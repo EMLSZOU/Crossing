@@ -1,0 +1,1032 @@
+MIME-Version: 1.0
+Content-Location: file:///C:/85899E79/Py.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3DProgId content=3DOneNote.File>
+<meta name=3DGenerator content=3D"Microsoft OneNote 15">
+<link id=3DMain-File rel=3DMain-File href=3DPy.htm>
+<link rel=3DFile-List href=3D"Py.files/filelist.xml">
+</head>
+
+<body lang=3Dzh-CN style=3D'font-family:微软雅黑;font-size:10.5pt;color=
+:black'>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:8.0902in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:.4861in;width:2.8729=
+in'>
+
+<p style=3D'margin:0in;font-size:20.0pt'><span style=3D'font-family:"Micros=
+oft YaHei"'
+lang=3Dzh-CN>异常处理</span><span style=3D'font-family:Arial' lang=3Den=
+-US>Exception</span></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0409in;margin-left:.4861in;width:2.=
+3284in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:gray'
+lang=3Den-US>Friday, September 23, 2016</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:gray'
+lang=3Den-US>12:51</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.2951in;margin-left:0in;width:8.0902=
+in'>
+
+<ul style=3D'margin-left:.4854in;direction:ltr;unicode-bidi:embed;margin-to=
+p:
+ 0in;margin-bottom:0in'>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>两=
+种错误：错误（语法错误）和异常。</p>
+ <ol type=3D1 style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;mar=
+gin-top:
+  0in;margin-bottom:0in;font-size:16.0pt;font-weight:bold;font-style:normal=
+'>
+  <li value=3D1 style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;
+      font-weight:bold;color:#002060'><span style=3D'font-size:16.0pt;font-=
+weight:
+      bold;font-style:normal;font-weight:bold;font-family:"Microsoft YaHei";
+      font-size:16.0pt;color:#002060'>错误（</span><span style=3D'font-s=
+ize:16.0pt;
+      font-weight:bold;font-style:normal;font-weight:bold;font-family:"Micr=
+osoft YaHei";
+      font-size:16.0pt;color:#1E4E79'>语法错误</span><span style=3D'fon=
+t-size:16.0pt;
+      font-weight:bold;font-style:normal;font-weight:bold;font-family:"Micr=
+osoft YaHei";
+      font-size:16.0pt;color:#002060'>）</span></li>
+ </ol>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:Arial'
+ lang=3Den-US>Python </span><span style=3D'font-family:"Microsoft YaHei"'
+ lang=3Dzh-CN>的语法错误，也称为解析错。这是程序员“主�=
+��”犯的错。常常出现于初学者，</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:微软=
+雅黑'>例</span><span
+ style=3D'font-family:"Microsoft YaHei"'>：</span></p>
+ <p style=3D'margin:0in'><span style=3D'font-family:Consolas;font-size:11.5=
+pt;
+ color:#0070C0' lang=3Den-US>while True print('Hello world')<br>
+  </span><span style=3D'font-family:Consolas;font-size:11.5pt;color:#00B050'
+ lang=3Den-US><span style=3D'mso-spacerun:yes'>  </span>File
+ &quot;&lt;stdin&gt;&quot;, line 1, in ?<span style=3D'mso-spacerun:yes'> =
+     
+ </span></span><span style=3D'font-family:"Microsoft YaHei";font-size:10.5p=
+t;
+ color:#00B050' lang=3Den-US><span style=3D'mso-spacerun:yes'> </span></sp=
+an><span
+ style=3D'font-family:"Microsoft YaHei";font-size:10.5pt;color:#00B050'
+ lang=3Dzh-CN>在文件</span><span style=3D'font-family:"Microsoft YaHei";=
+font-size:
+ 10.5pt;color:#00B050' lang=3Den-US> File &quot;&lt;stdin&gt;&quot;, </span=
+><span
+ style=3D'font-family:"Microsoft YaHei";font-size:10.5pt;color:#00B050'
+ lang=3Dzh-CN>第</span><span style=3D'font-family:"Microsoft YaHei";font-s=
+ize:10.5pt;
+ color:#00B050' lang=3Den-US>1</span><span style=3D'font-family:"Microsoft =
+YaHei";
+ font-size:10.5pt;color:#00B050' lang=3Dzh-CN>行的箭头那里</span><span
+ style=3D'font-family:Consolas;font-size:11.5pt;color:#00B050' lang=3Den-US=
+><br>
+  <span style=3D'mso-spacerun:yes'>    </span>while True print('Hello
+ world')<br>
+  <span style=3D'mso-spacerun:yes'>                   </s=
+pan>^<br>
+  SyntaxError: invalid syntax</span><span style=3D'font-family:Arial;font-s=
+ize:
+ 11.5pt;color:#00B050' lang=3Den-US><span style=3D'mso-spacerun:yes'>   =
+ </span></span><span
+ style=3D'font-family:"Microsoft YaHei";font-size:10.5pt;color:#00B050'
+ lang=3Dzh-CN>语法错误：无效的语法</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>函数</span><span style=3D'font-family:Arial' lang=3Den-US> =
+print() </span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>被检查到有错误=
+，是它前面缺少了一个冒号（</span><span
+ style=3D'font-family:Arial' lang=3Den-US>:</span><span style=3D'font-famil=
+y:"Microsoft YaHei"'
+ lang=3Dzh-CN>）。语法分析器指出了出错的一行，并且在最�=
+��找到的错误的位置标记了一个小小的箭头。</span></p>
+ <ol type=3D1 style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;mar=
+gin-top:
+  0in;margin-bottom:0in;font-size:16.0pt;font-weight:bold;font-style:normal=
+'>
+  <li value=3D2 style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;
+      font-weight:bold;color:#002060'><span style=3D'font-size:16.0pt;font-=
+weight:
+      bold;font-style:normal;font-weight:bold;font-family:"Microsoft YaHei";
+      font-size:16.0pt'>异常</span></li>
+ </ol>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>有时候，即使</span><span style=3D'font-family:Arial' la=
+ng=3Den-US>Python</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>程序的语法正确=
+，在运行的时候，也有可能发生错误。有可能是逻辑错误=
+（比如除零错），也有可能是环境导致运行出错。运行的=
+时候检测到的错误被称为异常。</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>大多数的异常都不会被程序处理，都以错误信�=
+��的形式展现</span><span style=3D'font-family:Arial'
+ lang=3Den-US>:</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt' lang=3Den-US=
+><span
+ style=3D'color:#0070C0'>10 * (1/0)<br>
+  </span><span style=3D'color:#00B050'>Traceback (most recent call last):<b=
+r>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 1, in ?<br>
+  ZeroDivisionError: division by zero<br>
+  </span><span style=3D'color:#0070C0'>4 + spam*3<br>
+  </span><span style=3D'color:#00B050'>Traceback (most recent call last):<b=
+r>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 1, in ?<br>
+  NameError: name 'spam' is not defined<br>
+  </span><span style=3D'color:#0070C0'>'2' + 2<br>
+  </span><span style=3D'color:#00B050'>Traceback (most recent call last):<b=
+r>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 1, in ?<br>
+  TypeError: Can't convert 'int' object to str implicitly</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>错误信息的前面部分显示了异常发生的上下文�=
+��并以调用栈的形式显示具体信息。异常以不同的类型出�=
+��，这些类型都作为信息的一部分打印出来。</span><span
+ style=3D'font-family:Arial' lang=3Den-US> </span><span style=3D'font-famil=
+y:"Microsoft YaHei"'
+ lang=3Dzh-CN>以上</span><span style=3D'font-family:Calibri' lang=3Den-US=
+>3</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>个，异常类型有=
+</span><span
+ style=3D'font-family:Arial' lang=3Den-US> ZeroDivisionError</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>，</span><span
+ style=3D'font-family:Arial' lang=3Den-US>NameError </span><span style=3D'f=
+ont-family:
+ "Microsoft YaHei"' lang=3Dzh-CN>和</span><span style=3D'font-family:Arial'
+ lang=3Den-US> TypeError</span><span style=3D'font-family:"Microsoft YaHei"'
+ lang=3Dzh-CN>。</span></p>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'><sp=
+an
+ lang=3Dzh-CN>异常的类是</span><span lang=3Den-US>Python</span><span l=
+ang=3Dzh-CN>官方库中的</span><span
+ lang=3Den-US>class</span><span lang=3Dzh-CN>。所有的异常类都继承=
+自异常类</span><span lang=3Den-US>Exception</span><span
+ lang=3Dzh-CN>，而</span><span lang=3Den-US>Exception</span><span lang=3D=
+zh-CN>继承自异常根类</span><span
+ lang=3Den-US>BaseException</span><span lang=3Dzh-CN>（继承树见文末�=
+��表）。异常类可以像其他的类一样做任何事情，但是通�=
+��都会比较简单，只提供一些错误相关的属性，并且允许�=
+��理异常的代码方便的获取这些信息。</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>异常处理是</span><span style=3D'font-family:Calibri' lan=
+g=3Den-US>Python</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>的高级控制流程=
+。作用：如果不写异常处理语句，</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>Python</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>默认的处理行为=
+是停止程序、打印出错信息，写</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>try</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>语句就可以捕捉=
+异常并且从中恢复。异常处理可以得到有效的处理信息，=
+而不是状态码（比如</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>404</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>之类）。程序中=
+出现特殊情况很难处理，写异常处理就可以解决。</span><s=
+pan
+ style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>try</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>…</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>finally</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>可以确保清理行=
+为一定会执行。</span></p>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>常=
+见的异常处理语句：</p>
+ <div style=3D'direction:ltr'>
+ <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'di=
+rection:ltr;
+  border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-w=
+idth:
+  1pt;margin-left:.3333in'>
+  <tr>
+   <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+   vertical-align:top;width:1.6222in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+   <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'
+   lang=3Den-US>try……except……else</p>
+   <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'
+   lang=3Den-US>try……finally……</p>
+   <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'
+   lang=3Den-US>raise</p>
+   <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'
+   lang=3Den-US>assert</p>
+   <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'
+   lang=3Den-US>with/as</p>
+   </td>
+   <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+   vertical-align:top;width:1.8972in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+   <p style=3D'margin:0in;font-family:微软雅黑;font-size:8.0pt'>捕捉�=
+��常，并且恢复</p>
+   <p style=3D'margin:0in;font-family:微软雅黑;font-size:8.0pt'>无论�=
+��否发生异常，都要执行清理</p>
+   <p style=3D'margin:0in;font-family:微软雅黑;font-size:8.0pt'>主动�=
+��发异常</p>
+   <p style=3D'margin:0in;font-family:微软雅黑;font-size:8.0pt'>有条�=
+��地触发异常</p>
+   <p style=3D'margin:0in;font-family:微软雅黑;font-size:8.0pt'>环境�=
+��理器（自动清理）</p>
+   </td>
+  </tr>
+ </table>
+ </div>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>&nb=
+sp;</p>
+ <ul type=3Ddisc style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#1E=
+4E79'><span
+      style=3D'font-weight:bold;font-family:"Microsoft YaHei";font-size:14.=
+0pt'>常见的异常处理：</span></li>
+ </ul>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'><sp=
+an
+ style=3D'font-weight:bold' lang=3Den-US>try…except…</span><span style=
+=3D'font-weight:
+ bold' lang=3Dzh-CN>尝试、捕捉异常（最常见）</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>try:</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>pass</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>except BaseException as msg:<span style=3D'mso-spacerun:yes'>=
+  
+ </span></p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>prin=
+t(&quot;XXX</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>异常</span><span
+ style=3D'font-family:Consolas' lang=3Den-US>&quot;, msg)<span
+ style=3D'mso-spacerun:yes'>  </span># </span><span style=3D'font-family:"=
+Microsoft YaHei"'
+ lang=3Dzh-CN>出现异常，报错语句</span><span style=3D'font-family:=
+Consolas' lang=3Dzh-CN>“</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>自定义语句</span=
+><span
+ style=3D'font-family:Consolas' lang=3Den-US> + </span><span style=3D'font-=
+family:
+ "Microsoft YaHei"' lang=3Dzh-CN>错误信息</span><span style=3D'font-fam=
+ily:Consolas'
+ lang=3Dzh-CN>”</span></p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US>print(&quot;continuing&quot;)<span
+ style=3D'mso-spacerun:yes'>  </span># </span><span style=3D'font-family:�=
+��软雅黑'
+ lang=3Dzh-CN>在异常处理后执行</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:Arial'
+ lang=3Den-US>try</span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>语句工作流程：</span></p>
+ <ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:emb=
+ed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>首先，执行</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>try</span><=
+span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>子句，如果没有异常发生，忽略</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>except</spa=
+n><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>子句，继续执行</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>try…excep=
+t</span><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>之后的代码。</span></li>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>如果在执行</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>try</span><=
+span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>子句的过程中发生了异常，那么</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>try</span><=
+span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>子句余下的部分将被忽略。如果异常的类型和</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US> except </s=
+pan><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>之后的名称相符，那么对应的</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>except</spa=
+n><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>子句将被执行。如果一个异常没有与任何的</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>except</spa=
+n><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>匹配，那么这个异常将会传递给上层的</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>try</span><=
+span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>中。然后执行</span><span
+      style=3D'font-family:Arial;font-size:10.5pt' lang=3Den-US>try…excep=
+t</span><span
+      style=3D'font-family:"Microsoft YaHei";font-size:10.5pt' lang=3Dzh-CN=
+>之后的语句。</span></li>
+ </ul>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>就像</span><span style=3D'font-family:"Microsoft YaHei"' la=
+ng=3Den-US>switch</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>语句，一个</span=
+><span
+ style=3D'font-family:Arial' lang=3Den-US> try </span><span style=3D'font-f=
+amily:
+ "Microsoft YaHei"' lang=3Dzh-CN>语句可能包含多个</span><span style=
+=3D'font-family:Arial'
+ lang=3Den-US>except</span><span style=3D'font-family:"Microsoft YaHei"'
+ lang=3Dzh-CN>子句，分别来处理不同的特定的异常，最多只�=
+��一个分支会被执行（对应的异常种类被执行）。处理程�=
+��将只针对对应的</span><span
+ style=3D'font-family:Arial' lang=3Den-US>try</span><span style=3D'font-fam=
+ily:"Microsoft YaHei"'
+ lang=3Dzh-CN>子句中的异常进行处理，而不是其他的</span><sp=
+an style=3D'font-family:Arial' lang=3Den-US>
+ try </span><span style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>的�=
+��理程序中的异常。而且，就像</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>Switch</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>的</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>case</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>可以合并，多个=
+异常合成元组，一个</span><span
+ style=3D'font-family:Arial' lang=3Den-US>except</span><span style=3D'font-=
+family:
+ "Microsoft YaHei"' lang=3Dzh-CN>子句就可以同时处理多个异常</s=
+pan><span style=3D'font-family:
+ Arial' lang=3Den-US>: </span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'><span
+ style=3D'mso-spacerun:yes'>    </span>except (RuntimeError, TypeError,
+ NameError):<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print(&quot;OS err=
+or:
+ {0}&quot;.format(err))</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>最后一个</span><span style=3D'font-family:Arial' lang=3De=
+n-US>except</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>子句可以忽略异=
+常的名称，它将被当作通配符使用。你可以使用这种方法=
+打印一个错误信息，然后再次把异常抛出。</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>import sys</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt' lang=3Den-US>tr=
+y:<br>
+  <span style=3D'mso-spacerun:yes'>    </span>f =3D open('myfile.txt')<b=
+r>
+  <span style=3D'mso-spacerun:yes'>    </span>s =3D f.readline()<br>
+  <span style=3D'mso-spacerun:yes'>    </span>i =3D int(s.strip())<br>
+  except OSError as err:<br>
+  <span style=3D'mso-spacerun:yes'>    </span>print(&quot;OS error:
+ {0}&quot;.format(err))<br>
+  except ValueError:<br>
+  <span style=3D'mso-spacerun:yes'>    </span>print(&quot;Could not conv=
+ert data
+ to an integer.&quot;)<br>
+  except:<br>
+  <span style=3D'mso-spacerun:yes'>    </span>print(&quot;Unexpected
+ error:&quot;, sys.exc_info()[0])<br>
+  <span style=3D'mso-spacerun:yes'>    </span>raise</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=3Den-US>try…except…else</span><span
+ style=3D'font-weight:bold;font-family:微软雅黑' lang=3Dzh-CN>尝试、=
+异常、没有异常继续</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>try:</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>pass</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>except BaseException as msg:</p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>prin=
+t(&quot;XXX</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>异常</span><span
+ style=3D'font-family:Consolas' lang=3Den-US>&quot;, msg)</span></p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US>else:<span style=3D'mso-spacerun:yes'>  </span># e=
+lse</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>只在没有异常的=
+时候执行。</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>pass</p>
+ <p style=3D'margin:0in;font-size:10.5pt' lang=3Den-US><span style=3D'font-=
+family:
+ Arial'>try except </span><span style=3D'font-family:"Microsoft YaHei"'>语=
+句还有一个可选的</span><span
+ style=3D'font-family:Arial'>else</span><span style=3D'font-family:"Microso=
+ft YaHei"'>子句，如果使用这个子句，那么必须放在所有的<=
+/span><span
+ style=3D'font-family:Arial'>except</span><span style=3D'font-family:"Micro=
+soft YaHei"'>子句之后。这个子句将在</span><span
+ style=3D'font-family:Arial'>try</span><span style=3D'font-family:"Microsof=
+t YaHei"'>子句没有发生任何异常的时候执行。例如</span><span
+ style=3D'font-family:Arial'>: </span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>for arg in
+ sys.argv[1:]:<br>
+  <span style=3D'mso-spacerun:yes'>    </span>try:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>f =3D open(arg, 'r=
+')<br>
+  <span style=3D'mso-spacerun:yes'>    </span>except IOError:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print('cannot open=
+', arg)<br>
+  <span style=3D'mso-spacerun:yes'>    </span>else:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print(arg, 'has',
+ len(f.readlines()), 'lines')<br>
+  <span style=3D'mso-spacerun:yes'>        </span>f.close()</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>使用</span><span style=3D'font-family:Arial' lang=3Den-US> =
+else </span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>子句比把所有的=
+语句都放在</span><span
+ style=3D'font-family:Arial' lang=3Den-US> try </span><span style=3D'font-f=
+amily:
+ "Microsoft YaHei"' lang=3Dzh-CN>子句里面要好，这样可以避免一=
+些意想不到的、而</span><span
+ style=3D'font-family:Arial' lang=3Den-US>except</span><span style=3D'font-=
+family:
+ "Microsoft YaHei"' lang=3Dzh-CN>又没有捕获的异常。</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>异常处理并不仅仅处理那些直接发生在</span><sp=
+an style=3D'font-family:Arial' lang=3Den-US>try</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>子句中的异常，=
+而且还能处理子句中调用的函数（甚至间接调用的函数）=
+里抛出的异常。例如</span><span
+ style=3D'font-family:Arial' lang=3Den-US>:</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt; def
+ this_fails():<br>
+  <span style=3D'mso-spacerun:yes'>        </span>x =3D 1/0<br>
+  <span style=3D'mso-spacerun:yes'>   </span><br>
+  &gt;&gt;&gt; try:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>this_fails()<br>
+  <span style=3D'mso-spacerun:yes'>    </span>except ZeroDivisionError as
+ err:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print('Handling ru=
+n-time
+ error:', err)<br>
+  <span style=3D'mso-spacerun:yes'>   </span><br>
+  Handling run-time error: int division or modulo by zero</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt' lang=3Den-US>&n=
+bsp;</p>
+ <p style=3D'margin:0in;font-family:微软雅黑;font-size:10.5pt'><span
+ style=3D'font-weight:bold' lang=3Den-US>try…except…Finally</span><span
+ style=3D'font-weight:bold' lang=3Dzh-CN>尝试、异常、一定要执行�=
+��自定义清理行为）</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>try:</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>pass</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>except BaseException as msg:</p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>prin=
+t(&quot;XXX</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>异常</span><span
+ style=3D'font-family:Consolas' lang=3Den-US>&quot;, msg)</span></p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US>finally:<span style=3D'mso-spacerun:yes'>  </span>=
+# </span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>不管有没有异常=
+，都执行。</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>pass</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.0pt' lang=3Den-US=
+>&nbsp;</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:Arial'
+ lang=3Den-US>try </span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>语句还有另外一个可选的子句，它定义了无论在任=
+何情况下都会执行的清理行为。</span><span
+ style=3D'font-family:Arial' lang=3Den-US> </span><span style=3D'font-famil=
+y:"Microsoft YaHei"'
+ lang=3Dzh-CN>例如</span><span style=3D'font-family:Arial' lang=3Den-US>:=
+</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:Arial'
+ lang=3Dzh-CN>try:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>raise KeyboardInte=
+rrupt<br>
+  finally:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print('Goodbye, wo=
+rld!')<br>
+  </span><span style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>以上�=
+��子不管</span><span
+ style=3D'font-family:Arial' lang=3Den-US>try</span><span style=3D'font-fam=
+ily:"Microsoft YaHei"'
+ lang=3Dzh-CN>子句里面有没有发生异常，</span><span style=3D'fon=
+t-family:Arial' lang=3Den-US>finally</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>子句都会执行。=
+</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>如果一个异常在</span><span style=3D'font-family:Arial'=
+ lang=3Den-US> try </span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>子句里（或者在=
+</span><span
+ style=3D'font-family:Arial' lang=3Den-US> except </span><span style=3D'fon=
+t-family:
+ "Microsoft YaHei"' lang=3Dzh-CN>和</span><span style=3D'font-family:Arial'
+ lang=3Den-US> else </span><span style=3D'font-family:"Microsoft YaHei"'
+ lang=3Dzh-CN>子句里）被抛出，而又没有任何的</span><span sty=
+le=3D'font-family:Arial' lang=3Den-US>
+ except </span><span style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>�=
+��它截住，那么这个异常会在</span><span
+ style=3D'font-family:Arial' lang=3Den-US> finally </span><span style=3D'fo=
+nt-family:
+ "Microsoft YaHei"' lang=3Dzh-CN>子句执行后再次被抛出。</span></=
+p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>下面是一个更加复杂的例子（在同一个</span><sp=
+an style=3D'font-family:Arial' lang=3Den-US>
+ try </span><span style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>语�=
+��里包含</span><span
+ style=3D'font-family:Arial' lang=3Den-US> except </span><span style=3D'fon=
+t-family:
+ "Microsoft YaHei"' lang=3Dzh-CN>和</span><span style=3D'font-family:Arial'
+ lang=3Den-US> finally </span><span style=3D'font-family:"Microsoft YaHei"'
+ lang=3Dzh-CN>子句）</span><span style=3D'font-family:Arial' lang=3Den-U=
+S>:</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt; def
+ divide(x, y):<br>
+  <span style=3D'mso-spacerun:yes'>        </span>try:<br>
+  <span style=3D'mso-spacerun:yes'>            </span>result =3D=
+ x / y<br>
+  <span style=3D'mso-spacerun:yes'>        </span>except ZeroDivisio=
+nError:<br>
+  <span style=3D'mso-spacerun:yes'>            </span>print(&quo=
+t;division by
+ zero!&quot;)<br>
+  <span style=3D'mso-spacerun:yes'>        </span>else:<br>
+  <span style=3D'mso-spacerun:yes'>            </span>print(&quo=
+t;result
+ is&quot;, result)<br>
+  <span style=3D'mso-spacerun:yes'>        </span>finally:<br>
+  <span style=3D'mso-spacerun:yes'>            </span>print(&quo=
+t;executing
+ finally clause&quot;)<span style=3D'mso-spacerun:yes'>   </span><br>
+  &gt;&gt;&gt; divide(2, 1)<br>
+  result is 2.0<br>
+  executing finally clause<br>
+  &gt;&gt;&gt; divide(2, 0)<br>
+  division by zero!<br>
+  executing finally clause<br>
+  &gt;&gt;&gt; divide(&quot;2&quot;, &quot;1&quot;)<br>
+  executing finally clause<br>
+  Traceback (most recent call last):<br>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 1, in ?<br>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 3, in divide<br>
+  TypeError: unsupported operand type(s) for /: 'str' and 'str'</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <ul type=3Ddisc style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#1E=
+4E79'><span
+      style=3D'font-weight:bold;font-family:"Microsoft YaHei";font-size:14.=
+0pt'>预定义的清理行为</span></li>
+ </ul>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>一=
+些对象定义了标准的清理行为，无论系统是否成功的使用=
+了它（成功执行代码），一旦不需要它了，那么这个标准=
+的清理行为就会执行。</p>
+ <p style=3D'margin:0in'><span style=3D'font-family:Consolas;font-size:11.5=
+pt;
+ color:#0070C0' lang=3Den-US>for line in open(&quot;myfile.txt&quot;):<span
+ style=3D'mso-spacerun:yes'>  </span></span><span style=3D'font-family:"Mi=
+crosoft YaHei";
+ font-size:11.0pt' lang=3Den-US>#</span><span style=3D'font-family:"Microso=
+ft YaHei";
+ font-size:11.0pt' lang=3Dzh-CN>打开一个文件，然后把内容打印�=
+��屏幕上</span><span style=3D'font-family:
+ Consolas;font-size:11.5pt;color:#0070C0' lang=3Den-US><br>
+  <span style=3D'mso-spacerun:yes'>    </span>print(line, end=3D&quot;&q=
+uot;) </span><span
+ style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US><span
+ style=3D'mso-spacerun:yes'> </span>#</span><span style=3D'font-family:"Mi=
+crosoft YaHei";
+ font-size:11.0pt' lang=3Dzh-CN>当执行完毕后，文件会保持打开�=
+��态，并没有被关闭</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>关键词</span><span style=3D'font-family:Arial' lang=3Den-U=
+S> with </span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>语句，保证诸如=
+文件之类的对象</span><span
+ style=3D'font-family:Arial' lang=3Den-US><span style=3D'mso-spacerun:yes'>=
+  </span></span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>在使用完之后一=
+定会执行清理（比如关闭文件），不管处理过程是不是出=
+现问题</span><span
+ style=3D'font-family:Arial' lang=3Den-US>:</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>with open(&quot;myfile.txt&quot;) as f:<br>
+  <span style=3D'mso-spacerun:yes'>    </span>for line in f:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print(line, end=3D=
+&quot;&quot;)</p>
+ <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>&nb=
+sp;</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <ul type=3Ddisc style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#1E=
+4E79'><span
+      style=3D'font-weight:bold;font-family:"Microsoft YaHei";font-size:14.=
+0pt'>抛出异常</span></li>
+ </ul>
+ <p style=3D'margin:0in;font-family:微软雅黑;font-size:10.5pt'>主动�=
+�出异常</p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>if a =3D=3D b:</p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>raise
+ NameError(&quot;</span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>发生</span><span
+ style=3D'font-family:Consolas' lang=3Den-US>XXX</span><span style=3D'font-=
+family:
+ "Microsoft YaHei"' lang=3Dzh-CN>异常</span><span style=3D'font-family:Co=
+nsolas'
+ lang=3Den-US>&quot;)</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.5pt;color:#0070C0'
+ lang=3Den-US>if a &gt; b:</p>
+ <p style=3D'margin:0in;font-size:11.5pt;color:#0070C0'><span style=3D'font=
+-family:
+ Consolas' lang=3Den-US><span style=3D'mso-spacerun:yes'>    </span>raise
+ NameError(&quot;</span><span style=3D'font-family:"Microsoft YaHei"' lang=
+=3Dzh-CN>发生</span><span
+ style=3D'font-family:Consolas' lang=3Den-US>XXX</span><span style=3D'font-=
+family:
+ "Microsoft YaHei"' lang=3Dzh-CN>异常</span><span style=3D'font-family:Co=
+nsolas'
+ lang=3Den-US>&quot;)</span></p>
+ <p style=3D'margin:0in;font-family:Consolas;font-size:11.0pt'>&nbsp;</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:Arial'
+ lang=3Den-US>Python </span><span style=3D'font-family:"Microsoft YaHei"'
+ lang=3Dzh-CN>使用</span><span style=3D'font-family:Arial' lang=3Den-US> =
+raise </span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>语句抛出一个指=
+定的异常。例如</span><span
+ style=3D'font-family:Arial' lang=3Den-US>:</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt; ra=
+ise
+ NameError('HiThere')<br>
+  Traceback (most recent call last):<br>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 1, in ?<br>
+  NameError: HiThere</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:Arial'
+ lang=3Den-US>raise </span><span style=3D'font-family:"Microsoft YaHei"'
+ lang=3Dzh-CN>唯一的一个参数指定了要被抛出的异常。它必�=
+��是一个异常的实例或者是异常的类（也就是</span><span
+ style=3D'font-family:Arial' lang=3Den-US> Exception </span><span style=3D'=
+font-family:
+ "Microsoft YaHei"' lang=3Dzh-CN>的子类）。</span></p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>如果你只想知道这是否抛出了一个异常，并不�=
+��去处理它，那么一个简单的</span><span style=3D'font-family:
+ Arial' lang=3Den-US> raise </span><span style=3D'font-family:"Microsoft Ya=
+Hei"'
+ lang=3Dzh-CN>语句就可以再次把它抛出。</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt;
+ try:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>raise
+ NameError('HiThere')<br>
+  <span style=3D'mso-spacerun:yes'>    </span>except NameError:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print('An exceptio=
+n flew
+ by!')<br>
+  <span style=3D'mso-spacerun:yes'>        </span>raise<br>
+  <span style=3D'mso-spacerun:yes'>   </span><br>
+  An exception flew by!<br>
+  Traceback (most recent call last):<br>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 2, in ?<br>
+  NameError: HiThere</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <ul type=3Ddisc style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#1E=
+4E79'><span
+      style=3D'font-weight:bold;font-family:"Microsoft YaHei";font-size:14.=
+0pt'>用户自定义异常</span></li>
+ </ul>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>你可以通过创建一个新的</span><span style=3D'font-f=
+amily:Arial' lang=3Den-US>exception</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>类来拥有自己的=
+异常。异常应该继承自</span><span
+ style=3D'font-family:Arial' lang=3Den-US> Exception </span><span style=3D'=
+font-family:
+ "Microsoft YaHei"' lang=3Dzh-CN>类，或者直接继承，或者间接继=
+承，例如</span><span style=3D'font-family:
+ Arial' lang=3Den-US>:</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt; cl=
+ass
+ MyError(Exception):<br>
+  <span style=3D'mso-spacerun:yes'>        </span>def __init__(self,
+ value):<br>
+  <span style=3D'mso-spacerun:yes'>            </span>self.value=
+ =3D value<br>
+  <span style=3D'mso-spacerun:yes'>        </span>def __str__(self):=
+<br>
+  <span style=3D'mso-spacerun:yes'>            </span>return
+ repr(self.value)<br>
+  <span style=3D'mso-spacerun:yes'>   </span><br>
+  &gt;&gt;&gt; try:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>raise MyError(2*2)=
+<br>
+  <span style=3D'mso-spacerun:yes'>    </span>except MyError as e:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>print('My exceptio=
+n occurred,
+ value:', e.value)<br>
+  <span style=3D'mso-spacerun:yes'>   </span><br>
+  My exception occurred, value: 4<br>
+  &gt;&gt;&gt; raise MyError('oops!')<br>
+  Traceback (most recent call last):<br>
+  <span style=3D'mso-spacerun:yes'>  </span>File &quot;&lt;stdin&gt;&quot;=
+, line
+ 1, in ?<br>
+  __main__.MyError: 'oops!'</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>在这个例子中，类</span><span style=3D'font-family:Ari=
+al' lang=3Den-US>
+ Exception </span><span style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-C=
+N>默认的</span><span
+ style=3D'font-family:Arial' lang=3Den-US> __init__() </span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>被覆盖。</span></=
+p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:Arial'
+ lang=3Den-US>&lt;p</span><span style=3D'font-family:"Microsoft YaHei"' lan=
+g=3Dzh-CN>异常的类可以像其他的类一样做任何事情，但是�=
+�常都会比较简单，只提供一些错误相关的属性，并且允�=
+�处理异常的代码方便的获取这些信息。</span><span
+ style=3D'font-family:Arial' lang=3Den-US>&lt; p=3D&quot;&quot;&gt; </span>=
+</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>当创建一个模块有可能抛出多种不同的异常时�=
+��一种通常的做法是为这个包建立一个基础异常类，然后�=
+��于这个基础类为不同的错误情况创建不同的子类</span><sp=
+an
+ style=3D'font-family:Arial' lang=3Den-US>:</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>class
+ Error(Exception):<br>
+  <span style=3D'mso-spacerun:yes'>    </span>&quot;&quot;&quot;Base cla=
+ss for
+ exceptions in this module.&quot;&quot;&quot;<br>
+  <span style=3D'mso-spacerun:yes'>    </span>pass</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt' lang=3Den-US>cl=
+ass
+ InputError(Error):<br>
+  <span style=3D'mso-spacerun:yes'>    </span>&quot;&quot;&quot;Exceptio=
+n raised
+ for errors in the input.</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>Attributes:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>expression -- inpu=
+t expression
+ in which the error occurred<br>
+  <span style=3D'mso-spacerun:yes'>        </span>message -- explana=
+tion of the
+ error<br>
+  <span style=3D'mso-spacerun:yes'>    </span>&quot;&quot;&quot;</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt' lang=3Den-US>def
+ __init__(self, expression, message):<br>
+  <span style=3D'mso-spacerun:yes'>        </span>self.expression =3D
+ expression<br>
+  <span style=3D'mso-spacerun:yes'>        </span>self.message =3D m=
+essage</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt' lang=3Den-US>cl=
+ass
+ TransitionError(Error):<br>
+  <span style=3D'mso-spacerun:yes'>    </span>&quot;&quot;&quot;Raised w=
+hen an
+ operation attempts a state transition that's not<br>
+  <span style=3D'mso-spacerun:yes'>    </span>allowed.</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>Attributes:<br>
+  <span style=3D'mso-spacerun:yes'>        </span>previous -- state =
+at beginning
+ of transition<br>
+  <span style=3D'mso-spacerun:yes'>        </span>next -- attempted =
+new
+ state<br>
+  <span style=3D'mso-spacerun:yes'>        </span>message -- explana=
+tion of why
+ the specific transition is not allowed<br>
+  <span style=3D'mso-spacerun:yes'>    </span>&quot;&quot;&quot;</p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt' lang=3Den-US>def
+ __init__(self, previous, next, message):<br>
+  <span style=3D'mso-spacerun:yes'>        </span>self.previous =3D =
+previous<br>
+  <span style=3D'mso-spacerun:yes'>        </span>self.next =3D next=
+<br>
+  <span style=3D'mso-spacerun:yes'>        </span>self.message =3D m=
+essage</p>
+ <p style=3D'margin:0in;font-size:10.5pt'><span style=3D'font-family:"Micro=
+soft YaHei"'
+ lang=3Dzh-CN>大多数的异常的名字都以</span><span style=3D'font-f=
+amily:Arial' lang=3Den-US>&quot;Error&quot;</span><span
+ style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>结尾，就跟标准=
+的异常命名一样。</span></p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style=3D'margin:0in;font-size:9.0pt;color:#595959'><span style=3D'font-=
+family:
+ "Microsoft YaHei"' lang=3Dzh-CN>来自</span><span style=3D'font-family:Ca=
+libri'
+ lang=3Den-US> &lt;</span><a
+ href=3D"http://www.runoob.com/python3/python3-errors-execptions.html"><span
+ style=3D'font-family:Calibri' lang=3Den-US>http://www.runoob.com/python3/p=
+ython3-errors-execptions.html</span></a><span
+ style=3D'font-family:Calibri' lang=3Den-US>&gt; </span></p>
+ <p style=3D'margin:0in;font-family:微软雅黑;font-size:10.5pt' lang=3De=
+n-US>&nbsp;</p>
+ <ul type=3Ddisc style=3D'margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle;color:#1E=
+4E79'><span
+      style=3D'font-weight:bold;font-family:"Microsoft YaHei";font-size:14.=
+0pt'>异常列表</span></li>
+ </ul>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'><span
+ style=3D'color:black'>BaseException<br>
+  <span style=3D'mso-spacerun:yes'> </span>+-- SystemExit<br>
+  <span style=3D'mso-spacerun:yes'> </span>+-- KeyboardInterrupt<br>
+  <span style=3D'mso-spacerun:yes'> </span>+-- GeneratorExit<br>
+  <span style=3D'mso-spacerun:yes'> </span>+-- Exception<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- StopIteration<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- ArithmeticError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- FloatingPointError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- OverflowError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- ZeroDivisionError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- AssertionError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- AttributeError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- BufferError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- EOFError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- ImportError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- LookupError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- IndexError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- KeyError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- MemoryError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- NameError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- UnboundLocalError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- OSError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- BlockingIOError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- ChildProcessError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- ConnectionError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>|<span style=3D'mso-spacerun:yes'=
+>   
+ </span>+-- BrokenPipeError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>|<span style=3D'mso-spacerun:yes'=
+>   
+ </span>+-- ConnectionAbortedError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>|<span style=3D'mso-spacerun:yes'=
+>   
+ </span>+-- ConnectionRefusedError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>|<span style=3D'mso-spacerun:yes'=
+>   
+ </span>+-- ConnectionResetError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- FileExistsError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- FileNotFoundError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- InterruptedError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- IsADirectoryError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- NotADirectoryError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- PermissionError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- ProcessLookupError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- TimeoutError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- ReferenceError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- RuntimeError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- NotImplementedError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- SyntaxError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- IndentationError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>         </span>+-- TabError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- SystemError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- TypeError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- ValueError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>    </span>+-- UnicodeError<br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>         </span>+-- UnicodeDecodeError<=
+br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>         </span>+-- UnicodeEncodeError<=
+br>
+  <span style=3D'mso-spacerun:yes'>      </span>|<span
+ style=3D'mso-spacerun:yes'>         </span>+-- UnicodeTranslateErr=
+or<br>
+  <span style=3D'mso-spacerun:yes'>      </span>+-- Warning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- Deprecat=
+ionWarning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+--
+ PendingDeprecationWarning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- RuntimeW=
+arning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- SyntaxWa=
+rning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- UserWarn=
+ing<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- FutureWa=
+rning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- ImportWa=
+rning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- UnicodeW=
+arning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- BytesWar=
+ning<br>
+  <span style=3D'mso-spacerun:yes'>           </span>+-- Resource=
+Warning</span></p>
+ <p style=3D'margin:0in;font-size:9.0pt;color:#595959'><span style=3D'font-=
+family:
+ "Microsoft YaHei"'>来自</span><span style=3D'font-family:Calibri'> &lt;<=
+/span><a
+ href=3D"http://www.cnblogs.com/zhangpengshou/p/3565087.html"><span
+ style=3D'font-family:Calibri'>http://www.cnblogs.com/zhangpengshou/p/35650=
+87.html</span></a><span
+ style=3D'font-family:Calibri'>&gt; </span></p>
+ <p style=3D'margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</=
+p>
+ <p style=3D'margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'text-align:left;margin:0in;font-family:宋体;font-size:9pt;col=
+or:#969696;
+direction:ltr'>已使用 Microsoft OneNote 2013 创建。</p>
+
+</div>
+
+</body>
+
+</html>
