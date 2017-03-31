@@ -1,898 +1,568 @@
-MIME-Version: 1.0
-Content-Location: file:///C:/C5220377/file0663.htm
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/html; charset="utf-8"
-
-<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
-xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
-xmlns=3D"http://www.w3.org/TR/REC-html40">
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
-<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
-<meta name=3DProgId content=3DOneNote.File>
-<meta name=3DGenerator content=3D"Microsoft OneNote 15">
-<link id=3DMain-File rel=3DMain-File href=3Dfile0663.htm>
-<link rel=3DFile-List href=3D"file0663.files/filelist.xml">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=OneNote.File>
+<meta name=Generator content="Microsoft OneNote 15">
+<link id=Main-File rel=Main-File href=file0663.htm>
+<link rel=File-List href="file0663.files/filelist.xml">
 </head>
 
-<body lang=3Dzh-CN style=3D'font-family:Calibri;font-size:11.0pt'>
+<body lang=zh-CN style='font-family:Calibri;font-size:11.0pt'>
 
-<div style=3D'direction:ltr;border-width:100%'>
+<div style='direction:ltr;border-width:100%'>
 
-<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:7.7722in'>
+<div style='direction:ltr;margin-top:0in;margin-left:0in;width:7.7722in'>
 
-<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:1.9409in'>
+<div style='direction:ltr;margin-top:0in;margin-left:0in;width:1.9409in'>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei Light";font-size:20.0pt=
-'>笔记：模块</p>
-
-</div>
-
-<div style=3D'direction:ltr;margin-top:.0388in;margin-left:0in;width:1.7034=
-in'>
-
-<p style=3D'margin:0in;font-size:10.0pt;color:#767676'><span style=3D'font-=
-family:
-Calibri'>2017</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
-><span
-style=3D'font-family:Calibri'>3</span><span style=3D'font-family:"Microsoft=
- YaHei"'>月</span><span
-style=3D'font-family:Calibri'>29</span><span style=3D'font-family:"Microsof=
-t YaHei"'>日</span></p>
-
-<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:#767676'>=
-21:22</p>
+<p style='margin:0in;font-family:"Microsoft YaHei Light";font-size:20.0pt'>笔记：模块</p>
 
 </div>
 
-<div style=3D'direction:ltr;margin-top:.4895in;margin-left:0in;width:7.7722=
-in'>
+<div style='direction:ltr;margin-top:.0388in;margin-left:0in;width:1.7034in'>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-size:10.0pt;color:#767676'><span style='font-family:
+Calibri'>2017</span><span style='font-family:"Microsoft YaHei"'>年</span><span
+style='font-family:Calibri'>3</span><span style='font-family:"Microsoft YaHei"'>月</span><span
+style='font-family:Calibri'>29</span><span style='font-family:"Microsoft YaHei"'>日</span></p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-lang=3Den-US>Python</span><span lang=3Dzh-CN>的程序结构：</span></p>
+<p style='margin:0in;font-family:Calibri;font-size:10.0pt;color:#767676'>21:22</p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+</div>
 
-<p style=3D'margin:0in'><span style=3D'font-family:"Microsoft YaHei";font-s=
-ize:
-11.0pt' lang=3Den-US>Python程序</span><span style=3D'font-family:Calibri;=
-font-size:
-11.0pt' lang=3Den-US> &gt;&gt; </span><span style=3D'font-family:"Microsoft=
- YaHei";
-font-size:11.0pt' lang=3Den-US>模块 &gt;&gt; 语句</span><span style=3D'=
-font-family:
-"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>（构建基本工具</spa=
-n><span
-style=3D'font-family:等线;font-size:12.0pt' lang=3Dzh-CN>，函数、类�=
-��等）</span><span
-style=3D'font-family:等线;font-size:12.0pt' lang=3Den-US>&gt;&gt;表达��=
-�</span><span
-style=3D'font-family:等线;font-size:12.0pt' lang=3Dzh-CN>（建立并处�=
-��</span><span
-style=3D'font-family:等线;font-size:12.0pt' lang=3Den-US>对象</span><sp=
-an
-style=3D'font-family:等线;font-size:12.0pt' lang=3Dzh-CN>）</span></p>
+<div style='direction:ltr;margin-top:.4895in;margin-left:0in;width:7.7722in'>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>一个</span><span style=3D'font-family:"Microsoft YaHei"' lan=
-g=3Den-US>Python</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>程序，是由很多�=
-��块组成的系统。一个模块就是一个</span><span
-style=3D'font-family:Calibri' lang=3Den-US>.py</span><span style=3D'font-fa=
-mily:"Microsoft YaHei"'
-lang=3Dzh-CN>文件（或者是</span><span style=3D'font-family:Calibri' l=
-ang=3Den-US>C/C++</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>、</span><span
-style=3D'font-family:Calibri' lang=3Den-US>Java</span><span style=3D'font-f=
-amily:
-"Microsoft YaHei"' lang=3Dzh-CN>、</span><span style=3D'font-family:Calibr=
-i'
-lang=3Den-US>C#</span><span style=3D'font-family:"Microsoft YaHei"' lang=3D=
-zh-CN>写的扩展）。</span></p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:embe=
-d;
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+lang=en-US>Python</span><span lang=zh-CN>的程序结构：</span></p>
+
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
+
+<p style='margin:0in'><span style='font-family:"Microsoft YaHei";font-size:
+11.0pt' lang=en-US>Python程序</span><span style='font-family:Calibri;font-size:
+11.0pt' lang=en-US> &gt;&gt; </span><span style='font-family:"Microsoft YaHei";
+font-size:11.0pt' lang=en-US>模块 &gt;&gt; 语句</span><span style='font-family:
+"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>（构建基本工具</span><span
+style='font-family:等线;font-size:12.0pt' lang=zh-CN>，函数、类等等）</span><span
+style='font-family:等线;font-size:12.0pt' lang=en-US>&gt;&gt;表达式</span><span
+style='font-family:等线;font-size:12.0pt' lang=zh-CN>（建立并处理</span><span
+style='font-family:等线;font-size:12.0pt' lang=en-US>对象</span><span
+style='font-family:等线;font-size:12.0pt' lang=zh-CN>）</span></p>
+
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>一个</span><span style='font-family:"Microsoft YaHei"' lang=en-US>Python</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>程序，是由很多模块组成的系统。一个模块就是一个</span><span
+style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>文件（或者是</span><span style='font-family:Calibri' lang=en-US>C/C++</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>、</span><span
+style='font-family:Calibri' lang=en-US>Java</span><span style='font-family:
+"Microsoft YaHei"' lang=zh-CN>、</span><span style='font-family:Calibri'
+lang=en-US>C#</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>写的扩展）。</span></p>
+
+<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
  margin-top:0in;margin-bottom:0in'>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-唯一的顶层文件（或叫顶层脚本），包含了程序的主要控=
-制流程，启动就是运行整个程序（相当于</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>main</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-入口函数）。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt'>其他的模�=
-��文件，是工具库，放置各种支撑的组件（函数、类等等�=
-��。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>唯一的顶层文件（或叫顶层脚本），包含了程序的主要控制流程，启动就是运行整个程序（相当于</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>main</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>入口函数）。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt'>其他的模块文件，是工具库，放置各种支撑的组件（函数、类等等）。</span></li>
 </ul>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-lang=3Dzh-CN>模块</span><span lang=3Den-US>+</span><span lang=3Dzh-CN>导=
-入，大程序切分为不同的软件组件，不同模块之间的代码=
-相互隔离，运行时通过导入操作连接在一起，就是</span><s=
-pan
-lang=3Den-US>Python</span><span lang=3Dzh-CN>程序架构的核心。</span=
-></p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+lang=zh-CN>模块</span><span lang=en-US>+</span><span lang=zh-CN>导入，大程序切分为不同的软件组件，不同模块之间的代码相互隔离，运行时通过导入操作连接在一起，就是</span><span
+lang=en-US>Python</span><span lang=zh-CN>程序架构的核心。</span></p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>模块的</span><span style=3D'font-family:Calibri' lang=3Den-=
-US>3</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>个作用：</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>模块的</span><span style='font-family:Calibri' lang=en-US>3</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>个作用：</span></p>
 
-<ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:embe=
-d;
+<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
  margin-top:0in;margin-bottom:0in'>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-复用代码和共享。交互模式，输入就运行，退出就没有了=
-。保存后的</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.py</span>=
-<span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-文件，可以无数次载入和运行，还可以拷贝给别人。</span=
-></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt'>作为一个�=
-��名空间。模块是一个定义变量名的空间，可以避免变量�=
-��的冲突。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-组建工程。模块是</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-Python</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-程序中最高级别的组织单元。将各个工具部件组成一个系=
-统（将各种函数和类组成一个</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-.py</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-文件）。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>复用代码和共享。交互模式，输入就运行，退出就没有了。保存后的</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件，可以无数次载入和运行，还可以拷贝给别人。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt'>作为一个命名空间。模块是一个定义变量名的空间，可以避免变量名的冲突。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>组建工程。模块是</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Python</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>程序中最高级别的组织单元。将各个工具部件组成一个系统（将各种函数和类组成一个</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>.py</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件）。</span></li>
 </ul>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>导入链要多深，就有多深：顶层文件</span><span s=
-tyle=3D'font-family:Calibri' lang=3Den-US>&gt;&gt;</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>模块</span><span
-style=3D'font-family:Calibri' lang=3Den-US>&gt;&gt;</span><span style=3D'fo=
-nt-family:
-"Microsoft YaHei"' lang=3Dzh-CN>第三方库</span><span style=3D'font-fami=
-ly:Calibri'
-lang=3Den-US>&gt;&gt;</span><span style=3D'font-family:"Microsoft YaHei"'
-lang=3Dzh-CN>标准库（权重依次递减）</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>导入链要多深，就有多深：顶层文件</span><span style='font-family:Calibri' lang=en-US>&gt;&gt;</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>模块</span><span
+style='font-family:Calibri' lang=en-US>&gt;&gt;</span><span style='font-family:
+"Microsoft YaHei"' lang=zh-CN>第三方库</span><span style='font-family:Calibri'
+lang=en-US>&gt;&gt;</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>标准库（权重依次递减）</span></p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<h1 style=3D'margin:0in;font-size:16.0pt;color:#1E4E79'><span style=3D'font=
--family:
-"Microsoft YaHei"' lang=3Dzh-CN>模块</span><span style=3D'font-family:Cal=
-ibri'
-lang=3Den-US>.py</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>文件</span></h1>
+<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
+"Microsoft YaHei"' lang=zh-CN>模块</span><span style='font-family:Calibri'
+lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>文件</span></h1>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>建立一个</span><span style=3D'font-family:Calibri' lang=3D=
-en-US>.py</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>文件，就是一个�=
-��块。如果需要被导入，必须以</span><span
-style=3D'font-family:Calibri' lang=3Den-US>.py</span><span style=3D'font-fa=
-mily:"Microsoft YaHei"'
-lang=3Dzh-CN>结尾。顶层文件，仅运行而不被导入，可以不��=
-�</span><span style=3D'font-family:Calibri'
-lang=3Den-US>.py</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>结尾，但最好用</span><span
-style=3D'font-family:Calibri' lang=3Den-US>.py</span><span style=3D'font-fa=
-mily:"Microsoft YaHei"'
-lang=3Dzh-CN>结尾，编辑的时候代码高亮。</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>建立一个</span><span style='font-family:Calibri' lang=en-US>.py</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>文件，就是一个模块。如果需要被导入，必须以</span><span
+style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>结尾。顶层文件，仅运行而不被导入，可以不用</span><span style='font-family:Calibri'
+lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>结尾，但最好用</span><span
+style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>结尾，编辑的时候代码高亮。</span></p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>包�=
-��模块，导入后都成为一个变量名，所以遵循普通变量名�=
-��命名法则。</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>包和模块，导入后都成为一个变量名，所以遵循普通变量名的命名法则。</p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<div style=3D'direction:ltr'>
+<div style='direction:ltr'>
 
-<table border=3D0 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'dir=
-ection:ltr;
- border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-wi=
-dth:
- 0pt;margin-left:.3333in' title=3D"" summary=3D"">
+<table border=0 cellpadding=0 cellspacing=0 valign=top style='direction:ltr;
+ border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-width:
+ 0pt;margin-left:.3333in' title="" summary="">
  <tr>
-  <td style=3D'border-width:0pt;vertical-align:top;width:4.0319in;padding:2=
-.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt;
+  <td style='border-width:0pt;vertical-align:top;width:4.0319in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt;
   text-align:center'>模块内部的通常布局</p>
   </td>
-  <td style=3D'border-width:0pt;vertical-align:top;width:3.0479in;padding:2=
-.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style=3D'margin:0in;font-size:11.0pt;text-align:center'><span
-  style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>范例</span><span
-  style=3D'font-family:Calibri' lang=3Den-US> demo.py</span></p>
+  <td style='border-width:0pt;vertical-align:top;width:3.0479in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+  <p style='margin:0in;font-size:11.0pt;text-align:center'><span
+  style='font-family:"Microsoft YaHei"' lang=zh-CN>范例</span><span
+  style='font-family:Calibri' lang=en-US> demo.py</span></p>
   </td>
  </tr>
  <tr>
-  <td style=3D'border-width:0pt;vertical-align:top;width:4.0513in;padding:2=
-.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  lang=3Den-US>1.Shebang (也称Hashbang)</span><span lang=3Dzh-CN>，指��=
-�</span><span
-  lang=3Den-US>Python</span><span lang=3Dzh-CN>解析器路径。</span></p>
-  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calib=
-ri'
-  lang=3Den-US>2. </span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>指定文件编码。</span></p>
-  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calib=
-ri'
-  lang=3Den-US>3.</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>模块文档字符串。</span></p>
-  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calib=
-ri'
-  lang=3Den-US>4.</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>导入。</span></p>
-  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calib=
-ri'
-  lang=3Den-US>5.</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>全局变量。</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=3Den-US>&nbsp;</p>
-  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calib=
-ri'
-  lang=3Den-US>6.</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>类定义。</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=3Den-US>&nbsp;</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=3Den-US>&nbsp;</p>
-  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calib=
-ri'
-  lang=3Den-US>7.</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>函数定义。</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=3Den-US>&nbsp;</p>
-  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calib=
-ri'
-  lang=3Den-US>8.</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>主程序。一般用来写单元测试。</span></p>
+  <td style='border-width:0pt;vertical-align:top;width:4.0513in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  lang=en-US>1.Shebang (也称Hashbang)</span><span lang=zh-CN>，指定</span><span
+  lang=en-US>Python</span><span lang=zh-CN>解析器路径。</span></p>
+  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+  lang=en-US>2. </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>指定文件编码。</span></p>
+  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+  lang=en-US>3.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>模块文档字符串。</span></p>
+  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+  lang=en-US>4.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>导入。</span></p>
+  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+  lang=en-US>5.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>全局变量。</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+  lang=en-US>&nbsp;</p>
+  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+  lang=en-US>6.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>类定义。</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+  lang=en-US>&nbsp;</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+  lang=en-US>&nbsp;</p>
+  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+  lang=en-US>7.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>函数定义。</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+  lang=en-US>&nbsp;</p>
+  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+  lang=en-US>8.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>主程序。一般用来写单元测试。</span></p>
   </td>
-  <td style=3D'border-width:0pt;background-color:#FFF2CC;vertical-align:top;
+  <td style='border-width:0pt;background-color:#FFF2CC;vertical-align:top;
   width:3.0284in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'>#!/usr/bin/env Python3</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'># -*- coding: utf-8 -*-</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'>&quot;This is just a test module &quot;</span>=
-</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'>from platform import *</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'>string =3D 'module'</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>pr=
-int(string,python_version())</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'>class Test():</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'mso-spacerun:yes'>    </span>def __init__(self):</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'mso-spacerun:yes'>        </span>print('run __init__',end=
-=3D'\n')</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'>def foo():</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'mso-spacerun:yes'>    </span>print('run foo()')</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'font-weight:bold'>if __name__ =3D=3D '__main__':</span></p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'mso-spacerun:yes'>    </span>Test()</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'mso-spacerun:yes'>    </span>foo()</p>
-  <p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><s=
-pan
-  style=3D'mso-spacerun:yes'>    </span>print('__main__',python_version(=
-))</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'>#!/usr/bin/env Python3</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'># -*- coding: utf-8 -*-</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'>&quot;This is just a test module &quot;</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'>from platform import *</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'>string = 'module'</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>print(string,python_version())</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'>class Test():</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='mso-spacerun:yes'>    </span>def __init__(self):</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='mso-spacerun:yes'>        </span>print('run __init__',end='\n')</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'>def foo():</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='mso-spacerun:yes'>    </span>print('run foo()')</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='font-weight:bold'>if __name__ == '__main__':</span></p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='mso-spacerun:yes'>    </span>Test()</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='mso-spacerun:yes'>    </span>foo()</p>
+  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+  style='mso-spacerun:yes'>    </span>print('__main__',python_version())</p>
   </td>
  </tr>
 </table>
 
 </div>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>#!/usr/bin/python指定一个路径里的</span><span style=3D=
-'font-family:Calibri'
-lang=3Den-US>Python</span><span style=3D'font-family:"Microsoft YaHei"' lan=
-g=3Dzh-CN>解析器，系统</span><span
-style=3D'font-family:Calibri' lang=3Den-US>Python</span><span style=3D'font=
--family:
-"Microsoft YaHei"' lang=3Dzh-CN>解析器（#!/usr/bin/python指定</span><=
-span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>Python3</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>）。</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>#!/usr/bin/python指定一个路径里的</span><span style='font-family:Calibri'
+lang=en-US>Python</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>解析器，系统</span><span
+style='font-family:Calibri' lang=en-US>Python</span><span style='font-family:
+"Microsoft YaHei"' lang=zh-CN>解析器（#!/usr/bin/python指定</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US>Python3</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>）。</span></p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>#!/usr/</span><span style=3D'font-family:"Microsoft YaHei"'
-lang=3Den-US>local/</span><span style=3D'font-family:"Microsoft YaHei"' lan=
-g=3Dzh-CN>bin/python</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US><span
-style=3D'mso-spacerun:yes'>  </span></span><span style=3D'font-family:"Mic=
-rosoft YaHei"'
-lang=3Dzh-CN>指定一个路径里的</span><span style=3D'font-family:Cali=
-bri' lang=3Den-US>Python</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>解析器，系统</sp=
-an><span
-style=3D'font-family:Calibri' lang=3Den-US>Python</span><span style=3D'font=
--family:
-"Microsoft YaHei"' lang=3Dzh-CN>解析器</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>#!/usr/</span><span style='font-family:"Microsoft YaHei"'
+lang=en-US>local/</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>bin/python</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US><span
+style='mso-spacerun:yes'>  </span></span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>指定一个路径里的</span><span style='font-family:Calibri' lang=en-US>Python</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>解析器，系统</span><span
+style='font-family:Calibri' lang=en-US>Python</span><span style='font-family:
+"Microsoft YaHei"' lang=zh-CN>解析器</span></p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-weight:bold;
-font-family:"Microsoft YaHei"' lang=3Dzh-CN>#!/usr/bin/env python</span><sp=
-an
-style=3D'font-weight:bold;font-family:Calibri' lang=3Den-US><span
-style=3D'mso-spacerun:yes'>  </span></span><span style=3D'font-weight:bold;
-font-family:"Microsoft YaHei"' lang=3Dzh-CN>指出要</span><span style=3D'=
-font-weight:
-bold;font-family:Calibri' lang=3Den-US>Python2</span><span style=3D'font-we=
-ight:
-bold;font-family:"Microsoft YaHei"' lang=3Dzh-CN>，但让系统搜寻路��=
-�（#!/usr/bin/env python</span><span
-style=3D'font-weight:bold;font-family:Calibri' lang=3Den-US>3 </span><span
-style=3D'font-weight:bold;font-family:"Microsoft YaHei"' lang=3Dzh-CN>指��=
-�要</span><span
-style=3D'font-weight:bold;font-family:Calibri' lang=3Den-US>Python3</span><=
-span
-style=3D'font-weight:bold;font-family:"Microsoft YaHei"' lang=3Dzh-CN>）��=
-�—建议。</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-weight:bold;
+font-family:"Microsoft YaHei"' lang=zh-CN>#!/usr/bin/env python</span><span
+style='font-weight:bold;font-family:Calibri' lang=en-US><span
+style='mso-spacerun:yes'>  </span></span><span style='font-weight:bold;
+font-family:"Microsoft YaHei"' lang=zh-CN>指出要</span><span style='font-weight:
+bold;font-family:Calibri' lang=en-US>Python2</span><span style='font-weight:
+bold;font-family:"Microsoft YaHei"' lang=zh-CN>，但让系统搜寻路径（#!/usr/bin/env python</span><span
+style='font-weight:bold;font-family:Calibri' lang=en-US>3 </span><span
+style='font-weight:bold;font-family:"Microsoft YaHei"' lang=zh-CN>指出要</span><span
+style='font-weight:bold;font-family:Calibri' lang=en-US>Python3</span><span
+style='font-weight:bold;font-family:"Microsoft YaHei"' lang=zh-CN>）——建议。</span></p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-lang=3Dzh-CN>指定解析器的检验方法：写出平台特有的语法��=
-�然后直接运行</span><span lang=3Den-US>py</span><span
-lang=3Dzh-CN>文件。如上面的例子。</span></p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+lang=zh-CN>指定解析器的检验方法：写出平台特有的语法，然后直接运行</span><span lang=en-US>py</span><span
+lang=zh-CN>文件。如上面的例子。</span></p>
 
-<p style=3D'margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><=
-span
-style=3D'font-family:Consolas' lang=3Dzh-CN>chmod u+x </span><span
-style=3D'font-family:Calibri' lang=3Den-US>demo</span><span style=3D'font-f=
-amily:
-Consolas' lang=3Dzh-CN>.py</span><span style=3D'font-family:Calibri' lang=
-=3Den-US><span
-style=3D'mso-spacerun:yes'>  </span># </span><span style=3D'font-family:"M=
-icrosoft YaHei"'
-lang=3Dzh-CN>更改文件的模式，变为可执行模式</span></p>
+<p style='margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><span
+style='font-family:Consolas' lang=zh-CN>chmod u+x </span><span
+style='font-family:Calibri' lang=en-US>demo</span><span style='font-family:
+Consolas' lang=zh-CN>.py</span><span style='font-family:Calibri' lang=en-US><span
+style='mso-spacerun:yes'>  </span># </span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>更改文件的模式，变为可执行模式</span></p>
 
-<p style=3D'margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><=
-span
-style=3D'font-family:Consolas' lang=3Dzh-CN>./</span><span style=3D'font-fa=
-mily:Calibri'
-lang=3Den-US>demo</span><span style=3D'font-family:Consolas' lang=3Dzh-CN>.=
-py</span><span
-style=3D'font-family:Calibri' lang=3Den-US><span style=3D'mso-spacerun:yes'=
->    
-</span># </span><span style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>=
-运行这个文件</span></p>
+<p style='margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><span
+style='font-family:Consolas' lang=zh-CN>./</span><span style='font-family:Calibri'
+lang=en-US>demo</span><span style='font-family:Consolas' lang=zh-CN>.py</span><span
+style='font-family:Calibri' lang=en-US><span style='mso-spacerun:yes'>    
+</span># </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>运行这个文件</span></p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Den-US>Python 2</span><span style=3D'font-family:"Microsoft YaHei"'
-lang=3Dzh-CN>的</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Den-US> </span><span
-style=3D'font-family:Consolas;color:#0070C0' lang=3Den-US>print 2</span><sp=
-an
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>无法在</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>Python3</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>运行，而</span><sp=
-an
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>Python3 </span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>的</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US> </span><span
-style=3D'font-family:Consolas;color:#0070C0' lang=3Dzh-CN>print('run
-__init__',end=3D'\n')</span><span style=3D'font-family:Consolas;color:#0070=
-C0'
-lang=3Den-US> </span><span style=3D'font-family:"Microsoft YaHei"' lang=3Dz=
-h-CN>无法在</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>2</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>运行。</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=en-US>Python 2</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>的</span><span style='font-family:"Microsoft YaHei"' lang=en-US> </span><span
+style='font-family:Consolas;color:#0070C0' lang=en-US>print 2</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>无法在</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US>Python3</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，而</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US>Python3 </span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>的</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US> </span><span
+style='font-family:Consolas;color:#0070C0' lang=zh-CN>print('run
+__init__',end='\n')</span><span style='font-family:Consolas;color:#0070C0'
+lang=en-US> </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>无法在</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US>2</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>运行。</span></p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Consola=
-s;
-color:#0070C0' lang=3Den-US>python </span><span style=3D'font-family:Consol=
-as;
-color:#0070C0' lang=3Dzh-CN>hello.py</span><span style=3D'font-family:"Micr=
-osoft YaHei"'
-lang=3Dzh-CN>是指定</span><span style=3D'font-family:"Microsoft YaHei"' =
-lang=3Den-US>python2</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>运行，</span><span
-style=3D'font-family:Consolas;color:#0070C0' lang=3Den-US>python3 </span><s=
-pan
-style=3D'font-family:Consolas;color:#0070C0' lang=3Dzh-CN>hello.py</span><s=
-pan
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>是指定</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>python3</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>运行，都不是直�=
-��运行模块。</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:Consolas;
+color:#0070C0' lang=en-US>python </span><span style='font-family:Consolas;
+color:#0070C0' lang=zh-CN>hello.py</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>是指定</span><span style='font-family:"Microsoft YaHei"' lang=en-US>python2</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，</span><span
+style='font-family:Consolas;color:#0070C0' lang=en-US>python3 </span><span
+style='font-family:Consolas;color:#0070C0' lang=zh-CN>hello.py</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>是指定</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US>python3</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，都不是直接运行模块。</span></p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<h1 style=3D'margin:0in;font-size:16.0pt;color:#1E4E79'><span style=3D'font=
--family:
-Calibri' lang=3Den-US>import </span><span style=3D'font-family:"Microsoft Y=
-aHei"'
-lang=3Dzh-CN>语句——导入整个模块</span></h1>
+<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
+Calibri' lang=en-US>import </span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>语句——导入整个模块</span></h1>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>这与</span><span style=3D'font-family:Calibri' lang=3Den-US>=
-C</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>语言的</span><span
-style=3D'font-family:Calibri' lang=3Den-US><span style=3D'mso-spacerun:yes'=
-> 
-</span>#include</span><span style=3D'font-family:"Microsoft YaHei"' lang=3D=
-zh-CN>语句有点类似，但不一样。</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>#include</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>是将一个文件的�=
-��句插入另一个文件。</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>这与</span><span style='font-family:Calibri' lang=en-US>C</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>语言的</span><span
+style='font-family:Calibri' lang=en-US><span style='mso-spacerun:yes'> 
+</span>#include</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>语句有点类似，但不一样。</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US>#include</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>是将一个文件的语句插入另一个文件。</span></p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:Calibri'
-lang=3Den-US>import </span><span style=3D'font-family:"Microsoft YaHei"'
-lang=3Dzh-CN>的</span><span style=3D'font-family:Calibri' lang=3Den-US> 3<=
-/span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>个步骤：</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+lang=en-US>import </span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>的</span><span style='font-family:Calibri' lang=en-US> 3</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>个步骤：</span></p>
 
-<ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:embe=
-d;
+<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
  margin-top:0in;margin-bottom:0in'>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-识别这个文件，编译成</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.pyc</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-文件（只在必要时），加载这个模块</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>识别这个文件，编译成</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件（只在必要时），加载这个模块</span></li>
 </ul>
 
-<p style=3D'margin:0in;margin-left:.375in;font-size:11.0pt'><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>识别的路径：</sp=
-an><span
-style=3D'font-family:Calibri' lang=3Den-US>sys.path</span><span style=3D'fo=
-nt-family:
-"Microsoft YaHei"' lang=3Dzh-CN>包括：程序的主目录，</span><span =
-style=3D'font-family:Calibri'
-lang=3Den-US>PythonPATH</span><span style=3D'font-family:"Microsoft YaHei"'
-lang=3Dzh-CN>，标准库，路径文件</span><span style=3D'font-family:C=
-alibri' lang=3Den-US>.pth </span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>定义的路径（权�=
-��依次递减）。主目录和标准库是自定义的，无需设置；<=
-/span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US>PythonPATH </span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>和</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Den-US> .pth </span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>用于扩展路径，�=
-��为补充。</span></p>
+<p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>识别的路径：</span><span
+style='font-family:Calibri' lang=en-US>sys.path</span><span style='font-family:
+"Microsoft YaHei"' lang=zh-CN>包括：程序的主目录，</span><span style='font-family:Calibri'
+lang=en-US>PythonPATH</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>，标准库，路径文件</span><span style='font-family:Calibri' lang=en-US>.pth </span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>定义的路径（权重依次递减）。主目录和标准库是自定义的，无需设置；</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US>PythonPATH </span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>和</span><span
+style='font-family:"Microsoft YaHei"' lang=en-US> .pth </span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>用于扩展路径，作为补充。</span></p>
 
-<ol type=3D1 style=3D'margin-left:.75in;direction:ltr;unicode-bidi:embed;
+<ol type=1 style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
  margin-top:0in;margin-bottom:0in;font-family:Calibri;font-size:11.0pt;
  font-weight:normal;font-style:normal'>
- <li value=3D1 style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt;font-weight:no=
-rmal;
-     font-style:normal;font-family:"Microsoft YaHei";font-size:11.0pt'>程�=
-��主目录：交互模式，就是当前目录。创建一个工程或者�=
-��行程序时，就是顶层脚本所在的目录。最先搜索，权重�=
-��最高，可能会覆盖其他地方的同名模块。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-PythonPATH</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-：当主目录与支撑模块所在的目录不同时，才会用到这个=
-方式。比如，控制面板</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
--</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-系统与安全</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
--</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-系统</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
--</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-高级系统设置</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
--</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-环境变量，建立一个</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>
-     PythonPATH</span><span style=3D'font-family:"Microsoft YaHei";font-siz=
-e:
-     11.0pt' lang=3Dzh-CN>，填入</span><span style=3D'font-family:"Micro=
-soft YaHei";
-     font-size:11.0pt' lang=3Den-US>C:\pycode\utilities;D:\pycode\package</=
-span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-标准库：</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-Python</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-自带的官方库，无需设置，直接</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-import</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-路径文件</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.pth </spa=
-n><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-：是</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-PythonPATH</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-的替代品，设置更简单，并且设置一次可以让所有用户使=
-用。</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-Windows</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-的，</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-C:\Python30\myconfig.pth
-     </span><span style=3D'font-family:"Microsoft YaHei";font-size:11.0pt'
-     lang=3Dzh-CN>或</span><span style=3D'font-family:"Microsoft YaHei";fo=
-nt-size:
-     11.0pt' lang=3Den-US> C:\Python30\Lib\sitepackages\myconfig.pth</span>=
-<span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-（常用来定义第三方库）；</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-Unix</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-的，</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-usr/local/lib/site-python
-     </span><span style=3D'font-family:"Microsoft YaHei";font-size:11.0pt'
-     lang=3Dzh-CN>或</span><span style=3D'font-family:"Microsoft YaHei";fo=
-nt-size:
-     11.0pt' lang=3Den-US> usr/local/lib/python30/site-packages</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-。比如，在</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>
-     C:/Python30/pydirs.pth </span><span style=3D'font-family:"Microsoft Ya=
-Hei";
-     font-size:11.0pt' lang=3Dzh-CN>文本文件加入</span></li>
+ <li value=1 style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt;font-weight:normal;
+     font-style:normal;font-family:"Microsoft YaHei";font-size:11.0pt'>程序主目录：交互模式，就是当前目录。创建一个工程或者运行程序时，就是顶层脚本所在的目录。最先搜索，权重也最高，可能会覆盖其他地方的同名模块。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>PythonPATH</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>：当主目录与支撑模块所在的目录不同时，才会用到这个方式。比如，控制面板</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>系统与安全</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>系统</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>高级系统设置</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>环境变量，建立一个</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>
+     PythonPATH</span><span style='font-family:"Microsoft YaHei";font-size:
+     11.0pt' lang=zh-CN>，填入</span><span style='font-family:"Microsoft YaHei";
+     font-size:11.0pt' lang=en-US>C:\pycode\utilities;D:\pycode\package</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>标准库：</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Python</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>自带的官方库，无需设置，直接</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>import</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>路径文件</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pth </span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>：是</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>PythonPATH</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的替代品，设置更简单，并且设置一次可以让所有用户使用。</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Windows</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的，</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>C:\Python30\myconfig.pth
+     </span><span style='font-family:"Microsoft YaHei";font-size:11.0pt'
+     lang=zh-CN>或</span><span style='font-family:"Microsoft YaHei";font-size:
+     11.0pt' lang=en-US> C:\Python30\Lib\sitepackages\myconfig.pth</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>（常用来定义第三方库）；</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Unix</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的，</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>usr/local/lib/site-python
+     </span><span style='font-family:"Microsoft YaHei";font-size:11.0pt'
+     lang=zh-CN>或</span><span style='font-family:"Microsoft YaHei";font-size:
+     11.0pt' lang=en-US> usr/local/lib/python30/site-packages</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。比如，在</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>
+     C:/Python30/pydirs.pth </span><span style='font-family:"Microsoft YaHei";
+     font-size:11.0pt' lang=zh-CN>文本文件加入</span></li>
 </ol>
 
-<p style=3D'margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=3Den-US>C:\pycode\utilities</p>
+<p style='margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
+font-size:11.0pt' lang=en-US>C:\pycode\utilities</p>
 
-<p style=3D'margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=3Den-US>D:\pycode\package</p>
+<p style='margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
+font-size:11.0pt' lang=en-US>D:\pycode\package</p>
 
-<p style=3D'margin:0in;margin-left:.75in;font-size:11.0pt'><span
-style=3D'font-family:Consolas;color:#0070C0' lang=3Den-US>print(sys.path)</=
-span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>来检查自己的设�=
-��是否正确</span></p>
+<p style='margin:0in;margin-left:.75in;font-size:11.0pt'><span
+style='font-family:Consolas;color:#0070C0' lang=en-US>print(sys.path)</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>来检查自己的设置是否正确</span></p>
 
-<p style=3D'margin:0in;margin-left:.375in;font-size:11.0pt'><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>语句</span><span
-style=3D'font-family:Calibri' lang=3Den-US> </span><span style=3D'font-fami=
-ly:"Microsoft YaHei"'
-lang=3Den-US>import b </span><span style=3D'font-family:"Microsoft YaHei"'
-lang=3Dzh-CN>可能并不是加载</span><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Den-US> .py</span><span style=3D'font-family:"Microsoft YaHei"' lang=
-=3Dzh-CN>文件，它可能是：</span></p>
+<p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>语句</span><span
+style='font-family:Calibri' lang=en-US> </span><span style='font-family:"Microsoft YaHei"'
+lang=en-US>import b </span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>可能并不是加载</span><span style='font-family:"Microsoft YaHei"'
+lang=en-US> .py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>文件，它可能是：</span></p>
 
-<ul type=3Dcircle style=3D'margin-left:.75in;direction:ltr;unicode-bidi:emb=
-ed;
+<ul type=circle style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
  margin-top:0in;margin-bottom:0in'>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-b.py</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-文件或</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-b</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.pyc</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-文件，或者</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.pyo</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-优化文件。只在必要的时候才编译，比如</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.pyc</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-不存在，第一次编译，比如</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.py</span>=
-<span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-文件修改后再次运行程序需要重新编译。只有被导入的文=
-件才会留下</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.pyc</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-。如果不存在</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.py</span>=
-<span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-，会直接加载</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.pyc</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-目录</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-b</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-——包导入</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-C/C++</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-模块：动态链接导入扩展模块（</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-b.so</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-、</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-b.dll</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-、</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-b.pyd</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-之类），或者静态链接导入已经编译好的模块。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>.zip</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-压缩包。导入时自动解压。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-frozen </span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-二进制文件，导入的是内存中的模块。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-java</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-类，</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-Jython</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-。</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-.net</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-组件，</span><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Den-US>=
-IronPython</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.py</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件或</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件，或者</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyo</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>优化文件。只在必要的时候才编译，比如</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>不存在，第一次编译，比如</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件修改后再次运行程序需要重新编译。只有被导入的文件才会留下</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。如果不存在</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>，会直接加载</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>目录</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>——包导入</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>C/C++</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>模块：动态链接导入扩展模块（</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.so</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>、</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.dll</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>、</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.pyd</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>之类），或者静态链接导入已经编译好的模块。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.zip</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>压缩包。导入时自动解压。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>frozen </span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>二进制文件，导入的是内存中的模块。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>java</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>类，</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Jython</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>.net</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>组件，</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>IronPython</span></li>
 </ul>
 
-<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt'><span lang=3Dzh-CN>从</span><span lang=3Den-US>sys.path<=
-/span><span
-lang=3Dzh-CN>中，从左至右一个个路径开始搜寻</span><span lang=
-=3Den-US>b</span><span lang=3Dzh-CN>，找到一个</span><span
-lang=3Den-US>b.x</span><span lang=3Dzh-CN>文件（后缀必须合法）就=
-导入——这就是覆盖原理。最好不要在同一目录下出现</s=
-pan><span
-lang=3Den-US> b.py </span><span lang=3Dzh-CN>和</span><span lang=3Den-US> =
-b.dll</span><span
-lang=3Dzh-CN>这样的情况。</span></p>
+<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.0pt'><span lang=zh-CN>从</span><span lang=en-US>sys.path</span><span
+lang=zh-CN>中，从左至右一个个路径开始搜寻</span><span lang=en-US>b</span><span lang=zh-CN>，找到一个</span><span
+lang=en-US>b.x</span><span lang=zh-CN>文件（后缀必须合法）就导入——这就是覆盖原理。最好不要在同一目录下出现</span><span
+lang=en-US> b.py </span><span lang=zh-CN>和</span><span lang=en-US> b.dll</span><span
+lang=zh-CN>这样的情况。</span></p>
 
-<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:embe=
-d;
+<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
  margin-top:0in;margin-bottom:0in'>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt'>将变量名�=
-��值给这个模块对象。隐性赋值，效果和赋值语句一样，�=
-��是将一个变量名指向内存中的一块区域。</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt'>运行模块�=
-��的语句，建立其中的顶层代码的内容（也就是模块里面�=
-��级缩进代码所定义的对象，比如类、函数、变量）。之�=
-��，就能通过变量名获取其中的所有的属性了。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt'>将变量名赋值给这个模块对象。隐性赋值，效果和赋值语句一样，都是将一个变量名指向内存中的一块区域。</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt'>运行模块中的语句，建立其中的顶层代码的内容（也就是模块里面零级缩进代码所定义的对象，比如类、函数、变量）。之后，就能通过变量名获取其中的所有的属性了。</span></li>
 </ul>
 
-<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt'>一个文件导入了一个模块，就获得了其中的=
-各种工具的读取访问权。导入模块，获取它的属性，使用=
-它的工具。导入后，一个模块文件的顶层定义的（零级缩=
-进的）所有变量名都成了被导入的模块对象的属性。</p>
+<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.0pt'>一个文件导入了一个模块，就获得了其中的各种工具的读取访问权。导入模块，获取它的属性，使用它的工具。导入后，一个模块文件的顶层定义的（零级缩进的）所有变量名都成了被导入的模块对象的属性。</p>
 
-<p style=3D'margin:0in;margin-left:.375in;font-size:11.0pt'><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>对象属性语法：<=
-/span><span
-style=3D'font-family:Calibri' lang=3Den-US>object.attribute</span></p>
+<p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>对象属性语法：</span><span
+style='font-family:Calibri' lang=en-US>object.attribute</span></p>
 
-<ul type=3Ddisc style=3D'margin-left:.75in;direction:ltr;unicode-bidi:embed;
+<ul type=disc style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
  margin-top:0in;margin-bottom:0in'>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-调用函数：</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>random.ran=
-dom()</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Dzh-CN>——</sp=
-an><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-调用模块</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>random</sp=
-an><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-的</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>random</sp=
-an><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-函数；</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>self.run()=
-</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Dzh-CN>——</sp=
-an><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-调用一个对象的</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>run()</spa=
-n><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-函数</span></li>
- <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-取得数据：</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>math.pi</s=
-pan><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Dzh-CN>——</sp=
-an><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-调用模块</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>math</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-的</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>pi</span><=
-span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-变量值；</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>self.name<=
-/span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Dzh-CN>——</sp=
-an><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-调用一个对象的</span><span
-     style=3D'font-family:Calibri;font-size:11.0pt' lang=3Den-US>name</span=
-><span
-     style=3D'font-family:"Microsoft YaHei";font-size:11.0pt' lang=3Dzh-CN>=
-属性</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用函数：</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>random.random()</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用模块</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>random</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>random</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>函数；</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>self.run()</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用一个对象的</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>run()</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>函数</span></li>
+ <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>取得数据：</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>math.pi</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用模块</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>math</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>pi</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>变量值；</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>self.name</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用一个对象的</span><span
+     style='font-family:Calibri;font-size:11.0pt' lang=en-US>name</span><span
+     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>属性</span></li>
 </ul>
 
-<p style=3D'margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:"Micros=
-oft YaHei"'
-lang=3Dzh-CN>导入的模块，存在</span><span style=3D'font-family:Cali=
-bri' lang=3Den-US>sys.modules</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>的字典里，每次�=
-��入都会检查（用</span><span
-style=3D'font-family:Consolas;color:#0070C0' lang=3Den-US>print(list(sys.mo=
-dules.keys()))</span><span
-style=3D'font-family:"Microsoft YaHei"' lang=3Dzh-CN>查看）。首次导�=
-��才会运行这</span><span
-style=3D'font-family:Calibri' lang=3Den-US>3</span><span style=3D'font-fami=
-ly:"Microsoft YaHei"'
-lang=3Dzh-CN>步，之后如果导入相同的模块，就在内存中提��=
-�。</span></p>
+<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>导入的模块，存在</span><span style='font-family:Calibri' lang=en-US>sys.modules</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>的字典里，每次导入都会检查（用</span><span
+style='font-family:Consolas;color:#0070C0' lang=en-US>print(list(sys.modules.keys()))</span><span
+style='font-family:"Microsoft YaHei"' lang=zh-CN>查看）。首次导入才会运行这</span><span
+style='font-family:Calibri' lang=en-US>3</span><span style='font-family:"Microsoft YaHei"'
+lang=zh-CN>步，之后如果导入相同的模块，就在内存中提取。</span></p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<h1 style=3D'margin:0in;font-size:16.0pt;color:#1E4E79'><span style=3D'font=
--family:
-Calibri' lang=3Den-US>from … import a, b</span><span style=3D'font-family=
-:Calibri'
-lang=3Dzh-CN>——</span><span style=3D'font-family:"Microsoft YaHei"' lan=
-g=3Dzh-CN>导入特定的变量名</span></h1>
+<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
+Calibri' lang=en-US>from … import a, b</span><span style='font-family:Calibri'
+lang=zh-CN>——</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>导入特定的变量名</span></h1>
 
-<p style=3D'margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=3Den-US>&nbsp;</p>
+<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<h1 style=3D'margin:0in;font-size:16.0pt;color:#1E4E79'><span style=3D'font=
--family:
-Calibri' lang=3Den-US>imp.reload</span><span style=3D'font-family:Calibri'
-lang=3Dzh-CN>——</span><span style=3D'font-family:"Microsoft YaHei"' lan=
-g=3Dzh-CN>不停止程序时，重新载入模块</span></h1>
+<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
+Calibri' lang=en-US>imp.reload</span><span style='font-family:Calibri'
+lang=zh-CN>——</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>不停止程序时，重新载入模块</span></h1>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
-<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt' lang=3Den-US>&=
-nbsp;</p>
+<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
 </div>
 
@@ -902,9 +572,9 @@ nbsp;</p>
 
 <div>
 
-<p style=3D'margin:0in'>&nbsp;</p>
+<p style='margin:0in'>&nbsp;</p>
 
-<p style=3D'text-align:left;margin:0in;font-family:Arial;font-size:9pt;
+<p style='text-align:left;margin:0in;font-family:Arial;font-size:9pt;
 color:#969696;direction:ltr'>已使用 Microsoft OneNote 2016 创建。</p>
 
 </div>
