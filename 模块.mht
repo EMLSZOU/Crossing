@@ -6,563 +6,1454 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=ProgId content=OneNote.File>
 <meta name=Generator content="Microsoft OneNote 15">
-<link id=Main-File rel=Main-File href=file0663.htm>
-<link rel=File-List href="file0663.files/filelist.xml">
+<link id=Main-File rel=Main-File href=Py.htm>
+<link rel=File-List href="Py.files/filelist.xml">
 </head>
 
-<body lang=zh-CN style='font-family:Calibri;font-size:11.0pt'>
+<body lang=zh-CN style='font-family:微软雅黑;font-size:10.5pt;color:black'>
 
 <div style='direction:ltr;border-width:100%'>
 
-<div style='direction:ltr;margin-top:0in;margin-left:0in;width:7.7722in'>
+<div style='direction:ltr;margin-top:0in;margin-left:0in;width:7.8812in'>
 
-<div style='direction:ltr;margin-top:0in;margin-left:0in;width:1.9409in'>
+<div style='direction:ltr;margin-top:0in;margin-left:.277in;width:.5826in'>
 
-<p style='margin:0in;font-family:"Microsoft YaHei Light";font-size:20.0pt'>笔记：模块</p>
-
-</div>
-
-<div style='direction:ltr;margin-top:.0388in;margin-left:0in;width:1.7034in'>
-
-<p style='margin:0in;font-size:10.0pt;color:#767676'><span style='font-family:
-Calibri'>2017</span><span style='font-family:"Microsoft YaHei"'>年</span><span
-style='font-family:Calibri'>3</span><span style='font-family:"Microsoft YaHei"'>月</span><span
-style='font-family:Calibri'>29</span><span style='font-family:"Microsoft YaHei"'>日</span></p>
-
-<p style='margin:0in;font-family:Calibri;font-size:10.0pt;color:#767676'>21:22</p>
+<p style='margin:0in;font-family:微软雅黑;font-size:20.0pt'>&nbsp;</p>
 
 </div>
 
-<div style='direction:ltr;margin-top:.4895in;margin-left:0in;width:7.7722in'>
+<div style='direction:ltr;margin-top:.0409in;margin-left:.277in;width:1.5597in'>
 
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
+<p style='margin:0in;font-size:9.0pt;color:gray'><span style='font-family:Calibri'>2017</span><span
+style='font-family:微软雅黑'>年</span><span style='font-family:Calibri'>3</span><span
+style='font-family:微软雅黑'>月</span><span style='font-family:Calibri'>31</span><span
+style='font-family:微软雅黑'>日</span></p>
 
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-lang=en-US>Python</span><span lang=zh-CN>的程序结构：</span></p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<p style='margin:0in'><span style='font-family:"Microsoft YaHei";font-size:
-11.0pt' lang=en-US>Python程序</span><span style='font-family:Calibri;font-size:
-11.0pt' lang=en-US> &gt;&gt; </span><span style='font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=en-US>模块 &gt;&gt; 语句</span><span style='font-family:
-"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>（构建基本工具</span><span
-style='font-family:等线;font-size:12.0pt' lang=zh-CN>，函数、类等等）</span><span
-style='font-family:等线;font-size:12.0pt' lang=en-US>&gt;&gt;表达式</span><span
-style='font-family:等线;font-size:12.0pt' lang=zh-CN>（建立并处理</span><span
-style='font-family:等线;font-size:12.0pt' lang=en-US>对象</span><span
-style='font-family:等线;font-size:12.0pt' lang=zh-CN>）</span></p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>一个</span><span style='font-family:"Microsoft YaHei"' lang=en-US>Python</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>程序，是由很多模块组成的系统。一个模块就是一个</span><span
-style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>文件（或者是</span><span style='font-family:Calibri' lang=en-US>C/C++</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>、</span><span
-style='font-family:Calibri' lang=en-US>Java</span><span style='font-family:
-"Microsoft YaHei"' lang=zh-CN>、</span><span style='font-family:Calibri'
-lang=en-US>C#</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>写的扩展）。</span></p>
-
-<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
- margin-top:0in;margin-bottom:0in'>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>唯一的顶层文件（或叫顶层脚本），包含了程序的主要控制流程，启动就是运行整个程序（相当于</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>main</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>入口函数）。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt'>其他的模块文件，是工具库，放置各种支撑的组件（函数、类等等）。</span></li>
-</ul>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-lang=zh-CN>模块</span><span lang=en-US>+</span><span lang=zh-CN>导入，大程序切分为不同的软件组件，不同模块之间的代码相互隔离，运行时通过导入操作连接在一起，就是</span><span
-lang=en-US>Python</span><span lang=zh-CN>程序架构的核心。</span></p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>模块的</span><span style='font-family:Calibri' lang=en-US>3</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>个作用：</span></p>
-
-<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
- margin-top:0in;margin-bottom:0in'>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>复用代码和共享。交互模式，输入就运行，退出就没有了。保存后的</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件，可以无数次载入和运行，还可以拷贝给别人。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt'>作为一个命名空间。模块是一个定义变量名的空间，可以避免变量名的冲突。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>组建工程。模块是</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Python</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>程序中最高级别的组织单元。将各个工具部件组成一个系统（将各种函数和类组成一个</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>.py</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件）。</span></li>
-</ul>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>导入链要多深，就有多深：顶层文件</span><span style='font-family:Calibri' lang=en-US>&gt;&gt;</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>模块</span><span
-style='font-family:Calibri' lang=en-US>&gt;&gt;</span><span style='font-family:
-"Microsoft YaHei"' lang=zh-CN>第三方库</span><span style='font-family:Calibri'
-lang=en-US>&gt;&gt;</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>标准库（权重依次递减）</span></p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
-"Microsoft YaHei"' lang=zh-CN>模块</span><span style='font-family:Calibri'
-lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>文件</span></h1>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>建立一个</span><span style='font-family:Calibri' lang=en-US>.py</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>文件，就是一个模块。如果需要被导入，必须以</span><span
-style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>结尾。顶层文件，仅运行而不被导入，可以不用</span><span style='font-family:Calibri'
-lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>结尾，但最好用</span><span
-style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>结尾，编辑的时候代码高亮。</span></p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>包和模块，导入后都成为一个变量名，所以遵循普通变量名的命名法则。</p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<div style='direction:ltr'>
-
-<table border=0 cellpadding=0 cellspacing=0 valign=top style='direction:ltr;
- border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-width:
- 0pt;margin-left:.3333in' title="" summary="">
- <tr>
-  <td style='border-width:0pt;vertical-align:top;width:4.0319in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt;
-  text-align:center'>模块内部的通常布局</p>
-  </td>
-  <td style='border-width:0pt;vertical-align:top;width:3.0479in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style='margin:0in;font-size:11.0pt;text-align:center'><span
-  style='font-family:"Microsoft YaHei"' lang=zh-CN>范例</span><span
-  style='font-family:Calibri' lang=en-US> demo.py</span></p>
-  </td>
- </tr>
- <tr>
-  <td style='border-width:0pt;vertical-align:top;width:4.0513in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  lang=en-US>1.Shebang (也称Hashbang)</span><span lang=zh-CN>，指定</span><span
-  lang=en-US>Python</span><span lang=zh-CN>解析器路径。</span></p>
-  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-  lang=en-US>2. </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>指定文件编码。</span></p>
-  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-  lang=en-US>3.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>模块文档字符串。</span></p>
-  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-  lang=en-US>4.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>导入。</span></p>
-  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-  lang=en-US>5.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>全局变量。</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=en-US>&nbsp;</p>
-  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-  lang=en-US>6.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>类定义。</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=en-US>&nbsp;</p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=en-US>&nbsp;</p>
-  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-  lang=en-US>7.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>函数定义。</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-  lang=en-US>&nbsp;</p>
-  <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-  lang=en-US>8.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>主程序。一般用来写单元测试。</span></p>
-  </td>
-  <td style='border-width:0pt;background-color:#FFF2CC;vertical-align:top;
-  width:3.0284in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'>#!/usr/bin/env Python3</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'># -*- coding: utf-8 -*-</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'>&quot;This is just a test module &quot;</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'>from platform import *</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'>string = 'module'</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>print(string,python_version())</p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'>class Test():</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='mso-spacerun:yes'>    </span>def __init__(self):</p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='mso-spacerun:yes'>        </span>print('run __init__',end='\n')</p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'>def foo():</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='mso-spacerun:yes'>    </span>print('run foo()')</p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='font-weight:bold'>if __name__ == '__main__':</span></p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='mso-spacerun:yes'>    </span>Test()</p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='mso-spacerun:yes'>    </span>foo()</p>
-  <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-  style='mso-spacerun:yes'>    </span>print('__main__',python_version())</p>
-  </td>
- </tr>
-</table>
+<p style='margin:0in;font-family:Calibri;font-size:9.0pt;color:gray'>15:09</p>
 
 </div>
 
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>#!/usr/bin/python指定一个路径里的</span><span style='font-family:Calibri'
-lang=en-US>Python</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>解析器，系统</span><span
-style='font-family:Calibri' lang=en-US>Python</span><span style='font-family:
-"Microsoft YaHei"' lang=zh-CN>解析器（#!/usr/bin/python指定</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US>Python3</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>）。</span></p>
+<div style='direction:ltr;margin-top:.5in;margin-left:0in;width:7.8812in'>
 
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>#!/usr/</span><span style='font-family:"Microsoft YaHei"'
-lang=en-US>local/</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>bin/python</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US><span
-style='mso-spacerun:yes'>  </span></span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>指定一个路径里的</span><span style='font-family:Calibri' lang=en-US>Python</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>解析器，系统</span><span
-style='font-family:Calibri' lang=en-US>Python</span><span style='font-family:
-"Microsoft YaHei"' lang=zh-CN>解析器</span></p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-weight:bold;
-font-family:"Microsoft YaHei"' lang=zh-CN>#!/usr/bin/env python</span><span
-style='font-weight:bold;font-family:Calibri' lang=en-US><span
-style='mso-spacerun:yes'>  </span></span><span style='font-weight:bold;
-font-family:"Microsoft YaHei"' lang=zh-CN>指出要</span><span style='font-weight:
-bold;font-family:Calibri' lang=en-US>Python2</span><span style='font-weight:
-bold;font-family:"Microsoft YaHei"' lang=zh-CN>，但让系统搜寻路径（#!/usr/bin/env python</span><span
-style='font-weight:bold;font-family:Calibri' lang=en-US>3 </span><span
-style='font-weight:bold;font-family:"Microsoft YaHei"' lang=zh-CN>指出要</span><span
-style='font-weight:bold;font-family:Calibri' lang=en-US>Python3</span><span
-style='font-weight:bold;font-family:"Microsoft YaHei"' lang=zh-CN>）——建议。</span></p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
-lang=zh-CN>指定解析器的检验方法：写出平台特有的语法，然后直接运行</span><span lang=en-US>py</span><span
-lang=zh-CN>文件。如上面的例子。</span></p>
-
-<p style='margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><span
-style='font-family:Consolas' lang=zh-CN>chmod u+x </span><span
-style='font-family:Calibri' lang=en-US>demo</span><span style='font-family:
-Consolas' lang=zh-CN>.py</span><span style='font-family:Calibri' lang=en-US><span
-style='mso-spacerun:yes'>  </span># </span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>更改文件的模式，变为可执行模式</span></p>
-
-<p style='margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><span
-style='font-family:Consolas' lang=zh-CN>./</span><span style='font-family:Calibri'
-lang=en-US>demo</span><span style='font-family:Consolas' lang=zh-CN>.py</span><span
-style='font-family:Calibri' lang=en-US><span style='mso-spacerun:yes'>    
-</span># </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>运行这个文件</span></p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=en-US>Python 2</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>的</span><span style='font-family:"Microsoft YaHei"' lang=en-US> </span><span
-style='font-family:Consolas;color:#0070C0' lang=en-US>print 2</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>无法在</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US>Python3</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，而</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US>Python3 </span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>的</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US> </span><span
-style='font-family:Consolas;color:#0070C0' lang=zh-CN>print('run
-__init__',end='\n')</span><span style='font-family:Consolas;color:#0070C0'
-lang=en-US> </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>无法在</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US>2</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>运行。</span></p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:Consolas;
-color:#0070C0' lang=en-US>python </span><span style='font-family:Consolas;
-color:#0070C0' lang=zh-CN>hello.py</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>是指定</span><span style='font-family:"Microsoft YaHei"' lang=en-US>python2</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，</span><span
-style='font-family:Consolas;color:#0070C0' lang=en-US>python3 </span><span
-style='font-family:Consolas;color:#0070C0' lang=zh-CN>hello.py</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>是指定</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US>python3</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，都不是直接运行模块。</span></p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
-Calibri' lang=en-US>import </span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>语句——导入整个模块</span></h1>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>这与</span><span style='font-family:Calibri' lang=en-US>C</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>语言的</span><span
-style='font-family:Calibri' lang=en-US><span style='mso-spacerun:yes'> 
-</span>#include</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>语句有点类似，但不一样。</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US>#include</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>是将一个文件的语句插入另一个文件。</span></p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
-lang=en-US>import </span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>的</span><span style='font-family:Calibri' lang=en-US> 3</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>个步骤：</span></p>
-
-<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
- margin-top:0in;margin-bottom:0in'>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>识别这个文件，编译成</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件（只在必要时），加载这个模块</span></li>
+<ul style='margin-left:.202in;direction:ltr;unicode-bidi:embed;margin-top:0in;
+ margin-bottom:0in'>
+ <p style='margin:0in;font-family:微软雅黑;font-size:20.0pt'>笔记：模块</p>
+ <p style='margin:0in;font-size:10.0pt;color:#767676'><span style='font-family:
+ Calibri'>2017</span><span style='font-family:"Microsoft YaHei"'>年</span><span
+ style='font-family:Calibri'>3</span><span style='font-family:"Microsoft YaHei"'>月</span><span
+ style='font-family:Calibri'>29</span><span style='font-family:"Microsoft YaHei"'>日</span></p>
+ <p style='margin:0in;font-family:Calibri;font-size:10.0pt;color:#767676'>21:22</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>Python的核心思想：以对象为核心组织代码(Everything
+ is object)，支持多种编程范式(multi-paradigm)，采用动态类型(dynamic typing)，自动进行内存回收(garbage
+ collection)。Python支持解释运行(interpret)，并能调用C库进行拓展。Python有强大的标准库 (battery
+ included)，以及第三方包，如Django, web.py, wxpython, numpy, matplotlib,PIL。</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in'><span style='font-family:"Microsoft YaHei";font-size:
+ 11.0pt' lang=en-US>Python</span><span style='font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=zh-CN>的程序结构：</span><span style='font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=en-US>Python</span><span style='font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=zh-CN>程序</span><span style='font-family:Calibri;
+ font-size:11.0pt' lang=en-US> &gt;&gt; </span><span style='font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=en-US>模块 &gt;&gt; 语句</span><span style='font-family:
+ "Microsoft YaHei";font-size:11.0pt' lang=zh-CN>（构建基本工具</span><span
+ style='font-family:"Microsoft YaHei";font-size:12.0pt' lang=zh-CN>，函数、类等等）</span><span
+ style='font-family:"Microsoft YaHei";font-size:12.0pt' lang=en-US>&gt;&gt;表达式</span><span
+ style='font-family:"Microsoft YaHei";font-size:12.0pt' lang=zh-CN>（建立并处理</span><span
+ style='font-family:"Microsoft YaHei";font-size:12.0pt' lang=en-US>对象</span><span
+ style='font-family:"Microsoft YaHei";font-size:12.0pt' lang=zh-CN>）</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>一个</span><span style='font-family:"Microsoft YaHei"' lang=en-US>Python</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>程序，是由很多模块组成的系统。一个模块就是一个</span><span
+ style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>文件（或者是</span><span style='font-family:Calibri'
+ lang=en-US>C/C++</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>、</span><span
+ style='font-family:Calibri' lang=en-US>Java</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>、</span><span style='font-family:Calibri'
+ lang=en-US>C#</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>写的扩展）。</span></p>
+ <ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>唯一的顶层文件（或叫顶层脚本），包含了程序的主要控制流程，启动就是运行整个程序（相当于</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>main</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>入口函数）。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt'>其他的模块文件，是工具库，放置各种支撑的组件（函数、类等等）。</span></li>
+ </ul>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+ lang=zh-CN>模块</span><span lang=en-US>+</span><span lang=zh-CN>导入，大程序切分为不同的软件组件，不同模块之间的代码相互隔离，运行时通过导入操作连接在一起，就是</span><span
+ lang=en-US>Python</span><span lang=zh-CN>程序架构的核心。</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>模块的</span><span style='font-family:Calibri' lang=en-US>3</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>个作用：</span></p>
+ <ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>复用代码和共享。交互模式，在</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>Python</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>解释器里输入就能运行，但退出后就什么也没有了。保存后的</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件，可以无数次载入和运行，还可以拷贝给别人。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt'>作为一个命名空间。模块是一个定义变量名的空间，可以避免变量名的冲突。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>组建工程。模块是</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Python</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>程序中最高级别的组织单元。将各个工具部件组成一个系统（将各种函数和类组成一个</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>.py</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件）。</span></li>
+ </ul>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>导入链要多深，就有多深：顶层文件</span><span style='font-family:Calibri'
+ lang=en-US>&gt;&gt;</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>模块</span><span style='font-family:Calibri' lang=en-US>&gt;&gt;</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>第三方库</span><span
+ style='font-family:Calibri' lang=en-US>&gt;&gt;</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>标准库（权重依次递减）</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-weight:
+ bold;font-family:"Microsoft YaHei"' lang=zh-CN>模块</span><span
+ style='font-weight:bold;font-family:Calibri' lang=en-US>.py</span><span
+ style='font-weight:bold;font-family:"Microsoft YaHei"' lang=zh-CN>文件</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>建立一个</span><span style='font-family:Calibri' lang=en-US>.py</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>文件，就是一个模块。如果需要被导入，必须以</span><span
+ style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>结尾。顶层文件，仅运行而不被导入，可以不用</span><span
+ style='font-family:Calibri' lang=en-US>.py</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>结尾，但最好用</span><span style='font-family:Calibri'
+ lang=en-US>.py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>结尾，编辑的时候代码高亮。</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>包和模块，导入后都成为一个变量名，所以遵循普通变量名的命名法则。</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'>内置的函数</span><span
+ style='font-family:Arial'> dir() </span><span style='font-family:"Microsoft YaHei"'>可以找到模块或者包内定义的所有名称。</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <div style='direction:ltr'>
+ <table border=1 cellpadding=0 cellspacing=0 valign=top style='direction:ltr;
+  border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-width:
+  1pt'>
+  <tr>
+   <td style='border-style:solid;border-color:#A3A3A3;border-width:1pt;
+   vertical-align:top;width:4.0673in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt;
+   text-align:center'>模块内部的通常布局</p>
+   </td>
+   <td style='border-style:solid;border-color:#A3A3A3;border-width:1pt;
+   vertical-align:top;width:2.8631in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+   <p style='margin:0in;font-size:11.0pt;text-align:center'><span
+   style='font-family:"Microsoft YaHei"' lang=zh-CN>范例</span><span
+   style='font-family:Calibri' lang=en-US> demo.py</span></p>
+   </td>
+  </tr>
+  <tr>
+   <td style='border-style:solid;border-color:#A3A3A3;border-width:1pt;
+   vertical-align:top;width:4.0673in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   lang=en-US>1.Shebang (</span><span lang=zh-CN>也称</span><span lang=en-US>Hashbang)</span><span
+   lang=zh-CN>，指定</span><span lang=en-US>Python</span><span lang=zh-CN>解析器路径。</span></p>
+   <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+   lang=en-US>2. </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>指定文件编码。</span></p>
+   <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+   lang=en-US>3.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>模块文档字符串。</span></p>
+   <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+   lang=en-US>4.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>导入。</span></p>
+   <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+   lang=en-US>5.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>全局变量。</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+   lang=en-US>&nbsp;</p>
+   <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+   lang=en-US>6.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>类定义。</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+   lang=en-US>&nbsp;</p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+   lang=en-US>&nbsp;</p>
+   <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+   lang=en-US>7.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>函数定义。</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+   lang=en-US>&nbsp;</p>
+   <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+   lang=en-US>8.</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>主程序。一般用来写单元测试。</span></p>
+   </td>
+   <td style='border-style:solid;border-color:#A3A3A3;border-width:1pt;
+   background-color:#FFF2CC;vertical-align:top;width:2.8631in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'>#!/usr/bin/env Python3</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'># -*- coding: utf-8 -*-</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'>&quot;This is just a test module &quot;</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'>from platform import *</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'>string = 'module'</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'>print(string,python_version())</p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'>class Test():</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='mso-spacerun:yes'>    </span>def __init__(self):</p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='mso-spacerun:yes'>        </span>print('run __init__',end='\n')</p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'>def foo():</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='mso-spacerun:yes'>    </span>print('run foo()')</p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='font-weight:bold'>if __name__ == '__main__':</span></p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='mso-spacerun:yes'>    </span>Test()</p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='mso-spacerun:yes'>    </span>foo()</p>
+   <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+   style='mso-spacerun:yes'>    </span>print('__main__',python_version())</p>
+   </td>
+  </tr>
+ </table>
+ </div>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>#!/usr/bin/python指定一个路径里的</span><span style='font-family:Calibri'
+ lang=en-US>Python</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>解析器，系统</span><span style='font-family:Calibri' lang=en-US>Python</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>解析器（</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>#!/usr/bin/python</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>指定</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>Python3</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>）。</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>#!/usr/</span><span style='font-family:"Microsoft YaHei"'
+ lang=en-US>local/bin/python<span style='mso-spacerun:yes'>  </span></span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>指定一个路径里的</span><span
+ style='font-family:Calibri' lang=en-US>Python</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>解析器，系统</span><span style='font-family:Calibri'
+ lang=en-US>Python</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>解析器</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>#!/usr/bin/env python</span><span
+ style='font-weight:bold;font-family:Calibri' lang=en-US><span
+ style='mso-spacerun:yes'>  </span></span><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>指出要</span><span style='font-weight:
+ bold;font-family:Calibri' lang=en-US>Python2</span><span style='font-weight:
+ bold;font-family:"Microsoft YaHei"' lang=zh-CN>，但让系统搜寻路径（</span><span
+ style='font-weight:bold;font-family:"Microsoft YaHei"' lang=en-US>#!/usr/bin/env
+ python</span><span style='font-weight:bold;font-family:Calibri' lang=en-US>3 </span><span
+ style='font-weight:bold;font-family:"Microsoft YaHei"' lang=zh-CN>指出要</span><span
+ style='font-weight:bold;font-family:Calibri' lang=en-US>Python3</span><span
+ style='font-weight:bold;font-family:"Microsoft YaHei"' lang=zh-CN>）——建议。</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'><span
+ lang=zh-CN>指定解析器的检验方法：写出平台特有的语法，然后直接运行</span><span lang=en-US>py</span><span
+ lang=zh-CN>文件。如上面的例子。</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><span
+ style='font-family:Consolas' lang=zh-CN>chmod u+x </span><span
+ style='font-family:Calibri' lang=en-US>demo</span><span style='font-family:
+ Consolas' lang=zh-CN>.py</span><span style='font-family:Calibri' lang=en-US><span
+ style='mso-spacerun:yes'>  </span># </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>更改文件的模式，变为可执行模式</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:11.0pt;color:#0070C0'><span
+ style='font-family:Consolas' lang=zh-CN>./</span><span style='font-family:
+ Calibri' lang=en-US>demo</span><span style='font-family:Consolas' lang=zh-CN>.py</span><span
+ style='font-family:Calibri' lang=en-US><span style='mso-spacerun:yes'>    
+ </span># </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>运行这个文件</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=en-US>Python 2</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>的</span><span style='font-family:"Microsoft YaHei"' lang=en-US> </span><span
+ style='font-family:Consolas;color:#0070C0' lang=en-US>print 2</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>无法在</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>Python3</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，而</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>Python3 </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>的</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US> </span><span
+ style='font-family:Consolas;color:#0070C0' lang=zh-CN>print('run
+ __init__',end='\n')</span><span style='font-family:Consolas;color:#0070C0'
+ lang=en-US> </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>无法在</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>2</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>运行。</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:Consolas;
+ color:#0070C0' lang=en-US>python </span><span style='font-family:Consolas;
+ color:#0070C0' lang=zh-CN>hello.py</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>是指定</span><span style='font-family:"Microsoft YaHei"' lang=en-US>python2</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，</span><span
+ style='font-family:Consolas;color:#0070C0' lang=en-US>python3 </span><span
+ style='font-family:Consolas;color:#0070C0' lang=zh-CN>hello.py</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>是指定</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>python3</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>运行，都不是直接运行模块。</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-weight:
+ bold;font-family:Calibri' lang=en-US>import </span><span style='font-weight:
+ bold;font-family:"Microsoft YaHei"' lang=zh-CN>语句——导入整个模块</span></p>
+ <p style='margin:0in;font-size:18.0pt'><span style='font-weight:bold;
+ font-family:Arial' lang=en-US>import </span><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>语句</span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>import module1[,
+ module2[,... moduleN]</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>这看起来很像环境变量，事实上，也可以通过定义环境变量的方式来确定搜索路径。</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>搜索路径是在</span><span style='font-family:Arial' lang=en-US>Python</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>编译或安装的时候确定的，安装新的库应该也会修改。搜索路径被存储在</span><span
+ style='font-family:Arial' lang=en-US>sys</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>模块中的</span><span style='font-family:Arial' lang=en-US>path</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>变量，做一个简单的实验，在交互式解释器中，输入以下代码：</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt; import
+ sys<br>
+  &gt;&gt;&gt; sys.path<br>
+  ['', '/usr/lib/python3.4', '/usr/lib/python3.4/plat-x86_64-linux-gnu',
+ '/usr/lib/python3.4/lib-dynload', '/usr/local/lib/python3.4/dist-packages',
+ '/usr/lib/python3/dist-packages']<br>
+  &gt;&gt;&gt; </p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Arial'
+ lang=en-US>sys.path </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>输出是一个列表，其中第一项是空串</span><span style='font-family:Arial' lang=en-US>''</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>，代表当前目录（若是从一个脚本中打印出来的话，可以更清楚地看出是哪个目录），亦即我们执行</span><span
+ style='font-family:Arial' lang=en-US>python</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>解释器的目录（对于脚本的话就是运行的脚本所在的目录）。</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>因此若像我一样在当前目录下存在与要引入模块同名的文件，就会把要引入的模块屏蔽掉。</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>了解了搜索路径的概念，就可以在脚本中修改</span><span style='font-family:Arial'
+ lang=en-US>sys.path</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>来引入一些不在搜索路径中的模块。</span><span style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:16.0pt;
+ color:#1E4E79'><span style='font-weight:bold'>——————————————</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这与</span><span style='font-family:Calibri' lang=en-US>C</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>语言的</span><span
+ style='font-family:Calibri' lang=en-US><span style='mso-spacerun:yes'> 
+ </span>#include</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>语句有点类似，但不一样。</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>#include</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>是将一个文件的语句插入另一个文件。</span></p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:Calibri'
+ lang=en-US>import </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>的</span><span style='font-family:Calibri' lang=en-US> 3</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>个步骤：</span></p>
+ <ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>识别这个文件，编译成</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件（只在必要时），加载这个模块</span></li>
+ </ul>
+ <p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>识别这个文件，搜索的路径</span><span
+ style='font-family:Calibri' lang=en-US>sys.path</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>包括：程序的主目录，</span><span style='font-family:Calibri'
+ lang=en-US>PythonPATH</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>，标准库，路径文件</span><span style='font-family:Calibri' lang=en-US>.pth </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>定义的路径（权重依次递减）。主目录和标准库是自定义的，无需设置；</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>PythonPATH </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>和</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US> .pth </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>用于扩展路径，作为补充。</span></p>
+ <ol type=1 style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in;font-family:微软雅黑;font-size:11.0pt;
+  font-weight:normal;font-style:normal'>
+  <li value=1 style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt;font-weight:normal;
+      font-style:normal;font-family:"Microsoft YaHei";font-size:11.0pt'>程序主目录：交互模式，就是当前目录。创建一个工程或者运行程序时，就是顶层脚本所在的目录。最先搜索，权重也最高，可能会覆盖其他地方的同名模块。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>PythonPATH</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>：当主目录与支撑模块所在的目录不同时，才会用到这个方式。比如，控制面板</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>系统与安全</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>系统</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>高级系统设置</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>环境变量，建立一个</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>
+      PythonPATH</span><span style='font-family:"Microsoft YaHei";font-size:
+      11.0pt' lang=zh-CN>，填入</span><span style='font-family:"Microsoft YaHei";
+      font-size:11.0pt' lang=en-US>C:\pycode\utilities;D:\pycode\package</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>标准库：</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Python</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>自带的官方库，无需设置，直接</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>import</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>路径文件</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pth </span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>：是</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>PythonPATH</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的替代品，设置更简单，并且设置一次可以让所有用户使用。</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Windows</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的，</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>C:\Python30\myconfig.pth
+      </span><span style='font-family:"Microsoft YaHei";font-size:11.0pt'
+      lang=zh-CN>或</span><span style='font-family:"Microsoft YaHei";font-size:
+      11.0pt' lang=en-US> C:\Python30\Lib\sitepackages\myconfig.pth</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>（常用来定义第三方库）；</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Unix</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的，</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>usr/local/lib/site-python
+      </span><span style='font-family:"Microsoft YaHei";font-size:11.0pt'
+      lang=zh-CN>或</span><span style='font-family:"Microsoft YaHei";font-size:
+      11.0pt' lang=en-US> usr/local/lib/python30/site-packages</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。比如，在</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>
+      C:/Python30/pydirs.pth </span><span style='font-family:"Microsoft YaHei";
+      font-size:11.0pt' lang=zh-CN>文本文件加入</span></li>
+ </ol>
+ <p style='margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=en-US>C:\pycode\utilities</p>
+ <p style='margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=en-US>D:\pycode\package</p>
+ <p style='margin:0in;margin-left:.75in;font-size:11.0pt'><span
+ style='font-family:Consolas;color:#0070C0' lang=en-US>print(sys.path)</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>来检查自己的设置是否正确</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>语句</span><span
+ style='font-family:Calibri' lang=en-US> </span><span style='font-family:"Microsoft YaHei"'
+ lang=en-US>import b </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>可能并不是加载</span><span style='font-family:"Microsoft YaHei"'
+ lang=en-US> .py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>文件，它可能是：</span></p>
+ <ul type=circle style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.py</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件或</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件，或者</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyo</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>优化文件。只在必要的时候才编译，比如</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>不存在，就会进行首次编译，而</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件修改后再次运行程序则会重新编译。只有被导入的文件才会留下</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。如果不存在</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>，会直接加载</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>目录</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b——包导入</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>C/C++</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>模块：动态链接导入扩展模块（</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.so</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>、</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.dll</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>、</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.pyd</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>之类），或者静态链接导入已经编译好的模块。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>.zip</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>压缩包。导入时自动解压。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>frozen </span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>二进制文件，导入的是内存中的模块。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>java</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>类，</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Jython</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>.net</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>组件，</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>IronPython</span></li>
+ </ul>
+ <p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+ font-size:11.0pt'><span lang=zh-CN>从</span><span lang=en-US>sys.path</span><span
+ lang=zh-CN>中，从左至右一个个路径开始搜寻</span><span lang=en-US>b</span><span lang=zh-CN>，找到一个</span><span
+ lang=en-US>b.x</span><span lang=zh-CN>文件（后缀必须合法）就导入——这就是覆盖原理。最好不要在同一目录下出现</span><span
+ lang=en-US> b.py </span><span lang=zh-CN>和</span><span lang=en-US> b.dll</span><span
+ lang=zh-CN>这样的情况。</span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=en-US>&nbsp;</p>
+ <ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt'>将变量名赋值给这个模块对象。隐性赋值，效果和赋值语句一样，都是将一个变量名指向内存中的一块区域。</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt'>运行模块中的语句，建立其中的顶层代码的内容（也就是模块里面零级缩进代码所定义的对象，比如类、函数、变量）。之后，就能通过变量名获取其中的所有的属性了。</span></li>
+ </ul>
+ <p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+ font-size:11.0pt'>一个文件导入了一个模块，就获得了其中的各种工具的读取访问权。导入模块，获取它的属性，使用它的工具。导入后，一个模块文件的顶层定义的（零级缩进的）所有变量名都成了被导入的模块对象的属性。</p>
+ <p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>对象属性语法：</span><span
+ style='font-family:Calibri' lang=en-US>object.attribute</span></p>
+ <ul type=circle style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用函数：</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>random.random()</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用模块</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>random</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>random</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>函数；</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>self.run()</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用一个对象的</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>run()</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>函数</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>取得数据：</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>math.pi</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用模块</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>math</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>pi</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>变量值；</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>self.name</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用一个对象的</span><span
+      style='font-family:Calibri;font-size:11.0pt' lang=en-US>name</span><span
+      style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>属性</span></li>
+ </ul>
+ <p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
+ font-size:11.0pt' lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>导入的模块，存在</span><span style='font-family:Calibri' lang=en-US>sys.modules</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>的字典里，每次导入都会检查（用</span><span
+ style='font-family:Consolas;color:#0070C0' lang=en-US>print(list(sys.modules.keys()))</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>查看）。首次导入才会运行这</span><span
+ style='font-family:Calibri' lang=en-US>3</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>步，之后如果导入相同的模块，就在内存中提取。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>一个模块只会被导入一次，不管你执行了多少次</span><span style='font-family:Arial'
+ lang=en-US>import</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>。这样可以防止导入模块被一遍又一遍地执行。</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:11.0pt' lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:11.0pt' lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:11.0pt' lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-weight:
+ bold;font-family:Calibri' lang=en-US>from </span><span style='font-weight:
+ bold;font-family:微软雅黑' lang=zh-CN>…</span><span style='font-weight:bold;
+ font-family:Calibri' lang=en-US> import …</span><span style='font-weight:bold;
+ font-family:Calibri' lang=zh-CN>——</span><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>导入特定的变量名</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-size:18.0pt'><span style='font-weight:bold;
+ font-family:Arial' lang=en-US>from</span><span style='font-weight:bold;
+ font-family:Arial' lang=zh-CN>…</span><span style='font-weight:bold;
+ font-family:Arial' lang=en-US>import </span><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>语句</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Arial'
+ lang=en-US>Python</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>的</span><span style='font-family:Arial' lang=en-US>from</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>语句让你从模块中导入一个指定的部分到当前命名空间中，语法如下：</span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>from modname import
+ name1[, name2[, ... nameN]]</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>例如，要导入模块</span><span style='font-family:Arial' lang=en-US> fibo </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>的</span><span
+ style='font-family:Arial' lang=en-US> fib </span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>函数，使用如下语句：</span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt; from
+ fibo import fib, fib2<br>
+  &gt;&gt;&gt; fib(500)<br>
+  1 1 2 3 5 8 13 21 34 55 89 144 233 377</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这个声明不会把整个</span><span style='font-family:Arial' lang=en-US>fibo</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>模块导入到当前的命名空间中，它只会将</span><span
+ style='font-family:Arial' lang=en-US>fibo</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>里的</span><span style='font-family:Arial' lang=en-US>fib</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>函数引入进来。</span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-size:18.0pt'><span style='font-weight:bold;
+ font-family:Arial' lang=en-US>from</span><span style='font-weight:bold;
+ font-family:Arial' lang=zh-CN>…</span><span style='font-weight:bold;
+ font-family:Arial' lang=en-US>import* </span><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>语句</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>把一个模块的所有内容全都导入到当前的命名空间也是可行的，只需使用如下声明：</span><span style='font-family:
+ Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>from modname import *</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>这提供了一个简单的方法来导入一个模块中的所有项目。然而这种声明不该被过多地使用。</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:11.0pt' lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-weight:
+ bold;font-family:Calibri' lang=en-US>imp.reload</span><span style='font-weight:
+ bold;font-family:Calibri' lang=zh-CN>——</span><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>不停止程序时，重新载入模块</span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-size:8.0pt;color:#595959'><span style='font-family:
+ 宋体'>来自</span><span style='font-family:Calibri'> &lt;</span><a
+ href="http://localhost:63342/glue/1.html?_ijt=2dauia8j8oks15p8fu8k5gaf8"><span
+ style='font-family:Calibri'>http://localhost:63342/glue/1.html?_ijt=2dauia8j8oks15p8fu8k5gaf8</span></a><span
+ style='font-family:Calibri'>&gt; </span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;font-family:微软雅黑;font-size:36.0pt;
+ color:#111111'>模块</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>1.</span><span
+ style='font-family:微软雅黑'>从实际角度，模块对应</span><span style='font-family:Georgia'>Python</span><span
+ style='font-family:微软雅黑'>程序文件（或者用外部语言如</span><span style='font-family:Georgia'>C|C#</span><span
+ style='font-family:微软雅黑'>编写的扩展）。从逻辑上看，模块是最高级别的程序组织单元。</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>每个</span><span
+      style='font-family:Georgia;font-size:12.0pt'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>程序文件都是一个模块</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>模块导入另一个模块后，可以直接使用被导模块定义的全局变量名</span></li>
+ </ul>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>3.Python</span><span
+ style='font-family:微软雅黑'>自带了很多模块，称为标准链接库。他们提供了很多常用功能</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>4.</span><span
+ style='font-family:微软雅黑'>导入模块用</span><span style='font-family:Consolas'>import</span><span
+ style='font-family:微软雅黑'>。其通用格式为</span><span style='font-family:Consolas'>import
+ modname</span><span style='font-family:微软雅黑'>。其中</span><span style='font-family:
+ Consolas'>modname</span><span style='font-family:微软雅黑'>为模块名，它没有文件后缀名</span><span
+ style='font-family:Consolas'>.py</span><span style='font-family:微软雅黑'>，也没有文件路径名。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:微软雅黑' lang=zh-CN>导入并非是</span><span
+ style='font-family:Georgia' lang=zh-CN>C</span><span style='font-family:微软雅黑'
+ lang=zh-CN>语言的</span><span style='font-family:Consolas' lang=zh-CN>#include</span><span
+ style='font-family:微软雅黑' lang=zh-CN>。导入其实是运行时的运算。程序首次导入一个模块时，执行三个步骤：</span><span
+ style='font-family:Consolas' lang=en-US><span
+ style='mso-spacerun:yes'>         </span></span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>找到模块文件</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>编译成字节码（即</span><span
+      style='font-family:Consolas;font-size:12.0pt'>.pyc</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>文件）。如果字节码文件不存在或者字节码文件比源代码文件旧，</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>则执行该步骤。否则跳过该步骤直接加载字节码</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>执行模块代码来创建其定义的对象</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-family:微软雅黑;
+ font-size:12.0pt;color:#444444'>在这之后导入相同模块时，会跳过这三步而只是提取内存中已经加载的模块对象。</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#666666'><span style='font-family:微软雅黑'>从内部看，</span><span
+ style='font-family:Georgia'>Python</span><span style='font-family:微软雅黑'>将加载的模块存储到一个名为</span><span
+ style='font-family:Consolas'>sys.modules</span><span style='font-family:微软雅黑'>的字典中，键就是模块名字符串。在每次导入模块开始时都检查这个字典，若模块不存在则执行上述三步。</span></p>
+ <p style='margin:0in'><img src="Py.files/image001.jpg" width=720 height=455
+ alt=模块导入过程></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>5.</span><span
+ style='font-family:微软雅黑'>当文件</span><span style='font-family:Consolas'>import</span><span
+ style='font-family:微软雅黑'>时，会进行编译产生字节码文件</span><span style='font-family:Consolas'>.pyc</span><span
+ style='font-family:微软雅黑'>，因此只有被导入文件才会在机器上留下</span><span style='font-family:
+ Consolas'>.pyc</span><span style='font-family:微软雅黑'>文件。顶层文件的字节码在内部使用后就丢弃了，并未保留下来。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-family:微软雅黑;
+ font-size:12.0pt;color:#666666'>顶层文件通常设计成直接执行，而不是被导入的</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>6.Python</span><span
+ style='font-family:微软雅黑'>模块文件搜索路径：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>程序主目录</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>环境变量</span><span
+      style='font-family:Consolas;font-size:12.0pt'>PYTHONPATH</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>指定的目录</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>标准链接库目录（这个一般不动它）</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#444444'>任何</span><span style='font-family:Consolas;font-size:12.0pt;
+      color:#444444'>.pth</span><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#444444'>文件的内容，其中</span><span style='font-family:Consolas;
+      font-size:12.0pt;color:#444444'>.path</span><span style='font-family:
+      微软雅黑;font-size:12.0pt;color:#444444'>文件在前三者中查找到的。</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#444444'> <br>
+            </span><span style='font-family:Georgia;font-size:12.0pt;
+      color:#666666'>Python</span><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#666666'>会将每个</span><span style='font-family:Consolas;font-size:
+      12.0pt;color:#666666'>.pth</span><span style='font-family:微软雅黑;
+      font-size:12.0pt;color:#666666'>文件的每行目录从头到尾添加到</span><span
+      style='font-family:Consolas;font-size:12.0pt;color:#666666'>sys.path</span><span
+      style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>列表的最后</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#666666'> </span><span
+      style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>（在此期间</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#666666'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>会过滤</span><span
+      style='font-family:Consolas;font-size:12.0pt;color:#666666'>.pth</span><span
+      style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>文件中目录列表中重复的和不存在的目录</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#666666'>)</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:微软雅黑'>以上四者优先级从高到低。这四部分组合起来就是</span><span
+ style='font-family:Consolas'>sys.path</span><span style='font-family:微软雅黑'>列表的内容</span></p>
+ <p style='margin:0in'><img src="Py.files/image002.jpg" width=713 height=81
+ alt=sys.path></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>7.</span><span
+ style='font-family:Consolas'>sys.path</span><span style='font-family:微软雅黑'>列表就是模块的搜索路径。</span><span
+ style='font-family:Georgia'>Python</span><span style='font-family:微软雅黑'>在程序启动时配置它，自动将顶级文件的主目录（或代表当前工作目录的一个空字符串）、环境变量</span><span
+ style='font-family:Consolas'>PYTHONPATH</span><span style='font-family:微软雅黑'>指定的目录、标准库目录以及已创建的任何</span><span
+ style='font-family:Consolas'>.pth</span><span style='font-family:微软雅黑'>文件的内容合并</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>模块搜索时，从左到右搜索</span><span
+      style='font-family:Consolas;font-size:12.0pt'>sys.path</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>，直到第一次找到要</span><span
+      style='font-family:Consolas;font-size:12.0pt'>import</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>的文件</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>8.</span><span
+ style='font-family:Consolas'>import</span><span style='font-family:微软雅黑'>模块时，省略文件后缀名因为模块可能是</span><span
+ style='font-family:Consolas'>.py</span><span style='font-family:微软雅黑'>文件、</span><span
+ style='font-family:Consolas'>.pyc</span><span style='font-family:微软雅黑'>文件，或者扩展的</span><span
+ style='font-family:Georgia'>C</span><span style='font-family:微软雅黑'>模块等。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>9.</span><span
+ style='font-family:微软雅黑'>创建模块：任何保存为</span><span style='font-family:Consolas'>.py</span><span
+ style='font-family:微软雅黑'>文件的文件均被自动认为是</span><span style='font-family:Georgia'>Python</span><span
+ style='font-family:微软雅黑'>模块。所有该模块顶层指定的变量均为模块属性。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#666666'><span style='font-family:微软雅黑'>可执行但不会被导入的顶层文件不必保存为</span><span
+ style='font-family:Georgia'>.py</span><span style='font-family:微软雅黑'>文件</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>因为模块名在</span><span
+      style='font-family:Georgia;font-size:12.0pt'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>中会变成变量名，因此模块名必须遵守普通变量名的命名规则</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>10.</span><span
+ style='font-family:Consolas'>import</span><span style='font-family:微软雅黑'>和</span><span
+ style='font-family:Consolas'>from</span><span style='font-family:微软雅黑'>语句：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>import</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>使得一个变量名引用整个模块对象：</span><span
+      style='font-family:Consolas;font-size:12.0pt'>import module1</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>将一个变量名赋值给另一个模块中同名的对象：</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from module1 import printer</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>。在本模块内</span><span
+      style='font-family:Consolas;font-size:12.0pt'>printer</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>名字引用了</span><span
+      style='font-family:Consolas;font-size:12.0pt'>module1.printer</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>对象</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from
+      *</span><span style='font-family:微软雅黑;font-size:12.0pt'>语句将多个变量名赋值给了另一个模块中同名的对象：</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from module1 import *</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>。在本模块内，所有</span><span
+      style='font-family:Consolas;font-size:12.0pt'>module1.name</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>对象赋值给了</span><span
+      style='font-family:Consolas;font-size:12.0pt'>name</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>变量名</span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image003.jpg" width=533 height=231
+ alt=import与from语句></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-family:微软雅黑;
+ font-size:12.0pt;color:#444444'>有几点需要注意：</p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>语句首先与</span><span
+      style='font-family:Consolas;font-size:12.0pt'>import</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>一样导入模块文件。但它多了一步：定义一个或多个变量名指向被导入模块中的同名对象</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>与</span><span style='font-family:
+      Consolas;font-size:12.0pt'>import</span><span style='font-family:微软雅黑;
+      font-size:12.0pt'>都是隐性赋值语句</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>与</span><span style='font-family:
+      Consolas;font-size:12.0pt'>import</span><span style='font-family:微软雅黑;
+      font-size:12.0pt'>对本模块的命名空间影响不同：</span><span style='font-family:Consolas;
+      font-size:12.0pt'>from</span><span style='font-family:微软雅黑;font-size:
+      12.0pt'>会在命名空间中引入</span><span style='font-family:Consolas;font-size:12.0pt'>from
+      import</span><span style='font-family:微软雅黑;font-size:12.0pt'>的变量名而不会引入模块名，</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span><span
+      style='font-family:Consolas;font-size:12.0pt'>import</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>会在命名空间中引入模块名</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image004.jpg" width=720 height=166
+ alt=import与from语句></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>、</span><span style='font-family:
+      Consolas;font-size:12.0pt'>import</span><span style='font-family:微软雅黑;
+      font-size:12.0pt'>与</span><span style='font-family:Consolas;font-size:
+      12.0pt'>def</span><span style='font-family:微软雅黑;font-size:12.0pt'>一样是可执行语句，而不是编译器声明</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>当出现交叉导入时，可以使用</span><span
+      style='font-family:Consolas;font-size:12.0pt'>import</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>，用</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>可能出现死锁的问题：</span><span
+      style='font-family:Consolas;font-size:12.0pt'>modA</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>需要</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from import</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span><span
+      style='font-family:Consolas;font-size:12.0pt'>modB</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>的变量</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>，而此时</span><span
+      style='font-family:Consolas;font-size:12.0pt'>modB</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>也在</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from import</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span><span
+      style='font-family:Consolas;font-size:12.0pt'>modA</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>的变量</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image005.jpg" width=719 height=133
+ alt=import与from语句></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>11.</span><span
+ style='font-family:微软雅黑'>要修改被导入的全局变量，必须用</span><span style='font-family:Consolas'>import</span><span
+ style='font-family:微软雅黑'>，然后用模块名的属性修改它；不能用以</span><span style='font-family:
+ Consolas'>from</span><span style='font-family:微软雅黑'>隐式创建的变量名来修改。</span></p>
+ <p style='margin:0in'><img src="Py.files/image006.jpg" width=509 height=363
+ alt=修改模块属性></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>12.</span><span
+ style='font-family:微软雅黑'>用</span><span style='font-family:Consolas'>from</span><span
+ style='font-family:微软雅黑'>时，被导入模块对象并没有赋值给变量名：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>import
+      module1</span><span style='font-family:Georgia;font-size:12.0pt'>:</span><span
+      style='font-family:Consolas;font-size:12.0pt'>module1</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>既是模块名，也是一个变量名（引用被导入模块对象）</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from
+      module1 import func</span><span style='font-family:微软雅黑;font-size:12.0pt'>：</span><span
+      style='font-family:Consolas;font-size:12.0pt'>module1</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>仅仅是模块名，而不是变量名</span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image007.jpg" width=515 height=166
+ alt=模块名与变量名></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>13.</span><span
+ style='font-family:Consolas'>from</span><span style='font-family:微软雅黑'>语句陷阱：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>语句可能破坏命名空间</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>后跟随</span><span
+      style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>时，</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>导入的变量名还是原始的对象</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>14.</span><span
+ style='font-family:微软雅黑'>模块的命名空间可以通过属性</span><span style='font-family:Consolas'>.__dict__</span><span
+ style='font-family:微软雅黑'>或者</span><span style='font-family:Consolas'>dir(modname)</span><span
+ style='font-family:微软雅黑'>来获取</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>在</span><span
+      style='font-family:Georgia;font-size:12.0pt'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>内部，模块命名空间是作为字典对象存储的</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>我们在模块文件中赋值的变量名在</span><span
+      style='font-family:Georgia;font-size:12.0pt'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>内部称为命名空间字典的键</span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image008.jpg" width=720 height=83
+ alt=模块命名空间></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>15.</span><span
+ style='font-family:微软雅黑'>一个模块内无法使用其他模块内的变量，除非明确地进行了导入操作</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>17.</span><span
+ style='font-family:微软雅黑'>重载函数</span><span style='font-family:Consolas'>reload()</span><span
+ style='font-family:微软雅黑'>：它会强制已加载的模块代码重新载入并重新执行</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>函数可以修改程序的一部分，而无需停止整个程序</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>函数只能用于</span><span
+      style='font-family:Georgia;font-size:12.0pt'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>编写的模块，而无法用于其它语言编写的扩展模块</span><span
+      style='font-family:Georgia;font-size:12.0pt'> </span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image009.jpg" width=536 height=281
+ alt=reload函数></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>18.</span><span
+ style='font-family:Consolas'>reload()</span><span style='font-family:微软雅黑'>与</span><span
+ style='font-family:Consolas'>import</span><span style='font-family:微软雅黑'>和</span><span
+ style='font-family:Consolas'>from</span><span style='font-family:微软雅黑'>的差异：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>是</span><span style='font-family:
+      Georgia;font-size:12.0pt'>Python</span><span style='font-family:微软雅黑;
+      font-size:12.0pt'>内置函数，返回值为模块对象，</span><span style='font-family:Consolas;
+      font-size:12.0pt'>import</span><span style='font-family:微软雅黑;font-size:
+      12.0pt'>与</span><span style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>是语句</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>传递给</span><span
+      style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>是已经存在的模块对象，而不是一个变量名</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>在</span><span style='font-family:
+      Georgia;font-size:12.0pt'>Python3.0</span><span style='font-family:微软雅黑;
+      font-size:12.0pt'>中位于</span><span style='font-family:Consolas;font-size:
+      12.0pt'>imp</span><span style='font-family:微软雅黑;font-size:12.0pt'>标准库模块中，必须首先导入才可用。</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>19.</span><span
+ style='font-family:Consolas'>reload</span><span style='font-family:微软雅黑'>工作细节：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>并不会删除并重建模块对象，它只是修改模块对象。即原来模块的每个属性对象内存空间还在，所有旧的引用指向他们，新的引用指向修改后的属性对象内存空间</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>会在模块当前命名空间内执行模块文件的新代码</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>会影响所有使用</span><span
+      style='font-family:Consolas;font-size:12.0pt'>import</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>读取了模块的用户，用户会发现模块的属性已变</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>reload</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>只会对以后使用</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>的代码造成影响，之前用</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>的代码并不受影响。之前的名字还可用，且引用的是旧对象</span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image010.jpg" width=555 height=286
+ alt="reload与import、from"></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;font-family:微软雅黑;font-size:36.0pt;
+ color:#111111'>模块高级用法</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>1.Python</span><span
+ style='font-family:微软雅黑'>模块会默认导出其模块文件顶层所赋值的所有变量名，不存在私有变量名。所有的私有数据更像是一个约定，而不是语法约束：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>下划线开始的变量名</span><span
+      style='font-family:Consolas;font-size:12.0pt'>_x</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：</span><span style='font-family:
+      Consolas;font-size:12.0pt'>from *</span><span style='font-family:微软雅黑;
+      font-size:12.0pt'>导入该模块时，这类变量名不会被复制出去</span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image011.jpg" width=445 height=230
+ alt=私有模块变量></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>模块文件顶层的变量名列表</span><span
+      style='font-family:Consolas;font-size:12.0pt'>__all__</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：它是一个变量名的字符串列表。</span><span
+      style='font-family:Consolas;font-size:12.0pt'>from *</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>语句只会把列在</span><span
+      style='font-family:Consolas;font-size:12.0pt'>__all__</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>列表中的这些变量名复制出来。</span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image012.jpg" width=492 height=279
+ alt="__all__变量名列表"></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#666666'><span style='font-family:Georgia'>Python</span><span
+ style='font-family:微软雅黑'>会首先查找模块内的</span><span style='font-family:Consolas'>__all__</span><span
+ style='font-family:微软雅黑'>列表；否该列表未定义，则</span><span style='font-family:Consolas'>from
+ *</span><span style='font-family:微软雅黑'>会复制那些非</span><span style='font-family:
+ Georgia'> </span><span style='font-family:Consolas'>_</span><span
+ style='font-family:微软雅黑'>开头的所有变量名<br>
+  所有这些隐藏变量名的方法都可以通过模块的属性直接绕开</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>2.</span><span
+ style='font-family:微软雅黑'>当文件是以顶层程序文件执行时，该模块的</span><span style='font-family:
+ Consolas'>__name__</span><span style='font-family:微软雅黑'>属性会设为字符串</span><span
+ style='font-family:Consolas'>&quot;__main__&quot;</span><span
+ style='font-family:微软雅黑'>。若文件被导入，则</span><span style='font-family:Consolas'>__name__</span><span
+ style='font-family:微软雅黑'>属性就成为文件名去掉后缀的名字</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>模块可以检测自己的</span><span
+      style='font-family:Consolas;font-size:12.0pt'>__name__</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>属性，以确定它是在执行还是被导入</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;margin-top:
+      0pt;margin-bottom:18pt;line-height:18pt;color:#444444'><span
+      style='font-family:微软雅黑;font-size:12.0pt'>使用</span><span
+      style='font-family:Consolas;font-size:12.0pt'>__name__</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>最常见的是用于自我测试代码：在文件末尾添加测试部分：<br>
+            </span><span style='font-family:Consolas;font-size:12.0pt'><span
+      style='mso-spacerun:yes'>  </span>if __name__=='__main__':<br>
+            <span style='mso-spacerun:yes'>      </span>#pass</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>3.</span><span
+ style='font-family:微软雅黑'>在程序中修改</span><span style='font-family:Consolas'>sys.path</span><span
+ style='font-family:微软雅黑'>内置列表，会对修改点之后的所有导入产生影响。因为所有导入都使用同一个</span><span
+ style='font-family:Consolas'>sys.path</span><span style='font-family:微软雅黑'>列表</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>4.</span><span
+ style='font-family:Consolas'>import</span><span style='font-family:微软雅黑'>和</span><span
+ style='font-family:Consolas'>from</span><span style='font-family:微软雅黑'>可以使用</span><span
+ style='font-family:Consolas'>as</span><span style='font-family:微软雅黑'>扩展，通过这种方法解决变量名冲突：</span></p>
+ <p style='margin:0in;font-family:Consolas;font-size:10.5pt;color:#444444'><span
+ style='mso-spacerun:yes'>  </span>import modname as name1<br>
+  <span style='mso-spacerun:yes'>  </span>from modname import attr as name2</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:微软雅黑'>在使用</span><span
+ style='font-family:Consolas'>as</span><span style='font-family:微软雅黑'>扩展之后，必须用</span><span
+ style='font-family:Consolas'>name1</span><span style='font-family:微软雅黑'>、</span><span
+ style='font-family:Consolas'>name2</span><span style='font-family:微软雅黑'>访问，而不能用</span><span
+ style='font-family:Consolas'>modname</span><span style='font-family:微软雅黑'>或者</span><span
+ style='font-family:Consolas'>attr</span><span style='font-family:微软雅黑'>，因为它们事实上被</span><span
+ style='font-family:Consolas'>del</span><span style='font-family:微软雅黑'>掉了</span></p>
+ <p style='margin:0in'><img src="Py.files/image013.jpg" width=398 height=294
+ alt="import、from as语句"></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>5.</span><span
+ style='font-family:微软雅黑'>在</span><span style='font-family:Consolas'>import</span><span
+ style='font-family:微软雅黑'>与</span><span style='font-family:Consolas'>from</span><span
+ style='font-family:微软雅黑'>时有个问题，即必须编写变量名，而无法通过字符串指定。有两种方法：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>使用</span><span
+      style='font-family:Consolas;font-size:12.0pt'>exec:</span><span
+      style='font-family:Georgia;font-size:12.0pt'>exec(“import
+      ”+modname_string)`</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#444444'>使用内置的</span><span style='font-family:Consolas;font-size:
+      12.0pt;color:#444444'>__import__</span><span style='font-family:微软雅黑;
+      font-size:12.0pt;color:#444444'>函数：</span><span style='font-family:Consolas;
+      font-size:12.0pt;color:#444444'>__import__(modname_string)</span><span
+      style='font-family:微软雅黑;font-size:12.0pt;color:#444444'>，它返回一个模块对象</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#444444'> <br>
+            </span><span style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>这种方法速度较快</span></li>
+ </ul>
+ <p style='margin:0in'><img src="Py.files/image014.jpg" width=634 height=245
+ alt=通过字符串指定导入包名></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>6.</span><span
+ style='font-family:Consolas'>reload(modname)</span><span style='font-family:
+ 微软雅黑'>只会重载模块</span><span style='font-family:Consolas'>modname</span><span
+ style='font-family:微软雅黑'>，而对于模块</span><span style='font-family:Consolas'>modname</span><span
+ style='font-family:微软雅黑'>文件中</span><span style='font-family:Consolas'>import</span><span
+ style='font-family:微软雅黑'>的模块，</span><span style='font-family:Consolas'>reload</span><span
+ style='font-family:微软雅黑'>函数不会自动加载。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:微软雅黑'>要想</span><span style='font-family:
+ Consolas'>reload</span><span style='font-family:微软雅黑'>模块</span><span
+ style='font-family:Consolas'>A</span><span style='font-family:微软雅黑'>以及</span><span
+ style='font-family:Consolas'>A</span><span style='font-family:Georgia'> </span><span
+ style='font-family:Consolas'>import</span><span style='font-family:微软雅黑'>的所有模块，可以手工递归扫描</span><span
+ style='font-family:Consolas'>A</span><span style='font-family:微软雅黑'>模块的</span><span
+ style='font-family:Consolas'>__dict__</span><span style='font-family:微软雅黑'>属性，并检查每一项的</span><span
+ style='font-family:Consolas'>type</span><span style='font-family:微软雅黑'>以找到所有</span><span
+ style='font-family:Consolas'>import</span><span style='font-family:微软雅黑'>的模块然后</span><span
+ style='font-family:Consolas'>reload</span><span style='font-family:微软雅黑'>这些模块</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>7.</span><span
+ style='font-family:微软雅黑'>可以通过下列几种办法获取模块的某个属性：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>modname.attr</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：直接通过模块对象访问</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>modname.__dict__['attr']</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：通过模块对象的</span><span
+      style='font-family:Consolas;font-size:12.0pt'>__dict__</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>属性字典访问</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>sys.modules['modname'].name</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：通过</span><span
+      style='font-family:Georgia;font-size:12.0pt'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>的</span><span style='font-family:
+      Consolas;font-size:12.0pt'>sys.modules</span><span style='font-family:
+      微软雅黑;font-size:12.0pt'>获取模块对象来访问</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>getattr(modname,'attr')</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：通过模块对象的</span><span
+      style='font-family:Consolas;font-size:12.0pt'>.getattr()</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>方法来访问</span></li>
+ </ul>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:18.0pt'><span
+ style='font-weight:bold'>包</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>包是一种管理</span><span style='font-family:Arial' lang=en-US> Python </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>模块命名空间的形式，采用</span><span
+ style='font-family:Arial' lang=en-US>&quot;</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>点模块名称</span><span style='font-family:Arial'
+ lang=en-US>&quot;</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>比如一个模块的名称是</span><span style='font-family:Arial' lang=en-US> A.B</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>，</span><span
+ style='font-family:Arial' lang=en-US> </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>那么他表示一个包</span><span style='font-family:Arial' lang=en-US> A</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>中的子模块</span><span
+ style='font-family:Arial' lang=en-US> B </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>就好像使用模块的时候，你不用担心不同模块之间的全局变量相互影响一样，采用点模块名称这种形式也不用担心不同库之间的模块重名的情况。</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这样不同的作者都可以提供</span><span style='font-family:Arial' lang=en-US>
+ NumPy </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>模块，或者是</span><span
+ style='font-family:Arial' lang=en-US> Python </span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>图形库。</span><span style='font-family:Arial'
+ lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>不妨假设你想设计一套统一处理声音文件和数据的模块（或者称之为一个</span><span style='font-family:
+ Arial' lang=en-US>&quot;</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>包</span><span style='font-family:Arial' lang=en-US>&quot;</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>）。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>现存很多种不同的音频文件格式（基本上都是通过后缀名区分的，例如：</span><span style='font-family:
+ Arial' lang=en-US> .wav</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>，</span><span style='font-family:Arial' lang=en-US>:file:.aiff</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>，</span><span
+ style='font-family:Arial' lang=en-US>:file:.au</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>，），所以你需要有一组不断增加的模块，用来在不同的格式之间转换。</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>并且针对这些音频数据，还有很多不同的操作（比如混音，添加回声，增加均衡器功能，创建人造立体声效果），所你还需要一组怎么也写不完的模块来处理这些操作。</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这里给出了一种可能的包结构（在分层的文件系统中）</span><span style='font-family:Arial'
+ lang=en-US>: </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Arial'>sound/<span
+ style='mso-spacerun:yes'>                          </span></span><span
+ style='font-family:"Microsoft YaHei"'>顶层包</span><span style='font-family:Arial'><br>
+  <span style='mso-spacerun:yes'>      </span>__init__.py<span
+ style='mso-spacerun:yes'>               </span></span><span style='font-family:
+ "Microsoft YaHei"'>初始化</span><span style='font-family:Arial'> sound </span><span
+ style='font-family:"Microsoft YaHei"'>包</span><span style='font-family:Arial'><br>
+  <span style='mso-spacerun:yes'>      </span>formats/<span
+ style='mso-spacerun:yes'>                  </span></span><span
+ style='font-family:"Microsoft YaHei"'>文件格式转换子包</span><span style='font-family:
+ Arial'><br>
+  <span style='mso-spacerun:yes'>              </span>__init__.py<br>
+  <span style='mso-spacerun:yes'>              </span>wavread.py<br>
+  <span style='mso-spacerun:yes'>              </span>wavwrite.py<br>
+  <span style='mso-spacerun:yes'>              </span>aiffread.py<br>
+  <span style='mso-spacerun:yes'>              </span>aiffwrite.py<br>
+  <span style='mso-spacerun:yes'>              </span>auread.py<br>
+  <span style='mso-spacerun:yes'>              </span>auwrite.py<br>
+  <span style='mso-spacerun:yes'>              </span>...<br>
+  <span style='mso-spacerun:yes'>      </span>effects/<span
+ style='mso-spacerun:yes'>                  </span></span><span
+ style='font-family:"Microsoft YaHei"'>声音效果子包</span><span style='font-family:
+ Arial'><br>
+  <span style='mso-spacerun:yes'>              </span>__init__.py<br>
+  <span style='mso-spacerun:yes'>              </span>echo.py<br>
+  <span style='mso-spacerun:yes'>              </span>surround.py<br>
+  <span style='mso-spacerun:yes'>              </span>reverse.py<br>
+  <span style='mso-spacerun:yes'>              </span>...<br>
+  <span style='mso-spacerun:yes'>      </span>filters/<span
+ style='mso-spacerun:yes'>                  </span>filters </span><span
+ style='font-family:"Microsoft YaHei"'>子包</span><span style='font-family:Arial'><br>
+  <span style='mso-spacerun:yes'>              </span>__init__.py<br>
+  <span style='mso-spacerun:yes'>              </span>equalizer.py<br>
+  <span style='mso-spacerun:yes'>              </span>vocoder.py<br>
+  <span style='mso-spacerun:yes'>              </span>karaoke.py<br>
+  <span style='mso-spacerun:yes'>              </span>...</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>在导入一个包的时候，</span><span style='font-family:Arial' lang=en-US>Python </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>会根据</span><span
+ style='font-family:Arial' lang=en-US> sys.path </span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>中的目录来寻找这个包中包含的子目录。</span><span style='font-family:
+ Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>目录只有包含一个叫做</span><span style='font-family:Arial' lang=en-US>
+ __init__.py </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>的文件才会被认作是一个包，主要是为了避免一些滥俗的名字（比如叫做</span><span
+ style='font-family:Arial' lang=en-US> string</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>）不小心的影响搜索路径中的有效模块。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>最简单的情况，放一个空的</span><span style='font-family:Arial' lang=en-US> :</span><a
+ href="file:///\\__init__.py就可以了。当然这个文件中也可以包含一些初始化代码或者为（将在后面介绍的）"><span
+ style='font-family:Arial' lang=en-US>file:__init__.py</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>就可以了。当然这个文件中也可以包含一些初始化代码或者为（将在后面介绍的）</span></a><span
+ style='font-family:Arial' lang=en-US> __all__</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>变量赋值。</span><span style='font-family:Arial'
+ lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>用户可以每次只导入一个包里面的特定模块，比如</span><span style='font-family:Arial'
+ lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>import
+ sound.effects.echo</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这将会导入子模块</span><span style='font-family:Arial' lang=en-US>:sound.effects.echo</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>。</span><span
+ style='font-family:Arial' lang=en-US> </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>他必须使用全名去访问</span><span style='font-family:Arial' lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>sound.effects.echo.echofilter(input,
+ output, delay=0.7, atten=4)</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>还有一种导入子模块的方法是</span><span style='font-family:Arial' lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>from sound.effects
+ import echo</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这同样会导入子模块</span><span style='font-family:Arial' lang=en-US>: echo</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>，并且他不需要那些冗长的前缀，所以他可以这样使用</span><span
+ style='font-family:Arial' lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>echo.echofilter(input,
+ output, delay=0.7, atten=4)</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>还有一种变化就是直接导入一个函数或者变量</span><span style='font-family:Arial'
+ lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>from
+ sound.effects.echo import echofilter</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>同样的，这种方法会导入子模块</span><span style='font-family:Arial' lang=en-US>:
+ echo</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>，并且可以直接使用他的</span><span
+ style='font-family:Arial' lang=en-US> echofilter() </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>函数</span><span
+ style='font-family:Arial' lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt' lang=en-US>echofilter(input,
+ output, delay=0.7, atten=4) </p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>注意当使用</span><span style='font-family:Arial' lang=en-US>from package
+ import item</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>这种形式的时候，对应的</span><span
+ style='font-family:Arial' lang=en-US>item</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>既可以是包里面的子模块（子包），或者包里面定义的其他名称，比如函数，类或者变量。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Arial'
+ lang=en-US>import</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>语法会首先把</span><span style='font-family:Arial' lang=en-US>item</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>当作一个包定义的名称，如果没找到，再试图按照一个模块去导入。如果还没找到，恭喜，一个</span><span
+ style='font-family:Arial' lang=en-US>:exc:ImportError </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>异常被抛出了。</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>反之，如果使用形如</span><span style='font-family:Arial' lang=en-US>import
+ item.subitem.subsubitem</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这种导入形式，除了最后一项，都必须是包，而最后一项则可以是模块或者是包，但是不可以是类，函数或者变量的名字。</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-size:18.0pt'><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>从一个包中导入</span><span
+ style='font-weight:bold;font-family:Arial' lang=en-US>* </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>设想一下，如果我们使用</span><span style='font-family:Arial' lang=en-US> from
+ sound.effects import *</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>会发生什么？</span><span style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Arial'
+ lang=en-US>Python </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>会进入文件系统，找到这个包里面所有的子模块，一个一个的把它们都导入进来。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>但是很不幸，这个方法在</span><span style='font-family:Arial' lang=en-US>
+ Windows</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>平台上工作的就不是非常好，因为</span><span
+ style='font-family:Arial' lang=en-US>Windows</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>是一个大小写不区分的系统。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>在这类平台上，没有人敢担保一个叫做</span><span style='font-family:Arial' lang=en-US>
+ ECHO.py </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>的文件导入为模块</span><span
+ style='font-family:Arial' lang=en-US> echo </span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>还是</span><span style='font-family:Arial'
+ lang=en-US> Echo </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>甚至</span><span style='font-family:Arial' lang=en-US> ECHO</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>（例如，</span><span style='font-family:Arial' lang=en-US>Windows 95</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>就很讨厌的把每一个文件的首字母大写显示）而且</span><span
+ style='font-family:Arial' lang=en-US> DOS </span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>的</span><span style='font-family:Arial'
+ lang=en-US> 8+3 </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>命名规则对长模块名称的处理会把问题搞得更纠结。</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>为了解决这个问题，只能烦劳包作者提供一个精确的包的索引了。</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>导入语句遵循如下规则：如果包定义文件</span><span style='font-family:Arial'
+ lang=en-US> __init__.py </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>存在一个叫做</span><span style='font-family:Arial' lang=en-US> __all__ </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>的列表变量，那么在使用</span><span
+ style='font-family:Arial' lang=en-US> from package import * </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>的时候就把这个列表中的所有名字作为包内容导入。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>作为包的作者，可别忘了在更新包之后保证</span><span style='font-family:Arial'
+ lang=en-US> __all__ </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>也更新了啊。你说我就不这么做，我就不使用导入</span><span style='font-family:Arial'
+ lang=en-US>*</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>这种用法，好吧，没问题，谁让你是老板呢。这里有一个例子，在</span><span
+ style='font-family:Arial' lang=en-US>:file:sounds/effects/__init__.py</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>中包含如下代码</span><span
+ style='font-family:Arial' lang=en-US>:</span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>__all__ =
+ [&quot;echo&quot;, &quot;surround&quot;, &quot;reverse&quot;]</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这表示当你使用</span><span style='font-family:Arial' lang=en-US>from
+ sound.effects import *</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这种用法时，你只会导入包里面这三个子模块。</span><span style='font-family:Arial'
+ lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>如果</span><span style='font-family:Arial' lang=en-US> </span><span
+ style='font-weight:bold;font-family:Arial' lang=en-US>__all__</span><span
+ style='font-family:Arial' lang=en-US> </span><span style='font-family:"Microsoft YaHei"'
+ lang=en-US>真的没有定义，那么使用</span><span style='font-weight:bold;font-family:Arial'
+ lang=en-US>from sound.effects import *</span><span style='font-family:"Microsoft YaHei"'
+ lang=en-US>这种语法的时候，就不会导入包</span><span style='font-family:Arial' lang=en-US>
+ sound.effects </span><span style='font-family:"Microsoft YaHei"' lang=en-US>里的任何子模块。他只是把包</span><span
+ style='font-family:Arial' lang=en-US>sound.effects</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>和它里面定义的所有内容导入进来（可能运行</span><span
+ style='font-family:Arial' lang=en-US>__init__.py</span><span style='font-family:
+ "Microsoft YaHei"' lang=en-US>里定义的初始化代码）。</span><span style='font-family:Arial'
+ lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这会把</span><span style='font-family:Arial' lang=en-US> __init__.py </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>里面定义的所有名字导入进来。并且他不会破坏掉我们在这句话之前导入的所有明确指定的模块。看下这部分代码</span><span
+ style='font-family:Arial' lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>import
+ sound.effects.echo<br>
+  import sound.effects.surround<br>
+  from sound.effects import *</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这个例子中，在执行</span><span style='font-family:Arial' lang=en-US>from...import</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>前，包</span><span
+ style='font-family:Arial' lang=en-US>sound.effects</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>中的</span><span
+ style='font-family:Arial' lang=en-US>echo</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>和</span><span style='font-family:Arial' lang=en-US>surround</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>模块都被导入到当前的命名空间中了。（当然如果定义了</span><span
+ style='font-family:Arial' lang=en-US>__all__</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>就更没问题了）</span><span style='font-family:Arial'
+ lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>通常我们并不主张使用</span><span style='font-family:Arial' lang=en-US>*</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>这种方法来导入模块，因为这种方法经常会导致代码的可读性降低。不过这样倒的确是可以省去不少敲键的功夫，而且一些模块都设计成了只能通过特定的方法导入。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>记住，使用</span><span style='font-family:Arial' lang=en-US>from Package
+ import specific_submodule</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这种方法永远不会有错。事实上，这也是推荐的方法。除非是你要导入的子模块有可能和其他包的子模块重名。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>如果在结构中包是一个子包（比如这个例子中对于包</span><span style='font-family:Arial'
+ lang=en-US>sound</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>来说），而你又想导入兄弟包（同级别的包）你就得使用导入绝对的路径来导入。比如，如果模块</span><span
+ style='font-family:Arial' lang=en-US> sound.filters.vocoder </span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>要使用包</span><span
+ style='font-family:Arial' lang=en-US>sound.effects</span><span
+ style='font-family:"Microsoft YaHei"' lang=en-US>中的模块</span><span
+ style='font-family:Arial' lang=en-US>echo</span><span style='font-family:"Microsoft YaHei"'
+ lang=en-US>，你就要写成</span><span style='font-family:Arial' lang=en-US> from
+ sound.effects import echo</span><span style='font-family:"Microsoft YaHei"'
+ lang=en-US>。</span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>from . import
+ echo<br>
+  from .. import formats<br>
+  from ..filters import equalizer</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>无论是隐式的还是显式的相对导入都是从当前模块开始的。主模块的名字永远是</span><span style='font-family:
+ Arial' lang=en-US>&quot;__main__&quot;</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>，一个</span><span style='font-family:Arial' lang=en-US>Python</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>应用程序的主模块，应当总是使用绝对路径引用。</span><span
+ style='font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>包还提供一个额外的属性</span><span style='font-family:Arial' lang=en-US>__path__</span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>。这是一个目录列表，里面每一个包含的目录都有为这个包服务的</span><span
+ style='font-family:Arial' lang=en-US>__init__.py</span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>，你得在其他</span><span style='font-family:Arial'
+ lang=en-US>__init__.py</span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>被执行前定义哦。可以修改这个变量，用来影响包含在包里面的模块和子包。</span><span style='font-family:
+ Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>这个功能并不常用，一般用来扩展包里面的模块。</span><span style='font-family:Arial'
+ lang=en-US> </span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-size:9.0pt;color:#595959'><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>来自</span><span style='font-family:Calibri'
+ lang=en-US> &lt;</span><a
+ href="http://www.runoob.com/python3/python3-module.html"><span
+ style='font-family:Calibri' lang=en-US>http://www.runoob.com/python3/python3-module.html</span></a><span
+ style='font-family:Calibri' lang=en-US>&gt; </span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:9.0pt;color:#595959'
+ lang=en-US>&nbsp;</p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-size:18.0pt'><span style='font-weight:bold;
+ font-family:"Microsoft YaHei"' lang=zh-CN>标准模块</span><span style='font-weight:
+ bold;font-family:Arial' lang=en-US> </span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Arial'
+ lang=en-US>Python </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>本身带着一些标准的模块库，直接被构建在解析器里，这些虽然不是一些语言内置的功能，但是却能很高效的使用，甚至是系统级调用。这些组件会根据不同的操作系统进行不同形式的配置，比如</span><span
+ style='font-family:Arial' lang=en-US> winreg </span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>这个模块就只会提供给</span><span style='font-family:Arial'
+ lang=en-US> Windows </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>系统。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>应该注意到这有一个特别的模块</span><span style='font-family:Arial' lang=en-US>
+ sys </span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>，它内置在每一个</span><span
+ style='font-family:Arial' lang=en-US> Python </span><span style='font-family:
+ "Microsoft YaHei"' lang=zh-CN>解析器中。变量</span><span style='font-family:Arial'
+ lang=en-US> sys.ps1 </span><span style='font-family:"Microsoft YaHei"'
+ lang=zh-CN>和</span><span style='font-family:Arial' lang=en-US> sys.ps2 </span><span
+ style='font-family:"Microsoft YaHei"' lang=zh-CN>定义了主提示符和副提示符所对应的字符串</span><span
+ style='font-family:Arial' lang=en-US>: </span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&gt;&gt;&gt; import
+ sys<br>
+  &gt;&gt;&gt; sys.ps1<br>
+  '&gt;&gt;&gt; '<br>
+  &gt;&gt;&gt; sys.ps2<br>
+  '... '<br>
+  &gt;&gt;&gt; sys.ps1 = 'C&gt; '<br>
+  C&gt; print('Yuck!')<br>
+  Yuck!<br>
+  C&gt;</p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>在time模块下面有个ctime()方法可以获取当前系统时间</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>#import
+ time</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>#print(time.ctime())</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>from time
+ import ctime</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'>print(ctime())</p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'><span
+ lang=en-US>time.time()<span style='mso-spacerun:yes'>  </span># </span><span
+ lang=zh-CN>获取当前时间戳</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'><span
+ lang=en-US>time.ctime()<span style='mso-spacerun:yes'>  </span># </span><span
+ lang=zh-CN>当前时间的字符串形式</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'><span
+ lang=en-US>time.localtime()<span style='mso-spacerun:yes'>  </span># </span><span
+ lang=zh-CN>当前时间的</span><span lang=en-US>struct_time</span><span lang=zh-CN>形式</span></p>
+ <p style='margin:0in;font-family:"Microsoft YaHei";font-size:10.5pt'><span
+ lang=en-US>time.strftime()<span style='mso-spacerun:yes'>  </span># </span><span
+ lang=zh-CN>获取当前时间，并且格式化成需要的字符串</span></p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:Arial;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
 </ul>
-
-<p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>识别的路径：</span><span
-style='font-family:Calibri' lang=en-US>sys.path</span><span style='font-family:
-"Microsoft YaHei"' lang=zh-CN>包括：程序的主目录，</span><span style='font-family:Calibri'
-lang=en-US>PythonPATH</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>，标准库，路径文件</span><span style='font-family:Calibri' lang=en-US>.pth </span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>定义的路径（权重依次递减）。主目录和标准库是自定义的，无需设置；</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US>PythonPATH </span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>和</span><span
-style='font-family:"Microsoft YaHei"' lang=en-US> .pth </span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>用于扩展路径，作为补充。</span></p>
-
-<ol type=1 style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
- margin-top:0in;margin-bottom:0in;font-family:Calibri;font-size:11.0pt;
- font-weight:normal;font-style:normal'>
- <li value=1 style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt;font-weight:normal;
-     font-style:normal;font-family:"Microsoft YaHei";font-size:11.0pt'>程序主目录：交互模式，就是当前目录。创建一个工程或者运行程序时，就是顶层脚本所在的目录。最先搜索，权重也最高，可能会覆盖其他地方的同名模块。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>PythonPATH</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>：当主目录与支撑模块所在的目录不同时，才会用到这个方式。比如，控制面板</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>系统与安全</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>系统</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>高级系统设置</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>-</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>环境变量，建立一个</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>
-     PythonPATH</span><span style='font-family:"Microsoft YaHei";font-size:
-     11.0pt' lang=zh-CN>，填入</span><span style='font-family:"Microsoft YaHei";
-     font-size:11.0pt' lang=en-US>C:\pycode\utilities;D:\pycode\package</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>标准库：</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Python</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>自带的官方库，无需设置，直接</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>import</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>路径文件</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pth </span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>：是</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>PythonPATH</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的替代品，设置更简单，并且设置一次可以让所有用户使用。</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Windows</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的，</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>C:\Python30\myconfig.pth
-     </span><span style='font-family:"Microsoft YaHei";font-size:11.0pt'
-     lang=zh-CN>或</span><span style='font-family:"Microsoft YaHei";font-size:
-     11.0pt' lang=en-US> C:\Python30\Lib\sitepackages\myconfig.pth</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>（常用来定义第三方库）；</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Unix</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的，</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>usr/local/lib/site-python
-     </span><span style='font-family:"Microsoft YaHei";font-size:11.0pt'
-     lang=zh-CN>或</span><span style='font-family:"Microsoft YaHei";font-size:
-     11.0pt' lang=en-US> usr/local/lib/python30/site-packages</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。比如，在</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>
-     C:/Python30/pydirs.pth </span><span style='font-family:"Microsoft YaHei";
-     font-size:11.0pt' lang=zh-CN>文本文件加入</span></li>
-</ol>
-
-<p style='margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=en-US>C:\pycode\utilities</p>
-
-<p style='margin:0in;margin-left:1.125in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=en-US>D:\pycode\package</p>
-
-<p style='margin:0in;margin-left:.75in;font-size:11.0pt'><span
-style='font-family:Consolas;color:#0070C0' lang=en-US>print(sys.path)</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>来检查自己的设置是否正确</span></p>
-
-<p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>语句</span><span
-style='font-family:Calibri' lang=en-US> </span><span style='font-family:"Microsoft YaHei"'
-lang=en-US>import b </span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>可能并不是加载</span><span style='font-family:"Microsoft YaHei"'
-lang=en-US> .py</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>文件，它可能是：</span></p>
-
-<ul type=circle style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
- margin-top:0in;margin-bottom:0in'>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.py</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件或</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件，或者</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyo</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>优化文件。只在必要的时候才编译，比如</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>不存在，第一次编译，比如</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>文件修改后再次运行程序需要重新编译。只有被导入的文件才会留下</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。如果不存在</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.py</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>，会直接加载</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.pyc</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>目录</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>——包导入</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>C/C++</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>模块：动态链接导入扩展模块（</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.so</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>、</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.dll</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>、</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>b.pyd</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>之类），或者静态链接导入已经编译好的模块。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>.zip</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>压缩包。导入时自动解压。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>frozen </span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>二进制文件，导入的是内存中的模块。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>java</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>类，</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>Jython</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>。</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>.net</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>组件，</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=en-US>IronPython</span></li>
-</ul>
-
-<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt'><span lang=zh-CN>从</span><span lang=en-US>sys.path</span><span
-lang=zh-CN>中，从左至右一个个路径开始搜寻</span><span lang=en-US>b</span><span lang=zh-CN>，找到一个</span><span
-lang=en-US>b.x</span><span lang=zh-CN>文件（后缀必须合法）就导入——这就是覆盖原理。最好不要在同一目录下出现</span><span
-lang=en-US> b.py </span><span lang=zh-CN>和</span><span lang=en-US> b.dll</span><span
-lang=zh-CN>这样的情况。</span></p>
-
-<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
- margin-top:0in;margin-bottom:0in'>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt'>将变量名赋值给这个模块对象。隐性赋值，效果和赋值语句一样，都是将一个变量名指向内存中的一块区域。</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt'>运行模块中的语句，建立其中的顶层代码的内容（也就是模块里面零级缩进代码所定义的对象，比如类、函数、变量）。之后，就能通过变量名获取其中的所有的属性了。</span></li>
-</ul>
-
-<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt'>一个文件导入了一个模块，就获得了其中的各种工具的读取访问权。导入模块，获取它的属性，使用它的工具。导入后，一个模块文件的顶层定义的（零级缩进的）所有变量名都成了被导入的模块对象的属性。</p>
-
-<p style='margin:0in;margin-left:.375in;font-size:11.0pt'><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>对象属性语法：</span><span
-style='font-family:Calibri' lang=en-US>object.attribute</span></p>
-
-<ul type=disc style='margin-left:.75in;direction:ltr;unicode-bidi:embed;
- margin-top:0in;margin-bottom:0in'>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用函数：</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>random.random()</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用模块</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>random</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>random</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>函数；</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>self.run()</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用一个对象的</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>run()</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>函数</span></li>
- <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>取得数据：</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>math.pi</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用模块</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>math</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>的</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>pi</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>变量值；</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>self.name</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=zh-CN>——</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>调用一个对象的</span><span
-     style='font-family:Calibri;font-size:11.0pt' lang=en-US>name</span><span
-     style='font-family:"Microsoft YaHei";font-size:11.0pt' lang=zh-CN>属性</span></li>
-</ul>
-
-<p style='margin:0in;margin-left:.375in;font-family:"Microsoft YaHei";
-font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-size:11.0pt'><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>导入的模块，存在</span><span style='font-family:Calibri' lang=en-US>sys.modules</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>的字典里，每次导入都会检查（用</span><span
-style='font-family:Consolas;color:#0070C0' lang=en-US>print(list(sys.modules.keys()))</span><span
-style='font-family:"Microsoft YaHei"' lang=zh-CN>查看）。首次导入才会运行这</span><span
-style='font-family:Calibri' lang=en-US>3</span><span style='font-family:"Microsoft YaHei"'
-lang=zh-CN>步，之后如果导入相同的模块，就在内存中提取。</span></p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
-Calibri' lang=en-US>from … import a, b</span><span style='font-family:Calibri'
-lang=zh-CN>——</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>导入特定的变量名</span></h1>
-
-<p style='margin:0in;font-family:"Microsoft YaHei";font-size:11.0pt'
-lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<h1 style='margin:0in;font-size:16.0pt;color:#1E4E79'><span style='font-family:
-Calibri' lang=en-US>imp.reload</span><span style='font-family:Calibri'
-lang=zh-CN>——</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>不停止程序时，重新载入模块</span></h1>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
-
-<p style='margin:0in;font-family:Calibri;font-size:11.0pt' lang=en-US>&nbsp;</p>
 
 </div>
 
@@ -574,8 +1465,8 @@ lang=zh-CN>——</span><span style='font-family:"Microsoft YaHei"' lang=zh-CN>�
 
 <p style='margin:0in'>&nbsp;</p>
 
-<p style='text-align:left;margin:0in;font-family:Arial;font-size:9pt;
-color:#969696;direction:ltr'>已使用 Microsoft OneNote 2016 创建。</p>
+<p style='text-align:left;margin:0in;font-family:宋体;font-size:9pt;color:#969696;
+direction:ltr'>已使用 Microsoft OneNote 2013 创建。</p>
 
 </div>
 
