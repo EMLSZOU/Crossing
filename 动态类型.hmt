@@ -1,0 +1,475 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=OneNote.File>
+<meta name=Generator content="Microsoft OneNote 15">
+<link id=Main-File rel=Main-File href=file6971.htm>
+<link rel=File-List href="file6971.files/filelist.xml">
+</head>
+
+<body lang=zh-CN style='font-family:微软雅黑;font-size:10.5pt;color:black'>
+
+<div style='direction:ltr;border-width:100%'>
+
+<div style='direction:ltr;margin-top:0in;margin-left:0in;width:7.8812in'>
+
+<div style='direction:ltr;margin-top:0in;margin-left:.277in;width:2.2083in'>
+
+<p style='margin:0in;font-family:微软雅黑;font-size:20.0pt'>动态类型简介</p>
+
+</div>
+
+<div style='direction:ltr;margin-top:.0409in;margin-left:.277in;width:1.5597in'>
+
+<p style='margin:0in;font-size:9.0pt;color:gray'><span style='font-family:Calibri'>2017</span><span
+style='font-family:微软雅黑'>年</span><span style='font-family:Calibri'>1</span><span
+style='font-family:微软雅黑'>月</span><span style='font-family:Calibri'>25</span><span
+style='font-family:微软雅黑'>日</span></p>
+
+<p style='margin:0in;font-family:Calibri;font-size:9.0pt;color:gray'>11:36</p>
+
+</div>
+
+<div style='direction:ltr;margin-top:.5in;margin-left:0in;width:7.8812in'>
+
+<ul style='margin-left:.2555in;direction:ltr;unicode-bidi:embed;margin-top:
+ 0in;margin-bottom:0in'>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Calibri'
+ lang=en-US>Python</span><span style='font-family:微软雅黑' lang=en-US> </span><span
+ style='font-family:微软雅黑' lang=zh-CN>是动态类型语言。也是强类型语言，特定的对象，只能执行特定的操作。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:微软雅黑'
+ lang=zh-CN>动态类型和多态，是</span><span style='font-family:Calibri' lang=en-US>Python</span><span
+ style='font-family:微软雅黑' lang=zh-CN>语言简洁和灵活的根源。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:Calibri'
+ lang=en-US>Python</span><span style='font-family:微软雅黑' lang=en-US> </span><span
+ style='font-family:微软雅黑' lang=zh-CN>只有一种赋值模型，所以理解了动态类型，就随处可用了。</span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'><span
+ style='font-weight:bold'>初始化赋值：变量、对象、引用</span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>初始化赋值语句</p>
+ <p style='margin:0in;margin-left:.375in;font-family:Calibri;font-size:10.5pt'
+ lang=en-US>a = 3</p>
+ <ul type=disc style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>对象：等式右边，常量</span><span
+      style='font-family:Calibri;font-size:10.5pt' lang=en-US> 3 </span><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>创建了一个新的对象（一块内存空间）去表示这个值。</span></li>
+  <ul type=circle style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+   margin-top:0in;margin-bottom:0in'>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>每次运行一个表达式（运算或者常量赋值）生成一个新的值，</span><span
+       style='font-family:Calibri;font-size:10.5pt' lang=en-US>Python</span><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>都创建一个新的对象（内存空间）去表示这个值。</span></li>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>每个对象都有</span><span
+       style='font-family:Calibri;font-size:10.5pt' lang=en-US>2</span><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>个标准的头部信息：数据类型标识符、引用计数器。</span></li>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>如果一个变量重新赋值，之前那个对象如果没有变量引用了，引用计数器就置零，占用的空间就会被自动回收（垃圾收集）。比如</span><span
+       style='font-family:Calibri;font-size:10.5pt' lang=en-US> a</span><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=en-US> =
+       &quot;something&quot; </span><span style='font-family:微软雅黑;font-size:
+       10.5pt' lang=zh-CN>，重新赋值，对象</span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=en-US> 3 </span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=zh-CN>就垃圾回收。</span></li>
+  </ul>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>变量：等式左边，创建一个变量名</span><span
+      style='font-family:Calibri;font-size:10.5pt' lang=en-US> a</span></li>
+  <ul type=circle style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+   margin-top:0in;margin-bottom:0in'>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt'>变量是一个系统表对象，拥有指向对象内存空间的连接（引用），</span></li>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt'>变量在初始化赋值（第一次赋值）时创建</span></li>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt'>变量是通用的（一个变量可以引用任何对象），只是在某个特定的时间点引用了一个特定的对象。变量没有类型，不需要声明变量的类型。类型由对象决定，并且自动跟踪变量引用的对象的类型。</span></li>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>变量使用时，马上会被引用的对象所代替，比如</span><span
+       style='font-family:Calibri;font-size:10.5pt' lang=en-US><span
+       style='mso-spacerun:yes'>  </span>c</span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=en-US> = a </span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=zh-CN>将</span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=en-US> a </span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=zh-CN>引用的对象</span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=en-US> 3 </span><span style='font-family:微软雅黑;
+       font-size:10.5pt' lang=zh-CN>，再次赋值，引用给</span><span style='font-family:
+       微软雅黑;font-size:10.5pt' lang=en-US> c </span><span style='font-family:
+       微软雅黑;font-size:10.5pt' lang=zh-CN>。未初始化赋值、创建的变量不准使用。</span></li>
+  </ul>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>引用：赋值语句的等式，创建一个变量</span><span
+      style='font-family:Calibri;font-size:10.5pt' lang=en-US> a</span><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=en-US> </span><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>与对象</span><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=en-US> 3 </span><span
+      style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>的引用。变量和对象存储在内存的不同区域，并通过引用相连。</span></li>
+  <ul type=circle style='margin-left:.375in;direction:ltr;unicode-bidi:embed;
+   margin-top:0in;margin-bottom:0in'>
+   <li style='margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>引用就是从变量到对象的内存指针，相当于</span><span
+       style='font-family:Calibri;font-size:10.5pt' lang=en-US> C</span><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=en-US> </span><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>语言的</span><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=en-US> void </span><span
+       style='font-family:微软雅黑;font-size:10.5pt' lang=zh-CN>指针。</span></li>
+  </ul>
+ </ul>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'><span
+ style='font-weight:bold'>共享引用</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:Calibri' lang=en-US>a = 3<span style='mso-spacerun:yes'>   
+ </span>#</span><span style='font-family:微软雅黑' lang=en-US> </span><span
+ style='font-family:微软雅黑' lang=zh-CN>初始化赋值，创建对象</span><span style='font-family:
+ 微软雅黑' lang=en-US> 3</span><span style='font-family:微软雅黑' lang=zh-CN>、变量</span><span
+ style='font-family:微软雅黑' lang=en-US> a </span><span style='font-family:微软雅黑'
+ lang=zh-CN>、以及相互之间的引用。</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:Calibri' lang=en-US>b = a<span style='mso-spacerun:yes'>   
+ </span>#</span><span style='font-family:微软雅黑' lang=en-US> </span><span
+ style='font-family:微软雅黑' lang=zh-CN>变量</span><span style='font-family:微软雅黑'
+ lang=en-US>a</span><span style='font-family:微软雅黑' lang=zh-CN>马上被替换成对象</span><span
+ style='font-family:微软雅黑' lang=en-US> 3</span><span style='font-family:微软雅黑'
+ lang=zh-CN>，所以</span><span style='font-family:微软雅黑' lang=en-US>b</span><span
+ style='font-family:微软雅黑' lang=zh-CN>也引用了对象</span><span style='font-family:
+ 微软雅黑' lang=en-US> 3</span><span style='font-family:微软雅黑' lang=zh-CN>——</span><span
+ style='font-family:微软雅黑' lang=en-US>a</span><span style='font-family:微软雅黑'
+ lang=zh-CN>与</span><span style='font-family:微软雅黑' lang=en-US>b</span><span
+ style='font-family:微软雅黑' lang=zh-CN>共同引用一块内存区域</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:Calibri' lang=en-US>a = a + 2<span
+ style='mso-spacerun:yes'>   </span># </span><span style='font-family:微软雅黑'
+ lang=zh-CN>变量</span><span style='font-family:Calibri' lang=en-US>a</span><span
+ style='font-family:微软雅黑' lang=en-US> </span><span style='font-family:微软雅黑'
+ lang=zh-CN>替换成对象</span><span style='font-family:微软雅黑' lang=en-US> 3 </span><span
+ style='font-family:微软雅黑' lang=zh-CN>，与对象</span><span style='font-family:微软雅黑'
+ lang=en-US> 2 </span><span style='font-family:微软雅黑' lang=zh-CN>进行运算得到全新的对象</span><span
+ style='font-family:微软雅黑' lang=en-US> 5</span><span style='font-family:微软雅黑'
+ lang=zh-CN>，然后创建变量</span><span style='font-family:微软雅黑' lang=en-US>a </span><span
+ style='font-family:微软雅黑' lang=zh-CN>与对象</span><span style='font-family:微软雅黑'
+ lang=en-US> 5</span><span style='font-family:微软雅黑' lang=zh-CN>的引用。此语句对</span><span
+ style='font-family:Calibri' lang=en-US> </span><span style='font-family:微软雅黑'
+ lang=zh-CN>变量</span><span style='font-family:Calibri' lang=en-US> b</span><span
+ style='font-family:微软雅黑' lang=en-US> </span><span style='font-family:微软雅黑'
+ lang=zh-CN>没有任何影响。</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:Calibri' lang=en-US>a = &quot;something&quot;<span
+ style='mso-spacerun:yes'>  </span>#</span><span style='font-family:微软雅黑'
+ lang=en-US> </span><span style='font-family:微软雅黑' lang=zh-CN>变量</span><span
+ style='font-family:微软雅黑' lang=en-US>a </span><span style='font-family:微软雅黑'
+ lang=zh-CN>引用新的对象</span><span style='font-family:微软雅黑' lang=en-US> </span><span
+ style='font-family:Calibri' lang=en-US>&quot;something&quot;</span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>对一个变量赋值，仅仅会影响变量，不会影响对象。</p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:微软雅黑'
+ lang=zh-CN>因为，在有些语言中，变量是可改变的内存区域的地址，重新赋值，会替换这个内存区域的值。而在</span><span
+ style='font-family:Calibri' lang=en-US>Python</span><span style='font-family:
+ 微软雅黑' lang=zh-CN>中，变量是一个指向内存区域的指针，重新赋值，是让这个变量去引用一个新的对象（指向新的内存空间）。</span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'><span
+ style='font-weight:bold'>共享对象与数值相等</span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L =
+ [1, 2, 3]<span style='mso-spacerun:yes'>  </span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>M =
+ [1, 2, 3]<span style='mso-spacerun:yes'>  </span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>print
+ L == M<span style='mso-spacerun:yes'>  </span># True ，因为 ==
+ 操作符比较两个对象的数值，数值的确相等。</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>print
+ L is M<span style='mso-spacerun:yes'>  </span># False ，因为 is
+ 操作符比较L与M是不是引用同一个对象（指向同一块内存）</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>但是，有时候又会出现“意外情况”：</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L =
+ 42</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>M =
+ 42</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>print
+ L == M<span style='mso-spacerun:yes'>  </span># True ，因为 ==
+ 操作符比较两个对象的数值，数值的确相等。</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>print
+ L is M<span style='mso-spacerun:yes'>  </span># True ，很奇怪。</p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:微软雅黑' lang=zh-CN>因为Python把小的整数缓存，并且复用了，所以L与M的确引用了同一个对象。这是</span><span
+ style='font-family:Calibri' lang=en-US>Python</span><span style='font-family:
+ 微软雅黑' lang=zh-CN>决定的，不是代码能够改变的。</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:微软雅黑'
+ lang=zh-CN>查询一个对象被引用的次数：数字对象</span><span style='font-family:Calibri'
+ lang=en-US> 1 </span><span style='font-family:微软雅黑' lang=zh-CN>被引用了</span><span
+ style='font-family:Calibri' lang=en-US> 607 </span><span style='font-family:
+ 微软雅黑' lang=zh-CN>次</span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>&gt;&gt;&gt;
+ import sys</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>&gt;&gt;&gt;
+ sys.getrefcount(1)</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>607</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'><span
+ style='font-weight:bold'>共享引用、原处修改可变的对象</span></p>
+ <p style='margin:0in;font-size:10.5pt'><span style='font-family:微软雅黑'
+ lang=zh-CN>有些数据类型的对象，本身就是对其他对象的引用，所以是可变的。比如列表、字典、</span><span
+ style='font-family:Calibri' lang=en-US>class</span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L1
+ = [1, 2, 3, 4]</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L2
+ = L1<span style='mso-spacerun:yes'>  </span># 共享引用。L2 也引用了list 对象 [1, 2, 3, 4]</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L1
+ = 89<span style='mso-spacerun:yes'>  </span># L1 引用了全新的对象 89。不影响 L2</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>但是，下面就会相互影响了</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L1
+ = [1, 2, 3, 4]</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L2
+ = L1<span style='mso-spacerun:yes'>  </span># L1与L2共享引用</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>L1[0]
+ = 32<span style='mso-spacerun:yes'>  </span># 结果L2 也受到了影响，变为 [32, 2, 3, 4]</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>避免共享对象带来的影响，可以直接拷贝对象。让不同的变量，引用不同的对象（指向不同的内存区域）</p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:微软雅黑' lang=zh-CN>L2 = L1</span><span style='font-family:
+ Calibri' lang=en-US>[:]<span style='mso-spacerun:yes'>  </span># </span><span
+ style='font-family:微软雅黑' lang=zh-CN>列表拷贝最简单的办法——从头到尾切片。</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:微软雅黑' lang=zh-CN>其他的对象，应该使用</span><span style='font-family:
+ Calibri' lang=en-US>copy</span><span style='font-family:微软雅黑' lang=zh-CN>方法</span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>import
+ copy</p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:微软雅黑' lang=zh-CN>x = copy.copy(y)<span
+ style='mso-spacerun:yes'>  </span># make a shallow copy of y</span><span
+ style='font-family:Calibri' lang=en-US> </span><span style='font-family:微软雅黑'
+ lang=zh-CN>创建对象</span><span style='font-family:Calibri' lang=en-US> y</span><span
+ style='font-family:微软雅黑' lang=en-US> </span><span style='font-family:微软雅黑'
+ lang=zh-CN>的影子拷贝</span></p>
+ <p style='margin:0in;margin-left:.375in;font-size:10.5pt'><span
+ style='font-family:微软雅黑' lang=zh-CN>x = copy.deepcopy(y)<span
+ style='mso-spacerun:yes'>  </span># make a deep copy of y</span><span
+ style='font-family:Calibri' lang=en-US> </span><span style='font-family:微软雅黑'
+ lang=zh-CN>创建对象</span><span style='font-family:Calibri' lang=en-US> y</span><span
+ style='font-family:微软雅黑' lang=en-US> </span><span style='font-family:微软雅黑'
+ lang=zh-CN>的深度拷贝</span></p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>影子拷贝和深度拷贝，差异就在复合对象上（包含其他对象的对象，比如列表和实例）。</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>影子拷贝是创建一个复合对象，然后内含的对象，还是上一个对象的引用。</p>
+ <p style='margin:0in;margin-left:.375in;font-family:微软雅黑;font-size:10.5pt'>深度拷贝，创建一个复合对象，内含的对象，也是新建的。</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin-top:0pt;margin-bottom:18pt;font-size:36.0pt;color:#111111'><span
+ style='font-family:Georgia'>Python </span><span style='font-family:微软雅黑'>的动态类型介绍</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>1.</span><span
+ style='font-family:微软雅黑'>在</span><span style='font-family:Georgia'>Python</span><span
+ style='font-family:微软雅黑'>中没有变量的声明以及变量的类型：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>变量的类型实在运行过程中自动决定的，而不是通过声明来决定的</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>变量首次赋值时，创建它。之后的再次赋值会改变该变量的值</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>2.</span><span
+ style='font-family:微软雅黑'>类型的概念是存在于对象中而不是变量名中。变量名是通用的，它只是在特定时刻引用某个特定的对象而已。</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>当变量出现在表达式中时，它会马上被当前引用的对象所代替</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>任何变量名在使用前必须明确地赋值。用未赋值的变量会产生错误。</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#666666'><span style='font-family:微软雅黑'>在</span><span style='font-family:
+ Georgia'>Python</span><span style='font-family:微软雅黑'>内部，变量实际上是指向对象内存空间的一个指针</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>3.</span><span
+ style='font-family:微软雅黑'>每个表达式生成的结果，</span><span style='font-family:Georgia'>python</span><span
+ style='font-family:微软雅黑'>都创建了一个新的对象去表示这个值</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>4.Python</span><span
+ style='font-family:微软雅黑'>对象缓存了不变的对象并对其进行复用，如小整数和小字符串。但是逻辑上看，每个表达式的结果值都是不同的对象，占用不同的内存。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>5.</span><span
+ style='font-family:微软雅黑'>每个对象都有两个标准的头部信息：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>类型标志符：标识了该对象的类型（见第</span><span
+      style='font-family:Georgia;font-size:12.0pt'>10</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>条）</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#444444'>引用计数器：决定了是否可以回收这个对象（见第</span><span style='font-family:
+      Georgia;font-size:12.0pt;color:#444444'>8</span><span style='font-family:
+      微软雅黑;font-size:12.0pt;color:#444444'>条）</span><span style='font-family:
+      Georgia;font-size:12.0pt;color:#444444'> <br>
+            </span><span style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>引用计数器记录了当前指向该对象的引用的数目。一旦它为</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#666666'>0</span><span
+      style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>，</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#666666'> </span><span
+      style='font-family:微软雅黑;font-size:12.0pt;color:#666666'>则该对象的内存空间就会自动回收</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>6.</span><span
+ style='font-family:微软雅黑'>给一个变量赋新值，并不是替换原始的对象，而是让这个变量去引用完全不同的一个对象。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>7.</span><span
+ style='font-family:微软雅黑'>多个变量名引用同一个对象时，称为共享引用：</span></p>
+ <p style='margin:0in;font-size:10.5pt;color:#444444'><span style='font-family:
+ Consolas'>graph LR<br>
+  id1(</span><span style='font-family:微软雅黑'>变量</span><span style='font-family:
+ Consolas'>a) --&gt;|</span><span style='font-family:微软雅黑'>引用</span><span
+ style='font-family:Consolas'>|id2(</span><span style='font-family:微软雅黑'>对象</span><span
+ style='font-family:Consolas'>)<br>
+  id3(</span><span style='font-family:微软雅黑'>变量</span><span style='font-family:
+ Consolas'>b) --&gt;|</span><span style='font-family:微软雅黑'>引用</span><span
+ style='font-family:Consolas'>|id2(</span><span style='font-family:微软雅黑'>对象</span><span
+ style='font-family:Consolas'>)<br>
+  style id2 fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5;</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>在共享引用中，对象的原地修改操作会影响到所有的引用该对象的变量</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#444444'>共享引用的多个变量之间，</span><span style='font-family:Consolas;
+      font-size:12.0pt;color:#444444'>is</span><span style='font-family:微软雅黑;
+      font-size:12.0pt;color:#444444'>比较的结果为</span><span style='font-family:
+      Consolas;font-size:12.0pt;color:#444444'>True</span><span
+      style='font-family:Georgia;font-size:12.0pt;color:#444444'> <br>
+            </span><span style='font-family:Consolas;font-size:12.0pt;
+      color:#666666'>==</span><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#666666'>操作符比较的是两个变量引用的对象是否具有相同的值<br>
+            </span><span style='font-family:Consolas;font-size:12.0pt;
+      color:#666666'>is</span><span style='font-family:微软雅黑;font-size:12.0pt;
+      color:#666666'>操作符比较的是两个变量是否引用的是同一个对象</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>8.</span><span
+ style='font-family:Consolas'>sys</span><span style='font-family:微软雅黑'>模块的</span><span
+ style='font-family:Consolas'>getrefcount</span><span style='font-family:微软雅黑'>函数会返回对象的引用次数，如：</span></p>
+ <p style='margin:0in'><img src="file6971.files/image001.jpg" width=616
+ height=216 alt="getrefcount()运行结果"></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#666666'><span style='font-family:微软雅黑'>这里可以看到</span><span
+ style='font-family:Georgia'>Python</span><span style='font-family:微软雅黑'>对象缓存了不变的对象并对其进行复用</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt'><span
+ style='font-family:Georgia;color:#444444'>9.</span><span style='font-family:
+ 微软雅黑;color:#444444'>动态类型是</span><span style='font-family:Georgia;color:#444444'>Python</span><span
+ style='font-family:微软雅黑;color:#444444'>多态的基础，因为没有类型约束。</span><span
+ style='font-family:Georgia;color:#444444'>Python</span><span style='font-family:
+ 微软雅黑;color:#444444'>的多态是</span><span style='font-family:Consolas;color:#444444'>x.method</span><span
+ style='font-family:微软雅黑;color:#444444'>的方法运行时，</span><span style='font-family:
+ Consolas;color:#444444'>method</span><span style='font-family:微软雅黑;color:#444444'>的意义取决于</span><span
+ style='font-family:Consolas;color:#444444'>x</span><span style='font-family:
+ 微软雅黑;color:#444444'>的类型，</span><span style='font-weight:bold;font-family:微软雅黑;
+ color:red'>属性总是在运行期解析</span><span style='font-family:微软雅黑;color:#444444'>。</span></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>10.</span><span
+ style='font-family:微软雅黑'>查看对象的类型用</span><span style='font-family:Consolas'>type()</span><span
+ style='font-family:微软雅黑'>函数，如：</span></p>
+ <p style='margin:0in'><img src="file6971.files/image002.jpg" width=406
+ height=249 alt="type()运行结果"></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>11.Python</span><span
+ style='font-family:微软雅黑'>提供了几种方法来查看对象的属性以及详细信息：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Georgia;font-size:12.0pt'>dir(x)</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：查看</span><span
+      style='font-family:Georgia;font-size:12.0pt'>x</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>所指对象的属性</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Georgia;font-size:12.0pt'>help(x.attr)</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：查看</span><span
+      style='font-family:Georgia;font-size:12.0pt'>x</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>所指对象的</span><span
+      style='font-family:Georgia;font-size:12.0pt'>attr</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>属性</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Georgia;font-size:12.0pt'>help(x)</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>：查看</span><span
+      style='font-family:Georgia;font-size:12.0pt'>x</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>所指对象的详细信息</span></li>
+ </ul>
+ <p style='margin:0in'><img src="file6971.files/image003.jpg" width=715
+ height=499 alt="dir、help运行结果"></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt'><span
+ style='font-family:Georgia;color:#444444'>12.</span><span style='font-family:
+ Consolas;color:#444444'>None</span><span style='font-family:微软雅黑;color:#444444'>对象是一个特殊的</span><span
+ style='font-family:Georgia;color:#444444'>Python</span><span style='font-family:
+ 微软雅黑;color:#444444'>对象，它总是</span><span style='font-family:Consolas;color:#444444'>False</span><span
+ style='font-family:微软雅黑;color:#444444'>，一般用于占位。它有一块内存，是一个真正的对象。</span><span
+ style='font-family:微软雅黑;color:red'>它不代表未定义，事实上它有定义。</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>None</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>是所有函数和方法的默认返回值</span></li>
+ </ul>
+ <p style='margin:0in'><img src="file6971.files/image004.jpg" width=208
+ height=60 alt="type(None)"></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>13.Python</span><span
+ style='font-family:微软雅黑'>中，任何东西都是对象类型（见第</span><span style='font-family:Georgia'>10</span><span
+ style='font-family:微软雅黑'>条），类型本身也是对象类型：</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>type(x)</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>返回变量</span><span
+      style='font-family:Consolas;font-size:12.0pt'>x</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>指向对象的类型</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:Consolas;font-size:12.0pt'>isinstance(x,typename)</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>用于测试</span><span
+      style='font-family:Consolas;font-size:12.0pt'>x</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>所指对象是否是</span><span
+      style='font-family:Consolas;font-size:12.0pt'>typename</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>类型</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>调用类型名是对这些对象构造函数的调用，而不仅仅是类型转换</span></li>
+ </ul>
+ <p style='margin:0in'><img src="file6971.files/image005.jpg" width=519
+ height=141 alt=任何东西都是对象类型></p>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt'><span
+ style='font-family:Georgia;color:#444444'>14.</span><span style='font-family:
+ 微软雅黑;color:#444444'>基本上在代码中进行类型检查是错误的，着破坏了代码的灵活性，限制了代码的类型。</span><span
+ style='font-family:Georgia;color:red'>Python</span><span style='font-family:
+ 微软雅黑;color:red'>代码不关心特定的数据类型，只关心接口，这就是</span><span style='font-family:Georgia;
+ color:red'>Python</span><span style='font-family:微软雅黑;color:red'>的多态设计</span></p>
+ <ul type=disc style='margin-left:0in;direction:ltr;unicode-bidi:embed;
+  margin-top:0in;margin-bottom:0in'>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>一个操作的意义取决于被操作对象的类型。同样的操作对不同的对象来说意义可能不同，前提是该对象支持该操作</span></li>
+  <li style='margin-top:0;margin-bottom:0;vertical-align:middle;line-height:
+      18pt;color:#444444'><span style='font-family:微软雅黑;font-size:12.0pt'>若对象不支持某种操作，则</span><span
+      style='font-family:Georgia;font-size:12.0pt'>Python</span><span
+      style='font-family:微软雅黑;font-size:12.0pt'>会在运行时检测到错误并自动抛出一个异常</span></li>
+ </ul>
+ <p style='margin-top:0pt;margin-bottom:18pt;line-height:18pt;font-size:12.0pt;
+ color:#444444'><span style='font-family:Georgia'>15.Python</span><span
+ style='font-family:微软雅黑'>可以在旧版本中开启新版本的特性，只需用在模块文件中使用：</span><span
+ style='font-family:Georgia'> </span><span style='font-family:Consolas'>from
+ __future__ import </span><span style='font-family:微软雅黑'>特性名</span></p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+ <p style='margin:0in;font-family:微软雅黑;font-size:10.5pt'>&nbsp;</p>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<p style='margin:0in'>&nbsp;</p>
+
+<p style='text-align:left;margin:0in;font-family:宋体;font-size:9pt;color:#969696;
+direction:ltr'>已使用 Microsoft OneNote 2013 创建。</p>
+
+</div>
+
+</body>
+
+</html>
