@@ -40,7 +40,7 @@ c = 17//3.0  # 5.0  强制地板除。即使出现浮点数，按照float法则�
 
 # 表达式
 常见表达式
-```
+```python
 a = var  # 读取一个变量，并且赋值
 function(arg)  # 调用函数
 object.function(arg)  # 调用实例的一个方法
@@ -54,7 +54,7 @@ a=input()  # 如果按下Ctrl-C Ctrl-D 会引发异常。最好是try:ipnut()
 注意：有些函数没有返回值，返回的是None对象，它的作用是对传入的参数对象作原处修改。
 append()、sort()、reverse都是
 
-```
+```python
 alist = [1,2]
 alist.append(3)  # 结果 alist = [1,2,3]
 # 但是有些人不知道原处修改的函数没有返回值，最后丢失了列表对象
@@ -80,19 +80,19 @@ print([object1,object2...]  [,sep=' ']  [,end='\n']  [,file=sys.stdout])
 - end='\n'：指定添加在打印文本末尾的字符串，默认是换行符（也就是一个print语句会换一行）。
 - file=sys.stdout：指定将输出流发送的地点（任何带有write(str)方法的文件、标准流等），默认是标准流 sys.stdout，也就是打印到屏幕。
 
-```
+```python
 a,b,c = 1,'you',['me']
 print(a,b,c,sep='...',end='!\n')  # 结果 1...you...me!
 ```
 虽然print()的sep和end参数很方便，但是最好还是自己定制一个格式：
 
-```
+```python
 text = '%s: %-.4f, %05d' % ('result', 3.1415926, 42)
 print(text)  # result：3.1416,00042
 ```
 
 ##### Python2的打印
-```
+```python
 print [>> file=sys.stdout]  [object1,object2...]  [,]  [,file=sys.stdout]
 ```
 - object1,object2...：传入的需要打印的对象，用逗号分隔。print函数将它们传给内置str()函数，变为“用户友好”字符串。
@@ -106,7 +106,7 @@ print [>> file=sys.stdout]  [object1,object2...]  [,]  [,file=sys.stdout]
 
 
 让Python2 也能支持 print()
-```
+```python
 from __future__ import print_function
 print(1)
 print('a', 'b', 'c')  # 并不可靠，有些Python版本会打印出元组  ('a', 'b', 'c')
@@ -118,25 +118,25 @@ print('{} {} {}'.format('a', 'b', 'c'))
 #### 重定向
 实际上，打印和写入文件，是对等的。
 print(a,b) 和 print a,b 等价于
-```
+```python
 import sys
 sys.stdout.write(str(a)+' '+str(b)+'\n')
 ```
 这，就是重定向的原理。
 
 1. 永久重定向（这次运行的整个过程都重定向）
-    ```
+    ```python
     import sys
     sys.stdout = open('log.txt', 'a')
     # 此后，每个print语句都被重定向了。
     ```
 2. 暂时性重定向（只在重定向这一次打印）.这需要一个文件对象（它有write(str)方法，而不是一个文件名字符串）
-	```
+	```python
 	print(a,b,c,file=open(log.txt,'a'))  # 重定向语句
 	print >> open(log.txt,'a'),a,b,c  # Python2语法
 	```
 	这就像永久重定向后，恢复正常
-	```
+	```python
 	origin = sys.stdout
 	sys.stdout = open(log.txt,'a')
 	print(a,b,c)
@@ -189,13 +189,13 @@ switch (selector){
 
 
 **Python 1**  如果分支很多，将会非常冗长
-```
+```python
 if selector == value1: <statement1>
 elif selector == value2:<statement2>
 else:<statement3>
 ```
 **Python 2**  用字典，然后取值，更简洁
-```
+```python
 branch = {value1:statement1,value2:statement2}
 if selector in branch: branch[selector]
 else: statement3  # default语句
@@ -232,8 +232,14 @@ while循环是最通用的迭代结构。
         <statement 2>  # 正常退出循环（不是break），就运行
 ```
 死循环、无限循环：
-```
+```python
 while True:print('Ctrl-C to stop')
+```
+Python没有 do-while，但是也可以实现"执行一次，再循环，条件成立就退出"：
+```python
+    while true:
+        <statement>          # 执行的操作代码
+        if exitTest():break  # 设置退出的条件
 ```
 序列，循环切片，每次切出一个元素：
 ```Python
@@ -242,17 +248,12 @@ while True:print('Ctrl-C to stop')
         print(x,end=' ');x=x[1:]
 ```
 常见的“变化--计数--退出”循环：
-```
+```python
     a=0; b=10
     while a<b:
         print(a, end=' '); a += 1
 ```
-Python没有 do-while，但是也可以实现"执行一次，再循环，条件成立就退出"：
-```
-    while true:
-        <statement>          # 执行的操作代码
-        if exitTest():break  # 设置退出的条件
-```
+
 跳转语句
 -    break  跳出最近所在的循环
 -    continue 跳到最近所在循环的开头处，也就是while/for首行
@@ -282,7 +283,7 @@ else是Python循环特有的结构。用处是捕捉循环体中 特殊情况引
 
 
 C-like语言常见的“判断-处理”循环
-```C
+```java
     while((x=func())!=NULL){ //对x的判断
         process(x)  //对x的处理代码
     }
@@ -370,7 +371,9 @@ for循环是通用的序列迭代器，可以遍历任何有序的序列对象�
     for item in D:print(item)  # 仅仅遍历key
     ```
     用D.items()就可以转为元组：
-	`list(D.items()) # 结果为 [('a',1),('b',2),('c',3)]`
+    ```python
+	list(D.items()) # 结果为 [('a',1),('b',2),('c',3)]
+    ```
     这就是字典可以并行遍历的原因：
     ```python
     for (key, value) in D.items: print(key, ':', value)  # a:1
@@ -379,6 +382,30 @@ for循环是通用的序列迭代器，可以遍历任何有序的序列对象�
 	| 数据库 | 数据表 | 一行 | 一单元格 |
     |--------|--------|--------|--------|
     |    迭代对象    |  序列      |   元组     |   元组内的对象     |
+4. 并行遍历 zip() 和 map()
+	zip()函数以一个或者多个可迭代对象（包括文件）为参数，然后返回一个配对元素的元组组成的列表。
+    ```python
+    L1 = ['a','b','c','d']; L2 = [5,6,7,8]
+    L3 = list(zip(L1, L2))  # [('a',5), ('b',6) ...] zip对象是虚拟的可迭代对象。可以构建 list
+    d1 = dic(zip(L1, L2))  # {'a':5, 'b':6 ...} 还可以构建字典
+    for (x,y) in zip(L1, L2):  # 这里使用元组赋值，解包zip()返回的 元组-列表
+    	print(x, ':', y)
+    ```
+    多个列表（大于2）传入 zip()，也会得到 元组-列表：
+    ```python
+    t1 = (1, 2, 3); t2 = (4, 5, 6); t3 = (7, 8, 9)
+    L = list(zip(t1, t2, t3))  # [(1,4,7), (2,5,8), (3,6,9)]
+    ```
+    zip会以最短序列为准，截断元组。而 Python2.x中的map()则会用None补齐缺项，在Python3.x中，map()则成为了一个值生成器。
+    ```python
+    a, b = 'efg', 'hijk'
+    L1 = list(zip(a, b))  # [('e','h'), ('f','i'), ('g','j')]
+    # python2.x
+    L2 = list(map(a,b))  # [('e','h'), ('f','i'), ('g','j'), (None, 'k')]
+    # Python3.x
+    L2 = list(map(ord, a)) # 'efg'一个个传入ord()，然后构建列表： [101, 102, 103]
+	L2 = [ord(c) for c in a]  # 等效语句： [101, 102, 103]
+    ```
 
 
 #### 嵌套 for 循环
@@ -502,10 +529,12 @@ print(L)  # 最终结果 [2, 3, 4, 5]，这才有效
 L = [1, 2, 3, 4]
 L = [x+1 for i in L]
 ```
-只差 并行遍历。P354--P357
 
 
 
+---
+<center>迭代和解析，第一部分</center>
+============
 
 
 
