@@ -37,6 +37,28 @@ a = 17/3   # 5 地板除。两个int相除，返回int。
 b = 17/3.0  # 5.66... 真除法。一旦出现float，就int转成float，整个运算执行float法则
 c = 17//3.0  # 5.0  强制地板除。即使出现浮点数，按照float法则运算，但强制截尾
 ```
+可变的对象，比如 list
+- 使用多重目标赋值、增强赋值语句，要小心，远处的修改会影响其他变量。
+    ```python
+    a = b = [1, 2, 3]
+    c = ['c']
+    c += a  # ['c', 1, 2, 3]
+    print(a, b, c)  # [1, 2, 3] [1, 2, 3] ['c', 1, 2, 3]
+    a += a
+    print(a, b)  # 都为 [1, 2, 3, 1, 2, 3]
+    ```
+- 原处修改对象的函数没有返回值
+    ```python
+    L = [1,2,3,4]
+    L.append(8)  # 返回None，也就是没有返回值。
+    L = L.append(8)  # 他本来想得到修改后的列表，然而却只能得到 L = None
+	for k in D.keys().sort():  # 这写法也是错误的。因为 D.keys().sort()返回None
+    # 正确写法：
+    ks = list(D.keys()); ks.sort()
+    for k in ks:
+    ```
+
+
 
 # 表达式
 常见表达式
@@ -530,6 +552,62 @@ L = [1, 2, 3, 4]
 L = [x+1 for i in L]
 ```
 
+---
+<center>文档 Doc</center>
+============
+##### dir()函数
+获得这类对象所有的属性列表。
+- ```python
+# 交互模式
+>>>import sys
+>>>dir(sys)
+# 模块模式
+import sys
+print(dir(sys))  # 导入的模块也是一个对象
+print(dir([]))  # 查看 list 的属性列表。用 dir(list)也一样
+if dir(str)==dir(''):print('True')  # True 构造函数名，也可以得到同样的结果。
+```
+
+##### 文档字符串`__doc__`
+在模块、函数、类的顶端。Python会自动封装成为文档字符串。比如 test.py
+- ```python
+#!/usr/bin/env Python3
+# -*- coding: utf-8 -*-
+"""This is just a test module"""
+from platform import *
+string = 'module'
+def foo():
+    """__Doc__"""
+    print('run foo()',python_version())
+class Test():
+    """__Doc__"""
+    def __init__(self):
+        print('run __init__', end='\n')
+if __name__ == '__main__':
+    Test()
+    foo()
+    print('__main__',python_version())
+```
+
+之后，可以用`object.__doc__`查看。但是一般不这么做，而是用 help()函数
+- ```python
+import test
+print(test.__doc__)  # 模块文档
+print(test.foo.__doc__)  # 某个函数的文档
+print(test.Test.__doc__)  # 某个类的文档
+```
+
+##### help() 函数，在交互环境下使用
+- ```python
+# 交互模式
+>>>help('a')
+# 模块模式
+import sys
+help(sys)  # 无需print()了，dir()需要print。查看一个模块的 __doc__
+help(sys.getrefcount)  # 查看模块内一个函数的 __doc__
+help(str)  # 内置对象查看
+help(str.replace)  # 内置对象的一个函数
+```
 
 
 ---
