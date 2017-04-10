@@ -52,9 +52,8 @@
     System.out.println(str1+" "+str2+" "+str3);
     }
     ```
-<center>Input 与 Output</center>
-===
 
+# <center>Input 与 Output</center>
 ### 输出
 输出很简单。
 不换行  `System.out.print("How old are you?");`
