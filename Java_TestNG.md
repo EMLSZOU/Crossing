@@ -21,18 +21,22 @@ TestNG的特点：
 - 用Java注解（JDK5.0引入的）定义测试，因此需要JDK5或更高的JDK版本
 - 线程管理：测试可以运行在任意大的线程池中，并且有多种运行策略可供选择（所有测试方法运行在自己的线程中、每个测试类一个线程，等等）。线程安全。
 - 灵活的测试配置、强大的运行模型（不再使用 TestSuite），支持综合类测试（例如，一般没有必要为每个测试用例创建一个被测类的实例）
-- 支持数据驱动测试（通过 @DataProvider 注释），支持参数化
+- 支持数据驱动测试（通过 @DataProvider 注解），支持参数化
 - 内嵌 BeanShell 以进一步增强灵活性
 - 支持依赖测试、并行测试、负载测试、局部故障
 - 涵盖所有类型的测试：单元，功能，端到端，集成等。
 - 默认提供 JDK 的运行时和日志功能
 - 有多种工具和插件支持（Eclipse, IDEA, Maven, 等等）
 
-关于注释
-由于TestNG是基于J2SE5.0的注释特性所构建的。注释是J2SE5.0所新提供的对于元数据的支持。开发人员可以在不改变原有逻辑的情况下，在源文件嵌入一些补充的信息，用来修饰类定义，方法，域变量等等。注释都是由@Interface annotationName 来声明的。使用的时候是在修饰的对象的定义前@annotationName。注释可以包含多个属性，使用的时候为属性赋值，例如@annotationName(prop1=value1,prop2=value2)。程序的开发人员还可以通过Java的反射特性，在运行时获得这些注释的信息。使用注释的好处：
+关于注解Annotations
+由于TestNG是基于J2SE5.0的注解特性所构建的。注解是J2SE5.0所新提供的对于元数据的支持，作用：预编译指令(Compiler instructions)、编译时指令(Build-time instructions)、运行时指令(Runtime instructions)。开发人员可以在不改变原有逻辑的情况下，在源文件嵌入一些补充的信息，用来修饰类、接口、方法、方法参数、成员变量、局部变量等等。语法
+```java
+@Entity(tableName="vehile") @注解名(元素="元素值")。元素:元素值也可以称为属性:属性值。只有一个属性的时候，可以省略元素名，@Entity("vehile")
+```
+使用注解的好处：
 - TestNG框架以@Test作为测试用例的标识，因此，和JUnit不同，TestNG中实现测试逻辑的类不需要继承任何父类，测试方法也无需遵循testXXX的命名规则。
 - 我们可以通过额外的参数注解。
-- 注释是强类型的，所以任何错误都会被编译器探测出来。
+- 注解是强类型的，所以任何错误都会被编译器探测出来。
 
 ## 快速起步 Whetting Your Appetite
 只要建立普通的java 类，用标注 @Test告诉TestNG框架这个方法是测试用力，再用assert来检测错误情况。
@@ -45,7 +49,8 @@ TestNG的特点：
 
    Intelij IDEA：IDEA 7及以上版本有相关插件，但是project里面没有添加相关的jar包，在相关的标记上（比如@Test）点击提示小灯泡，或者按快捷键 Alt Enter，然后选择Add ‘testng’ to class path，就可以了。
 2. **最简单的例子：**
-	这个用例没有涉及被测试的类。TestNG用法：import TestNG；在测试用力（方法）上标记 @Test ；用Assert.assertEquals(实际值，期望值，错误提示)作做检查，判断测试是否通过。
+	这个用例没有涉及被测试的类。TestNG用法：import TestNG；在测试用例（方法）上标记 @Test ；用Assert.assertEquals(实际值，期望值，错误提示)作做检查，判断测试是否通过。
+    一般来说，测试用例都写成void。但是即使有返回值，也会被TestNG忽略，如果不想被忽略，必须在xml里面加参数<suite allow-return-values="true">。
     ```java
     package learnTestNG;
     import org.testng.Assert;
@@ -315,7 +320,7 @@ build.xml
 随着项目开发的进行，单元测试的数量也会成倍的增加。有时仅仅有数量很小的某几个测试用例会运行失败。在这种情况之下，对于每一次修改，可能并不需要跑完所有的测试用例。只需要重新运行前次运行失败的测试用例。TestNG 内建了重新运行上次失败测试用例的功能，下文将会给出重新运行前次错误测试用例的步骤。
 运行一组测试用例，如果这一组测试用例中有失败的用例，TestNG 就会在输出目录中创建一个叫做 testng-failed.xml 的配置文件。这个文件记录了本组测试用例中运行失败的测试用例。使用该文件，用户可以快速的重新运行上次运行失败的测试用例。而无需运行整个测试用例组。如前文所述，运行完 Ant 脚本之后，会在脚本运行的目录之中生成一个 test-output 目录。该目录中，包含 testng-failed.xml 文件。可以用如下的命令运行被标记为运行失败的测试用例。
 列表 3. 重新运行前次运行失败的测试用例
-C:\>java -classpath 
+C:\>java -classpath
 c:/spark/eclipse/plugins/org.testng.eclipse_4.7.0.0/lib/testng-jdk15.jar
 org.testng.TestNG -d test-outputs test-output\testng-failures.xml
 
