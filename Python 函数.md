@@ -310,6 +310,181 @@ x("go")  # go 20
 f("about")  # about 2
 ```
 
+## 参数
+#### 参数传递
+传参的本质是赋值，是将传入的对象赋值给形参（函数的本地变量）。引用是以指针的方式实现的，所以参数实际上是通过指针传递的。参数传递的本质，并不是拷贝传入的对象，而是共享引用。
+在函数内部的参数名赋值不会影响到实参对象，只是将变量名重新引用到另一个对象。
+```python
+def shownum(a):
+	a = 10  # 重新赋值
+	print(a)
+s = 'asgsfg'
+shownum(s)
+print(s) # s并没有被赋值语句而影响
+```
+参数赋值传递，会形成一个对象的共享引用，有可变对象的原地修改问题：
+- **不可变对象**，是不可以原地修改的。
+```python
+def f(a):
+	a += 99  # 传入后，再次赋值的本质是完全引用一个新对象，而不是修改传入的对象
+    return a
+b = 88
+f(b)
+print(b)  # b的值没有任何变化
+```
+- **可变对象**，是可以原地修改的。传入后修改，会影响调用方。这样就不需要 return 语句了。可变参数实参对象对函数来说，既可以作为输入也可以作为输出。
+```python
+def change(a):
+	a[0] = 'change'
+b = [3, 4]
+change(b)
+print(b)  # ['change', 4]
+```
+**避免对可变对象的修改**
+  - 传入拷贝的对象
+  ```python
+ 	L = [1, 2]
+    change(L[:])  #等同于 L_copy=L[:]; change(L_copy)
+  ```
+  - 在函数内拷贝对象（这种方式比较好）
+  ```python
+  def change(a):
+  	a = a[:]
+  ```
+  - 使用不可变的对象（这种方式限制性太强）
+  ```python
+  L = (1, 2)  # 传入的对象都是不可变的。
+  def change(L): pass
+  # 或者在函数将对象转化为不可变的  def change(tuple(L))
+  ```
+
+模拟其他语言“通过引用进行调用”
+```python
+def multiple(x, y):
+    x += 1
+    y = [item + 2 for item in y]
+    return x, y  # 本质是返回一个元组 (x, y)
+a = 1; b = [1, 2]
+a, b = multiple(a, b)  # 对函数的返回值，进行解包赋值。
+print(a, b)
+```
+
+#### 参数匹配语法
+1. 位置参数，默认情况下，参数是通过位置进行匹配的,从左到右一一匹配。调用函数时传入的对象，必须位置相同、数量一致地传递合法的参数。
+```python
+def intro(name, age, say):
+    print("name: %s, age: %d, say:%s" % (name, age, say))
+intro("Jane", 18, "Hello")  # 如果调换顺序，或者少了一个参数，就会引发error
+```
+而附加的参数定义、传入参数的语法，则改变了对象匹配参数名（形参）时的优先级。
+2. 关键字参数，通过变量名指定一个形参接受这个对象，而不是通过位置。这样，传参的顺序就可以任意了。
+```python
+def intro(name, age, say):
+    print("name: %s, age: %d, say:%s" % (name, age, say))
+intro(name="Jane", say="Hello", age=18)  # 指定了具体的参数名，位置就不重要了
+```
+函数调用时，位置参数与关键字参数可以组合
+    - 不能为同一个形参同时指定位置实参与关键字实参
+    - 任何关键字实参必须位于任何位置实参之后
+```python
+def intro(name, age, say):
+    print("name: %s, age: %d, say:%s" % (name, age, say))
+intro("Jane", age=18, say="Hello")  # 混合使用 位置、关键字传参
+intro(name="Jane",18, say="Hello")  # 违法！位置参数必须在最前面
+intro(18, name="Jane", say="Hello")  # 虽然语法可行，但降低了易读性
+intro("Jane", age=18, "Hello")  # 违法！位置参数必须在最前面
+```
+定义函数时，形参列表中`*`可以单独出现(但是`**`不能)。此时函数并不表示接受一个可变长度的实参列表，而是表示`*`后面的所有实参必须作为关键字实参传入
+```python
+def intro(name, *, age, say):
+    print("name: %s, age: %d, say:%s" % (name, age, say))
+intro("Jane", age=18, say="Hello")
+```
+3. 默认参数，函数定义时，可以为参数设定默认值，这样允许调用时传递较少的参数。
+```python
+def intro(a, b=18):
+    print("name: %s, age: %d" % (a, b))
+intro("JaneWei")  # 对于默认实参，可以不用给它传入实参
+def func(a=1, b): pass  # 默认参数后面，不能跟随普通参数
+def func(a, b=1): pass  # 顺序只能是：普通参数、默认参数
+```
+4. 可变参数（函数定义）
+定义函数的时候，以`*`开头的参数，收集任意多的多余位置参数，组成一个元组；而以`**`开头的参数，则收集任意多的关键字参数，组成一个新字典。
+```python
+def intro(a, *b):
+    print("a:",a, "b:",b)
+intro(1)  # a: 1 b: () 没有传多余的位置参数，就是空tuple
+# 传入多余的各种类型参数，都被纳入tuple
+intro(1, 1, [], "xxx")  # a: 1 b: (1, [], 'xxx')
+# intro(1, [], "xxx", a=1) # 非法！这时候就不能用关键字传参了
+def show(a,**b):
+    print("a:", a, "b:", b)
+show(1)  # a: 1 b: {} 没有传入多余的关键字参数，就是空dict
+# 传入多余的各种类型的关键字参数，都被纳入dict
+show(1, b=1, c=[], d='xxx')  # a: 1 b: {'b': 1, 'd': 'xxx', 'c': []}
+# show(1, 2, [], 'xxx')  # 非法！这时候就不能用位置传参了
+def mix(a,*b,**c):
+    print("a:", a, "b:", b, "c:", c)
+mix(1)  # a: 1 b: () c: {} 没有多余的参数，就形成空的tuple和dict
+# 这样定义函数，就可以任意传入参数了。普通参数用位置匹配
+mix(1, 'a', [], c='some')  # a: 1 b: ('a', []) c: {'c': 'some'}
+mix( 'a', [],a=1, c='some') # 但是用普通参数用关键字传入，还是违法！！！
+```
+5. 可变参数解包（调用函数）
+调用函数时，可以用`*`将序列类型的实参（如tuple、list、str、set）打散，形成位置参数；而用`**`将字典实参打散，形成关键字参数
+```python
+def unpack(a, b, c):
+    print("a:", a, "b:", b, "c:", c)
+unpack(*'123')  # a: 1 b: 2 c: 3
+unpack(*['a', 1, None])  # a: a b: 1 c: {1, 2}
+a_set = {1, 2, 3}
+unpack(*a_set)  # a: 1 b: 2 c: 3
+a_dic = {'a': 1, 'b': 'one', 'c': []}
+unpack(**a_dic)  # a: 1 b: one c: []
+# 甚至，将二者混合使用，也是可以的！！！
+unpack(*[1, 2], **{'c': 3})  # a: 1 b: 2 c: 3
+```
+6. Python3的keyword-only参数
+它是一种命名参数，出现在*参数之后，在**参数之前。必须使用关键字语法传递，如果不这么做，则不能传递。
+```python
+def keyword(a, *b, c, **d):
+    print("a:", a, "b:", b, "c:", c, "d:", d)
+keyword(1, 2, 3, c=5, reversed=False, set=True)
+# 结果 a: 1 b: (2, 3) c: 5 d: {'reversed': False, 'set': True}
+```
+7. 函数定义时的参数类型顺序：
+```python
+def func(a,b,c='c',*d,e,f='f',**g):
+    pass
+# a,b:为一般参数
+# c:指定了默认实参
+# d:为可变位置参数
+# e,f:为 keyword-only参数，其中f指定了默认参数
+# g:为可变关键字参数
+```
+调用时必须先赋值形参c，才能进入d。无法跳过c去赋值d
+e,f,g调用时必须都是关键字实参
+8. 函数调用时实参类型顺序：
+```python
+func('a','b',e='e',*seq,**dic)
+#seq是一个序列，它解包之后优先覆盖c，剩下的再收集成元组传给d
+#dic是一个字典，它解包之后优先考虑e,f，剩下的在收集成字典传递给g
+#e='e'这个关键字实参也可以位于'b'之后的任何位置
+#关键字实参必须位于位置实参之后
+```
+例子：
+```python
+def func(a, b, c='c', *d, e, f='f', **g):
+    print(a, b, c, d, e, f, g)
+func('a', 'b', e='e', *[1, 2, 3], **{'x': 0, 'y': 1})
+# 结果 a b 1 (2, 3) e f {'y': 1, 'x': 0}
+```
+    - 通过位置分配位置参数
+    - 通过匹配变量名在分配关键字参数
+    - 额外的非关键字参数分配到 d引用的元组中
+    - 额外的关键字参数分配到g引用的字典中
+    - 默认值分配给剩下未赋值的参数
+9. 
 
 
 
