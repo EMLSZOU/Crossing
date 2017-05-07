@@ -445,14 +445,19 @@ unpack(**a_dic)  # a: 1 b: one c: []
 unpack(*[1, 2], **{'c': 3})  # a: 1 b: 2 c: 3
 ```
 6. Python3的keyword-only参数
-它是一种命名参数，出现在*参数之后，在**参数之前。必须使用关键字语法传递，如果不这么做，则不能传递。
+如果想定义一个函数，调用的时候，传入任意参数，同时又指定关键字参数，就非常困难。这时候，keyWord-only参数就很有用（参见模仿Python3的print函数的例子）。
+它是一种命名参数，出现在`*`参数之后，在`**`参数之前。必须使用关键字语法传递，如果不这么做，则不能传递。
 ```python
 def keyword(a, *b, c, **d):
     print("a:", a, "b:", b, "c:", c, "d:", d)
 keyword(1, 2, 3, c=5, reversed=False, set=True)
 # 结果 a: 1 b: (2, 3) c: 5 d: {'reversed': False, 'set': True}
+#有时 单用一个*指定后面的全是keyWord Only
+def keyWordOnly(a,*,b=1,c):pass  # b和c都必须用关键字传递。b使用了默认值
+keyWordOnly(1,c=3)  # 有默认值的参数可以不传参，但传参必须指定关键字
 ```
-7. 函数定义时的参数类型顺序：
+7. 各类参数的顺序总结：
+**函数定义时的参数类型顺序：**
 ```python
 def func(a,b,c='c',*d,e,f='f',**g):
     pass
@@ -464,7 +469,7 @@ def func(a,b,c='c',*d,e,f='f',**g):
 ```
 调用时必须先赋值形参c，才能进入d。无法跳过c去赋值d
 e,f,g调用时必须都是关键字实参
-8. 函数调用时实参类型顺序：
+**函数调用时实参类型顺序：**
 ```python
 func('a','b',e='e',*seq,**dic)
 #seq是一个序列，它解包之后优先覆盖c，剩下的再收集成元组传给d
@@ -485,9 +490,194 @@ func('a', 'b', e='e', *[1, 2, 3], **{'x': 0, 'y': 1})
     - 额外的关键字参数分配到g引用的字典中
     - 默认值分配给剩下未赋值的参数
 9. 参数语法的例子
+例1：模仿min()内置函数，求任意参数集合、任意对象的最小值
+```python
+def min1(*args):
+    first = args[0] # 以min1()不传参进行调用，这里会异常
+    for arg in args:
+        if arg < first:
+            first = arg
+    return first
+def min2(first, *rest):  # 以min2()不传参进行调用，这里会异常
+    for arg in rest:
+        if arg < first:
+            first = arg
+    return first
+def min3(*args):
+    return sorted(args)[0]  # 以min3()不传参进行调用，这里会异常
+# 但是还可以优化，函数式编程，一个函数技能提取最大值也能提取最小值
+def minmax(test_func,*args):
+    first = args[0] # 以min1()不传参进行调用，这里会异常
+    for arg in args:
+        if test_func(arg, first):
+            first = arg
+    return first
+# 调用的时候用lambda
+print(minmax(lambda x, y: x < y, 1, 42, 6, 345))  # 求最小值
+print(minmax(lambda x, y: x > y, 1, 42, 6, 345))  # 求最大值
+```
+例2：模仿set类型的内置函数，一个或者多个序列，求交集、并集
+```python
+def interset(*args):  # 求交集
+    res = []
+    for x in args[0]:
+        for other in args[1:]:
+            if x not in other: break
+        else:
+            res.append(x)
+    return res
+def union(*args):  # 求并集
+    res = []
+    for seq in args:
+        for x in seq:
+            if x not in res:
+                res.append(x)
+    return res
+print(interset('one', 'some', 'who')) #['o']
+print(union('one', 'some', 'who')) #['o', 'n', 'e', 's', 'm', 'w', 'h']
+```
+例3：模仿Python3的print()内置函数
+实际上并没有这个必要，在Python2中，用下句，就可以直接用print()
+from __future__ import print_function
+```python
+import sys
+def print3(*args, **kargs):
+    sep = kargs.pop('sep', ' ')
+    end = kargs.pop('end', '\n')
+    file = kargs.pop('file', sys.stdout)
+    if kargs:  # 如果有剩余的参数就要报错
+        raise TypeError('extra keywords: %s' %kargs)
+    output = ''
+    first = True
+    for arg in args:
+        output += ("" if first else sep) + str(arg)
+        first = False
+    file.write(output + end)
+print3(1, [2], 3, sep='..', end=' >\n')  # 多个参数混合类型，指定分隔符和行尾
+print3()  # 空行
+print3(88,name='Jhon')  # 错误的keyword参数就报错
+print3('a', {}, file=sys.stderr)  # 重定向 a {}
+# 用Python3的keyWord-only参数编写，传入错误的keyword参数也可以报错
+def print3(*args, sep=' ', end='\n', file=sys.stdout):
+    output = ''
+    first = True
+    for arg in args:
+        pass  # 其余部分与上面相同
+```
 
-10. 
+## 函数高级话题
+#### 聚合性与耦合性
+聚合性：尽量将任务分解成为更有针对性的函数，使得每一个函数都有一个单一的、统一的目标。不要想着把所有的步骤都混合在一起。保持简单，保持简短，一个过长或者有着很深的嵌套的函数，很可能是有设计缺陷的。
+耦合性：尽量让函数和其他编程组件中的外部依赖最小化，函数的自包含性越好，就越容易读懂、复用、维护。虽然函数的输入输出方式有很多，但是尽量用return语句，其次用可变参数。
+- 函数的输入有：参数、全局变量、文件、流对象
+- 函数内部有：本地变量、调用其他函数或者本身
+- 函数的输出有：return语句、可变参数、全局变量、文件、流对象
+- 慎用全局变量，只有真正必要的时候才使用。用全局变量进行函数间的通信，会引发依赖关系和计时问题。更不应该直接修改其他模块的全局变量，这会导致模块之间的耦合。
+- 用可变参数的就地修改代替return语句（比如list.sort()函数的模式取代sorted()的模式），会导致函数定义和函数调用之间的各种耦合。
 
+#### 递归函数
+在函数内部，可以调用其他函数。如果一个函数在内部直接或间接地调用自身，以进行循环运算，这个函数就是递归函数。
+**例1：递归求和**
+```python
+def mysum(l):
+    print(l)  # 打印递归的每层堆栈变量
+    if not l:
+        return 0
+    else:
+        return l[0] + mysum(l[1:])
+print(mysum([1, 2, 3, 4]))  # 10
+# [1, 2, 3, 4]
+# [2, 3, 4]
+# [3, 4]
+# [4]
+# []
+```
+一层层调用，一层层返回：在每一层，这个函数都递归地调用自己，最后就到了起始点，一个空list；从起始点开始返回0，之后每一层返回相加的和。对函数调用的每一个打开的层级，在运行时调用堆栈上都有自己的一个函数本地作用域的副本，这就意味着，变量`l`在每个层级都是不同的。
+可以改写为熟悉的for/while循环。循环比递归调用更加简单易读，并且内存和CPU占用都更低。
+```python
+sum = 0
+for x in l: sum += x
+while l:
+    sum += l[0]
+    l = l[1:]
+```
+
+还有用三元表达式优化的方案。后两者可以运算符重载，不仅仅可以递归求和，还可以拼接字符串。最后一种可以用于任何可迭代对象，比如文件。
+```python
+def mysum(l):
+    return 0 if not l else l[0] + mysum(l[1:])
+def mysum(l):  # 可以用于任何使用+运算符的类型，比如字符串拼接
+    return l[0] if len(l)==1 else l[0] + mysum(l[1:])
+def mysum(l):
+    first, *rest = l
+    return first if not rest else first + mysum(rest)
+print(mysum(['Hel', 'l', 'o']))  # Hello
+```
+**例2：上例，间接递归**
+直接递归是函数调用自身，而间接递归，是两个函数相互循环调用。
+```python
+def mysum(l):
+    if not l:return 0
+    else:
+        return nonempty(l)
+def nonempty(l):return l[0] + mysum(l[1:])
+# 三元表达式也可以改写
+def mysum(l):
+    return l[0] if len(l) == 1 else nonempty(l)
+def nonempty(l): return l[0] + mysum(l[1:])
+```
+
+**例3：递归计算阶乘**
+因为`n! = 1 * 2 * 3 * ... * (n-1) * n = (n-1)! * n`，
+所以`fact(n) =  fact(n-1) * n`，只有n=1时需要特殊处理。
+```python
+def myfactorial(n):
+    if n == 1:
+        return 1
+    return n * myfactorial(n - 1)
+```
+递归函数的优点是定义简单，逻辑清晰。理论上，所有的递归函数都可以写成循环的方式，但循环的逻辑有时不如递归清晰（也可能更简单）。但是递归在内存和CPU性能方面却更差，特别要注意防止栈溢出。在计算机中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。可以试试计算 myfactorial(10000)。
+**例4：递归处理无限结构**
+有些数据没有固定的格式，如果要运算，简单的循环体是无法操作的。比如json数据，比如下例
+```python
+# 求一个非线性数列的和
+sublist = [1, [2, [3, 4], 5], 6, [7, 8]]
+def sumtree(l):
+    total = 0
+    for x in l:
+        if not isinstance(x, list):total += x
+        else: total += sumtree(x)
+    return total
+print(sumtree(sublist))  # 36
+```
+所以：简单的线性迭代，用for/while更简单、更高效，而非线性的数据结构的运算，就非得递归不可了。
+
+#### 函数间接调用
+Python的函数，和字符串、数字一样，都是对象（内存里的一块数据区域），可以像普通对象一样操作它们：赋值给变量名、组成数据结构、传递给其他函数、作为一个函数的返回值。只是函数刚好支持一个特殊的操作——调用而已。
+```python
+# 函数作为对象
+def echo(msg):
+    print(msg)
+def inderect(func, arg):  # 函数对象作为参数，传入另一个函数中
+    func(arg)
+x = inderect  # 函数对象赋值给变量名
+x(echo, 'Hello')  # Hello
+# 嵌套在数据结构中，然后for循环调用
+schedule = [(echo, 'Hello'), (echo, 'world!')]
+for (func, arg) in schedule:
+    func(arg)
+# 函数对象作为一个函数的返回值
+def make(label):
+    def echo(msg):
+        print(label, ":", msg)
+    return echo
+f = make('make1')
+f(1)  # make1 : 1
+```
+#### 函数内省工具
+
+
+#### 函数属性和注解
 
 
 
