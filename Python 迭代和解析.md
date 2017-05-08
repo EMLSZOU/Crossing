@@ -10,8 +10,9 @@ print(f.next(), end='')  # 调用 next()等同于调用__next__()
 print(f.__next__(), end='')  # 文件读完，__next__()会引发StopIteration异常
 ```
 
-`__next__()`接口就是迭代协议：前进就得到下一个结果，而到达末尾的时候就会引发StopIteration异常。
+迭代协议：可迭代的对象定义了一个`__next__()`接口，调用它要么得到下一个运算结果，要么是到达末尾，引发了一个特殊的StopIteration异常来终止迭代。
 任何支持迭代协议的对象都是可迭代的。而在迭代工具（比如for循环）中，本质也是调用`__next__()`获得每一次的结果，而且在得到StopIteration异常时离开。
+每一个迭代语境（for循环、sum、map、sorted、any、all、list等等）都会自动触发迭代，而不用手动地使用next(x)
 迭代协议的用法：
 - 如果一次性地读取文件到内存，可能会造成内存崩溃：
 ```python
@@ -82,7 +83,7 @@ print(next(ib), next(ib))  # 0 1
 - enumerate()等函数，在可迭代对象的基础上，返回一个可迭代对象
 
 ##### 列表解析
-for循环、列表解析，是最常见的迭代工具。性能上，速度比for循环快一倍，数据量大的时候更是如此。功能上，列表解析能够实现的需求也很多。
+for循环、列表解析，是最常见的迭代工具。性能上，解析式速度比for循环快一倍，数据量大的时候更是如此。功能上，列表解析能够实现的需求也很多。
 修改一个列表的每个元素：每个都加上10
 ```python
 l = [1, 2, 3, 4, 5]
@@ -118,11 +119,11 @@ lines = [line.replace(' ', '!') for line in open('t.txt', 'r')]
 # 多个运算：是否存在某个字母，然后索引第一个字母，返回元组(Ture, 'i')组成的列表
 lines = [('sys' in line, line[0]) for line in open('t.txt', 'r')]
 ```
-列表解析式，也可以转为 集合解析、字典解析、生成器解析————修改一下外面的括号就可以了
+列表解析式，也可以转为 集合解析、字典解析、生成器解析————修改一下外面的括号就可以了。Python2中没有集合和字典解析。
 ```python
+gen =( em for em in enumerate(open('t.txt')))
 set(open('t.txt'))  # 等同于 {line for line in open('t.txt')}
 dic = {index: line for index, line in enumerate(open('t.txt'))}
-gen =( em for em in enumerate(open('t.txt')))
 ```
 
 
@@ -184,6 +185,161 @@ func(*open('t.txt'))
 ##### 其他的迭代主题
 可迭代的函数：生成器与yield
 可迭代的类：用户定义的类，通过__iter__和__getitem__运算符重载，变得可迭代，允许在任何迭代环境中使用任意的对象和操作。
+
+
+# 函数章节的迭代
+## 函数式编程工具
+map和filter函数，是将一个操作（传入的函数对象）映射到可迭代对象中。受其启发和影响，Python最终形成了解析式（比如列表解析）。但是解析式比这些函数式编程工具更有用。
+对比for循环、map、列表解析。例子：将一个字符串转成ASCII编码列表
+```python
+# ord()可以把一个字符转成ASCII编码
+print(ord('n'))  # 110
+# 将一个字符串的ASCII编码组成列表。1. for循环
+res = []
+for char in 'one':
+    res.append(ord(char))
+print(res)  # [111, 110, 101]
+# 2. map函数，注意是函数名，而不是带括号的函数调用func()
+res = list(map(ord, 'one'))  # list()不能用[]替代
+# 3. 列表解析式
+res = [ord(c) for c in 'one']
+```
+## 解析式
+受到函数式编程工具（map、filter、reduce等）的影响，Python最终产生了更为通用的解析式（最常见的是列表解析）。
+**解析式，**是在一个可迭代对象上应用一个任意的表达式，然后将结果形成一个指定的对象（序列、可迭代对象）。它比map函数更方便的地方是：可以用于任何表达式，这样就无需写lambda了，更为简洁。
+`[expression for item in itrable]`
+```python
+square = [i**2 for i in range(4)]  # [0, 1, 4, 9]
+square = list(map(lambda x: x ** 2, range(4)))
+```
+带if子句的解析式`[expression for item in itrable if condition]`
+```python
+even = [i for i in range(4) if i % 2 == 0]  # 提取偶数[0, 2]
+even = list(filter(lambda x: x % 2 == 0, range(4)))
+even_square = [i ** 2 for i in range(4) if i%2==0]  # 偶数的平方[0, 4]
+even_square = list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, range(4))))
+```
+嵌套的解析式。解析式可以嵌套任意数量的for循环，每个for循环都可以带if子句
+```
+[expression
+for item1 in itrable1 (if condition1)
+for item2 in itrable2 (if condition2)...
+]```
+例子：
+```python
+res = [x + y for x in [0, 1, 2] for y in [10, 20, 30]]
+# 等效的for
+res = []  # 结果[10, 20, 30, 11, 21, 31, 12, 22, 32]
+for x in [0, 1, 2]:
+    for y in [10, 20, 30]:
+        res.append(x+y)
+# 带if子句的嵌套
+res = [(x, y) for x in range(5) if x % 2 == 0 for y in range(5) if y % 2 != 0]
+res = []  # 结果[(0, 1), (0, 3), (2, 1), (2, 3), (4, 1), (4, 3)]
+for x in range(5):
+    if x % 2 == 0:
+        for y in range(5):
+            if y % 2 != 0:
+                res.append((x, y))
+```
+**解析式和矩阵（多维数组）**
+```python
+M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+N = [[2, 2, 2], [3, 3, 3], [4, 4, 4]]
+print(M[1], M[1][2])  # 也是用索引取值[4, 5, 6] 6
+# 列表解析式取出第一竖列
+# 对行数进行迭代，然后从矩阵提取一列。适合于特殊提取，比如提取偶数行
+rank = [M[rowindex][1] for rowindex in [0, 1, 2]]
+# 对每一行进行迭代，从一行提取一列。适合于通用提取
+rank = [row[1] for row in M]  # [2, 5, 8]
+# 提取对角线的值
+diagonal = [M[i][i] for i in range(len(M))]  # [1, 5, 9]
+diagonal = [M[i][len(M) - i - 1] for i in range(len(M))]  # [3, 5, 7]
+```
+多个矩阵混合运算。请注意得到数列和矩阵，row和col的循环层次不一样。
+```python
+# 每个矩阵的数对应相乘，得到新数列 [2, 4, 6, 12, 15, 18, 28, 32, 36]
+mix = [M[row][col] * N[row][col] for row in range(3) for col in range(3)]
+# 每个矩阵的数对应相乘，得到新矩阵 [[2, 4, 6], [12, 15, 18], [28, 32, 36]]
+mix = [[M[row][col] * N[row][col] for col in range(3)] for row in range(3)]
+# 实质是：内层的每一列迭代构建一个数列，外层的每一行迭代构建一个数列。for循环写法如下：
+res = []
+for row in range(3):
+    temp = []
+    for col in range(3):
+        temp.append(M[row][col] * N[row][col])
+    res.append(temp)
+```
+解析式和列选择（比如选取数据库查询结果的某一列）
+这种用法与二维数组非常类似。Python的标准SQL数据库API返回的查询结果，一般都是tuple组成的list：列表就是数据表，tuple是行，元组中的元素就是一个个数值。
+```python
+table = [('Bob', 35, 'manager'), ('Jhon', 40, 'sale')]
+# 提取表内所有员工的年龄。可以用for循环，但是解析式和map会更直观，更快
+ages = [age for (name, age, job) in table]  # [35, 40]
+ages = list(map(lambda:(name, age, job):age, table))  # 仅用于python2.x
+ages = [row[1] for row in table]
+ages = list(map(lambda row: row[1], table))
+```
+列表解析、map()与文件对象处理
+```python
+lines = open('a.txt').readlines()
+print(lines) # ['Beautiful\n', 'is better\n', 'than\n', 'ugly.\n']
+# 如果要去除行尾的\n换行符，可以用for循环，但是解析式和map更为简洁直观
+lines = [line.rstrip() for line in open('a.txt').readlines()]
+# open('a.txt').readlines()一次加载到内存，不好
+lines = [line.rstrip() for line in open('a.txt')]
+lines = list(map(lambda line: line.rstrip(), open('a.txt')))
+```
+
+但是，嵌套太多的时候，解析式会比较难读。
+易读性：for循环 > map() > 解析式
+简洁性和效率(CPU速度和内存占用)：解析式 > map() > for循环。解析式和map在底层是以C语言实现的，而for循环是PVM用字节码运行的，所以速度差异非常大。
+易用性：解析式、map都是表达式，而for是语句，所以有些地方不能使用for循环，比如lambda、列表、字典。
+## 生成器Generator
+生成器不立即产生结果，而是在需要的时候一次返回一个结果。有两种生成器
+- 生成器函数：def语句编写的普通函数，但是不用return一次返回所有的结果，而是用yield一次返回一个结果，在每个结果之间挂起和继续它们的状态。
+- 生成器解析式：类似于列表解析式，但不是一次返回一个结果列表，而是返回一个生成器对象，调用它就能一次返回一个结果。
+
+不一次性地构建一个列表，就能节省内存空间，并且将计算时间分散到各个结果请求。当结果是一个很大的列表，或者计算每一个时间都很长的时候，这种功能尤其有用。但实际上生成器运行的速度会更慢，所以对于非常大的运算来说是很好的选择。
+生成器都是迭代器，都是可迭代对象，支持迭代协议。
+生成器自动在生成一个值的时候挂起，保存整个本地作用域的状态，并在下一次请求的时候继续。每一次生成一个值后，控制权都返回给调用者。
+生成器也可能有一条return语句，如果出现return，它必然会在def语句块的末尾，直接终止值的生成。但这是没有必要的，任何函数退出执行的时候，引发了StopIteration异常，从而实现了迭代的终止。
+- ```python
+def gensquares(n):
+    for i in range(n):
+        yield i ** 2
+x = gensquares(4)
+print(x)  # <generator object gensquares at 0x102180938>
+print(next(x))  # 0
+gencompre = (i ** 2 for i in range(10))
+print(gencompre) # <generator object <genexpr> at 0x102180a98>
+next(gencompre)
+# 在一个有括号的环境里，生成器解析式就没有必要使用括号了
+l = sorted(i ** 2 for i in range(10))
+```
+
+生成器本身就是一种迭代器，所以没有必要像列表一样使用iter()函数创建一个迭代器。
+
+
+
+扩展生成器协议
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
