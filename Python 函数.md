@@ -26,16 +26,24 @@ other_name()  # 用别名调用函数对象
 a_list = [function_name, other_name] # 保存在列表、字典等数据结构中
 ```
 **参数：**括号内包含0或者多个参数，称为形参，它的本质是变量名。在函数调用的时候，一个个对象赋值给形参，这样就将对象（实参）传给了函数，作为函数的输入。
-**return：**函数可以有return，也可以没有。return表示函数调用结束，并且作为函数的输出，将结果（一个或者一些对象）返回给调用处，没有返回值的函数默认返回None。如果函数没有return，默认在流程执行完毕的时候将控制权交回调用处。在生成器中，yield取代return。
+**return：**函数可以有return，也可以没有。return表示函数调用结束，并且作为函数的输出，将结果（一个或者一些对象）返回给调用处。在生成器中，yield取代return，每次返回一个结果，将自己的状态挂起，并且将控制权返回给调用者。如果没有return，或者有return却没有返回值，函数默认返回None。如果函数没有return，默认在流程执行完毕的时候将控制权交回调用处。没有返回值的函数，很像其他语言的“过程”，只是执行一个任务，而不需要返回结果。
+要密切关注函数的返回值，比如list.sort()和list.append()没有返回值，会造成以下的错误
+- ```python
+L = [1, 3, 2]
+L = L.sort() # 错误
+L = L.append(4) # 错误
+```
+
 **调用：**调用函数的语法含简单，函数名加上括号function_name()。如果要传参，则加上参数。
-```python
+- ```python
 def times(x, y):
 	return x*y
 print(times(3, 4))  # 12
 print(times("a",3))  #“aaa”
 ```
+
 多态：一个操作的意义、结果，取决于被操作对象的类型，只要这个对象满足预期的要求（扩展对象接口protocol），就能处理，如果不支持，Python就会自己检测出来，引发异常。比如times()函数，传给它不同类型的值，执行的就是不同的操作。这正是Python的核心概念。所以，Python没有必要像静态类型语言（C/C++/Java）一样强制限定数据类型。不强制限定数据类型，让Python自己在运行的时候检测类型匹配，就可以少些很多代码，这就是Python简单灵活的根本原因。
-```python
+- ```python
 def intersect(seq1, seq2):  # 等同于 [x for x in seq1 if x in seq2]
 	res = []
     for item in seq1:
@@ -46,6 +54,7 @@ s1, s2 ,L1= "abc", "bcd",['a','b','d']
 a = intersect(s1, s2) # ['b','c']
 b = intersect(s2, L1)  #['b', 'd']
 ```
+
 本地变量：只是在函数内可见，而且仅在函数运行时候存在的变量。在上例中，函数内创建的变量res，这是最常见的本地变量；参数seq1和seq2，是通过赋值被传入的，也是本地变量；for循环也是将一个个对象赋值给变量，item也是本地变量。
 
 ## 作用域
@@ -310,11 +319,38 @@ x("go")  # go 20
 f("about")  # about 2
 ```
 
+#### 再看本地变量、global、nonlocal
+请注意：**本地变量、作用域声明是静态检测的，而不是运行时检测的**（相当于java的声明一样）！！！在func1()中，m在声明nonlocal前赋值，就被认为是本地变量。而在func2()中，既然没有声明global，并且在def语句块中出现本地的赋值语句，就被认为是本地变量，所以print()语句使用了不存在的变量名。
+- ```python
+def func1():
+    m = 'b'
+    def inner():
+        m = 1
+        nonlocal m  # SyntaxWarning: name 'm' is assigned to before nonlocal declaration
+        print(m)  # 1
+    inner()
+func1()
+n = 2
+def func2():
+    print(n) # UnboundLocalError: local variable 'n' referenced before assignment
+    n = 'a'
+func2()
+```
+如果在赋值之前声明global或者nonlocal，那就定义为全局变量/nonlocal变量，并且一个函数内，不可能出现同名的本地变量+global变量/nonlocal变量。如果非得使用同名的本地变量和全局变量，则可以如下：
+- ```python
+n = 2
+def func2():
+    import __main__
+    print(__main__.n) # 2
+    n = 'a'
+func2()
+```
+
 ## 参数
 #### 参数传递
 传参的本质是赋值，是将传入的对象赋值给形参（函数的本地变量）。引用是以指针的方式实现的，所以参数实际上是通过指针传递的。参数传递的本质，并不是拷贝传入的对象，而是共享引用。
 在函数内部的参数名赋值不会影响到实参对象，只是将变量名重新引用到另一个对象。
-```python
+- ```python
 def shownum(a):
 	a = 10  # 重新赋值
 	print(a)
@@ -322,6 +358,7 @@ s = 'asgsfg'
 shownum(s)
 print(s) # s并没有被赋值语句而影响
 ```
+
 参数赋值传递，会形成一个对象的共享引用，有可变对象的原地修改问题：
 - **不可变对象**，是不可以原地修改的。
 ```python
@@ -400,14 +437,25 @@ def intro(name, *, age, say):
     print("name: %s, age: %d, say:%s" % (name, age, say))
 intro("Jane", age=18, say="Hello")
 ```
-3. 默认参数，函数定义时，可以为参数设定默认值，这样允许调用时传递较少的参数。
-```python
-def intro(a, b=18):
-    print("name: %s, age: %d" % (a, b))
-intro("JaneWei")  # 对于默认实参，可以不用给它传入实参
-def func(a=1, b): pass  # 默认参数后面，不能跟随普通参数
-def func(a, b=1): pass  # 顺序只能是：普通参数、默认参数
-```
+3. 默认参数，函数定义时，可以为参数设定默认值，这样允许调用时传递较少的参数。参数在def语句执行时检测——也就是函数创建的时候检测，并且会保存为一个对象，附在函数对象上，成为一个属性。默认参数的值也会附在函数对象上。
+    ```python
+    def intro(a, b=18):
+        print("name: %s, age: %d" % (a, b))
+    print(intro.__code__.co_varnames) # 参数被附在函数对象上 ('a',  'b')
+    intro("JaneWei")  # 对于默认实参，可以不用给它传入实参
+    def func(a=1, b): pass  # 默认参数后面，不能跟随普通参数
+    def func(a, b=1): pass  # 顺序只能是：普通参数、默认参数
+    ```
+    如果默认参数是可原地修改的对象，每次调用改变它的值，这样就能保存它的状态。这有点像C语言的静态本地函数变量。但是，Python有更好的方式在调用之间保持状态（比如使用类）。
+    ```python
+    def func(x=[]):
+        x.append(1)
+        print(x)
+    func([2])  #[2, 1]
+    func()  # [1]
+    func()  # [1, 1]
+    func()  # [1, 1, 1]
+    ```
 4. 可变参数（函数定义）
 定义函数的时候，以`*`开头的参数，收集任意多的多余位置参数，组成一个元组；而以`**`开头的参数，则收集任意多的关键字参数，组成一个新字典。
 ```python
