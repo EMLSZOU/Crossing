@@ -895,6 +895,3 @@ def myreduce(func, seq):
         total = func(total, item)
     return total
 ```
-
-
-
