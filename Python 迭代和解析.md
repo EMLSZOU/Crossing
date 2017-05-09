@@ -119,8 +119,12 @@ lines = [line.replace(' ', '!') for line in open('t.txt', 'r')]
 # 多个运算：是否存在某个字母，然后索引第一个字母，返回元组(Ture, 'i')组成的列表
 lines = [('sys' in line, line[0]) for line in open('t.txt', 'r')]
 ```
-列表解析式，也可以转为 集合解析、字典解析、生成器解析————修改一下外面的括号就可以了。Python2中没有集合和字典解析。
-```python
+
+列表解析式，修改一下外面的括号就可以转为 集合解析、字典解析、生成器解析。Python2中只有列表解析和生成器解析，没有集合和字典解析。
+字典和集合解析式，本质上是把生成器表达式(x for x in seq)传递给构造函数set()/dict()而已，这是一个语法糖（只是人类用起来方便，但对于计算机来说没有什么本质变化）。
+
+- ```python
+# 生成器解析式
 gen =( em for em in enumerate(open('t.txt')))
 set(open('t.txt'))  # 等同于 {line for line in open('t.txt')}
 dic = {index: line for index, line in enumerate(open('t.txt'))}
@@ -183,8 +187,10 @@ func(*open('t.txt'))
 
 
 ##### 其他的迭代主题
+
 可迭代的函数：生成器与yield
-可迭代的类：用户定义的类，通过__iter__和__getitem__运算符重载，变得可迭代，允许在任何迭代环境中使用任意的对象和操作。
+
+可迭代的类：用户定义的类，通过`__iter__`和`__getitem__`运算符重载，变得可迭代，允许在任何迭代环境中使用任意的对象和操作。可迭代的类，可以实现更丰富的逻辑和数据结构选项。
 
 
 # 函数章节的迭代
@@ -318,11 +324,144 @@ next(gencompre)
 l = sorted(i ** 2 for i in range(10))
 ```
 
-生成器本身就是一种迭代器，所以没有必要像列表一样使用iter()函数创建一个迭代器。
+**扩展生成器协议:**send()和throw(type)方法（例子不清晰）
+
+**生成器、迭代器：**
+
+生成器（函数、解析式都是）本身就是一种迭代器，所以没有必要像列表一样使用iter()函数创建一个迭代器。另外，它不能像列表这样的可迭代对象一样，产生多个迭代器，同时进行多个迭代。
+- ```python
+g = (c * 4 for c in 'Spam')
+print(iter(g) is g)  # True，说明生成器自己就是迭代器
+# 如果强制生成两个迭代器，就会互相影响——因为本质上是同一个迭代器
+Iter1 = iter(g)
+Iter2 = iter(g)
+print(next(Iter1), next(Iter2), next(Iter1)) # SSSS pppp aaaa
+# 列表之类，可以产生多个迭代器，互不影响。并且会反映出列表的原地修改
+L = [1, 2, 3, 4]
+it1, it2 = iter(L), iter(L)
+print(next(it1), next(it2), next(it1), next(it2)) # 1 1 2 2
+del L[2:]
+print(next(it1), next(it2))  # StopIteration
+```
+
+## 用迭代工具模拟map和zip
+Python3里，zip和map函数的用法
+- ```python
+# zip()：在最短的序列处截断，生成器每次返回一个tuple
+L = list(zip('abc', 'xyz123')) #[('a', 'x'), ('b', 'y'), ('c', 'z')]
+# map()：一次次地将序列的值传入函数，然后yield一个结果
+L = list(map(abs, [-2, -1, 0, 1, 2]))  # [2, 1, 0, 1, 2]
+# map()：函数需要N个参数，就用N个序列。在最短的序列处截断
+L = list(map(pow, [1, 2, 3], [2, 3, 4, 5])) # [1, 8, 81]
+```
 
 
 
-扩展生成器协议
+模拟Python3的map函数
+- ```python
+def mymap(func, *seqs):
+    res = []
+    for args in zip(*seqs):
+        res.append(func(args))
+    return res
+# 用列表解析替代for循环
+def mymap(func, *seqs):
+    return [func(*args) for args in zip(*seqs)]
+# 真正的map()：使用yield的generator
+def mymap(func, *seqs):
+    for args in zip(*seqs):
+        yield func(args)
+```
+
+Python2和3的zip是一样的，但是Python2的map，其实是增强版的zip，会自动补全
+- ```python
+a = zip([1, 2, 3], [4, 5, 6, 7])
+print a # [(1, 4), (2, 5), (3, 6)]
+a = zip([1, 2, 3], [4, 5, 6, 7], ['a', 'b', 'c'])
+print a # [(1, 4, 'a'), (2, 5, 'b'), (3, 6, 'c')]
+a = map(None, [1, 2, 3], [4, 5, 6, 7])
+print a # [(1, 4), (2, 5), (3, 6), (None, 7)]
+```
+
+
+
+模拟zip和Python2的map：
+- ```python
+def myzip(*seqs):
+    seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
+    res = []
+    while all(seqs): # 只要出现空list，就为False
+        res.append(tuple(s.pop(0) for s in seqs))
+    return res
+# 在Python2 中模拟 自动填充的map
+def mymappad(*seqs, **kargs): # python2没法keyword-only
+    pad = kargs.pop('pad', None)
+    if kargs: raise TypeError("Extra args: %s" % kargs)
+    seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
+    res = []
+    while any(seqs): # 所有的都为空list，就为False
+        res.append(tuple((s.pop(0) if s else pad )for s in seqs))
+    return res
+a = mymappad([1, 2, 3], [4, 5, 6, 7]) # [(1, 4), (2, 5), (3, 6), (None, 7)]
+# 在Python3中模拟 自动填充的map
+def mymappad(*seqs, pad=None): # python2没法keyword-only
+    seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
+    res = []
+    while any(seqs): # 所有的都为空list，就为False
+        res.append(tuple((s.pop(0) if s else pad )for s in seqs))
+    return res
+```
+将它们改写为yield的generator函数
+```python
+def myzip(*seqs):
+    seqs = [list(s) for s in seqs]
+    while all(seqs):
+        yield tuple(s.pop(0) for s in seqs)
+def mymappad(*seqs, pad=None):
+    seqs = [list(s) for s in seqs]
+    while any(seqs):
+        yield tuple((s.pop(0) if s else pad )for s in seqs)
+```
+如果使用len()来控制，而不是pop()/any()/all()来控制，就只能适用于序列，而不适用于所有的可迭代对象。
+```python
+def myzip(*seqs):
+    minlen = min(len(s) for s in seqs)
+    return [tuple(s[i] for s in seqs) for i in range(minlen)]
+# 在Python2 中模拟 自动填充的map
+def mymappad(*seqs, pad=None): # python2没法keyword-only
+    maxlen = max(len(s) for s in seqs)
+    return [tuple((s[i] if len(s)>i else pad) for s in seqs) for i in range(maxlen)]
+```
+如果要将它们改写为生成器，return的不是列表解析式，而是生成器解析式就可以了
+```python
+def myzip(*seqs):
+    minlen = min(len(s) for s in seqs)
+    return (tuple(s[i] for s in seqs) for i in range(minlen))
+# 在Python2 中模拟 自动填充的map
+def mymappad(*seqs, pad=None): # python2没法keyword-only
+    maxlen = max(len(s) for s in seqs)
+    return (tuple((s[i] if len(s)>i else pad) for s in seqs) for i in range(maxlen))
+```
+
+单次迭代，还有map在Python2和3的差别，这是影响很大的
+- ```python
+def iterzip(*args):
+    # 因为map在2与3中的工作方式不同，在Python3中，生成  list <map object at 0x00947270>
+    iters_list = map(iter, args) # python2 [<listiterator object at 0x02726470>, <listiterator object at 0x02726490>]
+    print "list",iters_list
+    while iters_list:
+        res = [next(i) for i in iters_list]
+        yield tuple(res)
+a = iterzip([1, 2, 3], [4, 5, 6, 7])
+# 在Python2中正常工作
+print a # <generator object iterzip at 0x0290AAD0>
+for i in a: print i, # (1, 4) (2, 5) (3, 6)
+# 在Python3中，诡异无限循环。应该修改为iters_list = list(map(iter, args))
+for i in a: print(i,end=' ') # (1, 4) () () ()...
+```
+
+
+## 统计各种迭代工具的性能（耗时、内存占用）
 
 
 
@@ -351,3 +490,4 @@ http://www.cnblogs.com/huxi/archive/2011/07/01/2095931.html
 http://www.cnblogs.com/huxi/archive/2011/07/14/2106863.html
 并发编程
 https://zhuanlan.zhihu.com/p/25377631
+
