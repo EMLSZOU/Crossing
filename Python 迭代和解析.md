@@ -463,23 +463,114 @@ for i in a: print(i,end=' ') # (1, 4) () () ()...
 
 ## 统计各种迭代工具的性能（耗时、内存占用）
 
+一般来说，列表解析最快，map会随函数的不同而性能不同，而生成器则把内存需求降到了最小。但是，每种迭代的性能表现究竟如何，就需要性能分析了。
+####执行内置函数的效率比较
+```python
+import time, sys
+reps = 10000  # 重复运行多少次
+repsList = range(reps) # 把range()放在运行计时之外
+def timer(func, *pargs, **kargs):
+    start = time.clock() #开始计时 time.time()也可。精度随操作系统而不同
+    for i in repsList:
+        ret = func(*pargs, **kargs)
+    elapsed = time.clock() - start # 结束时间减去开始时间
+    return elapsed, ret
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def forLoop():
+    res = []
+    for x in repsList:
+        res.append(abs(x))
+    return res
+def listComp():
+    return [abs(x) for x in repsList]
+def mapCall():
+    return list(map(abs, repsList))
+def genExpr():
+    return list(abs(x) for x in repsList)
+def genFunc():
+    def gen():
+        for x in repsList:
+            yield abs(x)
+    return list(gen())
+if __name__ == "__main__":
+    print(sys.version)
+    for operate in (forLoop, listComp, mapCall, genExpr, genFunc):
+        elapsed, result = timer(operate)
+        print('-' * 33)
+        print('%-9s: %.5f => [%s...%s]'
+              % (operate.__name__, elapsed, result[0], result[-1]))
+```
+```html
+3.5.2 (Jun 26 2016, 10:47:25)[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
+---------------------------------
+forLoop  : 19.67708 => [0...9999]
+---------------------------------
+listComp : 12.28654 => [0...9999]
+---------------------------------
+mapCall  : 9.42848 => [0...9999]
+---------------------------------
+genExpr  : 15.93393 => [0...9999]
+---------------------------------
+genFunc  : 16.23100 => [0...9999]```
+速度：map>列表解析>生成器解析>生成器函数>for循环。map在内置函数方面有很大的优势。而生成器表达式，虽然和生成器函数的结果是一样的，但是内部实现的原理很不一样。
+####执行操作的效率比较
+如果不是执行abs(x)这样的内置函数，而是一个普通的 x+10操作，则把代码稍微改动一下，用自定义的abs()覆盖内置的abs()函数。
+```python
+def abs(x):
+    return x+10
+```
+结果如下。速度：列表解析>map调用>生成器解析>生成器函数>for循环。
+```html
+---------------------------------
+forLoop  : 31.83384 => [10...10009]
+---------------------------------
+listComp : 24.01207 => [10...10009]
+---------------------------------
+mapCall  : 24.13557 => [10...10009]
+---------------------------------
+genExpr  : 27.12141 => [10...10009]
+---------------------------------
+genFunc  : 27.13629 => [10...10009]
+```
+####计时的方法的优化
+1.不同的系统，调用不同的计时器。
+2.多次运行，选出最佳，就可过滤系统的性能波动。
+3.可以指定运行次数。
+- ```python
+import time, sys
+def timer(func, *pargs, **kargs):
+    if sys.platform[:3] == 'win': # 不同的系统，不同的计时器
+        timemeter = time.clock
+    else: timemeter = time.time
+    def showargs(*args):pass # 改为print(args)就能跟踪参数
+    _reps = kargs.pop('-reps', 10000)
+    showargs(func, pargs, kargs, _reps)
+    repsList = range(_reps)
+    start = timemeter()
+    for i in repsList:
+        ret = func(*pargs, **kargs)
+    elapsed = timemeter() - start
+    return elapsed, ret
+def best(func, *pargs, **kargs): # 多次运行，过滤系统性能波动的影响
+    _reps = kargs.pop('-reps', 10000)
+    best = 2 ** 32
+    for i in range(_reps):
+        (time, ret) = timer(func, *pargs, _reps=1 **kargs)
+        if time < best: best = time
+    return (best, ret)
+```
+相应的调用代码，也变为：
+- ```python
+if __name__ == "__main__": # 启动测试的代码
+    print(sys.version)
+    for tester in (timer, best):
+        print('<%s>' % tester.__name__)
+        for operate in (forLoop, listComp, mapCall, genExpr, genFunc):
+            elapsed, result = timer(operate)
+            print('-' * 33)
+            print('%-9s: %.5f => [%s...%s]'
+                  % (operate.__name__, elapsed, result[0], result[-1]))
+```
 
 
 
