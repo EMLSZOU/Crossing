@@ -82,53 +82,6 @@ print(next(ib), next(ib))  # 0 1
 内置的数据类型，如果可以调用iter()产生一个新的迭代对象，这说明这种数据类型支持多个迭代器；而如果一个对象自身就是迭代器，那么它只有一个迭代器。如果我们编写可迭代的类，也是同样的。
 - enumerate()等函数，在可迭代对象的基础上，返回一个可迭代对象
 
-##### 列表解析
-for循环、列表解析，是最常见的迭代工具。性能上，解析式速度比for循环快一倍，数据量大的时候更是如此。功能上，列表解析能够实现的需求也很多。
-修改一个列表的每个元素：每个都加上10
-```python
-l = [1, 2, 3, 4, 5]
-for i in range(len(l)):  # for index,item in enumerate(l)
-    l[i] += 10
-print(l)  # [11, 12, 13, 14, 15]
-l = [item + 10 for item in l]
-print(l)  # [21, 22, 23, 24, 25]
-```
-就像上面的例子，解析式写在一个环境中，表示运算结果，[ ] 表示会创建一个列表；前半部分是一个表达式，使用循环变量进行运算，x+10表示每个元素都加上10；后半部分是一个for循环，声明了循环变量x，也声明了迭代对象l。
-解析式会创造一个新的对象。
-上例的等效for语句是：
-```python
-la = []
-for x in l:
-    la.append(x + 10)
-l = la
-```
-文件也可以列表解析，比如
-```python
-# 每一行去掉换行符 \n
-f = open('t.txt', 'r')
-lines = f.readlines()
-lines = [line.rstrip() for line in lines]
-# ['#!/usr/bin/env python', '# -*- coding: UTF-8 -*-', 'import time', 'from selenium import webdriver']
-# 不打开文件也可以直接去掉换行符,然后再转成大写字母
-lines = [line.rstrip().upper() for line in open('t.txt', 'r')]
-# 每一行都切分为一个list
-lines = [line.split() for line in open('t.txt', 'r')]
-# [['#!/usr/bin/env', 'python'], ['#', '-*-', 'coding:', 'UTF-8', '-*-'], ['import', 'time'], ['from', 'selenium', 'import', 'webdriver']]
-# 替换：将行内空格替换为！
-lines = [line.replace(' ', '!') for line in open('t.txt', 'r')]
-# 多个运算：是否存在某个字母，然后索引第一个字母，返回元组(Ture, 'i')组成的列表
-lines = [('sys' in line, line[0]) for line in open('t.txt', 'r')]
-```
-
-列表解析式，修改一下外面的括号就可以转为 集合解析、字典解析、生成器解析。Python2中只有列表解析和生成器解析，没有集合和字典解析。
-字典和集合解析式，本质上是把生成器表达式(x for x in seq)传递给构造函数set()/dict()而已，这是一个语法糖（只是人类用起来方便，但对于计算机来说没有什么本质变化）。
-
-- ```python
-# 生成器解析式
-gen =( em for em in enumerate(open('t.txt')))
-set(open('t.txt'))  # 等同于 {line for line in open('t.txt')}
-dic = {index: line for index, line in enumerate(open('t.txt'))}
-```
 
 
 
@@ -210,22 +163,38 @@ res = list(map(ord, 'one'))  # list()不能用[]替代
 # 3. 列表解析式
 res = [ord(c) for c in 'one']
 ```
+
+
+
+
 ## 解析式
+
 受到函数式编程工具（map、filter、reduce等）的影响，Python最终产生了更为通用的解析式（最常见的是列表解析）。
 **解析式，**是在一个可迭代对象上应用一个任意的表达式，然后将结果形成一个指定的对象（序列、可迭代对象）。它比map函数更方便的地方是：可以用于任何表达式，这样就无需写lambda了，更为简洁。
-`[expression for item in itrable]`
+for循环、列表解析，是最常见的迭代工具。性能上，解析式速度比for循环快一倍，数据量大的时候更是如此。功能上，列表解析能够实现的需求也很多。
+- **基本语法：**`[expression for item in itrable]`    例子：
 ```python
+i_list = [i for i in range(4)]  # [0, 1, 2, 3] 最简单的取值运算
 square = [i**2 for i in range(4)]  # [0, 1, 4, 9]
 square = list(map(lambda x: x ** 2, range(4)))
 ```
-带if子句的解析式`[expression for item in itrable if condition]`
+列表解析式`[i**2 for i in range(4)]` 由 表达式 `i**2` 和表达式 `for i in range(4)` 组成，前面的表达式使用循环变量`i`进行运算，后面的表达式是for循环，迭代结构的取值表达式，声明了循环变量`i`，也声明了迭代对象`range(4)`。注意两个表达式 有个变量名 i 是相关联的。解析式被[ ] 包围，这说明结果是一个列表。
+解析式会创造一个新的对象。
+等效的for语句：
+```python
+la = []
+for x in range(4):
+    la.append(x ** 2)
+square = la
+```
+- **带if子句**`[expression for item in itrable if condition]` 先将迭代的数据过滤，再运算
 ```python
 even = [i for i in range(4) if i % 2 == 0]  # 提取偶数[0, 2]
 even = list(filter(lambda x: x % 2 == 0, range(4)))
 even_square = [i ** 2 for i in range(4) if i%2==0]  # 偶数的平方[0, 4]
 even_square = list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, range(4))))
 ```
-嵌套的解析式。解析式可以嵌套任意数量的for循环，每个for循环都可以带if子句
+- **嵌套：**解析式可以嵌套任意数量的for循环，每个for循环都可以带if子句。多个数据源结合进行解析。
 ```
 [expression
 for item1 in itrable1 (if condition1)
@@ -248,7 +217,9 @@ for x in range(5):
             if y % 2 != 0:
                 res.append((x, y))
 ```
+
 **解析式和矩阵（多维数组）**
+- 使用多维数组时，列表解析非常实用。
 ```python
 M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 N = [[2, 2, 2], [3, 3, 3], [4, 4, 4]]
@@ -262,7 +233,7 @@ rank = [row[1] for row in M]  # [2, 5, 8]
 diagonal = [M[i][i] for i in range(len(M))]  # [1, 5, 9]
 diagonal = [M[i][len(M) - i - 1] for i in range(len(M))]  # [3, 5, 7]
 ```
-多个矩阵混合运算。请注意得到数列和矩阵，row和col的循环层次不一样。
+- 多个矩阵混合运算。请注意得到数列和矩阵，row和col的循环层次不一样。
 ```python
 # 每个矩阵的数对应相乘，得到新数列 [2, 4, 6, 12, 15, 18, 28, 32, 36]
 mix = [M[row][col] * N[row][col] for row in range(3) for col in range(3)]
@@ -276,7 +247,7 @@ for row in range(3):
         temp.append(M[row][col] * N[row][col])
     res.append(temp)
 ```
-解析式和列选择（比如选取数据库查询结果的某一列）
+- 解析式和列选择（比如选取数据库查询结果的某一列）
 这种用法与二维数组非常类似。Python的标准SQL数据库API返回的查询结果，一般都是tuple组成的list：列表就是数据表，tuple是行，元组中的元素就是一个个数值。
 ```python
 table = [('Bob', 35, 'manager'), ('Jhon', 40, 'sale')]
@@ -286,21 +257,52 @@ ages = list(map(lambda:(name, age, job):age, table))  # 仅用于python2.x
 ages = [row[1] for row in table]
 ages = list(map(lambda row: row[1], table))
 ```
-列表解析、map()与文件对象处理
+
+**列表解析处理文件**
+- 文件也可以列表解析，结合map()对文件进行处理
 ```python
-lines = open('a.txt').readlines()
+# 每一行去掉换行符 \n，可以用for循环，但是解析式和map更为简洁直观
+f = open('t.txt', 'r')
+lines = f.readlines()
 print(lines) # ['Beautiful\n', 'is better\n', 'than\n', 'ugly.\n']
-# 如果要去除行尾的\n换行符，可以用for循环，但是解析式和map更为简洁直观
+lines = [line.rstrip() for line in lines]
+# 还可以直接readlines
 lines = [line.rstrip() for line in open('a.txt').readlines()]
-# open('a.txt').readlines()一次加载到内存，不好
+# ['#!/usr/bin/env python', '# -*- coding: UTF-8 -*-', 'import time', 'from selenium import webdriver']
+```
+- open('a.txt').readlines()一次加载到内存，不好，容易内存爆炸。直接迭代它
+```Python
 lines = [line.rstrip() for line in open('a.txt')]
 lines = list(map(lambda line: line.rstrip(), open('a.txt')))
+# 不打开文件也可以直接去掉换行符,然后再转成大写字母
+lines = [line.rstrip().upper() for line in open('t.txt', 'r')]
+# 每一行都切分为一个list
+lines = [line.split() for line in open('t.txt', 'r')]
+# [['#!/usr/bin/env', 'python'], ['#', '-*-', 'coding:', 'UTF-8', '-*-'], ['import', 'time'], ['from', 'selenium', 'import', 'webdriver']]
+# 替换：将行内空格替换为！
+lines = [line.replace(' ', '!') for line in open('t.txt', 'r')]
+# 多个运算：是否存在某个字母，然后索引第一个字母，返回元组(Ture, 'i')组成的列表
+lines = [('sys' in line, line[0]) for line in open('t.txt', 'r')]
+```
+
+**集合解析、字典解析、生成器解析**
+列表解析式，修改一下外面的括号就可以转为 集合解析、字典解析、生成器解析。Python2中只有列表解析和生成器解析，没有集合和字典解析。
+- 字典和集合解析式，本质上是把生成器表达式(x for x in seq)传递给构造函数set()/dict()而已，这是一个语法糖（只是人类用起来方便，但对于计算机来说没有什么本质变化）。
+- ```python
+# 生成器解析式
+gen =( em for em in enumerate(open('t.txt')))
+next(gen)
+# 集合与字典解析
+set(open('t.txt'))  # 等同于 {line for line in open('t.txt')}
+dic = {index: line for index, line in enumerate(open('t.txt'))}
 ```
 
 但是，嵌套太多的时候，解析式会比较难读。
 易读性：for循环 > map() > 解析式
 简洁性和效率(CPU速度和内存占用)：解析式 > map() > for循环。解析式和map在底层是以C语言实现的，而for循环是PVM用字节码运行的，所以速度差异非常大。
 易用性：解析式、map都是表达式，而for是语句，所以有些地方不能使用for循环，比如lambda、列表、字典。
+
+
 ## 生成器Generator
 生成器不立即产生结果，而是在需要的时候一次返回一个结果。有两种生成器
 - 生成器函数：def语句编写的普通函数，但是不用return一次返回所有的结果，而是用yield一次返回一个结果，在每个结果之间挂起和继续它们的状态。
