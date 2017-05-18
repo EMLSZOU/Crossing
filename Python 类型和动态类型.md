@@ -14,7 +14,11 @@ Python可以在旧版本中开启新版本的特性，只需： `from __future__
 
 ## 类型入门
 Python 没有类型声明，表达式的语法就决定了创建和使用的对象的类型。每个数据类型，都和某些操作一一对应。
-核心数据类型（对象的类型）：数字（包括集合）／字符串／元组／列表／字典／None／Boolean／函数／类／模块／文件
+- 核心数据类型（对象的类型）：数字／字符串／元组／列表／字典／集合／None／Boolean／函数／类／模块／文件
+- 六个标准数据类型：Number（数字）、String（字符串）、List（列表）、Tuple（元组）、Sets（集合）、Dictionary（字典）
+- 分为几大类别：数字、序列（str、list、tuple）、mapping（dict）、set、文件。相同的类别，有相同的操作方法。
+- 可变不可变：可变数据类型———列表list[ ]、字典dict{ }、集合set。不可变数据类型——整型int/float/complex、字符串str''、元组tuple（）、frozenset
+- 集合类型，list、dict、tuple，存储的都是对象的引用，可以包含任何类型的对象，可以任意嵌套，并且list和dict可以修改。嵌套对象在Python内部表示为不同内存区域的引用（也就是指针）。
 
 ```mermaid
 graph TB;
@@ -84,10 +88,8 @@ Internals-->Type
 ```
 
 
-**六个标准数据类型：**
-- Number（数字）、String（字符串）、List（列表）、Tuple（元组）、Sets（集合）、Dictionary（字典）
-- 可变数据类型：列表list[ ]、字典dict{ }
-- 不可变数据类型：整型int、字符串str''、元组tuple（）
+
+
 
 **如何查看一个类型的帮助文档？**
 - ```python
@@ -208,7 +210,7 @@ M = 42
 print L == M  # True ，因为 == 操作符比较两个对象的数值，数值的确相等。
 print L is M  # True ，很奇怪。
 ```
-因为Python把小的整数缓存，并且复用了，所以L与M的确引用了同一个对象。这是Python决定的，不是代码能够改变的。
+因为Python把整数、小的字符串缓存，并且复用了，所以L与M的确引用了同一个对象。这是Python决定的，不是代码能够改变的。
 - **共享引用的原地修改**
   在共享引用中，对象的原地修改操作会影响到所有的引用该对象的变量。有些数据类型的对象，本身就是对其他对象的引用，所以是可变的，可以原地修改。比如列表、字典、class
 ```mermaid
@@ -249,8 +251,11 @@ L1[0] = 32  # 结果L2 也受到了影响，变为 [32, 2, 3, 4]
     ```
 - 避免共享对象带来的影响，可以直接拷贝对象。让不同的变量，引用不同的对象（指向不同的内存区域）
 ```python
+# 一般的collection类型，用自带的复制工具就可浅层复制，如果要做到深层复制，则必须用 copy.copy()
+# 列表的[:]，colection.copy()，都是浅层复制，仅仅复制顶层，而不复制嵌套的数据。
 L2 = L1[:]  # 列表拷贝最简单的办法——从头到尾切片。
-其他的对象，应该使用copy方法
+L2 = L1.copy(); D2 = d1.copy()  # 列表和字典的copy方法
+# 类的实例化对象，应该使用copy方法
 import copy
 x = copy.copy(y)  # make a shallow copy of y 创建对象 y 的影子拷贝
 x = copy.deepcopy(y)  # make a deep copy of y 创建对象 y 的深度拷贝
