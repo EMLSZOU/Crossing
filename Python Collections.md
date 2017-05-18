@@ -16,7 +16,7 @@ if not a: pass # 而是直接布尔运算
 
 ## 字符串
 ##### 字符串的创建（常量表达）
-- 首先，我们定义一个`a='python'`语句，它在计算机中的执行顺序是先在内存中创建一个字符串`python`，在程序栈寄存器中创建一个变量`a`，最后把`python`的地址赋给`a` 。
+- 定义一个`a='python'`语句，它在计算机中的执行顺序是先在内存中创建一个字符串`python`，在程序栈寄存器中创建一个变量`a`，最后把`python`的地址赋给`a` 。
 ```python
 s = "" # 空字符串。
 # 单引号和双引号的意义是一样的
@@ -412,32 +412,57 @@ L = [i for i in range(10)] # 列表解析式
 
 
 ## 元组 tuple
-元组，任意类型、任意嵌套。不可变的序列，与列表很相似。
-除了序列的共有方法，list的列表修改是无法应用于tuple 的，但是tuple又有自己独特的方法
-	t =  (‘a’,’b’,’c’,’d’)
-	m = t.index(‘c’)  # 得出一个元素的索引值。结果为2
-	n = t.count(‘c’)  # 得出一个元素出现的次数。结果为1
-
-Tuple 元组是不可变的有序列表，语法糖`()`可以创建元组，一个元素的元组使用`(1,)`。
-
-##### 常见操作
-
-因为元组不可变，所以其内置函数只有`count`和`index`：
-
+元组，任意类型、任意嵌套。不可变的序列，除了这点，其余的特性与列表几乎相同。存储的依然是对象的引用。
+Guido van Rossum说，元组用来收集简单的对象的容器，而列表是随时改变的数据结构。而且元组的不变性，提供了完整性，保证数据不会在共享引用等场景下被篡改，有点“常数”的意义。同时元组还可以用于列表不可用的地方，比如作为字典的key。所以，无需改变的地方，尽可能用tuple替代list。
+- **创建（常量表达）**
 ```python
-In [1]: [i for i in dir(tuple) if not i.startswith('__')]
-Out[1]: ['count', 'index']
-
-In [2]: mytuple = (1, 2, 3, 4, 5)
-
-In [3]: mytuple.count(2)
-Out[3]: 1
-
-In [4]: mytuple.index(4)
-Out[4]: 3
+t = ()  # 空tuple，可以用tuple()创建
+t = ('some',)  # 单个元素一定要有逗号，否则括号就是运算符，而整句是赋值
+t = 'some',  # 没有括号也可以创建。但不建议这样做
+t = (0, 'N', 1.2, 3)  # 多个不同的元素
+t = 0, 'N', 1.2, 3  # 不用括号创建
+t = tuple('some')  # ('s', 'o', 'm', 'e') 从可迭代对象创建
 ```
-
-该怎样使用元组呢？因为元组的元素不可变，意味着我们使用 tuple 写出来的代码更加安全，所以如无特殊要求，可以尽可能地使用 tuple 代替 list。
+- 因为元组是不可变的，所以它只有序列的共有操作和方法。
+```python
+t = tuple('some')  # ('s', 'o', 'm', 'e')
+# 索引、切片（切片返回新的tuple对象）
+a = t[1]  # 'o'
+b = t[1:3]  # <class 'tuple'>: ('o', 'm')
+# 求长度
+lenth = len(t)  # 4
+# 合并、重复（返回新的tuple对象）
+t2 = ('o', 'n', 'e')
+T = t + t2  # ('s', 'o', 'm', 'e', 'o', 'n', 'e')
+print(T)
+T = t2 * 2  # ('o', 'n', 'e', 'o', 'n', 'e')
+print(T)
+# 迭代、in 成员测试
+if 'o' in t: pass
+for i in t: print(t)
+L = [i for i in t]
+# 通用运算
+index = t.index('m')  # 2
+count = t.count('o')  # 1
+```
+- 元组是不可变的对象，不提供任何修改的方法。如果需要“修改”，只能转为list，修改后转回tuple
+```python
+# 将元组排序，只能曲线救国
+t = tuple('some')  # ('s', 'o', 'm', 'e')
+temp = list(t) # ['s', 'o', 'm', 'e']
+temp.sort()  # ['e', 'm', 'o', 's']
+t = tuple(temp)  # ('e', 'm', 'o', 's')
+# 用sorted()取代sort()
+temp = sorted(t)
+t = tuple(temp)  # 两步合一，一步到位 t = tuple(sorted(t))
+```
+- “可变的元组”——元组的不可变性仅仅针对元组顶层元素，而不是嵌套元素。嵌套的元素是可以修改的。
+```python
+t = ('a', {'b': 2}, [1, 2, 3, 4], 'd')
+t[1].clear()  # 清空dict {'b': 2}
+t[2].clear()  # 清空list [1, 2, 3, 4]
+print(t)  # ('a', {}, [], 'd') 嵌套内容已经改变
+```
 
 
 
@@ -508,8 +533,9 @@ if 'name' in d:
 else:
     name = 'Carol'
 name = d['name'] if 'name' in d else 'Carol'
-# name = (d['name'],'Carol') ['name' in d] 没法用？
-name =  'name' in d  and d['name'] or 'Carol'
+# name = (d['name'],'Carol') ['name' in d] 没法用。这是元组取值表达式，True是1，False是0
+name = ('name' in d and [d['name']] or ['Carol'])[0] # 布尔运算，得到结果，然后从list中取值
+name =  'name' in d  and d['name'] or 'Carol' # 这句是上句的缩写
 # 用try语句捕获特定的KeyError也可以做到。但很捉急
 try:
     name = d['name']
@@ -620,77 +646,110 @@ d = OrderedDict()
 
 
 
-# 集合
+## 集合
 
-集合与 list 类似，但集合中不允许有重复的元素，普通集合是可变的，Frozenset是不可变的，我们可以利用集合的特性消除重复元素或做并、交、差等数学操作。
 
+集合（set）是一个无序不重复元素的集合。set和dict类似，也是一组key的集合，但不存储value。set的key，也是不可以放入可变对象（比如list），因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。
+因为set可以变化，所以不可散列（被固定引用），不能作为字典dictionary的key，也不能作为别的集合set的key。而另一种集合Frozenset是不可变的，可以作为字典和集合的key。
+##### 集合的创建和常量表达
+- 如果一个对象是可变的（比如列表list），那么它不可散列Unhashable，就不能作为集合set的元素，也不能作为字典dict的键。可以做key的类型：字符串、元组、数字。
 ```python
-In [1]: set([2, 2, 3, 4, 4, 6, 5, 6, 7, 9, 9])
-Out[1]: {2, 3, 4, 5, 6, 7, 9}
-
-In [2]: frozenset([2, 3, 4, 4, 5, 5, 6])
-Out[2]: frozenset({2, 3, 4, 5, 6})
-
-In [3]: s = set('hello world')
-
-In [4]: s
-Out[4]: {' ', 'd', 'e', 'h', 'l', 'o', 'r', 'w'}
+s = set()  # 创建空集合必须用 set()，因为{ }是空字典
+fset = frozenset([1, 2, 4]) # Frozenset的创建与set相似，仅仅是调用的构造函数不同
+s = {'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}  # {'Jack', 'Rose', 'Mary', 'Jim', 'Tom'} 重复元素在set中自动被过滤
+# 用构造函数set()从各种可迭代对象中创建
+s = set(['weight', 'food', 'color'])  # {'color', 'food', 'weight'}
+s = set({'food': 'apple', 'weight': 10, 'color': 'red'})   # {'color', 'food', 'weight'}
+s = set('some')  #  {'o', 'e', 's', 'm'}
+# 集合解析式
+s = set(i for i in 'some')  #  {'e', 'o', 's', 'm'} 集合解析式，生成器传入set()构造函数
+s = {i for i in 'some'} # 集合解析式的语法糖
 ```
 
-# 常见操作
-
+##### 集合操作
+- Collection接口通用的操作
 ```python
-In [1]: [i for i in dir(set) if not i.startswith('__')]
-Out[1]:
-['add',
- 'clear',
- 'copy',
- 'difference',
- 'difference_update',
- 'discard',
- 'intersection',
- 'intersection_update',
- 'isdisjoint',
- 'issubset',
- 'issuperset',
- 'pop',
- 'remove',
- 'symmetric_difference',
- 'symmetric_difference_update',
- 'union',
- 'update']
-
-In [2]: [i for i in dir(frozenset) if not i.startswith('__')]
-Out[2]:
-['copy',
- 'difference',
- 'intersection',
- 'isdisjoint',
- 'issubset',
- 'issuperset',
- 'symmetric_difference',
- 'union']
-
-In [3]: set('python') == set('nohtyp')
-Out[3]: True
-
-In [4]: set('python') <= set('nohtyp, avaj')
-Out[4]: True
-
-In [5]: s1 = set('python')
-
-In [6]: s2 = set('java')
-
-In [7]: s1 | s2
-Out[7]: {'a', 'h', 'j', 'n', 'o', 'p', 't', 'v', 'y'}
-
-In [8]: s1 & s2
-Out[8]: set()
-
-In [9]: s1 - s2
-Out[9]: {'h', 'n', 'o', 'p', 't', 'y'}
-
-In [10]: s1 ^ s2
-Out[10]: {'a', 'h', 'j', 'n', 'o', 'p', 't', 'v', 'y'}
+# 迭代、in成员测试、len、max/min
+s = set('some')
+if 'o' in s:print(s)
+for i in s:print(i)
+lenth = len(s)  # 4
+maxitem = max(s) # 's'
+minitem = min(s)  # 'e'
 ```
+- 集合类的方法
+```python
+>>>[i for i in dir(set) if not i.startswith('__')]
+['add','clear','copy','difference','difference_update','discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+>>>[i for i in dir(frozenset) if not i.startswith('__')]
+['copy','difference', 'intersection', 'isdisjoint', 'issubset', 'issuperset', 'symmetric_difference', 'union']
+```
+用集合进行数学运算，并、交、差等等。
+```python
+a = set('abcde')
+b = set('defgh')
+c = set('abcde')
+d = set('cd')
+print(a,b,c)           # {'r', 'b', 'a', 'c', 'd'}
+# 判断
+if not(a == b):print('not')  # 判断相等
+if not a.isdisjoint(b): print('have intersection') # 判断两个集合不想交
+if c <= a: print('sub1') # 判断c是不是a子集  等效a >= c
+if c.issubset(a):print('sub2') # 判断c是不是a子集
+if a.issuperset(c):pass # 判断c是不是a子集
+if d < a: print('sub3') # 判断是不是真子集  等效 a > d
+# 集合数学运算，返回一个新的集合
+# 求2到N个集合的并集∪ 。一个主集，其他集合作参数。
+E = a.union(b, c, d)  # {'d','g','b','e','f','a','c','h'} 等效表达式 a|b|c|d
+print(E)
+# 求2到N个集合的交集∩。一个主集，其他集合作参数。
+E = a.intersection(b, c, d)  # {'d'} 等效表达式 a & b & c & d
+print(E)
+# 求一个集合与1到N个集合的差集 A-(B∪C∪D...) 。一个主集，其他集合作参数。
+E = a.difference(b, d)  #{'b', 'a'} 等效表达式 a-b-d
+# 求两个集合的去重，找出不同时存在的元素(A∪B)-(A∩B)
+E = a.symmetric_difference(b) # {'g', 'b', 'a', 'h', 'c', 'f'} 等效表达式a ^ b 或者 (a|b)-(a&b)
+E = a.copy()
+s.add(4)  # 通过add(key)方法可以添加元素到set中，同一个元素可以重复添加，但不会有效果：{1, 2, 3, 4 }
+s.remove(4)  #通过remove(key)方法可以删除元素： {1, 2, 3}
+```
+set类型特有的修改集合的操作，Frozenset不支持。
+```python
+a = set('abcde')
+# 增加一个key
+a.add('k') # {'k', 'e', 'a', 'd', 'c', 'b'}
+# 删除一个key。如果这个key并不存在，就会报错
+a.remove('k')  # {'a', 'd', 'e', 'c', 'b'}
+# 删除一个key。如果这个key并不存在，那什么也不做
+a.discard('j') # {'a', 'd', 'e', 'c', 'b'}
+# 随机删除一个key，然后返回它
+item = a.pop()
+# 清空集合内的key
+a.clear()
+# 扩充集合 A = A∪B∪C...等效表达式 a = a|b|c 或者 a |= b|c
+a, b = set('abcde'), set('defgh')
+a.update(b, d)  # {'b', 'e', 'f', 'g', 'c', 'h', 'a', 'd'}
+# 替换为交集 A = A∩B∩C...等效表达式 a = a & b & c 或 a &= b & c
+a, b = set('abcde'), set('defgh')
+a.intersection_update(b, d)  # {'d'}
+# 替换为差集 A = A-(B∪C∪D...) 等效表达式 a = a-b-c 或 a -= b | c
+a, b = set('abcde'), set('defgh')
+a.difference_update(b, d)  # {'b', 'a'}
+# 替换为两个集合去重后的集合。A = (A∪B)-(A∩B) 等效表达式 a = a ^ b 或 (a|b)-(a&b)
+a, b = set('abcde'), set('defgh')
+a.symmetric_difference_update(b)  # {'a', 'c', 'b', 'h', 'f', 'g'}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
