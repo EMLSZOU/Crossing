@@ -16,8 +16,13 @@ Python可以在旧版本中开启新版本的特性，只需： `from __future__
 Python 没有类型声明，表达式的语法就决定了创建和使用的对象的类型。每个数据类型，都和某些操作一一对应。
 - 核心数据类型（对象的类型）：数字／字符串／元组／列表／字典／集合／None／Boolean／函数／类／模块／文件
 - 六个标准数据类型：Number（数字）、String（字符串）、List（列表）、Tuple（元组）、Sets（集合）、Dictionary（字典）
-- 分为几大类别：数字、序列（str、list、tuple）、mapping（dict）、set、文件。相同的类别，有相同的操作方法。
-- 可变不可变：可变数据类型———列表list[ ]、字典dict{ }、集合set。不可变数据类型——整型int/float/complex、字符串str''、元组tuple（）、frozenset
+- 分为三大类别：同在一个类别的类型，操作有很多共同之处。
+	- 数字：整数、浮点数、复数、分数。支持加减乘除等等
+	- 序列：字符串、列表、元组。支持索引、分片、拼接、重复。
+	- 映射：字典。通过键进行索引。
+	- 集合：set、Frozenset 是额外的类型。
+	- 文件：都支持 read
+- 可变不可变：可变数据类型———列表list[ ]、字典dict{ }、集合set，可变对象可以直接在原地修改。不可变数据类型——整型int/float/complex、字符串str''、元组tuple（）、frozenset，不可变类型有一种完整性，保证这个对象不会被程序的其他代码改变。
 - 集合类型，list、dict、tuple，存储的都是对象的引用，可以包含任何类型的对象，可以任意嵌套，并且list和dict可以修改。嵌套对象在Python内部表示为不同内存区域的引用（也就是指针）。
 
 ```mermaid
@@ -111,6 +116,8 @@ Internals-->Type
 ```python
 >>> type(list)
 <class 'type'>
+>>> isinstance(type([]),type)
+True
 >>> type(type)
 <class 'type'>
 ```
@@ -141,6 +148,38 @@ if isinstance(s, list):  # 最好的方式
 ```
 但是，一般来说，在代码中进行类型检查是错误的，破坏了代码的灵活性，限制了代码的类型。Python代码不关心特定的数据类型，只关心接口，这就是Python的多态设计。
 动态类型，不进行类型约束，这是Python多态的基础。Python的多态是属性总是在运行期解析，一个操作的意义取决于被操作对象的类型（比如x.attr表达式的意义取决于x的类型）。同样的操作对不同的对象来说意义可能不同，前提是该对象支持该操作；若对象不支持某种操作，则Python会在运行时检测到错误并自动抛出一个异常。
+
+#### 数据类型转换
+| 函数         | 描述               |
+| ---------- | ---------------- |
+| `int(x)`   | 将 x 转换为整数        |
+| `float(x)` | 将 x 转换为浮点数       |
+| `str(x)`   | 将 x 转换为字符串       |
+| `hex(x)`   | 将整数 x 转换为十六进制字符串 |
+| `oct(x)`   | 将整数 x 转换为八进制字符串  |
+| `bin(x)`   | 将整数 x 转换为二进制字符串  |
+| `chr(x)`   | 将整数 x 转换为字符      |
+| `ord(x)`   | 将字符 x 转换为整数      |
+同时，`list()`、`tuple()`、`dict()`和`set()`可以进行列表、元组、字典和集合转换。
+
+#### 自定义数据类型
+Python 允许通过继承去自定义数据类型，很多第三方库或框架有类似的应用，这里简单实现了一个：
+```python
+class CustomDict(dict):
+    '''Simple dict but support access as x.y style.'''
+    def __init__(self, names=(), values=(), **kw):
+        super(CustomDict, self).__init__(**kw)
+        for k, v in zip(names, values):
+            self[k] = v
+    def __getattr__(self, key):
+        try:
+            return self[key]
+        except KeyError:
+            raise AttributeError(
+                r"'CustomDict' object has no attribute '%s'" % key)
+    def __setattr__(self, key, value):
+        self[key] = value
+```
 
 ##动态类型
 Python 是动态类型语言。也是强类型语言，特定的对象有特定的接口，只能执行特定的操作。
@@ -263,123 +302,6 @@ x = copy.deepcopy(y)  # make a deep copy of y 创建对象 y 的深度拷贝
 影子拷贝和深度拷贝，差异就在复合对象上（包含其他对象的对象，比如列表和实例）。
 影子拷贝是创建一个复合对象，然后内含的对象，还是上一个对象的引用。
 深度拷贝，创建一个复合对象，内含的对象，也是新建的。
-
-# 浅拷贝与深拷贝
-
-**浅拷贝：**前面我们已经理解了，标识一个对象唯一身份的是对象的`id`，对象类型和值，那么什么是浅拷贝呢？浅拷贝就是创建一个相同类型和值但不同`id`的新对象，其中对象中的值是来自原对象的引用，所以浅拷贝产生的新对象中可变对象的值发生改变时**原对象的值也会随之改变**。
-
-**工厂函数、切片操作、copy 模块中的 copy 操作**都是浅拷贝，浅拷贝典型的使用场景就是对象自身发生改变的同时需要保持对象中的值完全相同，如 List 排序：
-
-```python
-In [1]: import copy
-
-In [2]: def sorted_list(olist, key=None):
-   ...:     copied_list = copy.copy(olist)
-   ...:     copied_list.sort(key=key)
-   ...:     return copied_list
-   ...: 
-
-In [3]: a = [3, 5, 2, 6, 1]
-
-In [4]: b = sorted_list(a)
-
-In [5]: b
-Out[5]: [1, 2, 3, 5, 6]
-
-In [6]: id(b) == id(a)
-Out[6]: False
-```
-
+**浅拷贝：**前面我们已经理解了，标识一个对象唯一身份的是对象的`id`，对象类型和值，那么什么是浅拷贝呢？浅拷贝就是创建一个相同类型和值但不同`id`的新对象，其中对象中的值是来自原对象的引用，所以浅拷贝产生的新对象中嵌套的可变对象的值发生改变时**原对象的值也会随之改变**。
+**工厂函数、切片操作、copy 模块中的 copy 操作**都是浅拷贝，浅拷贝典型的使用场景就是对象自身发生改变的同时需要保持对象中的值完全相同。
 **深拷贝：**理解了浅拷贝，深拷贝就变得简单了。深拷贝就是完完全全地拷贝了一个对象，该对象的值不再是引用自原对象，而是新开辟的地址，所以我们对深拷贝创建的对象可以随意操作而不必担心原对象的改变。深拷贝需要依赖 copy 模块的 deepcopy 操作：
-
-```python
-In [1]: a = [1, 2]
-
-In [2]: b = [a, a]
-
-In [3]: b
-Out[3]: [[1, 2], [1, 2]]
-
-In [4]: from copy import deepcopy
-
-In [5]: c = deepcopy(b)
-
-In [6]: c[0].append(3)
-
-In [7]: c
-Out[7]: [[1, 2, 3], [1, 2, 3]]
-
-In [8]: b
-Out[8]: [[1, 2], [1, 2]]
-
-In [9]: id(b[0]) == id(c[0])
-Out[9]: False
-
-In [10]: id(c[0]) == id(c[1])
-Out[10]: True
-```
-
-同时，我们在定义类时可以定义`__copy__`和`__deepcopy__`来定制 copy 的行为：
-
-```python
-In [1]: class CopyObj(object):
-   ...:     def __repr__(self):
-   ...:         return 'Hello'
-   ...:     def __copy__(self):
-   ...:         return 'World'
-   ...:     
-
-In [2]: obj = CopyObj()
-
-In [3]: print(obj)
-Hello
-
-In [4]: import copy
-
-In [5]: copyobj = copy.copy(obj)
-
-In [6]: print(copyobj)
-World
-```
-
-# 数据类型转换
-
-| 函数         | 描述               |
-| ---------- | ---------------- |
-| `int(x)`   | 将 x 转换为整数        |
-| `float(x)` | 将 x 转换为浮点数       |
-| `str(x)`   | 将 x 转换为字符串       |
-| `hex(x)`   | 将整数 x 转换为十六进制字符串 |
-| `oct(x)`   | 将整数 x 转换为八进制字符串  |
-| `bin(x)`   | 将整数 x 转换为二进制字符串  |
-| `chr(x)`   | 将整数 x 转换为字符      |
-| `ord(x)`   | 将字符 x 转换为整数      |
-
-同时，`list()`、`tuple()`、`dict()`和`set()`可以进行列表、元组、字典和集合转换。
-
-# 自定义数据类型
-
-Python 允许通过继承去自定义数据类型，很多第三方库或框架有类似的应用，这里简单实现了一个：
-
-```python
-class CustomDict(dict):
-    '''Simple dict but support access as x.y style.'''
-
-    def __init__(self, names=(), values=(), **kw):
-        super(CustomDict, self).__init__(**kw)
-        for k, v in zip(names, values):
-            self[k] = v
-
-    def __getattr__(self, key):
-        try:
-            return self[key]
-        except KeyError:
-            raise AttributeError(
-                r"'CustomDict' object has no attribute '%s'" % key)
-
-    def __setattr__(self, key, value):
-        self[key] = value
-```
-
-
-

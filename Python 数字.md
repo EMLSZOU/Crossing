@@ -44,7 +44,7 @@ In [9]: import math
 
 In [10]: for eachNum in range(5):
     ...:     print(round(math.pi, eachNum))
-    ...:     
+    ...:
 3.0
 3.1
 3.14
@@ -230,27 +230,44 @@ import decimal
         a_fraction = Fraction(1, 3) # 1/3
 ```
 
-**集合 set**
-- 一些唯一的、不可变的对象的一个无序集合/Collection。支持一般的数学集合操作。广泛应用于数学和数据库工作中。
-集合set既不是序列，也不是映射。集合很像一个只有key没有value的字典：可迭代、可增减、能包含各种类型的对象。
-支持len()，可迭代。但不能序列操作——索引和切片。
-P146集合操作的各种方法
-```python
-s1 = set()   # 创建空集合。dict = {} 这是创建空字典
-x = set('abcde')  # 传入一个可迭代对象，构造函数自动创建一个set，结果{'a','b','c','d','e'}
-a_dict = {'d': 1, 'e': 2, 'x': 3, 'y': 2, 'z': 3}
-y = set(a_dict)  # 字典的key构建了set ，结果{'e', 'd', 'x', 'y', 'z'}
-print('e' in x)  # 布尔运算：成员测试，'e'是集合x的成员吗？
-print(x|y)  # 数学求并集 {'a', 'b', 'c', 'd', 'e', 'x', 'y', 'z'}
-print(x&y)  # 交集 {'d', 'e'}
-print(sorted(x^y))  # 并集，然后减去交集。也就是 两个集合不重合的部分 {'a', 'b', 'c', 'x', 'y', 'z'}
-print(x>y)  # 布尔运算，子集测试，y是x的子集吗？
-```
-
 **布尔值 bool**
 调用`bool()`可以检查变量的真假值`True`或`False`。
 在Python2中是没有布尔型的，它用数字0表示False，用1表示True。到Python3中，把True和False定义成关键字了，但它们的值还是1和0，它们可以和数字相加。
-进行逻辑判断（比如if）时，布尔运算规则。
+
+
+**等值 与 同一：**
+- 操作符`==`测试两个对象的数值是不是相等。操作符`is`测试两个是不是同一个对象（内存地址、id）。
+- 但是有时候，虽然逻辑上不是同一个对象，is 运算却得到了True。这是因为Python把数字、小字符串都缓存了，然后让各个变量共享了。
+```python
+a, b = 1, 1
+print(a is b, a == b)  # True True
+c, d = 'you', 'you'
+print(c is d, c == d)  # True True
+```
+
+**数据结构，递归比较大小：**
+- 数字类型，通过大小进行比较。
+- 字符串按照ASCII顺序、一个一个字符地比较。列表和元组，从左到右对每部分的内容进行比较。
+- 字典通过排序后进行比较，Python2会自动排序比较，而Python3比较大小的时候则需要 sorted(d1)>sorted(d2)先排序后比较。
+```python
+(1, 2, 3)              < (1, 2, 4)
+[1, 2, 3]              < [1, 2, 4]
+'ABC' < 'C' < 'Pascal' < 'Python'
+(1, 2, 3, 4)           < (1, 2, 4)
+(1, 2)                 < (1, 2, -1)
+(1, 2, 3)             == (1.0, 2.0, 3.0)
+(1, 2, ('aa', 'ab'))   < (1, 2, ('abc', 'a'), 4)
+```
+
+**连续布尔值运算：**
+- ```python
+x,y,z = 2,4,6
+if x<y<z: pass  # 相当于 x<y and y<z
+if x<y>z:pass  # 相当于 x<y and y>z
+if x==y<z:pass  # 相当于 x==y and y<z
+```
+
+**布尔运算 bool(obj) 的规则：**
 - 基本类型（每个类型都存在一个值会被判定为False）：
 |  类型  | False             | True                               |
 | :--: | :---------------- | :--------------------------------- |
@@ -263,51 +280,29 @@ print(x>y)  # 布尔运算，子集测试，y是x的子集吗？
     - 如果定义了__nonzero__()方法，会调用这个方法，并按照返回值判断这个对象等价于True还是False
     - 如果没有定义__nonzero__方法但定义了__len__方法，会调用__len__方法，当返回0时为False，否则为True（这样就跟内置类型为空时对应False相同了）
     - 如果都没有定义，所有的对象都是True，只有None对应False
-- 连续布尔值运算：
-```python
-    x,y,z = 2,4,6
-    if x<y<z: pass  # 相当于 x<y and y<z 
-    if x<y>z:pass  # 相当于 x<y and y>z
-    if x==y<z:pass  # 相当于 x==y and y<z
+- 如果你要判断一个对象是不是为 False，建议最好别这样
+```Python
+if a == '':pass  # 判断是不是空的数据
+if a == '' or a == None: pass  # 判断是不是空的数据，或者是None
 ```
+而应该这样：
+```python
+if a: pass
+if not a: pass
+```
+执行中会调用`__nonzero__()`来判断自身对象是否为空并返回`0/1`或`True/False`，如果没有定义该方法，Python 将调用`__len__()`进行判断，返回`0`表示为空。如果一个类既没有定义`__len__()`又没有定义`__nonzero__()`，该类实例用 if 判断为`True`。
 P152
 
 
 **占位符 None**
 - 空值是Python里一个特殊的值，用None表示。None对象是一个特殊的Python对象，它总是False，一般用于占位。它有一块内存，是一个真正的对象。它不代表未定义，事实上它有定义。None是所有函数和方法的默认返回值。
 - None不是False：False和True对应，它作为布尔类型用来描述逻辑中“假”这个概念；None和“存在元素”相对应，“存在元素”反过来为“不存在元素”，也就是None。
-None和java的null是不同的，null是空字符，而Python的None是NoneType类的一个实例。
+None和java的null是不同的，null是空字符，而Python的None是NoneType类的一个实例，很像C语言的NULL指针。
 ```python
 >>> type(None)
 <class 'NoneType'>
 ```
-```python
-In [1]: id(None)
-Out[1]: 10743840
 
-In [2]: a = None
-
-In [3]: id(a)
-Out[3]: 10743840
-
-In [4]: L = []
-
-In [5]: if L is not None:
-   ...:     print('L is {}'.format(L))
-   ...: else:
-   ...:     print('L is empty')
-   ...:     
-L is []
-
-In [6]: if L:	#3 正确的判断形式
-   ...:     print('Do something...')
-   ...: else:
-   ...:     print('Do other thing...')
-   ...:     
-Do other thing...
-```
-
-`#3`执行中会调用`__nonzero__()`来判断自身对象是否为空并返回`0/1`或`True/False`，如果没有定义该方法，Python 将调用`__len__()`进行判断，返回`0`表示为空。如果一个类既没有定义`__len__()`又没有定义`__nonzero__()`，该类实例用 if 判断为`True`。
 **内置的数学函数和模块**，有很多的数学特有操作：
 - 内置数学函数：pow、abs、round、int、hex、bin
 - 内置数学模块：random、math

@@ -1,6 +1,6 @@
 ##文件 file
 调用内置函数open会创建一个文件对象，而后就可以用这个对象的方法来读写计算机上的文件。
-文件对象和其他类型的对象很不相同，无法通过常量语法（比如 l = [1,2,3] ）创建。
+文件对象和其他类型的对象很不相同，无法通过常量语法（比如 L = [1,2,3] ）创建。
 ##### 文件对象的创建
 f = open(file, mode='r', buffering=None, encoding=None, errors=None, newline=None, closefd=True)
 - file参数，用字符串指定文件的存放位置。Windows默认格式是\，Linux是/，Python无所谓，但要防止转义。如果文件不存在，会抛出一个IOError的错误，FileNotFoundError: [Errno 2] No such file or directory。

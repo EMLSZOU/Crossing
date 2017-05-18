@@ -1,18 +1,3 @@
-判断一个collection是不是空，
-```python
-if a == '' or a == None: pass # 最好不要用
-if not a: pass # 而是直接布尔运算
-```
-三大类型：同在一个类别的类型，操作有很多共同之处。
-- 数字：整数、浮点数、复数、分数。支持加减乘除等等
-- 序列：字符串、列表、元组。支持索引、分片、拼接、重复。
-- 映射：字典。通过键进行索引。
-- 集合set是额外的类型。
-
-可变与不可变类型：
-不可变类型：数字、字符串、元组、不可变集合。不可变类型有一种完整性，保证这个对象不会被程序的其他代码改变。
-可变类型：列表、字典、可变集合。可变对象可以直接在原地修改。
-
 
 ## 字符串
 ##### 字符串的创建（常量表达）
@@ -289,6 +274,7 @@ a[::2] # [1, 3] 步进切片
 b = [4, 5, 6]
 a + b # [1, 2, 3, 4, 5, 6]
 a * 2 # [1, 2, 3, 1, 2, 3]
+[a] * 2 # [[1, 2, 3], [1, 2, 3]] 注意这样做会变成嵌套
 # 迭代 和 in 成员测试
 for item in a: pass
 for key, value in enumerate(a): pass
@@ -398,6 +384,18 @@ L = sorted('Christ') # ['C', 'h', 'i', 'r', 's', 't'] 迭代字符串得到一�
 L = sorted({'name': '7', 'v': '1.2'}) # ['name', 'v'] 字典得到key、排序后的列表
 ```
 
+##### 循环引用，应该避免
+```python
+# 自身循环引用
+L = ['a']
+L.append(L)
+print(L) # ['a', [...]]
+# 相互循环引用
+a = ['a']
+b = ['b', a]
+a.append(b)
+print('a:', a, 'b:', b)  # a: ['a', ['b', [...]]] b: ['b', ['a', [...]]]
+```
 ##### 迭代和解析（更多请参见“迭代与解析”章节）
 - ```python
 a = [1, 2, 3]
@@ -618,7 +616,7 @@ d2 = {'food': 'pear', 'weight': 10, 'color': 'red'}
 if sorted(d1.items()) < sorted(d2.items()): pass  # True
 if d1 == d2: pass # False
 ```
-集合的常见的用途：
+字典的常见的用途：
 ```python
 # 1.构建数据。常用于接口和json
 d = {"people": [
@@ -647,9 +645,7 @@ d = OrderedDict()
 
 
 ## 集合
-
-
-集合（set）是一个无序不重复元素的集合。set和dict类似，也是一组key的集合，但不存储value。set的key，也是不可以放入可变对象（比如list），因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。
+集合（set）是一个无序不重复元素的集合。set和dict类似，也是一组key的集合，但不存储value。set的key，也是不可以放入可变对象（比如list），因为无法判断两个可变对象是否相等，也就无法保证set内部“不会有重复元素”。集合set既不是序列，也不是映射，它很像一个只有key没有value的字典。
 因为set可以变化，所以不可散列（被固定引用），不能作为字典dictionary的key，也不能作为别的集合set的key。而另一种集合Frozenset是不可变的，可以作为字典和集合的key。
 ##### 集合的创建和常量表达
 - 如果一个对象是可变的（比如列表list），那么它不可散列Unhashable，就不能作为集合set的元素，也不能作为字典dict的键。可以做key的类型：字符串、元组、数字。
@@ -684,7 +680,7 @@ minitem = min(s)  # 'e'
 >>>[i for i in dir(frozenset) if not i.startswith('__')]
 ['copy','difference', 'intersection', 'isdisjoint', 'issubset', 'issuperset', 'symmetric_difference', 'union']
 ```
-用集合进行数学运算，并、交、差等等。
+用集合进行数学运算，并、交、差等等。广泛应用于数学和数据库工作中。
 ```python
 a = set('abcde')
 b = set('defgh')
@@ -739,17 +735,3 @@ a.difference_update(b, d)  # {'b', 'a'}
 a, b = set('abcde'), set('defgh')
 a.symmetric_difference_update(b)  # {'a', 'c', 'b', 'h', 'f', 'g'}
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
