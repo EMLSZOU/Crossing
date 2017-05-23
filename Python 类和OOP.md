@@ -58,7 +58,7 @@ print(person1.age, person2.info())
 - 让数据（属性）和操作（方法）区域化，有利于编写和调试。
 - 继承、组合。扩展和定制简单。使得OOP编程的主要任务不是从底层开始，也不是修改原来的代码，而是在现有的类的基础上用继承和组合语法进行定制和扩展，于是催生了软件框架这个概念。而将常见的OOP结构归类，又催生了设计模式的概念。
 - 多重实例：类是生成实例的工厂。一个类可以有多个实例，互不干扰。而一个模块、函数只能有一个对象。
-- 运算符重载：让类的实例对象，能够截获并且响应那些在内置类型上的运算符号，比如`+`。
+- 运算符重载：编写特殊的方法，在特殊的环境条件下触发这些方法并且提供特定的行为，让类的实例对象能够截获并且响应那些内置的运算符号，比如`+`。运算符重载也可以继承。
 
 **对象的属性访问语法：**`object.attribute`，第一步是读取这个属性，第二步是使用属性、执行表达式。模块、函数、类的实例都是这样。当然实际使用的时候，两步一般是写在一起的。比如模块对象的属性搜索和使用：
 
@@ -196,7 +196,7 @@ print(a.name)
 
 ## 一个OOP的例子
 
-##### 版本1：类是实例的工厂。而这个版本的类，因为没有方法，是数据记录的工厂。
+##### 步骤1：类是实例的工厂。而这个版本的类，因为没有方法，是数据记录的工厂。
 
 `__init__()`方法是特殊钩子内的一种。虽然特殊钩子的样子比较特别，但它仍然是普通的函数。
 
@@ -218,7 +218,7 @@ if __name__ == '__main__':
     print(sue.name, sue.pay)  # Sue Jones 1000000
 ```
 
-##### 版本2：往类里添加方法：
+##### 步骤2：往类里添加方法：
 
 如果我们要对实例对象的属性进行操作，则可以在后面添加几行代码
 
@@ -239,7 +239,7 @@ if __name__ == '__main__':
 - 冗余：每个对象都必须复制粘贴相关的代码。
 - 逻辑混乱：因为处理数据的代码可能散落在不同的地方，特别是修改实例变量的操作，会像共享引用的原地修改一样，带来一系列的问题。比如，另一个模块要给每个人计算个人所得税，而其他模块则给一个人涨工资，它们之间的执行顺序和逻辑导致修改困难。这个问题很难用函数来解决。
 
-还是像java一样老老实实OOP吧。把操作对象数据的代码做成函数，放在类下面，称为“方法”。好处：类的方法可用于任何实例，避免冗余；操作对象的代码都在类方法里，而不是四处分散，利于维护；继承可以复用和扩展。
+还是像java一样老老实实OOP吧。把操作对象数据的代码做成函数，放在类下面，称为“方法”。这就是Python的封装：把逻辑封装到接口背后。好处：类的方法可用于任何实例，避免冗余；操作对象的代码都在类方法里，而不是四处分散，利于维护；可以继承复用和扩展。
 
 ```python
 class Person():
@@ -261,7 +261,7 @@ if __name__ == '__main__':
     print(sue.pay)  # 1100000 修改成功
 ```
 
-##### 版本3：运算符重载
+##### 步骤3：运算符重载
 
 在版本2中，如果要打印一个实例的信息，必须提取属性，如果直接打印对象，就会得到内存地址
 
@@ -272,17 +272,274 @@ if __name__ == '__main__':
     print(bob)  # <__main__.Person object at 0x0089E030>
 ```
 
-如果我想打印一个对象的各种数据，而不是内存地址，怎么办？
-
-
-
-
-
-
-
-方法是附加给类的属性，是一个普通的函数对象，用途是处理类的实例。实例是调用方法的主体，会自动传递self参数给方法，告诉方法处理的是“我这个实例”而不是其他的实例。
+如果我想打印一个对象的各种数据，而不是内存地址，怎么办？写一个`__str__()`方法，每次将一个实例对象转换为字符串的时候，都会自动运行。如果写`__repr__()`则返回的是更具体的字符串。
 
 ```python
-instance.method(args...)  # 用实例名调用方法，Python解释器会自动传递self参数
-Class.method(instance, args...)  # 用类名调用方法，必须手动传递实例
+class Person():
+	...(前面几行与之前相同)
+    def __str__(self):
+        return '[Person: %s, job: %s, salary: %s]' % (self.name, self.job, self.pay)
+if __name__ == '__main__':
+    bob = Person('Bob Smith')
+    sue = Person('Sue Jones', job='Dev', pay=1000000)
+    print(bob)  # [Person: Bob Smith, job: None, salary: 0] 打印的就不再是内存地址了
+    print(sue)  # [Person: Sue Jones, job: Dev, salary: 1000000]
 ```
+##### 步骤4：用子类继承
+版本3的Person类已经写完。数据和逻辑已经封装到了一个单一的、自包含的软件组件中。封装行为（而不是把数据操作零散到四处），避免了冗余，有利于维护。
+从Person继承Manager类（意思是Manager几乎就像个Person一样），然后添加一些定制：涨工资的时候，加上10%的额外奖金，于是就得到了20%的增长。
+- 第一个扩展方式：直接复制粘贴父类代码，然后修改。
+  ```python
+  class Manager(Person):
+      def giveRaise(self, percent, bonus=0.1):
+          self.pay = int(self.pay * (1 + percent + bonus))
+  ```
+  虽然这样写也可以正常运行，但是这不利于维护：万一以后涨工资的方式改变了，那Person和Manager的giveRaise()都必须修改。
+
+- 第二个扩展方式：在调用父类的方法来实现父类逻辑
+  ```python
+  class Manager(Person):
+      def giveRaise(self, percent, bonus=0.1):
+          Person.giveRaise(self, percent + bonus)
+  ```
+  这样写，就把Manager类的 giveRaise拆分为两部分：涨工资的逻辑仍然由Person类实现，加上奖金的类由Manager类自己实现。这更贴近我们扩展的本意：要执行标准的加工资操作，同时要加上奖金。并且，维护难度更小了。
+
+  方法是附加给类的属性，是一个普通的函数对象，用途是处理类的实例。实例是调用方法的主体，会自动传递self参数给方法，告诉方法处理的是“我这个实例”而不是其他的实例。用类调用方法，可以执行继承树中指定的那个类下面的方法。
+
+  ```python
+  instance.method(args...)  # 用实例名调用方法，Python解释器会自动传递self参数
+  Class.method(instance, args...)  # 用类名调用方法，必须手动传递实例
+  ```
+
+  而且，如果这里写成`def giveRaise(self, percent, bonus=0.1):self.giveRaise(self, percent + bonus)`，会造成方法的循环调用。
+  **在继承时的多态现象：**
+
+  ```python
+  class Person():
+      def __init__(self, name, job=None, pay=0):
+          self.name = name
+          self.job = job
+          self.pay = pay
+      def last_name(self):
+          return self.name.split()[-1]
+      def giveRaise(self, percent):
+          self.pay = int(self.pay * (1 + percent))
+      def __str__(self):
+          return '[Person: %s, job: %s, salary: %s]' % (self.name, self.job, self.pay)
+  class Manager(Person):
+      def giveRaise(self, percent, bonus=0.1):
+          Person.giveRaise(self, percent + bonus)
+  if __name__ == '__main__':
+      bob = Person('Bob Smith')
+      sue = Person('Sue Jones', job='Dev', pay=1000000)
+      tom = Manager('Tom Jones', 'manager', 50000)
+      for obj in (bob, sue, tom):
+          obj.giveRaise(percent=0.1)
+          print(obj)
+          # [Person: Bob Smith, job: None, salary: 0]
+          # [Person: Sue Jones, job: Dev, salary: 1100000]
+          # [Person: Tom Jones, job: manager, salary: 60000]
+  ```
+  三个对象 bob, sue, tom ，自动执行相应版本的 giveRaise 方法，这就是多态——同样的操作，对不同的对象就有不同的意义，不同的结果。
+
+- 第三种扩展方式：新增数据或者方法，与父类完全无关。
+  ```python
+  class Manager(Person):
+      def someThingElse(self, ...):
+          pass
+  ```
+
+从上面3个例子，总结**OOP编程的继承大思路：**
+
+- 继承，无需编写任何代码就可原封不动地使用父类的方法；
+- 定制，原有的类有点不合用，需要在原类的基础上修改。如果完全从头开始写新类，原类的可用部分就会浪费，相同的逻辑就造成冗余；如果改动原类，那么以后原类就没法正常使用了；如果复制原类的代码，然后修改，也会造成冗余和维护困难。最好的方式是理清逻辑，新功能用新代码实现，而旧功能，则调用原类的方法实现。
+- 新增，完全新增一个功能，和原代码几乎不相干。
+
+
+##### 步骤5：继承时，定制构造函数
+
+虽然Manager类写完了，但是构造方法仍然有冗余：既然是Manager类，实例肯定是一个manager，实例化的时候`tom = Manager('Tom Jones', 'manager', 50000)`太累赘了。用定制 giveRaise 的方式改写它。
+
+```python
+class Manager(Person):
+    def __init__(self, name, pay=0):
+        Person.__init__(self, name, 'manager', pay)
+        # super(User, self).__init__(args...)  一次性初始化所有的父类
+```
+
+以上，OOP的步骤：
+
+- 定义父类：需要什么数据——设计init()构造方法；需要什么数据操作逻辑——设计方法；需要什么特殊功能——运算符重载。
+- 定义子类：需要增加什么数据、改变初始化逻辑——定制init()构造方法；需要更改数据操作逻辑——定制或者新增方法。
+
+这些，都来自3个基本原则：继承树的属性查找语法、给方法传递self参数、运算符重载。
+
+##### 步骤6：其他组织类的结构：组合（代理和聚合）
+
+对象彼此嵌套，就是组合。
+
+- 代理：包装一个类的对象，并且通过它可以访问特定的属性。
+
+  ```python
+  class Person():
+      def __init__(self, name, job=None, pay=0):
+          self.name, self.job, self.pay = name, job, pay
+      def last_name(self):
+          return self.name.split()[-1]
+      def giveRaise(self, percent):
+          self.pay = int(self.pay * (1 + percent))
+      def __str__(self):
+          return '[Person: %s, job: %s, salary: %s]' % (self.name, self.job, self.pay)
+  class SomeOne():
+      def __init__(self, name,job, pay):
+          self.person = Person(name,job, pay)
+      def __getattr__(self, attr):  # 将一切属性都代理了
+          return getattr(self.person, attr)
+      def __str__(self):  # 代理运算符重载，必须用特殊的方式
+          return str(self.person)
+  if __name__ == '__main__':
+      sue = SomeOne('Sue Jones', job='Dev', pay=1000000)
+      print(sue.name)  # Sue Jones
+      print(sue)  # [Person: Sue Jones, job: Dev, salary: 1000000]
+  ```
+
+  代理这种语法不是很常用。如果直接控制、隐藏一个类的某些属性，可能会比较困难，这时候用代理就会非常简洁。比如，跟踪或验证对另一个对象的方法调用、类装饰器。
+
+- 聚合：嵌入各种类的对象
+
+  ```python
+  class Department():
+      def __init__(self, *args):
+          self.members = list(args)
+      def addMember(self, person):
+          self.members.append(person)
+      def giveRaises(self, percent):
+          for person in self.members:
+              person.giveRaise(percent)
+      def showAll(self):
+          for person in self.members:
+              print(person)
+  if __name__ == '__main__':
+      bob = Person('Bob Smith')
+      sue = Person('Sue Jones', job='Dev', pay=1000000)
+      tom = Manager('Tom Jones', 50000)
+      devTeam = Department(bob, sue)
+      devTeam.addMember(tom)
+      devTeam.giveRaises(0.1)
+      devTeam.showAll()
+  ```
+
+  Department是嵌入并且控制其他对象的聚合体——组合语法；Manager是Person基础上定制而成的——继承语法。
+
+  一个类，究竟使用继承还是组合，取决于要建模的对象。一个GUI类可能继承第三方库，定制标签和按钮，但是也会用复合构建嵌入的挂件（比如输入的表单）。
+
+##### 步骤7：使用内省工具
+
+然而打印每个实例print(obj)却做的不好，tom应该打出Manager的，却打成了Person类。另外，以后万一把"job"属性换成了"title"岂不是又要改？问题在于Person的`def __str__(self):`，使用**内省工具**可以解决这个问题。
+
+```python
+instance.__class__  # 用实例连接到类。instance.__bases__是所有的超类的列表
+class.__name__ # 类有一个__name__属性。instance.__class__.__name__就可以访问自己的类名
+obj.__dict__  # 任何对象，都有一个字典，key:value是一个属性：属性值。
+# 将Person的 __str__()方法改写
+class Person():
+	...
+    def __str__(self):
+        class_name = self.__class__.__name__
+        attrs = [key + '=' + str(self.__dict__[key]) for key in self.__dict__]
+        return '%s: %s' % (class_name, ', '.join(attrs))
+```
+
+打出来的格式就正确了。
+
+Person: job=Dev, pay=1100000, name=Sue Jones
+Manager: job=manager, pay=60000, name=Tom Jones 
+
+如果将这个提取出来，作为一个通用的类，再放到一个模块里，提供给任何类使用，也是很好的
+
+```python
+# showclasstools.py
+class AttrDisplay():  # 显示属性的工具类
+    def __gatherAttrs(self): # _x 是类内隐藏方法；__x 是伪私有类属性
+        attrs = ['%s=%s' % (key, getattr(self, key)) for key in self.__dict__]
+        return ', '.join(attrs)
+    def __str__(self):
+        return '[%s: %s]' % (self.__class__.__name__, self.__gatherAttrs())
+```
+
+这样，Person类就变为
+
+```python
+from showclasstools import AttrDisplay
+class Person(AttrDisplay):
+    def __init__(self, name, job=None, pay=0):
+        print('Person init start')
+        self.name = name
+        self.job = job
+        self.pay = pay
+        print('Person init over')
+    def last_name(self):
+        return self.name.split()[-1]
+    def giveRaise(self, percent):
+        self.pay = int(self.pay * (1 + percent))
+```
+
+##### 步骤8：对象持久化——把对象存储到数据库中
+
+让实例对象持久化很容易。3个相关模块：
+
+- pickle：将内存中的任何Python对象（内置类型对象、自定义的类的实例）序列化为字符串。并且可以从字符串中恢复内存中的Python对象。
+- dbm（Python2的anydbm）：创建一个用键访问的文件系统来存储字符串。
+- shelve：使用另两个模块按照键把Python对象存储到一个文件中。shelve先使用pickle将对象序列化字符串，然后存储在dbm文件的键之下；载入的时候，shelve通过键获取字符串，然后用pickle恢复为对象。在shelve里面操作对象，就像操作字典：用键存储、索引，还可以用len()、in、dict.keys()等字典工具，唯一不同的是开始的时候必须打开shelve，结束后必须关闭shelve。
+
+```python
+if __name__ == '__main__':
+    bob = Person('Bob Smith')
+    sue = Person('Sue Jones', job='Dev', pay=1000000)
+    import shelve
+    db = shelve.open('persondb')  # 创建persondb.bak/persondb.dat/persondb.dir三个文件
+    for obj in (sue, bob):
+        db[obj.name] = obj  # key可以是任何唯一的字符串，value可以是任何Python对象
+    db.close()  # 存入文件中
+```
+
+实际生成的文件可能随平台而不同。存储的文件可以打开，之后可以像普通的对象那样，读取属性、调用方法……因为pickle的时候已经记录了每个对象的属性，unpickle的时候自动连接到了那个类。所以，打开shelve对象的时候，无需导入对象的类，可以自动获取属性和方法。只有在创建新实例的时候，才需要导入类。
+
+```python
+if __name__ == '__main__':
+    import shelve
+    db = shelve.open('persondb')
+    # 像操作字典那样操作 shelve 数据库
+    print(len(db))  # 2
+    print(list(db.keys()))  # ['Bob Smith', 'Sue Jones']
+    print(db['Bob Smith'])  # [Person: job=None, name=Bob Smith, pay=0]
+    for key in db: print(key, '=>',db[key])
+    for key in sorted(db): print(key, '=>',db[key])
+    # 从数据库提取出一个，然后像普通的对象那样调用方法，却无需import Person类
+    bob = db['Bob Smith']
+    print(bob.last_name())  # Smith
+```
+
+将对象的数据更新一次，这样才能证明持久化是完全成功的。
+
+```python
+if __name__ == '__main__':
+    import shelve
+    db = shelve.open('persondb')
+    for key in sorted(db):
+        print(key, '=>', db[key]) # Sue Jones => [Person: pay=1210000, name=Sue Jones, job=Dev]
+        obj = db[key]
+        obj.giveRaise(0.1)
+        db[key] = obj  # 用状态已经变化的对象，更新数据库存储的对象
+    db.close()
+    db = shelve.open('persondb')
+    for key in sorted(db):
+        print(key, '=>', db[key]) # Sue Jones => [Person: pay=1331000, name=Sue Jones, job=Dev]
+```
+
+其他OPP可以做的事情：
+
+- GUI：tkinter、WxPython、PyQt
+- Web：Django
+- 数据库：面向对象数据库OODB（ZODB）、SQL数据库（SQLite、MySQL）、NoSQL数据库（MongoDB）
+- ORM：对象关系映射器
