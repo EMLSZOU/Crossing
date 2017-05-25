@@ -1,0 +1,309 @@
+Python的类就是个语法糖。一个函数写在类里面和写在类外面没有区别，唯一的区别就是参数，所谓实例方法就是第一个参数是self，所谓类方法就是第一个参数是class，而静态方法不需要额外的参数，所以必须区分。
+
+
+
+## 类的属性
+
+
+
+### 类的伪私有属性
+
+无论怎么命名，都不可能达到 java private一样真的私有，类外部还是能够访问和修改。
+
+- 任何位置的单下划线变量名`_x`，不建议访问和修改
+- 伪私有属性：类内的双下划线变量名`__x`（包括类数据、方法、实例属性），只是为了防止继承时发生变量名冲突和覆盖。
+
+继承的时候，同一层级的类，变量名很容易相互覆盖。下例中，A类完全把B类的变量名覆盖了，B类的变量名无法被 obj对象访问。
+
+```python
+class A:
+    cls_data = 'A_cls_data'
+    def __init__(self): self.data = 'A'
+    def meth(self): return 'A method'
+class B:
+    cls_data = 'B_cls_data'
+    def __init__(self): self.data = 'B'
+    def meth(self): return 'B method'
+class C(A, B):pass
+obj = C()
+print(C.cls_data)  # A_cls_data
+print(obj.cls_data, obj.data, obj.meth())  # A_cls_data A A method
+```
+
+而在下面的例子中，类数据、方法、实例属性前面都加了双下划线，同层级的类A与类B没有任何覆盖。但是，访问的时候变量名前面必须加上一个“下划线+类名”，比如用`obj._A__cls_data`访问`__cls_data`。这样做，依然可以访问和修改，就和普通变量没有什么区别，唯一的作用就是避免相互覆盖。
+
+```python
+class A:
+    __cls_data = 'A_cls_data'
+    def __init__(self):self.__data = 'A__self.data'
+    def __meth(self): return 'A method'
+class B:
+    __cls_data = 'B_cls_data'
+    def __init__(self):self.__data = 'B__self.data'
+    def __meth(self): return 'B method'
+class C(A, B):
+    def __init__(self):
+        A.__init__(self)
+        B.__init__(self)
+obj = C()
+print(obj.__dict__)  # {'_B__data': 'B__self.data', '_A__data': 'A__self.data'}
+print(C._A__cls_data, C._B__cls_data)  # A_cls_data B_cls_data 用类引用类数据
+print(obj._A__cls_data,obj._B__cls_data)  # A_cls_data B_cls_data 用实例引用类数据
+print(obj._A__data, obj._B__data,)  # A__self.data B__self.data 实例属性
+print(obj._A__meth(), obj._B__meth())  # A method B method 方法
+```
+
+
+
+
+
+## 经典类与新式类
+
+- 在Python2中，只有继承自object的类才是新式类。包括主动继承（自己继承）和被动继承（父类继承自object）。现在Python2中，经典类和新式类都还能正常使用。
+  ```python
+  ### Python 2
+  class A: pass  # 经典类
+  class A(): pass  # 经典类
+  class A(object): pass  # 只有明确继承自object才是新式类。
+  ```
+
+- 在Python3中，只有新式类，没有经典类。
+
+
+新式类在语法和操作上几乎完全向后兼容经典类，只是为了添加一些高级特性。
+
+##### 类型模式的变化
+
+- 经典类：通过type()运算可知，类是类、实例是实例，二者的联系仅在于`obj.__class__ `
+- 新式类和内置类型（str、list等等）：通过type()运算可知，类是类，实例是某个类的实例对象。
+  ```python
+  # 经典类
+  class B:pass
+  b = B()
+  dir(b)  # ['__doc__', '__module__']
+  dir(B)  # 与dir(b)相同
+  type(b)  # <type 'instance'>
+  type(B)  # <type 'classobj'>
+  print b.__class__  # <class __main__.B at 0x020F4AB0>
+  # 新式类
+  class E(object):pass
+  e = E()
+  dir(e) # ['__class__', '__delattr__', '__dict__', '__doc__', ...]
+  dir(E) # 与dir(e) 相同
+  type(e)  # <class '__main__.E'>
+  type(E)  # <type 'type'>
+  # 内置类型
+  a = str('H')
+  type(str) # <type 'type'>
+  type(a) # <type 'str'>
+  dir(str) # ['__add__', '__class__',... 'upper', 'zfill']
+  dir(a)  # 与dir(str)相同
+  ```
+
+内置类型，和自定义的类（经典类）不同，就会造成很多问题。比如，用一个对象，得到一个同类型的对象（找到它的父母造一个姐妹出来）。并且在经典类中，`type(obj1)==type(obj2)`类型测试是无效的，它们永远相等。所以应该使用`obj1.__class__==obj2.__class__`或使用最好的`isinstance(obj, Aclass)`
+
+```python
+# 内置类型
+class_of_obj = type(obj)  # 得到它的类对象
+new_obj = class_of_obj()  # 调用类的构造函数，得到新的类的实例
+type(obj1)==type(obj2) # 与 obj1.__class__==obj2.__class__结果相同。
+# 经典类
+class_of_obj = obj.__class__  # 得到它的类对象
+new_obj = class_of_obj()  # 调用类的构造函数，得到新的类的实例
+type(obj1)==type(obj2) # 永远为True。而 obj1.__class__==obj2.__class__才有实际效果
+```
+
+使用新式类，很多方面和内置类型一样，这些问题一扫而空：
+
+- 所有的类，都是object的子类。
+
+- 所有的类，调用的结果都是启动构造函数返回一个实例。
+
+- 所有的类，type(Aclass)都返回type 'type'，它的实例对象obj进行type(obj)运算返回所属的类。
+
+- 所有的类，都由元类产生。元类，是type类，或者经过定制的子类。但object和type是先有鸡还是先有蛋的问题。
+  ```python
+  isinstance(type, object) # True 因为type的基类是object。所有的类都继承自object，连type类都是。
+  isinstance(object, type) # True  因为object的类型是type。type是生成各种类的元类。
+  type is object # False 因为object和type又不是同一个对象。
+  ```
+
+
+
+
+##### 继承搜索顺序的变化（Method Resolution Order，MRO）
+
+```mermaid
+graph TD
+A[A:a_attr,b_attr]-->B
+B[B:a_attr]-->D
+A-->C[C:b_attr]
+C-->D
+```
+这个功能，主要影响多继承的钻石模式（Diamond Pattern）下的属性查找，经典类和新式类在这点上并不兼容。如上图，如果超类A下面有两个类BC，各覆写了一个方法，那么，表达式` d.b_attr`的意思是用D的实例对象查找属性b_attr
+
+- 经典类中，搜索顺序以绝对深度优先，D>B>A>C，所以先找到A的b_attr，然后就停止了，结果是C类的属性没有成功覆写A类的属性。当然这类问题也可以解决，
+
+  ```python
+  class D:b_attr = C.attr
+  d = D()
+  d.b_attr # 无论是类数据，还是方法，都能成功获取继承树上的正确版本
+  # 如果是方法，还有一个解决方式
+  class D:
+      def b_attr(self):
+          C.b_attr(self)  # 回调。指定调用哪个类下的方法
+  ```
+
+- 新式类中，搜索顺序以宽度优先，D>B>C>A，所以先找到C的b_attr，然后就停止了，结果是C类的属性成功覆写A类的属性。并且，因为所有的类都继承自object类，所以新式类本质上都是钻石继承，而这种搜索顺序可以避免多次访问相同的类所以性能更好，而且object类提供了很多默认操作，这种搜索顺序也使得object的默认操作不会覆盖更低级的子类。
+
+
+其他的新式类的变化：
+
+##### super added
+##### descriptors added
+##### new style class objects cannot be raised unless derived from `Exception` 
+##### `__slots__`added
+
+
+
+
+
+
+
+
+
+## 例1：继承+组合
+
+第一个文件 emp.py，主要是用继承语法建立了几个类。**继承是"is-a"关系**。继承很像数学的集合，高层级的父类是更大的集合，而定制化的子类是子集（或者是大集合的成员）。
+```python
+class Employee:  # 雇员
+    def __init__(self, name, salary=0):self.name, self.salary = name, salary
+    def work(self):print(self.name, 'does stuff')
+    def giveRaise(self, percent):self.salary = int(self.salary * (1 + percent))
+    def __repr__(self):
+        return '<Employee: name=%s, salary=%s>' % (self.name, self.salary)
+class Chef(Employee): # 厨师
+    def __init__(self, name):Employee.__init__(self, name, 50000)
+    def work(self):print(self.name, 'cooks food')
+class Servant(Employee): # 服务生
+    def __init__(self, name):Employee.__init__(self, name, 40000)
+    def work(self):print(self.name, 'service customer')
+class PizzaMaker(Chef):  # 做比萨的厨师
+    def __init__(self, name):Chef.__init__(self, name)
+    def work(self):print(self.name, 'makes pizza')
+if __name__ == '__main__':
+    bob = PizzaMaker('Bob')
+    print(bob)
+    bob.work()
+    bob.giveRaise(0.2)
+    print(bob)
+    for cls in (Employee,Chef, Servant, PizzaMaker):
+        obj = cls(cls.__name__)
+        obj.work()
+```
+
+第二个文件 pizzashop.py，主要是用继承语法建立了几个类。**组合是"has-a"关系**。组合关系不是继承那样的集合关系，而是组件关系，一个对象是其他对象的组成部分。组合类一般会提供接口（一个可以被调用的功能），而由内嵌的对象来实现。
+```python
+from emp import Servant, PizzaMaker
+class Customer: # 顾客的类
+    def __init__(self, name):self.name = name
+    def order(self, server):print(self.name, 'orders from', server)
+    def pay(self, server):print(self.name, 'pay bill to', server)
+class Oven: # 厨具微波炉的类
+    def bake(self): print('oven bakes pizza')
+class Pizzeria:  # 比萨店的类
+    def __init__(self):  # 比萨店有服务员、厨师、厨具
+        self.server = Servant('Jhon')
+        self.chef = PizzaMaker('Bob')
+        self.oven = Oven()
+    def order(self, customerName):  # 服务一个顾客的流程
+        customer = Customer(customerName)  # 创建这个客户信息
+        customer.order(self.server)  # 客户向服务员点单
+        self.chef.work()  # 厨师工作
+        self.oven.bake()  # 烤箱烘烤
+        customer.pay(self.server)  # 顾客结账
+if __name__ == '__main__':
+    shop = Pizzeria()
+    shop.order('Homer') # 第一个订单：顾客'Homer'点单
+    print('---*' * 3)
+    shop.order('Ringer') # 第二个订单：顾客'Ringer'点单
+```
+在这个文件中，Pizzeria类是容器：构造函数将内嵌的对象初始化，并且将它们嵌入。Pizzeria类也是控制器：在order方法里，让内嵌对象按照顺序工作，因为顾客是流动的，而服务生则是比萨店的一部分，所以每个订单都新建一个Customer对象，但是传入self.server对象。
+类名最好用名词，而方法用动词。这样，类可以表示任何用一句话表达的对象和关系。
+
+这种组合和继承结合而成的复合类，如果要将他们持久化，将最大的那个容器类的对象持久化就可以了。
+```python
+shop = Pizzeria()
+# 存入
+import pickle
+pickle.dump(shop, open('shopfile.dat', 'wb'))
+# 提取
+obj = pickle.load(shop, open('shopfile.dat', 'rb'))
+# 像以往那样使用
+shop.order('Kristyn')
+```
+
+
+
+##例2 流处理器
+
+通用的流处理器函数：
+
+```python
+def processor(reader, converter, writer):
+    while 1:  # 用1 比True更快
+        data = reader.read() # 用读取器，读取数据
+        if not data: break  # 处理完毕，或者出现异常，就终止
+        data = converter(data) # 用处理器，处理数据
+        writer.write(data) # 用写入器，写入数据
+```
+
+如果使用OOP，将会更强大。
+
+```python
+class Processor:
+    def __init__(self, reader, writer):  # 传入读取器和写入器
+        self.reader, self.writer = reader, writer  # 用组合语法嵌入
+    def converter(self, data): # 转换器是抽象接口，由子类实现
+        assert False, 'converter() need defined!'
+    def process(self):
+        while 1:
+            data = self.reader.readline()
+            if not data: break
+            data = self.converter(data)
+            self.writer.write(data)
+```
+
+使用这个类的时候，不用操心它的内部实现逻辑（父类只提供文件扫描循环），而只需关心输入如何、要怎么处理、输出什么，就在子类或者嵌入对象里面实现它。
+
+```python
+if __name__ == '__main__':
+    class Upper(Processor):  # 继承实现转换器：字符串转大写字母
+        def converter(self, data): return str.upper(data)
+    # 1. 输出到标准流，也就是print
+    import sys
+    obj = Upper(open('t.txt'), sys.stdout)
+    obj.process()
+    # 2. 输出到文件
+    Upper(open('t.txt'), open('out.txt', 'w')).process()
+    # 3. 定义写入器，然后传入写入器，更改输出的方式
+    class HTMLwriter:
+        def write(self, line):  # 将文字嵌入到HTML标签中
+            print('<pre>%s</pre>' % str.rstrip(line))
+    Upper(open('t.txt'), HTMLwriter()).process()
+```
+
+
+
+
+
+```python
+
+```
+
+
+
+
+
+
+
