@@ -378,16 +378,16 @@ class Manager(Person):
 
 对象彼此嵌套，就是组合。
 
-- 代理：包装一个类的对象，并且通过它可以访问特定的属性。
+- 代理：包装一个类的对象，并且通过它可以访问特定的属性。一般是用包装类来增强被包装的对象的整个接口。包装类是控制器，负责管理操作，它可以完整实现嵌入类的接口，同时又增加自己的处理逻辑。
+
+  代理这种语法不是很常用。如果直接控制、隐藏（包裹）一个类的某些属性，可能会比较困难，这时候用代理就会非常简洁。比如，跟踪或验证另一个对象的方法调用、类装饰器、把方法调用转给其他或者定制的逻辑、扩展内置类型等等。
 
   ```python
   class Person():
       def __init__(self, name, job=None, pay=0):
           self.name, self.job, self.pay = name, job, pay
-      def last_name(self):
-          return self.name.split()[-1]
-      def giveRaise(self, percent):
-          self.pay = int(self.pay * (1 + percent))
+      def last_name(self):return self.name.split()[-1]
+      def giveRaise(self, percent):self.pay = int(self.pay * (1 + percent))
       def __str__(self):
           return '[Person: %s, job: %s, salary: %s]' % (self.name, self.job, self.pay)
   class SomeOne():
@@ -403,7 +403,24 @@ class Manager(Person):
       print(sue)  # [Person: Sue Jones, job: Dev, salary: 1000000]
   ```
 
-  代理这种语法不是很常用。如果直接控制、隐藏一个类的某些属性，可能会比较困难，这时候用代理就会非常简洁。比如，跟踪或验证对另一个对象的方法调用、类装饰器。
+  `__getattr__`与`getattr(obj, attr)`：
+
+  - `__getattr__`拦截未定义（不存在）的属性查找。`getattr(obj, attr)`，就像obj.attr一样开启属性查找流程。
+  - 表达式sue.name，如果SomeOne类的实例对象sue有name属性，就会按照正常的属性查找运行下去，然而它根本就没有name属性，用特殊钩子`__getattr__`就能截获这种对不存在属性的读取。而在`__getattr__()`内部，则是由内置函数`getattr(self.person, attr)`实现self.person.attr的属性读取运算的。
+
+  `getattr(obj, attr)` 与`obj.__dict__[attr]`是不同的：
+
+  ```python
+  class Person():
+      def __init__(self, name, job=None, pay=0):
+          self.name, self.job, self.pay = name, job, pay
+      def last_name(self):pass
+  sue = Person('Sue Jones', job='Dev', pay=1000000)
+  # obj.__dict__只是罗列这个对象的属性。
+  print(sue.__dict__) # {'pay': 1000000, 'job': 'Dev', 'name': 'Sue Jones'} 只获得实例对象的属性
+  # 就像 obj.attr那样，进行完整的属性查找流程，包括继承树的查找。
+  print(getattr(sue, 'last_name'))#<bound method...>方法是类的属性，只能用getattr(obj,'attr')
+  ```
 
 - 聚合：嵌入各种类的对象
 
@@ -537,9 +554,16 @@ if __name__ == '__main__':
         print(key, '=>', db[key]) # Sue Jones => [Person: pay=1331000, name=Sue Jones, job=Dev]
 ```
 
+
+
 其他OPP可以做的事情：
 
 - GUI：tkinter、WxPython、PyQt
 - Web：Django
 - 数据库：面向对象数据库OODB（ZODB）、SQL数据库（SQLite、MySQL）、NoSQL数据库（MongoDB）
 - ORM：对象关系映射器
+
+
+
+
+
