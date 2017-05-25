@@ -194,7 +194,7 @@ print(a.name)
 
 
 
-## 一个OOP的例子
+## OOP 例1：简单介绍继承、组合、运算符重载等语法
 
 ##### 步骤1：类是实例的工厂。而这个版本的类，因为没有方法，是数据记录的工厂。
 
@@ -553,6 +553,137 @@ if __name__ == '__main__':
     for key in sorted(db):
         print(key, '=>', db[key]) # Sue Jones => [Person: pay=1331000, name=Sue Jones, job=Dev]
 ```
+
+
+
+## OOP 例2：继承与组合，共同构建一个复杂的类
+
+第一个文件 emp.py，主要是用继承语法建立了几个类。**继承是"is-a"关系**。继承很像数学的集合，高层级的父类是更大的集合，而定制化的子类是子集（或者是大集合的成员）。
+
+```python
+class Employee:  # 雇员
+    def __init__(self, name, salary=0):self.name, self.salary = name, salary
+    def work(self):print(self.name, 'does stuff')
+    def giveRaise(self, percent):self.salary = int(self.salary * (1 + percent))
+    def __repr__(self):
+        return '<Employee: name=%s, salary=%s>' % (self.name, self.salary)
+class Chef(Employee): # 厨师
+    def __init__(self, name):Employee.__init__(self, name, 50000)
+    def work(self):print(self.name, 'cooks food')
+class Servant(Employee): # 服务生
+    def __init__(self, name):Employee.__init__(self, name, 40000)
+    def work(self):print(self.name, 'service customer')
+class PizzaMaker(Chef):  # 做比萨的厨师
+    def __init__(self, name):Chef.__init__(self, name)
+    def work(self):print(self.name, 'makes pizza')
+if __name__ == '__main__':
+    bob = PizzaMaker('Bob')
+    print(bob)
+    bob.work()
+    bob.giveRaise(0.2)
+    print(bob)
+    for cls in (Employee,Chef, Servant, PizzaMaker):
+        obj = cls(cls.__name__)
+        obj.work()
+```
+
+第二个文件 pizzashop.py，主要是用继承语法建立了几个类。**组合是"has-a"关系**。组合关系不是继承那样的集合关系，而是组件关系，一个对象是其他对象的组成部分。组合类一般会提供接口（一个可以被调用的功能），而由内嵌的对象来实现。
+
+```python
+from emp import Servant, PizzaMaker
+class Customer: # 顾客的类
+    def __init__(self, name):self.name = name
+    def order(self, server):print(self.name, 'orders from', server)
+    def pay(self, server):print(self.name, 'pay bill to', server)
+class Oven: # 厨具微波炉的类
+    def bake(self): print('oven bakes pizza')
+class Pizzeria:  # 比萨店的类
+    def __init__(self):  # 比萨店有服务员、厨师、厨具
+        self.server = Servant('Jhon')
+        self.chef = PizzaMaker('Bob')
+        self.oven = Oven()
+    def order(self, customerName):  # 服务一个顾客的流程
+        customer = Customer(customerName)  # 创建这个客户信息
+        customer.order(self.server)  # 客户向服务员点单
+        self.chef.work()  # 厨师工作
+        self.oven.bake()  # 烤箱烘烤
+        customer.pay(self.server)  # 顾客结账
+if __name__ == '__main__':
+    shop = Pizzeria()
+    shop.order('Homer') # 第一个订单：顾客'Homer'点单
+    print('---*' * 3)
+    shop.order('Ringer') # 第二个订单：顾客'Ringer'点单
+```
+
+在这个文件中，Pizzeria类是容器：构造函数将内嵌的对象初始化，并且将它们嵌入。Pizzeria类也是控制器：在order方法里，让内嵌对象按照顺序工作，因为顾客是流动的，而服务生则是比萨店的一部分，所以每个订单都新建一个Customer对象，但是传入self.server对象。
+类名最好用名词，而方法用动词。这样，类可以表示任何用一句话表达的对象和关系。
+
+这种组合和继承结合而成的复合类，如果要将他们持久化，将最大的那个容器类的对象持久化就可以了。
+
+```python
+shop = Pizzeria()
+# 存入
+import pickle
+pickle.dump(shop, open('shopfile.dat', 'wb'))
+# 提取
+obj = pickle.load(shop, open('shopfile.dat', 'rb'))
+# 像以往那样使用
+shop.order('Kristyn')
+```
+
+
+
+## OOP 例3：流处理器，OOP的意义
+
+通用的流处理器函数：
+
+```python
+def processor(reader, converter, writer):
+    while 1:  # 用1 比True更快
+        data = reader.read() # 用读取器，读取数据
+        if not data: break  # 处理完毕，或者出现异常，就终止
+        data = converter(data) # 用处理器，处理数据
+        writer.write(data) # 用写入器，写入数据
+```
+
+如果使用OOP，将会更强大。
+
+```python
+class Processor:
+    def __init__(self, reader, writer):  # 传入读取器和写入器
+        self.reader, self.writer = reader, writer  # 用组合语法嵌入
+    def converter(self, data): # 转换器是抽象接口，由子类实现
+        assert False, 'converter() need defined!'
+    def process(self):
+        while 1:
+            data = self.reader.readline()
+            if not data: break
+            data = self.converter(data)
+            self.writer.write(data)
+```
+
+使用这个类的时候，不用操心它的内部实现逻辑（父类只提供文件扫描循环），而只需关心输入如何、要怎么处理、输出什么，就在子类或者嵌入对象里面实现它。
+
+```python
+if __name__ == '__main__':
+    class Upper(Processor):  # 继承实现转换器：字符串转大写字母
+        def converter(self, data): return str.upper(data)
+    # 1. 输出到标准流，也就是print
+    import sys
+    obj = Upper(open('t.txt'), sys.stdout)
+    obj.process()
+    # 2. 输出到文件
+    Upper(open('t.txt'), open('out.txt', 'w')).process()
+    # 3. 定义写入器，然后传入写入器，更改输出的方式
+    class HTMLwriter:
+        def write(self, line):  # 将文字嵌入到HTML标签中
+            print('<pre>%s</pre>' % str.rstrip(line))
+    Upper(open('t.txt'), HTMLwriter()).process()
+```
+
+
+
+
 
 
 
