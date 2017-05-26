@@ -295,7 +295,142 @@ if __name__ == '__main__':
     print(A.X)  # 33
 ```
 
+#### 命名空间与字典
+
 命名空间实际上是用字典实现的，属性运算的点号本质就是字典索引。模块、类、实例的命名空间都是这样。模块、类、实例，这些对象就是字典。
+
+```python
+class A:  # 这两个类故意设计成没有构造方法，运行一个方法后，实例对象才有属性
+    def make_data(self):self.a = 'A'
+class B(A):
+    def make(self):self.b = 'B'
+b = B()
+print(b.__dict__, b.__class__)  # {}实例对象没有属性，所以属性dict为空。 <class '__main__.B'>实例连接到自己的类
+print(B.__mro__) # (<class '__main__.B'>, <class '__main__.A'>, <class 'object'>) 类对象有MRO列表。用实例访问MRO：b.__class__.__mro__
+print(B.__bases__, A.__bases__)  # (<class '__main__.A'>,) (<class 'object'>,)类对象连接自己的父类
+print(B.__dict__.keys(), A.__dict__.keys())  # dict_keys(['__module__', '__doc__', 'make']) dict_keys(['__module__', '__dict__', 'make_data', '__weakref__', '__doc__'])访问每个类对象的命名空间
+b.make_data();print(b.__dict__)  # {'a': 'A'}  # 运行一个方法，产生一个属性。
+b.make();print(b.__dict__)  # {'a': 'A', 'b': 'B'}
+b_another = B();print(b_another.__dict__)  # {} 这个实例没有运行任何一个方法，命名空间和字典就为空
+```
+
+对象的属性运算：
+
+- 读取对象的属性，那`obj.attr`和`obj.__dict__['attr']`是完全等效的（模块对象、类对象、实例对象都是这样）。
+- 然而，实例对象`instance_obj.attr`会执行继承搜索，就无法使用简单的`obj.__dict__['attr']`了。
+
+实例的继承搜索步骤：
+
+- 首先像普通的`obj.attr`那样，是用`obj.__dict__['attr']`读取自身的属性。
+- 如果自身没有这些属性（比如类数据、方法），就执行继承搜索，用从类中获取；如果父类没有，就必须执行更深层次的继承搜索，到更高层级的父类中查找。这两步，实际上是MRO列表中轮询，然后读取每个类对象的属性：`for cls in b.__class__.__mro__: cls.__dict__['attr']`。新式类和经典类的MRO顺序是不同的。
+
+#### dir()函数
+
+dir()很像是`obj.__dict__keys()`，但是又比它更为强大，会搜索所有继承得来的属性。
+
+```python
+class A:
+    def make_data(self):self.a = 'A'
+class B(A):
+    def make(self):self.b = 'B'
+print(dir(A))  # ['__class__', '__delattr__', '__dict__',...'make_data'] 类A的结果里，包含了自己和类object的属性
+print(dir(B))  # ['__class__', ...'__weakref__', 'make', 'make_data'] 类B的结果，则是自己、类A、类object
+b = B()
+print(dir(b))  # ['__class__', ...'__weakref__', 'make', 'make_data'] 实例对象，则是自己、父类、超类
+b.make();print(dir(b))  # ['__class__', ...'__weakref__', 'b', 'make', 'make_data']
+```
+
+#### 命名空间链接
+
+既然各个对象的命名空间是字典，它们之间就可以用各种方式链接起来。
+
+- 模块和类对象的链接
+
+  ```python
+  import emp, sys  # emp 模块里面有 Chief类
+  print(emp.__dict__.keys())  # 类对象是模块对象的一个属性。module.class就可访问
+  # dict_keys(['__loader__', '__file__', '__builtins__', 'Chef', '__cached__', '__package__', '__spec__', 'PizzaMaker', 'Employee', '__doc__', 'Servant', '__name__'])
+  print(emp.Chef.__dict__)  # 类对象的属性，记录了自己所属的模块。
+  # {'__module__': 'emp', 'work': <function Chef.work at 0x008082B8>, '__init__': <function Chef.__init__ at 0x00808270>, '__doc__': None}
+  print(sys.modules[emp.Chef.__module__])  # 用sys.modules得到所有模块字典。emp.Chef.__module__返回模块名。二者结合得到模块对象<module 'emp' from 'D:\\GitbackUp\\PyProject\\emp.py'>
+  ```
+
+- 实例对象与类对象的链接
+
+  实例对象、类对象、父类对象的命名空间，是联通的。它们能够用特殊的方式沿着继承树向上访问（似乎不能向下访问）。
+
+  ```python
+  class A: pass
+  class B(A): pass
+  class C(A): pass
+  class D(B, C): pass
+  d = D()
+  print(d.__class__,)  # <class '__main__.D'>得到所属的类对象。d.__module__得到模块对象
+  print(D.__base__, D.__bases__) # <class '__main__.B'> 和(<class '__main__.B'>, <class '__main__.C'>)前者得到第一个父类B，后者得到所有的父类B和C（多继承）。
+  print(D.__mro__)  # (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)继承顺序列表
+  ```
+
+  利用`__class__`和`__bases__`，我们可以编写一个攀爬继承树的工具：
+
+  ```python
+  def classtree(cls, indent): # cls是类对象，indent指明每层级的缩进
+      print('.' * indent + cls.__name__)
+      for supercls in cls.__bases__:
+          classtree(supercls, indent + 3)  # 递归函数
+  def instancetree(inst):
+      print('tree of %s' % inst)
+      classtree(inst.__class__, 3)
+  if __name__ == '__main__':
+      class A: pass
+      class B(A): pass
+      class C(A): pass
+      class D(B, C): pass
+      class E: pass
+      class F(D, E):pass
+      instancetree(B())
+      instancetree(F())
+  ```
+
+  类树：
+
+  ```mermaid
+  graph RL;
+  	object--> A
+  	object-->E
+  	A-->B
+  	A-->C
+  	B-->D
+  	C-->D
+  	D-->F
+  	E-->F
+  ```
+
+  运行结果：缩进代表在类树的高度
+
+  ```HTML
+  tree of <__main__.B object at 0x0095E610>
+  ...B
+  ......A
+  .........object
+  tree of <__main__.F object at 0x0095E610>
+  ...F
+  ......D
+  .........B
+  ............A
+  ...............object
+  .........C
+  ............A
+  ...............object
+  ......E
+  .........object
+  ```
+
+  1
+
+
+
+
+
 
 
 
@@ -509,22 +644,91 @@ C-->D
 
 
 
+## 多重继承的例子
 
-
-
-
-
-
-
-
-
+继承这个类 ListInstance ，就能打印实例的具体信息：类名、内存地址、所有的实例属性
 
 ```python
+class ListInstance:
+    def __str__(self):
+        return '<instance of %s, address %s, attribute:\n\t%s>' % (
+        self.__class__.__name__, hex(id(self)), self.__attrnames())  # 类名、内存地址、所有的属性
+    def __attrnames(self):  # 每个属性名和值对应，然后连成一个str
+        return ', '.join(['%s=%s' % (attr, self.__dict__[attr]) for attr in sorted(self.__dict__)])
+if __name__ == '__main__':
+    class A(ListInstance):
+        def __init__(self): self.data, self.age= 'A', 13
+    print(A())
+```
 
+但是，这还是不够的。对于类的实例对象，`obj.attr`不仅仅是读取自己的属性，还会执行属性继承搜索。改动一下，成为
+
+```python
+class ListInherited():
+    def __str__(self):
+        return '<instance of %s, address %s, attribute:\n\t%s>' % (self.__class__.__name__, hex(id(self)), self.__attrnames())
+    def __attrnames(self):
+        result_list = [('\tname %s=<> \n' % attr if attr[:2] == '__' and attr[-2:] == '__'
+                        else '\tname %s=%s \n' % (attr, getattr(self, attr)))
+                       for attr in dir(self)]
+        result = ''
+        for attr in dir(self):
+            if attr[:2] == '__' and attr[-2:] == '__':
+                result += '\tname %s=<> \n' % attr
+            else:
+                result += '\tname %s=%s \n' % (attr, getattr(self,attr))
+        return ''.join(result_list)
+if __name__ == '__main__':
+    class A(ListInherited):
+        def __init__(self): self.data, self.age = 'A', 13
+    print(A())
 ```
 
 
 
+
+
+
+
+# 运算符重载（操作符重载）
+
+运算符重载，就是当实例对象出现内置操作时，用类的方法拦截这些操作，然后获得相应的结果。
+
+- 运算符重载不是必须的，也不是默认的，而是为了让类的实例对象模拟内置对象的接口，表现的像内置类型。
+- 几乎所有的运算符，都有重载方法，有些甚至有好几个（例如加法就有`__add__`、`__radd__`、`__iadd__`）。运算符重载可以拦截：所有的Python常规运算符、打印、函数调用、属性点号运算。
+- 运算符重载，是通过在类里面定义特殊名称的方法来实现的，这些方法前后都有双下线。Python定义了内置的操作表达式/运算 与 特殊方法名之间的映射关系。
+- 运算符重载也可以继承。
+
+
+
+| 方法名                  | 重载意义      | 内置操作符（调用方式）                      |
+| :------------------- | :-------- | :------------------------------- |
+| `__init__`           | 构造函数      | 对象创建: X = Class(args)            |
+| `__new__`            | 创建        | 在`__init__`之前创建对象                |
+| `__del__`            | 析构函数      | X对象收回                            |
+| `__repr__`和`__str__` | 打印，转换     | print(X)，repr(X)，str(X)          |
+| `__call__`           | 调用        | X(*args, **kwargs)               |
+| `__getattr__`        | 点号运算      | X.undefined                      |
+| `__setattr__`        | 属性赋值语句    | X.any=value                      |
+| `__delattr__`        | 属性删除      | del X.any                        |
+| `__getattribute__`   | 属性获取      | X.any                            |
+| `__get__`  `__set__` | 描述符属性     | X.attr, X.attr=value, del X.attr |
+| `__bool__`           | 布尔测试      | bool(X)                          |
+| `__add__`            | 运算符+      | 如果没有_iadd_， X+Y， X+=Y            |
+| `__or__`             | 运算符\|     |                                  |
+| `__getitem__`        | 索引运算      | X[key]，X[i:j]                    |
+| `__setitem__`        | 索引赋值语句    | X[key]，X[i:j]=sequence           |
+| `__delitem__`        | 索引和分片删除   | del X[key]，del X[i:j]            |
+| `__len__`            | 长度        | len(X)，如果没有`__bool__`，真值测试       |
+| `__radd__`           | 右侧加法      | other+X                          |
+| `__iadd__`           | 实地（增强的）加法 | X+=Y(or else` __add__`)          |
+| `__contains__`       | 成员关系测试    | item in X(任何可迭代)                 |
+| `__index__`          | 整数值       | hex(X), bin(X),  oct(X)          |
+| `__delete__`         | 描述符属性     | X.attr, X.attr=value, del X.attr |
+
+接下来举例说明常见的运算符重载
+
+#### 构造函数`__init__`
 
 
 
