@@ -644,7 +644,57 @@ C-->D
 
 
 
-## 多重继承的例子
+
+
+
+
+# 工厂函数和工厂设计模式
+
+基于环境的要求来创建实例，让这个类能够满足环境要求，而究竟是什么条件、要怎么样的对象，编写程序的时候是无法预料的。工厂函数和工厂就提供了解决方案。因为，类是对象，可以保存在数据结构中，也可以作为参数传给函数。
+
+`def factory(aClass, *args, **kwargs):return aClass(*args, **kwargs)`
+
+这种延迟手段，能将类的代码、调用实例的代码、配置代码分离。
+
+比如，上次提到的**流处理器**，它的数据源、输出目标都不是确定的。甚至用一个配置文档指定。下面就示例怎么用参数指定读取器。
+
+```python
+# streams.py 这里定义各种输入输出的流
+class File:
+    def __init__(self, *args, **kwargs):
+        self = open('pro.py')
+# pro.py 这个模块定义各种处理器
+class Processor:
+    def __init__(self, reader, writer):  # 传入读取器和写入器
+        self.reader, self.writer = reader, writer  # 用组合语法嵌入
+    def converter(self, data): # 转换器是抽象接口，由子类实现
+        assert False, 'converter() need defined!'
+    def process(self):
+        while 1:
+            data = self.reader.readline()
+            if not data: break
+            data = self.converter(data)
+            self.writer.write(data)
+class SubProcessor(Processor):
+    def converter(self, data): return data
+# fact.py 这里定义工厂函数、获取配置数据、实用各种类的实例和方法
+def factory(aClass, *args, **kwargs):
+    return aClass(*args, **kwargs)
+if __name__ == '__main__':
+    import streams, pro
+    reader_name = 'File'  # 这个参数可以从配置文档解析得到
+    reader_arg = None  # 这个参数可以从配置文档解析得到
+    readerClass = getattr(streams, reader_name)  # 由具体条件决定是哪个类
+    reader = factory(readerClass, reader_arg)
+    obj = pro.SubProcessor(open('a.txt'), open('t.txt', 'w'))
+    obj.process()
+```
+
+
+
+
+
+# 多重继承的例子——造一个类属性工具
 
 继承这个类 ListInstance ，就能打印实例的具体信息：类名、内存地址、所有的实例属性
 
@@ -653,12 +703,21 @@ class ListInstance:
     def __str__(self):
         return '<instance of %s, address %s, attribute:\n\t%s>' % (
         self.__class__.__name__, hex(id(self)), self.__attrnames())  # 类名、内存地址、所有的属性
-    def __attrnames(self):  # 每个属性名和值对应，然后连成一个str
+    def __attrnames(self):  # 每个属性名和值对应，然后连成一个str。伪私有属性，避免被覆盖。
         return ', '.join(['%s=%s' % (attr, self.__dict__[attr]) for attr in sorted(self.__dict__)])
 if __name__ == '__main__':
     class A(ListInstance):
         def __init__(self): self.data, self.age= 'A', 13
     print(A())
+# <instance of A, address 0x102178d30, attribute:
+# 	age=13, data=A>
+```
+
+运行结果：
+
+```Html
+<instance of A, address 0x102178d30, attribute:
+	age=13, data=A>
 ```
 
 但是，这还是不够的。对于类的实例对象，`obj.attr`不仅仅是读取自己的属性，还会执行属性继承搜索。改动一下，成为
@@ -666,25 +725,146 @@ if __name__ == '__main__':
 ```python
 class ListInherited():
     def __str__(self):
-        return '<instance of %s, address %s, attribute:\n\t%s>' % (self.__class__.__name__, hex(id(self)), self.__attrnames())
+        return '[instance of %s, address %s, attribute:\n%s]' % (
+            self.__class__.__name__, hex(id(self)), self.__attrnames())
     def __attrnames(self):
-        result_list = [('\tname %s=<> \n' % attr if attr[:2] == '__' and attr[-2:] == '__'
-                        else '\tname %s=%s \n' % (attr, getattr(self, attr)))
-                       for attr in dir(self)]
         result = ''
         for attr in dir(self):
             if attr[:2] == '__' and attr[-2:] == '__':
-                result += '\tname %s=<> \n' % attr
+                result += '\t%s=**\n' % attr
             else:
-                result += '\tname %s=%s \n' % (attr, getattr(self,attr))
-        return ''.join(result_list)
+                result += '\t%s=%s\n' % (attr, getattr(self,attr))
+        result_a = ''.join(
+            [('\t%s = **\n' % attr if attr[:2] == '__' and attr[-2:] == '__'
+              else '\t%s=%s \n' % (attr, getattr(self, attr)))
+             for attr in dir(self)])  # 另一种得出结果的方式
+        return result
 if __name__ == '__main__':
-    class A(ListInherited):
-        def __init__(self): self.data, self.age = 'A', 13
-    print(A())
+    class A:
+        def __init__(self): self.dataA = 'A'
+    class B(A, ListInherited):
+        def __init__(self):
+            A.__init__(self)
+            self.dataB, self.age = 'B', 13
+    print(B())
 ```
 
+运行结果：
 
+```Html
+[instance of B, address 0x102178e80, attribute:
+	_ListInherited__attrnames=<bound method ListInherited.__attrnames of <__main__.B object at 0x102178e80>> 这是继承而来的方法对象。并且是伪私有属性
+	__class__=**
+	...
+	__weakref__=**
+	age=13
+	dataA=A
+	dataB=B    ]
+```
+
+这样虽然能够获取所有的属性，但是一团浆糊，根本分不清哪个属性来自哪个类。再次改写为：首先遍历实例对象的属性，然后`__class__`链接到类并且遍历属性，然后递归地从类的`__bases__`链接到父类并且遍历属性。
+
+参数很多的时候，format()更容易理解。
+
+```python
+class ListtTree:
+    def __str__(self):
+        self.__visited = {}  # 用它记录已经访问过的类对象，避免重复访问
+        return '[instance of {0}, address {1}, attribute:\n{2}{3}]'.format(
+            self.__class__.__name__, hex(id(self)),
+            self.__attrnames(self, 0),
+            self.__listclass(self.__class__, 4))
+    def __attrnames(self, obj, indent):
+        spaces = ' ' * (indent + 4)
+        result = ''
+        for attr in sorted(obj.__dict__):
+            if attr.startswith('__') and attr.endswith('__'):
+                result += spaces + '%s=**\n' % attr
+            else:
+                result += spaces + '%s=%s\n' % (attr, getattr(self, attr))
+        return result
+    def __listclass(self, aClass, indent):
+        dots = '.' * indent
+        if aClass not in self.__visited:
+            self.visited[aClass] = True
+            # 这个生成器，里面有个递归调用
+            genabove = (self.__listclass(c, indent+4) for c in aClass.__bases__)
+            return '\n{0}[Class {1}, address {2},\n{3}{4}{5}]\n'.format(
+                dots, aClass.__name__, hex(id(aClass)),
+                self.__attrnames(aClass, indent),
+                ''.join(genabove), # join()作为迭代环境，激活生成器
+                dots)
+        else:
+            return '\n{0}[Class {1}, address {2}, (see above)]\n'.format(
+                dots, aClass.__name__, hex(id(aClass)))
+if __name__ == '__main__':
+    class A:
+        def __init__(self): self.dataA = 'A'
+    class B(A, ListtTree):
+        def __init__(self):
+            A.__init__(self)
+            self.dataB, self.age = 'B', 13
+    print(B())
+```
+
+运行结果：
+
+```Html
+[instance of B, address 0x1029a0208, attribute:
+    _ListtTree__visited={}
+    age=13
+    dataA=A
+    dataB=B
+....[Class B, address 0x100516498,
+        __doc__=**
+        __init__=**
+        __module__=**
+........[Class A, address 0x1005160f8,
+            __dict__=**
+            __doc__=**
+            __init__=**
+            __module__=**
+            __weakref__=**
+............[Class object, address 0x10022bb20,
+                __class__=**
+                __delattr__=**
+                __dir__=**
+                __doc__=**
+                __eq__=**
+                __format__=**
+                __ge__=**
+                __getattribute__=**
+                __gt__=**
+                __hash__=**
+                __init__=**
+                __le__=**
+                __lt__=**
+                __ne__=**
+                __new__=**
+                __reduce__=**
+                __reduce_ex__=**
+                __repr__=**
+                __setattr__=**
+                __sizeof__=**
+                __str__=**
+                __subclasshook__=**
+............]
+........]
+........[Class ListtTree, address 0x100515bb8,
+            _ListtTree__attrnames=<bound method ListtTree.__attrnames of <__main__.B object at 0x1029a0208>>
+            _ListtTree__listclass=<bound method ListtTree.__listclass of <__main__.B object at 0x1029a0208>>
+            __dict__=**
+            __doc__=**
+            __module__=**
+            __str__=**
+            __weakref__=**
+............[Class object, address 0x10022bb20, (see above)]
+........]
+....]
+]
+```
+
+由此可以看出，OOP是一种很好的代码复用语法，应用得当的时候非常实用。但是，滥用的话，就会变得比较复杂。
 
 
 
@@ -726,12 +906,6 @@ if __name__ == '__main__':
 | `__index__`          | 整数值       | hex(X), bin(X),  oct(X)          |
 | `__delete__`         | 描述符属性     | X.attr, X.attr=value, del X.attr |
 
-接下来举例说明常见的运算符重载
-
-#### 构造函数`__init__`
-
-
-
-
+1
 
 
