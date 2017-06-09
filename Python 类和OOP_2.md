@@ -909,3 +909,95 @@ if __name__ == '__main__':
 1
 
 
+内置函数可以用作装饰器，也可以自定义函数、可调用的类（实现了`__call__`方法）作为装饰器。
+
+```python
+class tracer: # 类写成的装饰器
+    def __init__(self, func):
+        self.calls = 0
+        self.func = func
+    def __call__(self, *args):
+        self.calls += 1
+        print('call %s to %s' %(self.calls, self.func.__name__), end=' ')
+        self.func(*args)
+@tracer # 类装饰器的使用
+def show(a, b, c): print(a, b, c)
+
+show(1, 2, 3)  # call 1 to show 1 2 3
+show('a', 'b', 'c')  # call 2 to show a b c
+```
+
+
+
+
+
+还有类装饰器。语法：
+
+```python
+def decorator(aclass):pass
+
+@decotrator # 相当于 A = decorator(A)
+class A:pass
+```
+
+
+
+元类语法：
+
+```python
+class Meta(type):
+    def __new__(mata, classname, supers, classdict):pass
+# Python3 的语法
+class A(metaclass=Meta):pass
+# Python2 的语法
+class A():
+    __metaclass__ = Meta
+    pass
+```
+
+
+
+
+
+### 类编码的陷阱
+
+1. 如果一个列表被共享引用，那么列表的原处修改会影响每个引用。类似地，类数据属性，用类对象修改后类数据属性，会影响类对象、实例对象。如果类数据属性是一个可变的对象（比如[ ]），那么用实例对象都可以修改，会影响类对象、实例对象。
+2. 继承中，属性查找是按照MRO的顺序来的。避免继承树中类的变量名相互覆盖，方法有：
+   - 注意继承的顺序，甚至是多重继承中的左右顺序 class A(B, C)
+   - 尽可能让一个个类独立完备，自己做自己的事情，而不要让继承关系过于复杂。
+   - 类的伪私有属性，也不不错
+3. 尽量避免类和函数的嵌套。
+4. 注意，`__getattr__`不会截获内置操作&重载方法，比如`__str__()`
+5. 尽量不要让类的继承层次太深。
+
+### super()函数
+
+super并不是父类，而是 MRO 中的下一个类。
+
+```python
+def super(cls, inst):
+    mro = inst.__class__.mro() # 用inst计算出MRO列表
+    return mro[mro.index(cls) + 1] # 通过cls定位当前的类，返回下一个类
+```
+
+
+
+
+
+
+
+mermaid学习：
+
+http://knsv.github.io/mermaid/#mermaid
+
+https://github.com/knsv/mermaid
+
+Python与Flask
+
+http://www.pythondoc.com/
+
+http://www.pythondoc.com/flask/
+
+PythonDjiango、Pandas
+
+http://python.usyiyi.cn/
