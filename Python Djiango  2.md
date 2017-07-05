@@ -18,7 +18,6 @@
 
   ```batch
   python -m pip install -U pip  # 用pip自己升级
-  # 如果升级失败，可以
   ```
   如果pip升级经常失败，就https://pypi.python.org/pypi/pip/下载pip-*.tar.gz然后，解压，进入所在的磁盘和目录，
 
@@ -30,7 +29,7 @@
 - 安装Django
 
   ```bash
-  >pip install Django :: linux必须sudo pip install Django
+  >pip install Django # linux必须sudo pip install Django
   >python
   >>> import django
   >>> django.get_version()
