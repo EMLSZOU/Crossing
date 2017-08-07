@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",//"C++ Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileBasename}.o",//"${file}.exe"
+            "args": [],
+            "stopAtEntry": false,
+            //"cwd": "${workspaceRoot}",
+            //"preLaunchTask": "clang++",
+            "preLaunchTask": "g++",
+            "environment": [],
+            "externalConsole": true,
+            "linux": {
+                "MIMode": "gdb"
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "miDebuggerPath": "c:\\Program Files (x86)\\C-Free 5\\MinGW\\bin\\gdb.exe"
+
+            }
+        },
+        {
+            "name": "C++ Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${fileBasename}.o",//"${workspaceRoot}/${file}.exe",
+            "processId": "${command:pickProcess}",
+            "linux": {
+                "MIMode": "gdb"
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb"
+            }
+        }
+    ]
+}

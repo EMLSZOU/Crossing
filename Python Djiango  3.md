@@ -161,7 +161,7 @@ Mac SSH 远程连接Ubuntu   {username}代表变量，比如用户名 aching
   ```shell
   #!/bin/sh
   service mysql stop; service mysql start
-  DIR==$(cd `dirname $0`; pwd)
+  DIR=$(cd "$'dirname $0'"; pwd)
   Python=${DIR}/djvenv/bin/python
   manage=${DIR}/mysite/manage.py
   echo "please input server ip:(default 0.0.0.0)"; read ip
