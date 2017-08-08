@@ -9,7 +9,6 @@
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
-            //"preLaunchTask": "clang++",
             "preLaunchTask": "Complie",
             "environment": [],
             "externalConsole": false,

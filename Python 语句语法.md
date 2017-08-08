@@ -55,43 +55,44 @@ Python的注释以 # 开头，后面的文字直到行尾都算注释
 ##### 文档字符串`__doc__`
 在模块、函数、类的顶端。Python会自动封装成为文档字符串。比如 test.py
 - ```python
-#!/usr/bin/env Python3
-# -*- coding: utf-8 -*-
-"""This is just a test module"""
-from platform import *
-string = 'module'
-def foo():
-    """__Doc__"""
-    print('run foo()',python_version())
-class Test():
-    """__Doc__"""
-    def __init__(self):
-        print('run __init__', end='\n')
-if __name__ == '__main__':
-    Test()
-    foo()
-    print('__main__',python_version())
-```
+  #!/usr/bin/env Python3
+  # -*- coding: utf-8 -*-
+  """This is just a test module"""
+  from platform import *
+  string = 'module'
+  def foo():
+      """__Doc__"""
+      print('run foo()',python_version())
+  class Test():
+      """__Doc__"""
+      def __init__(self):
+          print('run __init__', end='\n')
+  if __name__ == '__main__':
+      Test()
+      foo()
+      print('__main__',python_version())
+  ```
 
 之后，可以用`object.__doc__`查看。但是一般不这么做，而是用 help()函数
+
 - ```python
-import test
-print(test.__doc__)  # 模块文档
-print(test.foo.__doc__)  # 某个函数的文档
-print(test.Test.__doc__)  # 某个类的文档
-```
+  import test
+  print(test.__doc__)  # 模块文档
+  print(test.foo.__doc__)  # 某个函数的文档
+  print(test.Test.__doc__)  # 某个类的文档
+  ```
 
 **help() 函数，在交互环境下使用**
 - ```python
-# 交互模式
->>>help('a')
-# 模块模式
-import sys
-help(sys)  # 无需print()了，dir()需要print。查看一个模块的 __doc__
-help(sys.getrefcount)  # 查看模块内一个函数的 __doc__
-help(str)  # 内置对象查看
-help(str.replace)  # 内置对象的一个函数
-```
+  # 交互模式
+  >>>help('a')
+  # 模块模式
+  import sys
+  help(sys)  # 无需print()了，dir()需要print。查看一个模块的 __doc__
+  help(sys.getrefcount)  # 查看模块内一个函数的 __doc__
+  help(str)  # 内置对象查看
+  help(str.replace)  # 内置对象的一个函数
+  ```
 
 ##### dir()函数
 - 获得这类对象所有的属性列表。
@@ -112,9 +113,9 @@ Python与C/C++/Java语法不同：以冒号和缩进表示逻辑；分号、大�
 为什么缩进作为语法的一部分？保证可读性。Tab和空格都可以表示缩进，但不要混用Tab与空格。缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数，缩进数的空格数不一致，会运行出错。最好是4个空格最为一个缩进（很多编辑器也是这样做的）。
 Python对缩进要求非常严格。首行不能有空格。操作符两边加上空格。
 - ##### 代码组
-缩进相同的一组语句构成一个代码块，我们称之代码组。像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。
-我们将首行及后面的代码组称为一个子句(clause)。
-复合语句：首行，嵌套。if子句。代码块。
+  缩进相同的一组语句构成一个代码块，我们称之代码组。像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。
+  我们将首行及后面的代码组称为一个子句(clause)。
+  复合语句：首行，嵌套。if子句。代码块。
 - ##### 合行（不推荐）
 ```python
 # 简单语句合为一行（不推荐），由分号作为语句界定符
@@ -123,7 +124,7 @@ a= 1;b=2;print(a+b)
 if a > 0: print(a); print(b)
 ```
 - ##### 分行
-每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。
+  每行最大长度79，换行可以使用反斜杠，最好使用圆括号。换行点要在操作符的后边敲回车。
 ```python
 # 表达式的跨行，C语言方式，不推荐。斜线自己容易忘记，别人也不容易看到。
 c = 1 + \
@@ -146,8 +147,8 @@ if ( a > 1 and
     print(a,b)
 ```
 - #####空行
-空行并不是Python语法的一部分，只是为了易读性。
-类和top-level函数定义之间空两行；类中的方法定义之间空一行；函数内逻辑无关段落之间空一行；其他地方尽量不要再空行。
+  空行并不是Python语法的一部分，只是为了易读性。
+  类和top-level函数定义之间空两行；类中的方法定义之间空一行；函数内逻辑无关段落之间空一行；其他地方尽量不要再空行。
 
 
 ## 操作符
@@ -281,8 +282,8 @@ builtins.open('a.txt')
 PEP8 的变量命名惯例：
 - 变量名前后有下划线，有特殊作用。前后都有下划线的变量`__x__`，对解释器有特殊意义。
     -  `_xxx`：表示私有，不建议外部随意访问
-    - `__xxx`：私有变量
-    - `__xxx__`：特殊变量
+    -  `__xxx`：私有变量
+    -  `__xxx__`：特殊变量
 - 模块名：尽量短小，使用全部小写的方式，可以使用下划线 module_name。
 - 包命名：尽量短小，使用全部小写的方式，不可以使用下划线  packagename。
 - 全局变量：local_var_name 尽量只在模块内有效，类似C语言中的static。实现方法有两种，一是`__all__`机制；二是前缀一个下划线 _x，这样就不会被 from module import * 语句导入。
@@ -299,7 +300,7 @@ Python创建变量的方法很简单，变量起名，然后赋值。左值（�
 首次赋值创建变量名。有些数据结构的对象也会在赋值时创建，比如字典的key。一旦赋值，变量名在表达式中使用时，就会被其所引用的对象取代。
 赋值是建立将对象 的引用值存储在变量名内，而不是复制对象（内存中的存储区域）。赋值的本质，就是将变量名与对象的引用值绑定。
 - 变量名在使用前  必须赋值。隐式赋值：模块导入、函数定义、类定义、for循环变量、函数参数传递。
-同一个变量可以反复赋值，而且可以是不同类型的变量。例如：
+  同一个变量可以反复赋值，而且可以是不同类型的变量。例如：
 ```python
 miles = 100     # 整型变量。变量可以赋不同的值
 miles   = 1000.0   # 浮点型变量。动态语言不限类型，一个变量可以通过赋值指向不同类型的对象
@@ -462,18 +463,18 @@ print >> open(log.txt,'a'),a,b,c  # Python2语法
     # 此后，每个print语句都被重定向了。
     ```
 - 暂时性重定向（只在重定向这一次打印）.这需要一个文件对象（它有write(str)方法，而不是一个文件名字符串）
-	```python
-	print(a,b,c,file=open(log.txt,'a'))  # 重定向语句
-	print >> open(log.txt,'a'),a,b,c  # Python2语法
-	```
-	这就像永久重定向后，恢复正常
-	```python
-	origin = sys.stdout
-	sys.stdout = open(log.txt,'a')
-	print(a,b,c)
-	sys.stdout.close()
-	sys.stdout = origin
-	```
+ ```python
+ print(a,b,c,file=open(log.txt,'a'))  # 重定向语句
+ print >> open(log.txt,'a'),a,b,c  # Python2语法
+ ```
+ 这就像永久重定向后，恢复正常
+ ```python
+ origin = sys.stdout
+ sys.stdout = open(log.txt,'a')
+ print(a,b,c)
+ sys.stdout.close()
+ sys.stdout = origin
+ ```
 
 **输入input()**
 ```python
@@ -486,8 +487,8 @@ Python2里面有两个用来从命令行接受输入的函数：input 和 raw_in
 
 Python3里这两种输入方式被合并了。它保留了 input 这个名字和 raw_input 的效果。
 - input()  不管你输的是什么，程序都会认为这是字符串。
-在Py3里，如何输入一个值呢？方法是 eval()将字符串str当成有效Python表达式来求值，并返回计算结果。
-value = eval(input())
+  在Py3里，如何输入一个值呢？方法是 eval()将字符串str当成有效Python表达式来求值，并返回计算结果。
+  value = eval(input())
 
 
 ## 选择和分支————if 语句
@@ -495,28 +496,31 @@ value = eval(input())
 在Python里，任何非零、非空对象都为真。数字0、空对象（[]和''之类）、None都为假。比较和相等，会在数据结构中递归运算。运算符是 and or not，而不是 && || !!。计算返回的True False对象（而不是数值）。
 **if 语法**
 - ```Python
-if <test1>:
+  if <test1>:
     <statement1>
-elif <test2>:
+  elif <test2>:
     <statement2>
-else:
+  else:
     <statement3>
-```
 
-**Python 没有C-like语言的 switch 语句，但是有替代方案：**
-- **java**
-```java
-switch (selector){
-	case value1:
-        <statement1>;
-		break;
-	case value2:
-        <statement2>;
-		break;
-    default:
-        <statement3>;
-}
-```
+  ```
+
+
+- **Python 没有C-like语言的 switch 语句，但是有替代方案：**
+
+  ```java
+  switch (selector){
+  	case value1:
+          <statement1>;
+  		break;
+  	case value2:
+          <statement2>;
+  		break;
+      default:
+          <statement3>;
+  }
+  ```
+
 - **Python **  如果分支很多，将会非常冗长
 ```python
 if selector == value1: <statement1>
@@ -534,7 +538,7 @@ branch.get(selector,statement3)  # get方法，如果键不存在，就取默认
 
 **三元选择符（条件表达式）**
 - Python没有三元选择符，但是也可以实现。
-java
+  java
 ```java
 a = condition ? value1 : value2
 ```
@@ -548,12 +552,12 @@ a = condition and value1 or value2
 ## 循环————while语句
 while循环是最通用的循环结构。
 ```Python
-    while <test>:      # 循环入口检测
-        <statement 1>  # 循环体
-        if <test 1>: break    # 跳出循环，也不执行else
+while <test>:      # 循环入口检测
+    <statement 1>  # 循环体
+    if <test 1>: break    # 跳出循环，也不执行else
         if <test 2>: continue # 跳过此次循环，回到 while 测试
-    else:              # else可选项
-        <statement 2>  # 正常退出循环（不是break），就运行
+            else:              # else可选项
+                <statement 2>  # 正常退出循环（不是break），就运行
 ```
 - 死循环、无限循环：
 ```python
@@ -561,21 +565,21 @@ while True:print('Ctrl-C to stop')
 ```
 - Python没有 do-while，但是也可以实现"执行一次，再循环，条件成立就退出"：
 ```python
-    while 1:  # 比 while True 要好
-        <statement>          # 执行的操作代码
-        if exitTest():break  # 设置退出的条件
+while 1:  # 比 while True 要好
+    <statement>          # 执行的操作代码
+    if exitTest():break  # 设置退出的条件
 ```
 - 序列，循环切片，每次切出一个元素：
 ```Python
-    x = 'spam'
-    while x:  # while x != '' 的简写。判断非空，这写法很常见
-        print(x,end=' ');x=x[1:]
+x = 'spam'
+while x:  # while x != '' 的简写。判断非空，这写法很常见
+    print(x,end=' ');x=x[1:]
 ```
 - 常见的“变化--计数--退出”循环：
 ```python
-    a=0; b=10
-    while a<b:
-        print(a, end=' '); a += 1
+a=0; b=10
+while a<b:
+    print(a, end=' '); a += 1
 ```
 
 **跳转语句**
@@ -589,44 +593,44 @@ while True:print('Ctrl-C to stop')
 else是Python循环特有的结构。用处是捕捉循环体中 特殊情况引发的break 而不必设立标志位/检查项.
 - 循环搜索一个列表，看看里面是否包含一个值'a'。仿照C-like语言的写法
 ```Python
-    found = False           # 设标志位 found
-    while x and not found:  # x不为空 and 没有找到
-        if x[0]=='a':
-            print('found it'); found=True  # 一旦找到，就执行相关动作，并改变found
+found = False           # 设标志位 found
+while x and not found:  # x不为空 and 没有找到
+    if x[0]=='a':
+        print('found it'); found=True  # 一旦找到，就执行相关动作，并改变found
         x=x[1:]
-    if not found: print('not found') # 判断found，并且执行相关操作
+        if not found: print('not found') # 判断found，并且执行相关操作
 ```
 - 用Pythonic 的else就会简约很多，不必设立标志位，更为结构化。
 ```Python
-    while x:  # x不为空 and 没有找到
-        if x[0]=='a':
-            print('found it'); break  # 一旦找到，就执行相关动作，然后break
+while x:  # x不为空 and 没有找到
+    if x[0]=='a':
+        print('found it'); break  # 一旦找到，就执行相关动作，然后break
         x=x[1:]
-    else: print('not found') # 判断标志位，并且执行相关操作
+        else: print('not found') # 判断标志位，并且执行相关操作
 ```
 - C-like语言常见的“判断-处理”循环
 ```java
-    while((x=func())!=NULL){ //对x的判断
-        process(x)  //对x的处理代码
-    }
+while((x=func())!=NULL){ //对x的判断
+  process(x)  //对x的处理代码
+}
 ```
 python 不能写`while (x=func()):` 只能用以下方案替代
 ```Python
 #方案1：死循环，赋值语句移到循环体中，然后 if-break
-    while True:
+while True:
     x = func()
     if not x: break  # 对x的判断
     process(x)  # 对x的处理代码
 #方案2
-    x = True
-    while x:
-        x = func()
-        if x: process(x)
-#方案3
+x = True
+while x:
     x = func()
-    while x:
-        process(x)
-        x = func()
+    if x: process(x)
+#方案3
+x = func()
+while x:
+    process(x)
+    x = func()
 ```
 
 
@@ -662,63 +666,63 @@ for循环是通用的序列迭代器，可以遍历任何有序的序列对象�
 
 #### 并行遍历
 1. 并行遍历，赋值
-	```Python
-    for (a,b) in [(1,2),(3,4),(5,6)]: print(a,b)  # 解包赋值。比如第一次 a=1;b=2
-    ```
-    如果不用解包赋值，也不违反语法
-    ```python
-    for both in [(1,2),(3,4),(5,6)]: a,b = both; print(a, b)  #之后解包，效果一样
-    ```
-    嵌套规则不变的数据结构，用这种方法提取数据非常快捷：
-    ```python
-    for ((a,b),c) in [((1,2),3), ((4,5),6), ((7,8)9)]: print(a,b,c)
-    ```
-    任何嵌套的序列结构都可以
-    ```python
-    for ((a,b),c) in [((1,2),3), ('xy',6), ([7,8]9)]: print(a,b,c)
-    ```
+ ```Python
+   for (a,b) in [(1,2),(3,4),(5,6)]: print(a,b)  # 解包赋值。比如第一次 a=1;b=2
+ ```
+   如果不用解包赋值，也不违反语法
+   ```python
+   for both in [(1,2),(3,4),(5,6)]: a,b = both; print(a, b)  #之后解包，效果一样
+   ```
+   嵌套规则不变的数据结构，用这种方法提取数据非常快捷：
+   ```python
+   for ((a,b),c) in [((1,2),3), ((4,5),6), ((7,8)9)]: print(a,b,c)
+   ```
+   任何嵌套的序列结构都可以
+   ```python
+   for ((a,b),c) in [((1,2),3), ('xy',6), ([7,8]9)]: print(a,b,c)
+   ```
 2. 遍历字典
-	简单遍历，仅仅遍历 key
-	```python
-    D = {'a':1,'b':2,'c':3}
-    for item in D:print(item)  # 仅仅遍历key
-    ```
-    用D.items()就可以转为元组：
-    ```python
-	list(D.items()) # 结果为 [('a',1),('b',2),('c',3)]
-    ```
-    这就是字典可以并行遍历的原因：
-    ```python
-    for (key, value) in D.items: print(key, ':', value)  # a:1
-    ```
+   简单遍历，仅仅遍历 key
+ ```python
+   D = {'a':1,'b':2,'c':3}
+   for item in D:print(item)  # 仅仅遍历key
+ ```
+   用D.items()就可以转为元组：
+   ```python
+ list(D.items()) # 结果为 [('a',1),('b',2),('c',3)]
+   ```
+   这就是字典可以并行遍历的原因：
+   ```python
+   for (key, value) in D.items: print(key, ':', value)  # a:1
+   ```
 3. 并行遍历，用于数据库（例子待研究）。
-	| 数据库 | 数据表 | 一行 | 一单元格 |
-    |--------|--------|--------|--------|
-    |    迭代对象    |  序列      |   元组     |   元组内的对象     |
+| 数据库  | 数据表  | 一行   | 一单元格   |
+| ---- | ---- | ---- | ------ |
+| 迭代对象 | 序列   | 元组   | 元组内的对象 |
 4. 并行遍历 zip() 和 map()
-	zip()函数以一个或者多个可迭代对象（包括文件）为参数，然后返回一个配对元素的元组组成的列表。
-    ```python
-    L1 = ['a','b','c','d']; L2 = [5,6,7,8]
-    L3 = list(zip(L1, L2))  # [('a',5), ('b',6) ...] zip对象是虚拟的可迭代对象。可以构建 list
-    d1 = dic(zip(L1, L2))  # {'a':5, 'b':6 ...} 还可以构建字典
-    for (x,y) in zip(L1, L2):  # 这里使用元组赋值，解包zip()返回的 元组-列表
-    	print(x, ':', y)
-    ```
-    多个列表（大于2）传入 zip()，也会得到 元组-列表：
-    ```python
-    t1 = (1, 2, 3); t2 = (4, 5, 6); t3 = (7, 8, 9)
-    L = list(zip(t1, t2, t3))  # [(1,4,7), (2,5,8), (3,6,9)]
-    ```
-    zip会以最短序列为准，截断元组。而 Python2.x中的map()则会用None补齐缺项，在Python3.x中，map()则成为了一个值生成器。
-    ```python
-    a, b = 'efg', 'hijk'
-    L1 = list(zip(a, b))  # [('e','h'), ('f','i'), ('g','j')]
-    # python2.x
-    L2 = list(map(a,b))  # [('e','h'), ('f','i'), ('g','j'), (None, 'k')]
-    # Python3.x
-    L2 = list(map(ord, a)) # 'efg'一个个传入ord()，然后构建列表： [101, 102, 103]
-	L2 = [ord(c) for c in a]  # 等效语句： [101, 102, 103]
-    ```
+   zip()函数以一个或者多个可迭代对象（包括文件）为参数，然后返回一个配对元素的元组组成的列表。
+   ```python
+   L1 = ['a','b','c','d']; L2 = [5,6,7,8]
+   L3 = list(zip(L1, L2))  # [('a',5), ('b',6) ...] zip对象是虚拟的可迭代对象。可以构建 list
+   d1 = dic(zip(L1, L2))  # {'a':5, 'b':6 ...} 还可以构建字典
+   for (x,y) in zip(L1, L2):  # 这里使用元组赋值，解包zip()返回的 元组-列表
+   	print(x, ':', y)
+   ```
+   多个列表（大于2）传入 zip()，也会得到 元组-列表：
+   ```python
+   t1 = (1, 2, 3); t2 = (4, 5, 6); t3 = (7, 8, 9)
+   L = list(zip(t1, t2, t3))  # [(1,4,7), (2,5,8), (3,6,9)]
+   ```
+   zip会以最短序列为准，截断元组。而 Python2.x中的map()则会用None补齐缺项，在Python3.x中，map()则成为了一个值生成器。
+   ```python
+   a, b = 'efg', 'hijk'
+   L1 = list(zip(a, b))  # [('e','h'), ('f','i'), ('g','j')]
+   # python2.x
+   L2 = list(map(a,b))  # [('e','h'), ('f','i'), ('g','j'), (None, 'k')]
+   # Python3.x
+   L2 = list(map(ord, a)) # 'efg'一个个传入ord()，然后构建列表： [101, 102, 103]
+    L2 = [ord(c) for c in a]  # 等效语句： [101, 102, 103]
+   ```
 
 
 #### 嵌套 for 循环

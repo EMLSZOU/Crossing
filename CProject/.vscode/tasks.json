@@ -8,7 +8,7 @@
             "taskName": "Complie",
             "linux": {"command": "gcc"},
             "windows": {"command": "gcc"},
-            "osx": {"command": "clang"},//clang++
+            "osx": {"command": "clang++"},//clang++
             "args": [
                 // Ask msbuild to generate full paths for file names.
                 "${file}","-o","${fileDirname}/${fileBasenameNoExtension}.o","-g","-Wall"

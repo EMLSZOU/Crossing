@@ -124,21 +124,17 @@ i = reduce(lambda x, y: x * 10 + y, [1, 3, 5, 7, 9])  # 13579
 - sorted()返回排序后的可迭代对象。
 - sum/min 返回最大最小值
 - any/all 针对每个对象进行布尔运算，all在所有的为True返回True，any在任何一个True的时候返回True
-使用迭代协议的工具，甚至包括：
+   使用迭代协议的工具，甚至包括：
 - list()和tuple()，从可迭代对象构建一个新的对象
 - 字符串join()，将一个子字符串放在一个可迭代对象的字符串之间
 - 序列赋值。
    ```python
-a, b, c, d = open('t.txt')  # 文件有且只有4行，才能赋值，否则Error
-a , *b = open('t.txt')  # 文件不能是空的。
-# 甚至在函数调用的时候，也可以用可迭代对象，进行参数解包赋值
-def func(a, b, c, d): print(a, b, c, d)
-func(*open('t.txt'))
-
+   a, b, c, d = open('t.txt')  # 文件有且只有4行，才能赋值，否则Error
+   a , *b = open('t.txt')  # 文件不能是空的。
+   # 甚至在函数调用的时候，也可以用可迭代对象，进行参数解包赋值
+   def func(a, b, c, d): print(a, b, c, d)
+   func(*open('t.txt'))
    ```
-
-
-
 ##### 其他的迭代主题
 
 可迭代的函数：生成器与yield
@@ -150,7 +146,8 @@ func(*open('t.txt'))
 ## 函数式编程工具
 map和filter函数，是将一个操作（传入的函数对象）映射到可迭代对象中。受其启发和影响，Python最终形成了解析式（比如列表解析）。但是解析式比这些函数式编程工具更有用。
 对比for循环、map、列表解析。例子：将一个字符串转成ASCII编码列表
-```python
+
+   ```python
 # ord()可以把一个字符转成ASCII编码
 print(ord('n'))  # 110
 # 将一个字符串的ASCII编码组成列表。1. for循环
@@ -162,7 +159,7 @@ print(res)  # [111, 110, 101]
 res = list(map(ord, 'one'))  # list()不能用[]替代
 # 3. 列表解析式
 res = [ord(c) for c in 'one']
-```
+   ```
 
 
 
@@ -201,7 +198,7 @@ for item1 in itrable1 (if condition1)
 for item2 in itrable2 (if condition2)...
 ]```
 例子：
-```python
+​```python
 res = [x + y for x in [0, 1, 2] for y in [10, 20, 30]]
 # 等效的for
 res = []  # 结果[10, 20, 30, 11, 21, 31, 12, 22, 32]
@@ -248,7 +245,7 @@ for row in range(3):
     res.append(temp)
 ```
 - 解析式和列选择（比如选取数据库查询结果的某一列）
-这种用法与二维数组非常类似。Python的标准SQL数据库API返回的查询结果，一般都是tuple组成的list：列表就是数据表，tuple是行，元组中的元素就是一个个数值。
+  这种用法与二维数组非常类似。Python的标准SQL数据库API返回的查询结果，一般都是tuple组成的list：列表就是数据表，tuple是行，元组中的元素就是一个个数值。
 ```python
 table = [('Bob', 35, 'manager'), ('Jhon', 40, 'sale')]
 # 提取表内所有员工的年龄。可以用for循环，但是解析式和map会更直观，更快
@@ -288,43 +285,48 @@ lines = [('sys' in line, line[0]) for line in open('t.txt', 'r')]
 **集合解析、字典解析、生成器解析**
 列表解析式，修改一下外面的括号就可以转为 集合解析、字典解析、生成器解析。Python2中只有列表解析和生成器解析，没有集合和字典解析。
 - 字典和集合解析式，本质上是把生成器表达式(x for x in seq)传递给构造函数set()/dict()而已，这是一个语法糖（只是人类用起来方便，但对于计算机来说没有什么本质变化）。
-- ```python
-# 生成器解析式
-gen =( em for em in enumerate(open('t.txt')))
-next(gen)
-# 集合与字典解析
-set(open('t.txt'))  # 等同于 {line for line in open('t.txt')}
-dic = {index: line for index, line in enumerate(open('t.txt'))}
-```
 
-但是，嵌套太多的时候，解析式会比较难读。
-易读性：for循环 > map() > 解析式
-简洁性和效率(CPU速度和内存占用)：解析式 > map() > for循环。解析式和map在底层是以C语言实现的，而for循环是PVM用字节码运行的，所以速度差异非常大。
-易用性：解析式、map都是表达式，而for是语句，所以有些地方不能使用for循环，比如lambda、列表、字典。
+  ```python
+  # 生成器解析式
+  gen =( em for em in enumerate(open('t.txt')))
+  next(gen)
+  # 集合与字典解析
+  set(open('t.txt'))  # 等同于 {line for line in open('t.txt')}
+  dic = {index: line for index, line in enumerate(open('t.txt'))}
+  ```
+
+  但是，嵌套太多的时候，解析式会比较难读。
+  易读性：for循环 > map() > 解析式
+  简洁性和效率(CPU速度和内存占用)：解析式 > map() > for循环。解析式和map在底层是以C语言实现的，而for循环是PVM用字节码运行的，所以速度差异非常大。
+  易用性：解析式、map都是表达式，而for是语句，所以有些地方不能使用for循环，比如lambda、列表、字典。
 
 
-## 生成器Generator
-生成器不立即产生结果，而是在需要的时候一次返回一个结果。有两种生成器
-- 生成器函数：def语句编写的普通函数，但是不用return一次返回所有的结果，而是用yield一次返回一个结果，在每个结果之间挂起和继续它们的状态。
-- 生成器解析式：类似于列表解析式，但不是一次返回一个结果列表，而是返回一个生成器对象，调用它就能一次返回一个结果。
+  ## 生成器Generator
+  生成器不立即产生结果，而是在需要的时候一次返回一个结果。有两种生成器
+-   生成器函数：def语句编写的普通函数，但是不用return一次返回所有的结果，而是用yield一次返回一个结果，在每个结果之间挂起和继续它们的状态。
+  - 生成器解析式：类似于列表解析式，但不是一次返回一个结果列表，而是返回一个生成器对象，调用它就能一次返回一个结果。
 
-不一次性地构建一个列表，就能节省内存空间，并且将计算时间分散到各个结果请求。当结果是一个很大的列表，或者计算每一个时间都很长的时候，这种功能尤其有用。但实际上生成器运行的速度会更慢，所以对于非常大的运算来说是很好的选择。
-生成器都是迭代器，都是可迭代对象，支持迭代协议。
-生成器自动在生成一个值的时候挂起，保存整个本地作用域的状态，并在下一次请求的时候继续。每一次生成一个值后，控制权都返回给调用者。
-生成器也可能有一条return语句，如果出现return，它必然会在def语句块的末尾，直接终止值的生成。但这是没有必要的，任何函数退出执行的时候，引发了StopIteration异常，从而实现了迭代的终止。
-- ```python
-def gensquares(n):
-    for i in range(n):
-        yield i ** 2
-x = gensquares(4)
-print(x)  # <generator object gensquares at 0x102180938>
-print(next(x))  # 0
-gencompre = (i ** 2 for i in range(10))
-print(gencompre) # <generator object <genexpr> at 0x102180a98>
-next(gencompre)
-# 在一个有括号的环境里，生成器解析式就没有必要使用括号了
-l = sorted(i ** 2 for i in range(10))
-```
+  不一次性地构建一个列表，就能节省内存空间，并且将计算时间分散到各个结果请求。当结果是一个很大的列表，或者计算每一个时间都很长的时候，这种功能尤其有用。但实际上生成器运行的速度会更慢，所以对于非常大的运算来说是很好的选择。
+  生成器都是迭代器，都是可迭代对象，支持迭代协议。
+  生成器自动在生成一个值的时候挂起，保存整个本地作用域的状态，并在下一次请求的时候继续。每一次生成一个值后，控制权都返回给调用者。
+  生成器也可能有一条return语句，如果出现return，它必然会在def语句块的末尾，直接终止值的生成。但这是没有必要的，任何函数退出执行的时候，引发了StopIteration异常，从而实现了迭代的终止。
+
+  ```python
+  def gensquares(n):
+      for i in range(n):
+          yield i ** 2
+  x = gensquares(4)
+  print(x)  # <generator object gensquares at 0x102180938>
+  print(next(x))  # 0
+  gencompre = (i ** 2 for i in range(10))
+  print(gencompre) # <generator object <genexpr> at 0x102180a98>
+  next(gencompre)
+  # 在一个有括号的环境里，生成器解析式就没有必要使用括号了
+  l = sorted(i ** 2 for i in range(10))
+  ```
+
+  ​
+
 
 **扩展生成器协议:**send()和throw(type)方法（例子不清晰）
 
@@ -332,23 +334,27 @@ l = sorted(i ** 2 for i in range(10))
 
 生成器（函数、解析式都是）本身就是一种迭代器，所以没有必要像列表一样使用iter()函数创建一个迭代器。另外，它不能像列表这样的可迭代对象一样，产生多个迭代器，同时进行多个迭代。
 - ```python
-g = (c * 4 for c in 'Spam')
-print(iter(g) is g)  # True，说明生成器自己就是迭代器
-# 如果强制生成两个迭代器，就会互相影响——因为本质上是同一个迭代器
-Iter1 = iter(g)
-Iter2 = iter(g)
-print(next(Iter1), next(Iter2), next(Iter1)) # SSSS pppp aaaa
-# 列表之类，可以产生多个迭代器，互不影响。并且会反映出列表的原地修改
-L = [1, 2, 3, 4]
-it1, it2 = iter(L), iter(L)
-print(next(it1), next(it2), next(it1), next(it2)) # 1 1 2 2
-del L[2:]
-print(next(it1), next(it2))  # StopIteration
-```
+  g = (c * 4 for c in 'Spam')
+  print(iter(g) is g)  # True，说明生成器自己就是迭代器
+  # 如果强制生成两个迭代器，就会互相影响——因为本质上是同一个迭代器
+  Iter1 = iter(g)
+  Iter2 = iter(g)
+  print(next(Iter1), next(Iter2), next(Iter1)) # SSSS pppp aaaa
+  # 列表之类，可以产生多个迭代器，互不影响。并且会反映出列表的原地修改
+  L = [1, 2, 3, 4]
+  it1, it2 = iter(L), iter(L)
+  print(next(it1), next(it2), next(it1), next(it2)) # 1 1 2 2
+  del L[2:]
+  print(next(it1), next(it2))  # StopIteration
+  ```
+
+
 
 ## 用迭代工具模拟map和zip
+
 Python3里，zip和map函数的用法
-- ```python
+
+```python
 # zip()：在最短的序列处截断，生成器每次返回一个tuple
 L = list(zip('abc', 'xyz123')) #[('a', 'x'), ('b', 'y'), ('c', 'z')]
 # map()：一次次地将序列的值传入函数，然后yield一个结果
@@ -357,26 +363,25 @@ L = list(map(abs, [-2, -1, 0, 1, 2]))  # [2, 1, 0, 1, 2]
 L = list(map(pow, [1, 2, 3], [2, 3, 4, 5])) # [1, 8, 81]
 ```
 
-
-
 模拟Python3的map函数
 - ```python
-def mymap(func, *seqs):
+  def mymap(func, *seqs):
     res = []
     for args in zip(*seqs):
         res.append(func(args))
     return res
-# 用列表解析替代for循环
-def mymap(func, *seqs):
-    return [func(*args) for args in zip(*seqs)]
-# 真正的map()：使用yield的generator
-def mymap(func, *seqs):
-    for args in zip(*seqs):
-        yield func(args)
-```
+  # 用列表解析替代for循环
+  def mymap(func, *seqs):
+      return [func(*args) for args in zip(*seqs)]
+  # 真正的map()：使用yield的generator
+  def mymap(func, *seqs):
+      for args in zip(*seqs):
+          yield func(args)
+  ```
 
 Python2和3的zip是一样的，但是Python2的map，其实是增强版的zip，会自动补全
-- ```python
+
+```python
 a = zip([1, 2, 3], [4, 5, 6, 7])
 print a # [(1, 4), (2, 5), (3, 6)]
 a = zip([1, 2, 3], [4, 5, 6, 7], ['a', 'b', 'c'])
@@ -385,35 +390,37 @@ a = map(None, [1, 2, 3], [4, 5, 6, 7])
 print a # [(1, 4), (2, 5), (3, 6), (None, 7)]
 ```
 
-
-
 模拟zip和Python2的map：
+
 - ```python
-def myzip(*seqs):
+  def myzip(*seqs):
     seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
     res = []
     while all(seqs): # 只要出现空list，就为False
         res.append(tuple(s.pop(0) for s in seqs))
     return res
-# 在Python2 中模拟 自动填充的map
-def mymappad(*seqs, **kargs): # python2没法keyword-only
-    pad = kargs.pop('pad', None)
-    if kargs: raise TypeError("Extra args: %s" % kargs)
-    seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
-    res = []
-    while any(seqs): # 所有的都为空list，就为False
-        res.append(tuple((s.pop(0) if s else pad )for s in seqs))
-    return res
-a = mymappad([1, 2, 3], [4, 5, 6, 7]) # [(1, 4), (2, 5), (3, 6), (None, 7)]
-# 在Python3中模拟 自动填充的map
-def mymappad(*seqs, pad=None): # python2没法keyword-only
-    seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
-    res = []
-    while any(seqs): # 所有的都为空list，就为False
-        res.append(tuple((s.pop(0) if s else pad )for s in seqs))
-    return res
-```
+  # 在Python2 中模拟 自动填充的map
+  def mymappad(*seqs, **kargs): # python2没法keyword-only
+      pad = kargs.pop('pad', None)
+      if kargs: raise TypeError("Extra args: %s" % kargs)
+      seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
+      res = []
+      while any(seqs): # 所有的都为空list，就为False
+          res.append(tuple((s.pop(0) if s else pad )for s in seqs))
+      return res
+  a = mymappad([1, 2, 3], [4, 5, 6, 7]) # [(1, 4), (2, 5), (3, 6), (None, 7)]
+  # 在Python3中模拟 自动填充的map
+  def mymappad(*seqs, pad=None): # python2没法keyword-only
+      seqs = [list(s) for s in seqs] # 将传入的序列，都转成list
+      res = []
+      while any(seqs): # 所有的都为空list，就为False
+          res.append(tuple((s.pop(0) if s else pad )for s in seqs))
+      return res
+  ```
+
+
 将它们改写为yield的generator函数
+
 ```python
 def myzip(*seqs):
     seqs = [list(s) for s in seqs]
@@ -424,6 +431,7 @@ def mymappad(*seqs, pad=None):
     while any(seqs):
         yield tuple((s.pop(0) if s else pad )for s in seqs)
 ```
+
 如果使用len()来控制，而不是pop()/any()/all()来控制，就只能适用于序列，而不适用于所有的可迭代对象。
 ```python
 def myzip(*seqs):
@@ -447,26 +455,31 @@ def mymappad(*seqs, pad=None): # python2没法keyword-only
 
 单次迭代，还有map在Python2和3的差别，这是影响很大的
 - ```python
-def iterzip(*args):
+  def iterzip(*args):
     # 因为map在2与3中的工作方式不同，在Python3中，生成  list <map object at 0x00947270>
     iters_list = map(iter, args) # python2 [<listiterator object at 0x02726470>, <listiterator object at 0x02726490>]
     print "list",iters_list
     while iters_list:
         res = [next(i) for i in iters_list]
         yield tuple(res)
-a = iterzip([1, 2, 3], [4, 5, 6, 7])
-# 在Python2中正常工作
-print a # <generator object iterzip at 0x0290AAD0>
-for i in a: print i, # (1, 4) (2, 5) (3, 6)
-# 在Python3中，诡异无限循环。应该修改为iters_list = list(map(iter, args))
-for i in a: print(i,end=' ') # (1, 4) () () ()...
-```
+  a = iterzip([1, 2, 3], [4, 5, 6, 7])
+  # 在Python2中正常工作
+  print a # <generator object iterzip at 0x0290AAD0>
+  for i in a: print i, # (1, 4) (2, 5) (3, 6)
+  # 在Python3中，诡异无限循环。应该修改为iters_list = list(map(iter, args))
+  for i in a: print(i,end=' ') # (1, 4) () () ()...
+  ```
+
+
+
+
 
 
 ## 统计各种迭代工具的性能（耗时、内存占用）
 
 一般来说，列表解析最快，map会随函数的不同而性能不同，而生成器则把内存需求降到了最小。但是，每种迭代的性能表现究竟如何，就需要性能分析了。
 ####执行内置函数的效率比较
+
 ```python
 import time, sys
 reps = 10000  # 重复运行多少次
@@ -517,7 +530,7 @@ genFunc  : 16.23100 => [0...9999]```
 速度：map>列表解析>生成器解析>生成器函数>for循环。map在内置函数方面有很大的优势。而生成器表达式，虽然和生成器函数的结果是一样的，但是内部实现的原理很不一样。
 ####执行操作的效率比较
 如果不是执行abs(x)这样的内置函数，而是一个普通的 x+10操作，则把代码稍微改动一下，用自定义的abs()覆盖内置的abs()函数。
-```python
+​```python
 def abs(x):
     return x+10
 ```
@@ -539,8 +552,8 @@ genFunc  : 27.13629 => [10...10009]
 2.多次运行，选出最佳，就可过滤系统的性能波动。
 3.可以指定运行次数。
 - ```python
-import time, sys
-def timer(func, *pargs, **kargs):
+  import time, sys
+  def timer(func, *pargs, **kargs):
     if sys.platform[:3] == 'win': # 不同的系统，不同的计时器
         timemeter = time.clock
     else: timemeter = time.time
@@ -553,16 +566,17 @@ def timer(func, *pargs, **kargs):
         ret = func(*pargs, **kargs)
     elapsed = timemeter() - start
     return elapsed, ret
-def best(func, *pargs, **kargs): # 多次运行，过滤系统性能波动的影响
+  def best(func, *pargs, **kargs): # 多次运行，过滤系统性能波动的影响
     _reps = kargs.pop('-reps', 10000)
     best = 2 ** 32
     for i in range(_reps):
         (time, ret) = timer(func, *pargs, _reps=1 **kargs)
         if time < best: best = time
     return (best, ret)
-```
+  ```
+
 相应的调用代码，也变为：
-- ```python
+```python
 if __name__ == "__main__": # 启动测试的代码
     print(sys.version)
     for tester in (timer, best):
