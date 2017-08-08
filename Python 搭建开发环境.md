@@ -58,5 +58,5 @@ CMD>C:\Python35\python  D:demo.py   --Python解释器和脚本都可以**使用�
 • Shedskin C++：将Python代码转成C++字节码，然后编译链接。
 • 转为可执行程序：冻结二进制文件 Frozen Binary，将字节码、PVM、支持文件捆绑为一个软件包。Windows 用 py2exe 做成 exe文件，Unix/Linux 用 PyInstaller转成二进制文件。
 
-
+运行速度：ShedSkin>PyPy>IronPython>Cpython 2>C Python3>Jython
 
