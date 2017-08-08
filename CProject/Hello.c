@@ -6,4 +6,5 @@ int main(){
     printf("Fahr\tCelsius\n");  //打印华氏温度与
     float Fahr = (5.0/9.0) * (300.0-32.0);
     printf("%f",Fahr);
+    return 0;
 }

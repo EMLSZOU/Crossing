@@ -5,14 +5,14 @@
             "name": "Debug",//"C++ Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileBasename}.o",//"${file}.exe"
+            "program": "${fileDirname}/${fileBasenameNoExtension}.o",//"${file}.exe"
             "args": [],
             "stopAtEntry": false,
-            //"cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}",
             //"preLaunchTask": "clang++",
-            "preLaunchTask": "g++",
+            "preLaunchTask": "Complie",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "linux": {
                 "MIMode": "gdb"
             },
@@ -29,7 +29,7 @@
             "name": "C++ Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "${fileBasename}.o",//"${workspaceRoot}/${file}.exe",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.o",//"${workspaceRoot}/${file}.exe",
             "processId": "${command:pickProcess}",
             "linux": {
                 "MIMode": "gdb"
